@@ -29,6 +29,9 @@ importers:
       chai:
         specifier: ^5.2.0
         version: 5.2.0
+      node-readable-to-web-readable-stream:
+        specifier: ^0.4.2
+        version: 0.4.2
       rollup:
         specifier: ^4.40.0
         version: 4.40.0
@@ -927,6 +930,9 @@ packages:
 
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+
+  node-readable-to-web-readable-stream@0.4.2:
+    resolution: {integrity: sha512-/cMZNI34v//jUTrI+UIo4ieHAB5EZRY/+7OmXZgBxaWBMcW2tGdceIw06RFxWxrKZ5Jp3sI2i5TsRo+CBhtVLQ==}
 
   object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
@@ -2298,6 +2304,8 @@ snapshots:
   ms@2.1.3: {}
 
   natural-compare@1.4.0: {}
+
+  node-readable-to-web-readable-stream@0.4.2: {}
 
   object-assign@4.1.1: {}
 

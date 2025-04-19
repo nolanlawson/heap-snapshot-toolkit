@@ -1,21 +1,23 @@
 import { HeapSnapshotLoader, SecondaryInitManager } from './thirdparty/devtools-frontend/index.js'
 
+export * as DevToolsAPI from './thirdparty/devtools-frontend/index.js'
+
 export async function parse (readStream) {
   const loader = new HeapSnapshotLoader.HeapSnapshotLoader()
   if (readStream instanceof ReadableStream) {
+    // standard JS ReadableStream
     for await (const chunk of readStream) {
       loader.write(chunk)
     }
   } else {
     // assume Node ReadStream
-    const readStreamPromise = new Promise((resolve, reject) => {
+    await new Promise((resolve, reject) => {
       readStream.on('error', reject)
       readStream.on('end', () => resolve())
       readStream.on('data', chunk => {
         loader.write(chunk)
       })
     })
-    await readStreamPromise
   }
 
   loader.close()
@@ -49,5 +51,3 @@ export async function diff (startSnapshot, endSnapshot) {
 
   return await endSnapshot.calculateSnapshotDiff(startSnapshotUid, aggregatesForDiff)
 }
-
-export * as DevToolsAPI from './thirdparty/devtools-frontend/index.js'

@@ -3,7 +3,7 @@ import { createGunzip } from 'node:zlib'
 import { describe, it } from 'node:test'
 import { createReadStream } from 'node:fs'
 import { pipeline } from 'node:stream'
-
+import {makeDefaultReadableStreamFromNodeReadable} from 'node-readable-to-web-readable-stream';
 import { diff, parse, DevToolsAPI } from '../index.js'
 
 function fileToReadStream (filename) {
@@ -14,22 +14,31 @@ function fileToReadStream (filename) {
   return gunzip
 }
 
+const expectedStatistics = {
+  total: 352312,
+  native: { total: 11568, typedArrays: 0 },
+  v8heap: {
+    total: 340744,
+    code: 20840,
+    jsArrays: 512,
+    strings: 5156,
+    system: 140576
+  }
+}
+
 describe('basic test suite', () => {
-  it('can parse heap snapshots', async () => {
-    const parsed = await parse(fileToReadStream('./test/fixtures/snapshot1.heapsnapshot.gz'))
+  it('can parse heap snapshots - ReadStream', async () => {
+    const stream = fileToReadStream('./test/fixtures/snapshot1.heapsnapshot.gz')
+    const parsed = await parse(stream)
     const statistics = parsed.getStatistics()
-    expect(statistics).to.deep.equal({
-      total: 352312,
-      native: { total: 11568, typedArrays: 0 },
-      v8heap: {
-        total: 340744,
-        code: 20840,
-        jsArrays: 512,
-        strings: 5156,
-        system: 140576
-      }
-    }
-    )
+    expect(statistics).to.deep.equal(expectedStatistics)
+  })
+
+  it('can parse heap snapshots - ReadableStream', async () => {
+    const stream = makeDefaultReadableStreamFromNodeReadable(fileToReadStream('./test/fixtures/snapshot1.heapsnapshot.gz'))
+    const parsed = await parse(stream)
+    const statistics = parsed.getStatistics()
+    expect(statistics).to.deep.equal(expectedStatistics)
   })
 
   it('can diff heap snapshots', async () => {
