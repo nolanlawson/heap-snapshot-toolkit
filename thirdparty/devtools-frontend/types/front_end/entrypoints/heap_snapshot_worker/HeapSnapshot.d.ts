@@ -212,7 +212,7 @@ interface DominatedNodes {
     firstDominatedNodeIndex: Uint32Array;
     dominatedNodes: Uint32Array;
 }
-class SecondaryInitManager {
+export declare class SecondaryInitManager {
     argsStep1: Promise<SecondaryInitArgumentsStep1>;
     argsStep2: Promise<SecondaryInitArgumentsStep2>;
     argsStep3: Promise<SecondaryInitArgumentsStep3>;
