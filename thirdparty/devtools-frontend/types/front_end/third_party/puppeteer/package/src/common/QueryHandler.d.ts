@@ -11,15 +11,15 @@ import type { Awaitable, AwaitableIterable } from './types.js';
 /**
  * @internal
  */
-export type QuerySelectorAll = (node: Node, selector: string, PuppeteerUtil: PuppeteerUtil) => AwaitableIterable<Node>;
+type QuerySelectorAll = (node: Node, selector: string, PuppeteerUtil: PuppeteerUtil) => AwaitableIterable<Node>;
 /**
  * @internal
  */
-export type QuerySelector = (node: Node, selector: string, PuppeteerUtil: PuppeteerUtil) => Awaitable<Node | null>;
+type QuerySelector = (node: Node, selector: string, PuppeteerUtil: PuppeteerUtil) => Awaitable<Node | null>;
 /**
  * @internal
  */
-export declare const enum PollingOptions {
+declare const enum PollingOptions {
     RAF = "raf",
     MUTATION = "mutation"
 }

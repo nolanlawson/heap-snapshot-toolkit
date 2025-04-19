@@ -8,7 +8,7 @@ import type { JSHandle } from '../api/JSHandle.js';
 /**
  * @public
  */
-export interface ConsoleMessageLocation {
+interface ConsoleMessageLocation {
     /**
      * URL of the resource if known or `undefined` otherwise.
      */
@@ -26,7 +26,7 @@ export interface ConsoleMessageLocation {
  * The supported types for console messages.
  * @public
  */
-export type ConsoleMessageType = 'log' | 'debug' | 'info' | 'error' | 'warn' | 'dir' | 'dirxml' | 'table' | 'trace' | 'clear' | 'startGroup' | 'startGroupCollapsed' | 'endGroup' | 'assert' | 'profile' | 'profileEnd' | 'count' | 'timeEnd' | 'verbose';
+type ConsoleMessageType = 'log' | 'debug' | 'info' | 'error' | 'warn' | 'dir' | 'dirxml' | 'table' | 'trace' | 'clear' | 'startGroup' | 'startGroupCollapsed' | 'endGroup' | 'assert' | 'profile' | 'profileEnd' | 'count' | 'timeEnd' | 'verbose';
 /**
  * ConsoleMessage objects are dispatched by page via the 'console' event.
  * @public

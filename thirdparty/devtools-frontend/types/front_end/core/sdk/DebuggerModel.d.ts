@@ -155,7 +155,7 @@ export declare class Location {
     private paused;
     id(): string;
 }
-export interface LocationRange {
+interface LocationRange {
     start: Location;
     end: Location;
 }
@@ -249,7 +249,7 @@ interface SetBreakpointResult {
     breakpointId: Protocol.Debugger.BreakpointId | null;
     locations: Location[];
 }
-export interface EventListenerPausedDetailsAuxData {
+interface EventListenerPausedDetailsAuxData {
     eventName: string;
     targetName?: string;
     webglErrorName?: string;

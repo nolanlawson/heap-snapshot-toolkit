@@ -14,11 +14,11 @@ import type { QueryOptions, ScreenshotOptions, WaitForSelectorOptions } from './
 /**
  * @public
  */
-export type Quad = [Point, Point, Point, Point];
+type Quad = [Point, Point, Point, Point];
 /**
  * @public
  */
-export interface BoxModel {
+interface BoxModel {
     content: Quad;
     padding: Quad;
     border: Quad;
@@ -42,7 +42,7 @@ export interface BoundingBox extends Point {
 /**
  * @public
  */
-export interface Offset {
+interface Offset {
     /**
      * x-offset for the clickable point relative to the top-left corner of the border box.
      */
@@ -71,7 +71,7 @@ export interface Point {
 /**
  * @public
  */
-export interface ElementScreenshotOptions extends ScreenshotOptions {
+interface ElementScreenshotOptions extends ScreenshotOptions {
     /**
      * @defaultValue `true`
      */
@@ -85,7 +85,7 @@ export interface ElementScreenshotOptions extends ScreenshotOptions {
  *
  * @internal
  */
-export declare function bindIsolatedHandle<This extends ElementHandle<Node>>(target: (this: This, ...args: any[]) => Promise<any>, _: unknown): typeof target;
+declare function bindIsolatedHandle<This extends ElementHandle<Node>>(target: (this: This, ...args: any[]) => Promise<any>, _: unknown): typeof target;
 /**
  * ElementHandle represents an in-page DOM element.
  *

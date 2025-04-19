@@ -18,11 +18,11 @@ import type { Page } from '../Page.js';
  *
  * @public
  */
-export type VisibilityOption = 'hidden' | 'visible' | null;
+type VisibilityOption = 'hidden' | 'visible' | null;
 /**
  * @public
  */
-export interface ActionOptions {
+interface ActionOptions {
     /**
      * A signal to abort the locator action.
      */
@@ -31,11 +31,11 @@ export interface ActionOptions {
 /**
  * @public
  */
-export type LocatorClickOptions = ClickOptions & ActionOptions;
+type LocatorClickOptions = ClickOptions & ActionOptions;
 /**
  * @public
  */
-export interface LocatorScrollOptions extends ActionOptions {
+interface LocatorScrollOptions extends ActionOptions {
     scrollTop?: number;
     scrollLeft?: number;
 }
@@ -44,7 +44,7 @@ export interface LocatorScrollOptions extends ActionOptions {
  *
  * @public
  */
-export declare enum LocatorEvent {
+declare enum LocatorEvent {
     /**
      * Emitted every time before the locator performs an action on the located element(s).
      */
@@ -53,7 +53,7 @@ export declare enum LocatorEvent {
 /**
  * @public
  */
-export interface LocatorEvents extends Record<EventType, unknown> {
+interface LocatorEvents extends Record<EventType, unknown> {
     [LocatorEvent.Action]: undefined;
 }
 /**
@@ -214,7 +214,7 @@ export declare abstract class Locator<T> extends EventEmitter<LocatorEvents> {
 /**
  * @internal
  */
-export declare class FunctionLocator<T> extends Locator<T> {
+class FunctionLocator<T> extends Locator<T> {
     #private;
     static create<Ret>(pageOrFrame: Page | Frame, func: () => Awaitable<Ret>): Locator<Ret>;
     private constructor();
@@ -224,15 +224,15 @@ export declare class FunctionLocator<T> extends Locator<T> {
 /**
  * @public
  */
-export type Predicate<From, To extends From = From> = ((value: From) => value is To) | ((value: From) => Awaitable<boolean>);
+type Predicate<From, To extends From = From> = ((value: From) => value is To) | ((value: From) => Awaitable<boolean>);
 /**
  * @internal
  */
-export type HandlePredicate<From, To extends From = From> = ((value: HandleFor<From>, signal?: AbortSignal) => value is HandleFor<To>) | ((value: HandleFor<From>, signal?: AbortSignal) => Awaitable<boolean>);
+type HandlePredicate<From, To extends From = From> = ((value: HandleFor<From>, signal?: AbortSignal) => value is HandleFor<To>) | ((value: HandleFor<From>, signal?: AbortSignal) => Awaitable<boolean>);
 /**
  * @internal
  */
-export declare abstract class DelegatedLocator<T, U> extends Locator<U> {
+class DelegatedLocator<T, U> extends Locator<U> {
     #private;
     constructor(delegate: Locator<T>);
     protected get delegate(): Locator<T>;
@@ -247,7 +247,7 @@ export declare abstract class DelegatedLocator<T, U> extends Locator<U> {
 /**
  * @internal
  */
-export declare class FilteredLocator<From, To extends From> extends DelegatedLocator<From, To> {
+class FilteredLocator<From, To extends From> extends DelegatedLocator<From, To> {
     #private;
     constructor(base: Locator<From>, predicate: HandlePredicate<From, To>);
     _clone(): FilteredLocator<From, To>;
@@ -256,15 +256,15 @@ export declare class FilteredLocator<From, To extends From> extends DelegatedLoc
 /**
  * @public
  */
-export type Mapper<From, To> = (value: From) => Awaitable<To>;
+type Mapper<From, To> = (value: From) => Awaitable<To>;
 /**
  * @internal
  */
-export type HandleMapper<From, To> = (value: HandleFor<From>, signal?: AbortSignal) => Awaitable<HandleFor<To>>;
+type HandleMapper<From, To> = (value: HandleFor<From>, signal?: AbortSignal) => Awaitable<HandleFor<To>>;
 /**
  * @internal
  */
-export declare class MappedLocator<From, To> extends DelegatedLocator<From, To> {
+class MappedLocator<From, To> extends DelegatedLocator<From, To> {
     #private;
     constructor(base: Locator<From>, mapper: HandleMapper<From, To>);
     _clone(): MappedLocator<From, To>;
@@ -273,11 +273,11 @@ export declare class MappedLocator<From, To> extends DelegatedLocator<From, To> 
 /**
  * @internal
  */
-export type Action<T, U> = (element: HandleFor<T>, signal?: AbortSignal) => Observable<U>;
+type Action<T, U> = (element: HandleFor<T>, signal?: AbortSignal) => Observable<U>;
 /**
  * @internal
  */
-export declare class NodeLocator<T extends Node> extends Locator<T> {
+class NodeLocator<T extends Node> extends Locator<T> {
     #private;
     static create<Selector extends string>(pageOrFrame: Page | Frame, selector: Selector): Locator<NodeFor<Selector>>;
     private constructor();
@@ -291,7 +291,7 @@ export type AwaitedLocator<T> = T extends Locator<infer S> ? S : never;
 /**
  * @internal
  */
-export declare class RaceLocator<T> extends Locator<T> {
+class RaceLocator<T> extends Locator<T> {
     #private;
     static create<T extends readonly unknown[]>(locators: T): Locator<AwaitedLocator<T[number]>>;
     constructor(locators: ReadonlyArray<Locator<T>>);
@@ -307,4 +307,4 @@ export declare class RaceLocator<T> extends Locator<T> {
  *
  * @internal
  */
-export declare const RETRY_DELAY = 100;
+const RETRY_DELAY = 100;

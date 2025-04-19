@@ -159,7 +159,7 @@ class HeapSnapshotProgress {
     reportProblem(error: string): void;
     private sendUpdateEvent;
 }
-export interface Profile {
+interface Profile {
     root_index: number;
     nodes: Platform.TypedArrayUtilities.BigUint32Array;
     edges: Platform.TypedArrayUtilities.BigUint32Array;
@@ -170,7 +170,7 @@ export interface Profile {
     trace_function_infos: Uint32Array;
     trace_tree: Object;
 }
-export interface LiveObjects {
+interface LiveObjects {
     [x: number]: {
         count: number;
         size: number;

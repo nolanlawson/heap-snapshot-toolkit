@@ -12,11 +12,11 @@ export type EventType = string | symbol;
 /**
  * @public
  */
-export type Handler<T = unknown> = (event: T) => void;
+type Handler<T = unknown> = (event: T) => void;
 /**
  * @public
  */
-export interface CommonEventEmitter<Events extends Record<EventType, unknown>> {
+interface CommonEventEmitter<Events extends Record<EventType, unknown>> {
     on<Key extends keyof Events>(type: Key, handler: Handler<Events[Key]>): this;
     off<Key extends keyof Events>(type: Key, handler?: Handler<Events[Key]>): this;
     emit<Key extends keyof Events>(type: Key, event: Events[Key]): boolean;

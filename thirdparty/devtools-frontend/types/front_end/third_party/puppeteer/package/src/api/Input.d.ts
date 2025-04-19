@@ -234,7 +234,7 @@ export interface MouseMoveOptions {
  *
  * @public
  */
-export declare const MouseButton: Readonly<{
+const MouseButton: Readonly<{
     Left: "left";
     Right: "right";
     Middle: "middle";
@@ -244,7 +244,7 @@ export declare const MouseButton: Readonly<{
 /**
  * @public
  */
-export type MouseButton = (typeof MouseButton)[keyof typeof MouseButton];
+type MouseButton = (typeof MouseButton)[keyof typeof MouseButton];
 /**
  * The Mouse class operates in main-frame CSS pixels
  * relative to the top-left corner of the viewport.

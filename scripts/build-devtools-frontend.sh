@@ -15,5 +15,5 @@ rm -fr thirdparty/devtools-frontend/{front_end,inspector_overlay,test,tsconfig.t
 # remove unused .d.ts files since devtools-frontend has a lot
 echo '{ "include": ["tmp.d.ts", "thirdparty"] }' > tsconfig.json
 cp index.d.ts tmp.d.ts
-npx tsr --include-d-ts --write 'tmp\.d\.ts$'
+npx tsr --recursive --include-d-ts --write 'tmp\.d\.ts$'
 rm -f tsconfig.json tmp.d.ts

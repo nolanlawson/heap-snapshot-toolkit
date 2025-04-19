@@ -102,7 +102,7 @@ class ToolbarText extends ToolbarItem<void, HTMLElement> {
     text(): string;
     setText(text: string): void;
 }
-export declare class ToolbarButton extends ToolbarItem<ToolbarButton.EventTypes, Buttons.Button.Button> {
+class ToolbarButton extends ToolbarItem<ToolbarButton.EventTypes, Buttons.Button.Button> {
     private button;
     private text?;
     private adorner?;
@@ -199,7 +199,7 @@ class ToolbarSettingToggle extends ToolbarToggle {
 class ToolbarSeparator extends ToolbarItem<void> {
     constructor(spacer?: boolean);
 }
-export interface Provider {
+interface Provider {
     item(): ToolbarItem | null;
 }
 interface ItemsProvider {

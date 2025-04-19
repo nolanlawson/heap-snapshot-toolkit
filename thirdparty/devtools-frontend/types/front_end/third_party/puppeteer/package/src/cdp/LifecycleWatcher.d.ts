@@ -32,11 +32,11 @@ export type PuppeteerLifeCycleEvent =
 /**
  * @public
  */
-export type ProtocolLifeCycleEvent = 'load' | 'DOMContentLoaded' | 'networkIdle' | 'networkAlmostIdle';
+type ProtocolLifeCycleEvent = 'load' | 'DOMContentLoaded' | 'networkIdle' | 'networkAlmostIdle';
 /**
  * @internal
  */
-export declare class LifecycleWatcher {
+class LifecycleWatcher {
     #private;
     constructor(networkManager: NetworkManager, frame: CdpFrame, waitUntil: PuppeteerLifeCycleEvent | PuppeteerLifeCycleEvent[], timeout: number, signal?: AbortSignal);
     navigationResponse(): Promise<HTTPResponse | null>;

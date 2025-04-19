@@ -54,7 +54,7 @@ export interface Metric {
     navigationType: 'navigate' | 'reload' | 'back-forward' | 'back-forward-cache' | 'prerender' | 'restore';
 }
 /** The union of supported metric types. */
-export type MetricType = CLSMetric | FCPMetric | FIDMetric | INPMetric | LCPMetric | TTFBMetric;
+type MetricType = CLSMetric | FCPMetric | FIDMetric | INPMetric | LCPMetric | TTFBMetric;
 /** The union of supported metric attribution types. */
 type MetricWithAttribution = CLSMetricWithAttribution | FCPMetricWithAttribution | FIDMetricWithAttribution | INPMetricWithAttribution | LCPMetricWithAttribution | TTFBMetricWithAttribution;
 /**
@@ -70,7 +70,7 @@ type MetricWithAttribution = CLSMetricWithAttribution | FCPMetricWithAttribution
  * | > [0] and ≦ [1] | "needs improvement" |
  * | > [1]           | "poor"              |
  */
-export type MetricRatingThresholds = [number, number];
+type MetricRatingThresholds = [number, number];
 /**
  * @deprecated Use metric-specific function types instead, such as:
  * `(metric: LCPMetric) => void`. If a single callback type is needed for
@@ -79,7 +79,7 @@ export type MetricRatingThresholds = [number, number];
 interface ReportCallback {
     (metric: MetricType): void;
 }
-export interface ReportOpts {
+interface ReportOpts {
     reportAllChanges?: boolean;
     durationThreshold?: number;
 }

@@ -3,7 +3,7 @@ import type * as Platform from '../../core/platform/platform.js';
 import type { ContentDataOrError } from './ContentData.js';
 import type { StreamingContentDataOrError } from './StreamingContentData.js';
 import type { WasmDisassembly } from './WasmDisassembly.js';
-export interface ContentProvider {
+interface ContentProvider {
     contentURL(): Platform.DevToolsPath.UrlString;
     contentType(): Common.ResourceType.ResourceType;
     /** @deprecated Prefer {@link requestContentData} instead */
@@ -11,7 +11,7 @@ export interface ContentProvider {
     requestContentData(): Promise<ContentDataOrError>;
     searchInContent(query: string, caseSensitive: boolean, isRegex: boolean): Promise<SearchMatch[]>;
 }
-export declare class SearchMatch {
+class SearchMatch {
     readonly lineNumber: number;
     readonly lineContent: string;
     readonly columnNumber: number;

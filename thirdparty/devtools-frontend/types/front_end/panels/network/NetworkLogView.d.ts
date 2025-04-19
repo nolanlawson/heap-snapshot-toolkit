@@ -209,7 +209,7 @@ const HTTPSchemas: {
     ws: boolean;
     wss: boolean;
 };
-export interface GroupLookupInterface {
+interface GroupLookupInterface {
     groupNodeForRequest(request: SDK.NetworkRequest.NetworkRequest): NetworkGroupNode | null;
     reset(): void;
 }

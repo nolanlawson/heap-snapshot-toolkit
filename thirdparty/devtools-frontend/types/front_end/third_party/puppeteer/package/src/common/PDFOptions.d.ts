@@ -6,7 +6,7 @@
 /**
  * @public
  */
-export interface PDFMargin {
+interface PDFMargin {
     top?: string | number;
     bottom?: string | number;
     left?: string | number;
@@ -15,7 +15,7 @@ export interface PDFMargin {
 /**
  * @public
  */
-export type LowerCasePaperFormat = 'letter' | 'legal' | 'tabloid' | 'ledger' | 'a0' | 'a1' | 'a2' | 'a3' | 'a4' | 'a5' | 'a6';
+type LowerCasePaperFormat = 'letter' | 'legal' | 'tabloid' | 'ledger' | 'a0' | 'a1' | 'a2' | 'a3' | 'a4' | 'a5' | 'a6';
 /**
  * All the valid paper format types when printing a PDF.
  *
@@ -47,7 +47,7 @@ export type LowerCasePaperFormat = 'letter' | 'legal' | 'tabloid' | 'ledger' | '
  *
  * @public
  */
-export type PaperFormat = Uppercase<LowerCasePaperFormat> | Capitalize<LowerCasePaperFormat> | LowerCasePaperFormat;
+type PaperFormat = Uppercase<LowerCasePaperFormat> | Capitalize<LowerCasePaperFormat> | LowerCasePaperFormat;
 /**
  * Valid options to configure PDF generation via {@link Page.pdf}.
  * @public
@@ -172,14 +172,14 @@ export interface PDFOptions {
 /**
  * @internal
  */
-export interface PaperFormatDimensions {
+interface PaperFormatDimensions {
     width: number;
     height: number;
 }
 /**
  * @internal
  */
-export interface ParsedPDFOptionsInterface {
+interface ParsedPDFOptionsInterface {
     width: number;
     height: number;
     margin: {
@@ -192,11 +192,11 @@ export interface ParsedPDFOptionsInterface {
 /**
  * @internal
  */
-export type ParsedPDFOptions = Required<Omit<PDFOptions, 'path' | 'format' | 'timeout'> & ParsedPDFOptionsInterface>;
+type ParsedPDFOptions = Required<Omit<PDFOptions, 'path' | 'format' | 'timeout'> & ParsedPDFOptionsInterface>;
 /**
  * @internal
  *
  * @remarks All A series paper format sizes in inches are calculated from centimeters
  * rounded mathematically to four decimal places.
  */
-export declare const paperFormats: Record<LowerCasePaperFormat, Record<'cm' | 'in', PaperFormatDimensions>>;
+const paperFormats: Record<LowerCasePaperFormat, Record<'cm' | 'in', PaperFormatDimensions>>;

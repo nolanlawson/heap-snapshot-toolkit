@@ -1,6 +1,6 @@
 import type { Size } from './Geometry.js';
 import { Widget } from './Widget.js';
-export declare class GlassPane {
+class GlassPane {
     #private;
     private readonly widgetInternal;
     element: typeof Widget.prototype.element;

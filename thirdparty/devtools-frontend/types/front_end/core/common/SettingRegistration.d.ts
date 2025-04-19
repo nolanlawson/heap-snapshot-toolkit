@@ -1,11 +1,11 @@
 import type * as Platform from '../platform/platform.js';
 import * as Root from '../root/root.js';
 import type { SettingStorageType } from './Settings.js';
-export declare function registerSettingExtension(registration: SettingRegistration): void;
+declare function registerSettingExtension(registration: SettingRegistration): void;
 declare function getRegisteredSettings(): SettingRegistration[];
-export declare function registerSettingsForTest(settings: SettingRegistration[], forceReset?: boolean): void;
-export declare function resetSettings(): void;
-export declare function maybeRemoveSettingExtension(settingName: string): boolean;
+declare function registerSettingsForTest(settings: SettingRegistration[], forceReset?: boolean): void;
+declare function resetSettings(): void;
+declare function maybeRemoveSettingExtension(settingName: string): boolean;
 export declare const enum SettingCategory {
     NONE = "",// `NONE` must be a falsy value. Legacy code uses if-checks for the category.
     ELEMENTS = "ELEMENTS",
@@ -28,7 +28,7 @@ export declare const enum SettingCategory {
     SYNC = "SYNC",
     PRIVACY = "PRIVACY"
 }
-export declare function getLocalizedSettingsCategory(category: SettingCategory): Platform.UIString.LocalizedString;
+declare function getLocalizedSettingsCategory(category: SettingCategory): Platform.UIString.LocalizedString;
 export declare const enum SettingType {
     ARRAY = "array",
     REGEX = "regex",
@@ -161,7 +161,7 @@ interface RawSettingExtensionOption {
     text?: string;
     raw: true;
 }
-export type SettingExtensionOption = LocalizedSettingExtensionOption | RawSettingExtensionOption;
+type SettingExtensionOption = LocalizedSettingExtensionOption | RawSettingExtensionOption;
 type DisabledConditionResult = {
     disabled: true;
     reasons: string[];

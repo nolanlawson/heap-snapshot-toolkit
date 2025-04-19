@@ -65,4 +65,3 @@ export declare class CdpTouchscreen extends Touchscreen {
     updateClient(client: CDPSession): void;
     touchStart(x: number, y: number): Promise<TouchHandle>;
 }
-export {};

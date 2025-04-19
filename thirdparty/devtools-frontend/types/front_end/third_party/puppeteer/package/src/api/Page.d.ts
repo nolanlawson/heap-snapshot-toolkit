@@ -62,7 +62,7 @@ export interface Credentials {
 /**
  * @public
  */
-export interface WaitForNetworkIdleOptions extends WaitTimeoutOptions {
+interface WaitForNetworkIdleOptions extends WaitTimeoutOptions {
     /**
      * Time (in milliseconds) the network should be idle.
      *
@@ -161,7 +161,7 @@ export interface MediaFeature {
 /**
  * @public
  */
-export interface ScreenshotClip extends BoundingBox {
+interface ScreenshotClip extends BoundingBox {
     /**
      * @defaultValue `1`
      */
@@ -233,7 +233,7 @@ export type FileFormat = 'gif' | 'webm' | 'mp4';
  * @public
  * @experimental
  */
-export interface ScreencastOptions {
+interface ScreencastOptions {
     /**
      * File path to save the screencast to.
      */
@@ -329,7 +329,7 @@ export interface QueryOptions {
  *
  * @public
  */
-export declare const enum PageEvent {
+declare const enum PageEvent {
     /**
      * Emitted when the page closes.
      */
@@ -516,7 +516,7 @@ export interface NewDocumentScriptEvaluation {
 /**
  * @internal
  */
-export declare function setDefaultScreenshotOptions(options: ScreenshotOptions): void;
+declare function setDefaultScreenshotOptions(options: ScreenshotOptions): void;
 /**
  * Page provides methods to interact with a single tab or
  * {@link https://developer.chrome.com/extensions/background_pages | extension background page}
@@ -2335,4 +2335,4 @@ export declare abstract class Page extends EventEmitter<PageEvents> {
 /**
  * @internal
  */
-export declare const supportedMetrics: Set<string>;
+const supportedMetrics: Set<string>;

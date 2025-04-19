@@ -9,7 +9,7 @@ import type { HandleFor } from './types.js';
 /**
  * @internal
  */
-export interface WaitTaskOptions {
+interface WaitTaskOptions {
     polling: 'raf' | 'mutation' | number;
     root?: ElementHandle<Node>;
     timeout: number;
@@ -18,7 +18,7 @@ export interface WaitTaskOptions {
 /**
  * @internal
  */
-export declare class WaitTask<T = unknown> {
+class WaitTask<T = unknown> {
     #private;
     constructor(world: Realm, options: WaitTaskOptions, fn: ((...args: unknown[]) => Promise<T>) | string, ...args: unknown[]);
     get result(): Promise<HandleFor<T>>;

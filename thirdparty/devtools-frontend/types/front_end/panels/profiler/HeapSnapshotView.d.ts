@@ -147,7 +147,7 @@ declare const HeapSnapshotProfileType_base: {
         dispatchEventToListeners<T extends HeapSnapshotProfileTypeEvents.SNAPSHOT_RECEIVED>(eventType: Platform.TypeScriptUtilities.NoUnion<T>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<HeapSnapshotProfileTypeEventTypes, T>): void;
     };
 } & typeof ProfileType;
-export declare class HeapSnapshotProfileType extends HeapSnapshotProfileType_base implements SDK.TargetManager.SDKModelObserver<SDK.HeapProfilerModel.HeapProfilerModel> {
+class HeapSnapshotProfileType extends HeapSnapshotProfileType_base implements SDK.TargetManager.SDKModelObserver<SDK.HeapProfilerModel.HeapProfilerModel> {
     readonly exposeInternals: Common.Settings.Setting<boolean>;
     customContentInternal: UI.UIUtils.CheckboxLabel | null;
     constructor(id?: string, title?: string);
@@ -187,7 +187,7 @@ declare const TrackingHeapSnapshotProfileType_base: {
         dispatchEventToListeners<T extends keyof TrackingHeapSnapshotProfileTypeEventTypes>(eventType: Platform.TypeScriptUtilities.NoUnion<T>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<TrackingHeapSnapshotProfileTypeEventTypes, T>): void;
     };
 } & typeof HeapSnapshotProfileType;
-export declare class TrackingHeapSnapshotProfileType extends TrackingHeapSnapshotProfileType_base {
+class TrackingHeapSnapshotProfileType extends TrackingHeapSnapshotProfileType_base {
     readonly recordAllocationStacksSettingInternal: Common.Settings.Setting<boolean>;
     customContentInternal: UI.UIUtils.CheckboxLabel | null;
     recording: boolean;

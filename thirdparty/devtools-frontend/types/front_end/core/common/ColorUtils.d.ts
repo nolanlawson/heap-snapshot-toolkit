@@ -2,8 +2,8 @@
  * Combine the two given colors according to alpha blending.
  */
 export type Color4D = [number, number, number, number];
-export type Color3D = [number, number, number];
-export type Color4DOr3D = [number, number, number, number | undefined];
+type Color3D = [number, number, number];
+type Color4DOr3D = [number, number, number, number | undefined];
 declare function blendColors(fgRGBA: Color4D, bgRGBA: Color4D): Color4D;
 declare function rgbToHsl(rgb: Color3D): Color3D;
 declare function rgbaToHsla([r, g, b, a]: Color4DOr3D): Color4DOr3D;

@@ -19,7 +19,7 @@ import type { CdpWebWorker } from './WebWorker.js';
 /**
  * @internal
  */
-export interface PageBinding {
+interface PageBinding {
     name: string;
     pptrFunction: Function;
 }
@@ -34,7 +34,7 @@ export interface IsolatedWorldChart {
 /**
  * @internal
  */
-export type IsolatedWorldEmitter = EventEmitter<{
+type IsolatedWorldEmitter = EventEmitter<{
     context: ExecutionContext;
     disposed: undefined;
     consoleapicalled: Protocol.Runtime.ConsoleAPICalledEvent;

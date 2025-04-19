@@ -6,7 +6,7 @@
 /**
  * @public
  */
-export type DownloadPolicy = 'deny' | 'allow' | 'allowAndName' | 'default';
+type DownloadPolicy = 'deny' | 'allow' | 'allowAndName' | 'default';
 /**
  * @public
  */

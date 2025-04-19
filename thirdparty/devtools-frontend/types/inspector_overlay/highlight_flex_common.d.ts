@@ -24,7 +24,7 @@ export interface FlexContainerHighlight {
         crossAlignment?: LineStyle;
     };
 }
-export interface FlexItemHighlight {
+interface FlexItemHighlight {
     baseSize: number;
     isHorizontalFlow: boolean;
     flexItemHighlightConfig: {

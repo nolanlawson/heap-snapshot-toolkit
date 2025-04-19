@@ -5,7 +5,7 @@ import type { NetworkNode } from './NetworkNode.js';
  * A union of all types derived from BaseNode, allowing type check discrimination
  * based on `node.type`. If a new node type is created, it should be added here.
  */
-export type Node<T = Lantern.AnyNetworkObject> = CPUNode<T> | NetworkNode<T>;
+type Node<T = Lantern.AnyNetworkObject> = CPUNode<T> | NetworkNode<T>;
 /**
  * @fileoverview This class encapsulates logic for handling resources and tasks used to model the
  * execution dependency graph of the page. A node has a unique identifier and can depend on other

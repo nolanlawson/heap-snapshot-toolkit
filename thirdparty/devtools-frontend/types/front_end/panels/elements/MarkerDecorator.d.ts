@@ -1,6 +1,6 @@
 import type * as Platform from '../../core/platform/platform.js';
 import type * as SDK from '../../core/sdk/sdk.js';
-export interface MarkerDecorator {
+interface MarkerDecorator {
     decorate(node: SDK.DOMModel.DOMNode): {
         title: string;
         color: string;

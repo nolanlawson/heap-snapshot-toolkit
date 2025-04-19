@@ -12,7 +12,7 @@ import type { TimeoutSettings } from '../common/TimeoutSettings.js';
  *
  * @public
  */
-export declare class DeviceRequestPromptDevice {
+class DeviceRequestPromptDevice {
     /**
      * Device id during a prompt.
      */

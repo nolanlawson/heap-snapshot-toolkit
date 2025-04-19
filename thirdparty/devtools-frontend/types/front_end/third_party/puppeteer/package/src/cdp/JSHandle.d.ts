@@ -32,4 +32,4 @@ export declare class CdpJSHandle<T = unknown> extends JSHandle<T> {
 /**
  * @internal
  */
-export declare function releaseObject(client: CDPSession, remoteObject: Protocol.Runtime.RemoteObject): Promise<void>;
+declare function releaseObject(client: CDPSession, remoteObject: Protocol.Runtime.RemoteObject): Promise<void>;

@@ -81,7 +81,7 @@ export type DrawOverride = PerfUI.FlameChart.DrawOverride;
  * log this set list rather than full track names, which in the case of threads
  * can contain URLswhich we do not want to log.
  */
-export declare const enum VisualLoggingTrackName {
+declare const enum VisualLoggingTrackName {
     ANIMATIONS = "animations",
     TIMINGS = "timings",
     INTERACTIONS = "interactions",
