@@ -1,0 +1,87 @@
+export type PathCommands = Array<string | number>;
+export interface Quad {
+    p1: Position;
+    p2: Position;
+    p3: Position;
+    p4: Position;
+}
+export interface Position {
+    x: number;
+    y: number;
+}
+export interface Bounds {
+    minX: number;
+    maxX: number;
+    minY: number;
+    maxY: number;
+    width?: number;
+    height?: number;
+    allPoints: Position[];
+}
+export interface AreaBounds {
+    name: string;
+    bounds: {
+        allPoints: Position[];
+    };
+}
+interface ViewportSize {
+    width: number;
+    height: number;
+}
+export interface ResetData {
+    viewportSize: ViewportSize;
+    viewportSizeForMediaQueries?: ViewportSize;
+    deviceScaleFactor: number;
+    pageScaleFactor: number;
+    pageZoomFactor: number;
+    emulationScaleFactor: number;
+    scrollX: number;
+    scrollY: number;
+}
+export declare class Overlay {
+    protected viewportSize: {
+        width: number;
+        height: number;
+    };
+    protected viewportSizeForMediaQueries?: ViewportSize;
+    protected deviceScaleFactor: number;
+    protected emulationScaleFactor: number;
+    protected pageScaleFactor: number;
+    protected pageZoomFactor: number;
+    protected scrollX: number;
+    protected scrollY: number;
+    protected style: CSSStyleSheet[];
+    protected canvas?: HTMLCanvasElement;
+    protected canvasWidth: number;
+    protected canvasHeight: number;
+    protected platform?: string;
+    private _window?;
+    private _document?;
+    private _context?;
+    private _installed;
+    constructor(window: Window, style?: CSSStyleSheet[]);
+    setCanvas(canvas: HTMLCanvasElement): void;
+    install(): void;
+    uninstall(): void;
+    reset(resetData?: ResetData): void;
+    resetCanvas(): void;
+    setPlatform(platform: string): void;
+    dispatch(message: unknown[]): void;
+    eventHasCtrlOrMeta(event: KeyboardEvent): boolean;
+    get context(): CanvasRenderingContext2D;
+    get document(): Document;
+    get window(): Window;
+    get installed(): boolean;
+}
+declare function log(text: string): void;
+declare function createChild(parent: HTMLElement, tagName: string, className?: string): HTMLElement;
+declare function createTextChild(parent: HTMLElement, text: string): Text;
+declare function createElement(tagName: string, className?: string): HTMLElement;
+declare function ellipsify(str: string, maxLength: number): string;
+declare function constrainNumber(num: number, min: number, max: number): number;
+declare global {
+    interface Document {
+        adoptedStyleSheets: CSSStyleSheet[];
+    }
+}
+declare function adoptStyleSheet(styleSheet: CSSStyleSheet): void;
