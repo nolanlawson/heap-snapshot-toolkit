@@ -6,6 +6,12 @@ This package mostly re-exports code from [the Chromium DevTools frontend](https:
 
 The goal is to have a way to analyze and diff heap snapshots in any JavaScript environment, including the browser and Node.js
 
+## Installation
+
+```sh
+npm install heap-snapshot-parser
+```
+
 ## Usage
 
 ### Parsing

@@ -3,7 +3,7 @@
  * Copyright 2023 Google Inc.
  * SPDX-License-Identifier: Apache-2.0
  */
-import type { Observable } from '../../../third_party/rxjs/rxjs.js';
+import type { Observable, OperatorFunction } from '../../../third_party/rxjs/rxjs.js';
 import type { EventType } from '../../common/EventEmitter.js';
 import { EventEmitter } from '../../common/EventEmitter.js';
 import type { Awaitable, HandleFor, NodeFor } from '../../common/types.js';

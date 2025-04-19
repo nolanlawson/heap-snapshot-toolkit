@@ -22,7 +22,7 @@ export default {
   input: '__entry__',
   output: {
     format: 'esm',
-    file: '../fuite/src/thirdparty/devtools-frontend/index.js',
+    file: '../heap-snapshot-parser/thirdparty/devtools-frontend/index.js',
     banner: `/* Generated from devtools-frontend@${commit} via build-devtools-frontend.sh. Source: ${sourceUrl} */`,
     sourcemap: true
   },
@@ -72,9 +72,9 @@ export default {
       compilerOptions: {
         lib: ['esnext', 'dom', 'dom.iterable', 'webworker', 'webworker.iterable'],
         target: 'esnext',
-        outDir: '../fuite/src/thirdparty/devtools-frontend',
+        outDir: '../heap-snapshot-parser/thirdparty/devtools-frontend',
         declaration: true,
-        declarationDir: '../fuite/src/thirdparty/devtools-frontend/types'
+        declarationDir: '../heap-snapshot-parser/thirdparty/devtools-frontend/types'
       },
       noEmitOnError: false,
       outputToFilesystem: true

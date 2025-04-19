@@ -54,13 +54,11 @@ class CSSOverviewCompletedView extends UI.Widget.VBox {
 declare const DetailsView_base: {
     new (...args: any[]): {
         "__#15@#events": Common.ObjectWrapper.ObjectWrapper<EventTypes>;
-        addEventListener<T extends Events.TAB_CLOSED>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<EventTypes[T], any>) => void, thisObject?: Object | undefined): Common.EventTarget.EventDescriptor<EventTypes, T>;
-        once<T_1 extends Events.TAB_CLOSED>(eventType: T_1): Promise<EventTypes[T_1]>;
-        removeEventListener<T_2 extends Events.TAB_CLOSED>(eventType: T_2, listener: (arg0: Common.EventTarget.EventTargetEvent<EventTypes[T_2], any>) => void, thisObject?: Object | undefined): void;
-        hasEventListeners(eventType: Events.TAB_CLOSED): boolean; /**
-         *@description Column header title denoting which declaration is unused
-         */
-        dispatchEventToListeners<T_3 extends Events.TAB_CLOSED>(eventType: Platform.TypeScriptUtilities.NoUnion<T_3>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<EventTypes, T_3>): void;
+        addEventListener<T extends Events.TAB_CLOSED>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<EventTypes[T], any>) => void, thisObject?: Object): Common.EventTarget.EventDescriptor<EventTypes, T>;
+        once<T extends Events.TAB_CLOSED>(eventType: T): Promise<EventTypes[T]>;
+        removeEventListener<T extends Events.TAB_CLOSED>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<EventTypes[T], any>) => void, thisObject?: Object): void;
+        hasEventListeners(eventType: Events.TAB_CLOSED): boolean;
+        dispatchEventToListeners<T extends Events.TAB_CLOSED>(eventType: Platform.TypeScriptUtilities.NoUnion<T>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<EventTypes, T>): void;
     };
 } & typeof UI.Widget.VBox;
 class DetailsView extends DetailsView_base {

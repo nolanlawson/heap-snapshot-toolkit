@@ -1,4 +1,4 @@
-/// <reference types="node" />
+/// <reference types="node" preserve="true" />
 /**
  * @license
  * Copyright 2017 Google Inc.

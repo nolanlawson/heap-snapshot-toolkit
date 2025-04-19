@@ -20,9 +20,7 @@ interface StylePropertyTreeElementParams {
 }
 declare const FlexGridRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.FlexGridMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.FlexGridMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.FlexGridMatch, _context: RenderingContext): Node[];
 };
 class FlexGridRenderer extends FlexGridRenderer_base {
     #private;
@@ -31,9 +29,7 @@ class FlexGridRenderer extends FlexGridRenderer_base {
 }
 declare const CSSWideKeywordRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.CSSWideKeywordMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.CSSWideKeywordMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.CSSWideKeywordMatch, _context: RenderingContext): Node[];
 };
 class CSSWideKeywordRenderer extends CSSWideKeywordRenderer_base {
     #private;
@@ -42,9 +38,7 @@ class CSSWideKeywordRenderer extends CSSWideKeywordRenderer_base {
 }
 declare const VariableRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.VariableMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.VariableMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.VariableMatch, _context: RenderingContext): Node[];
 };
 class VariableRenderer extends VariableRenderer_base {
     #private;
@@ -53,18 +47,14 @@ class VariableRenderer extends VariableRenderer_base {
 }
 declare const LinearGradientRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.LinearGradientMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.LinearGradientMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.LinearGradientMatch, _context: RenderingContext): Node[];
 };
 class LinearGradientRenderer extends LinearGradientRenderer_base {
     render(match: SDK.CSSPropertyParserMatchers.LinearGradientMatch, context: RenderingContext): Node[];
 }
 declare const ColorRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.ColorMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.ColorMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.ColorMatch, _context: RenderingContext): Node[];
 };
 class ColorRenderer extends ColorRenderer_base {
     #private;
@@ -74,9 +64,7 @@ class ColorRenderer extends ColorRenderer_base {
 }
 declare const LightDarkColorRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.LightDarkColorMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.LightDarkColorMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.LightDarkColorMatch, _context: RenderingContext): Node[];
 };
 class LightDarkColorRenderer extends LightDarkColorRenderer_base {
     #private;
@@ -86,9 +74,7 @@ class LightDarkColorRenderer extends LightDarkColorRenderer_base {
 }
 declare const ColorMixRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.ColorMixMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.ColorMixMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.ColorMixMatch, _context: RenderingContext): Node[];
 };
 class ColorMixRenderer extends ColorMixRenderer_base {
     #private;
@@ -97,9 +83,7 @@ class ColorMixRenderer extends ColorMixRenderer_base {
 }
 declare const AngleRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.AngleMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.AngleMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.AngleMatch, _context: RenderingContext): Node[];
 };
 class AngleRenderer extends AngleRenderer_base {
     #private;
@@ -108,9 +92,7 @@ class AngleRenderer extends AngleRenderer_base {
 }
 declare const LinkableNameRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.LinkableNameMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.LinkableNameMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.LinkableNameMatch, _context: RenderingContext): Node[];
 };
 class LinkableNameRenderer extends LinkableNameRenderer_base {
     #private;
@@ -119,9 +101,7 @@ class LinkableNameRenderer extends LinkableNameRenderer_base {
 }
 declare const BezierRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.BezierMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.BezierMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.BezierMatch, _context: RenderingContext): Node[];
 };
 class BezierRenderer extends BezierRenderer_base {
     #private;
@@ -131,9 +111,7 @@ class BezierRenderer extends BezierRenderer_base {
 }
 declare const AutoBaseRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.AutoBaseMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.AutoBaseMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.AutoBaseMatch, _context: RenderingContext): Node[];
 };
 class AutoBaseRenderer extends AutoBaseRenderer_base {
     #private;
@@ -172,9 +150,7 @@ class ShadowModel implements InlineEditor.CSSShadowEditor.CSSShadowModel {
 }
 declare const ShadowRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.ShadowMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.ShadowMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.ShadowMatch, _context: RenderingContext): Node[];
 };
 class ShadowRenderer extends ShadowRenderer_base {
     #private;
@@ -184,9 +160,7 @@ class ShadowRenderer extends ShadowRenderer_base {
 }
 declare const FontRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.FontMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.FontMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.FontMatch, _context: RenderingContext): Node[];
 };
 class FontRenderer extends FontRenderer_base {
     readonly treeElement: StylePropertyTreeElement;
@@ -195,18 +169,14 @@ class FontRenderer extends FontRenderer_base {
 }
 declare const GridTemplateRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.GridTemplateMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.GridTemplateMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.GridTemplateMatch, _context: RenderingContext): Node[];
 };
 class GridTemplateRenderer extends GridTemplateRenderer_base {
     render(match: SDK.CSSPropertyParserMatchers.GridTemplateMatch, context: RenderingContext): Node[];
 }
 declare const LengthRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.LengthMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.LengthMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.LengthMatch, _context: RenderingContext): Node[];
 };
 class LengthRenderer extends LengthRenderer_base {
     #private;
@@ -216,9 +186,7 @@ class LengthRenderer extends LengthRenderer_base {
 }
 declare const MathFunctionRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.MathFunctionMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.MathFunctionMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.MathFunctionMatch, _context: RenderingContext): Node[];
 };
 class MathFunctionRenderer extends MathFunctionRenderer_base {
     #private;
@@ -229,9 +197,7 @@ class MathFunctionRenderer extends MathFunctionRenderer_base {
 }
 declare const AnchorFunctionRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.AnchorFunctionMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.AnchorFunctionMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.AnchorFunctionMatch, _context: RenderingContext): Node[];
 };
 class AnchorFunctionRenderer extends AnchorFunctionRenderer_base {
     #private;
@@ -241,9 +207,7 @@ class AnchorFunctionRenderer extends AnchorFunctionRenderer_base {
 }
 declare const PositionAnchorRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.PositionAnchorMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.PositionAnchorMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.PositionAnchorMatch, _context: RenderingContext): Node[];
 };
 class PositionAnchorRenderer extends PositionAnchorRenderer_base {
     #private;
@@ -253,9 +217,7 @@ class PositionAnchorRenderer extends PositionAnchorRenderer_base {
 }
 declare const PositionTryRenderer_base: abstract new () => {
     readonly matchType: Platform.Constructor.Constructor<SDK.CSSPropertyParserMatchers.PositionTryMatch, any[]>;
-    render(_match: SDK.CSSPropertyParserMatchers.PositionTryMatch, _context: RenderingContext): Node[]; /**
-     *@description Text in Color Swatch Popover Icon of the Elements panel
-     */
+    render(_match: SDK.CSSPropertyParserMatchers.PositionTryMatch, _context: RenderingContext): Node[];
 };
 class PositionTryRenderer extends PositionTryRenderer_base {
     #private;

@@ -5,11 +5,11 @@ import { type DataGridData, DataGridImpl, DataGridNode, type Parameters } from '
 declare const ViewportDataGrid_base: {
     new (...args: any[]): {
         "__#15@#events": Common.ObjectWrapper.ObjectWrapper<EventTypes>;
-        addEventListener<T_1 extends Events.VIEWPORT_CALCULATED>(eventType: T_1, listener: (arg0: Common.EventTarget.EventTargetEvent<EventTypes[T_1], any>) => void, thisObject?: Object | undefined): Common.EventTarget.EventDescriptor<EventTypes, T_1>;
-        once<T_2 extends Events.VIEWPORT_CALCULATED>(eventType: T_2): Promise<EventTypes[T_2]>;
-        removeEventListener<T_3 extends Events.VIEWPORT_CALCULATED>(eventType: T_3, listener: (arg0: Common.EventTarget.EventTargetEvent<EventTypes[T_3], any>) => void, thisObject?: Object | undefined): void;
+        addEventListener<T_1 extends Events.VIEWPORT_CALCULATED>(eventType: T_1, listener: (arg0: Common.EventTarget.EventTargetEvent<EventTypes[T_1], any>) => void, thisObject?: Object): Common.EventTarget.EventDescriptor<EventTypes, T_1>;
+        once<T_1 extends Events.VIEWPORT_CALCULATED>(eventType: T_1): Promise<EventTypes[T_1]>;
+        removeEventListener<T_1 extends Events.VIEWPORT_CALCULATED>(eventType: T_1, listener: (arg0: Common.EventTarget.EventTargetEvent<EventTypes[T_1], any>) => void, thisObject?: Object): void;
         hasEventListeners(eventType: Events.VIEWPORT_CALCULATED): boolean;
-        dispatchEventToListeners<T_4 extends Events.VIEWPORT_CALCULATED>(eventType: Platform.TypeScriptUtilities.NoUnion<T_4>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<EventTypes, T_4>): void;
+        dispatchEventToListeners<T_1 extends Events.VIEWPORT_CALCULATED>(eventType: Platform.TypeScriptUtilities.NoUnion<T_1>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<EventTypes, T_1>): void;
     };
 } & typeof DataGridImpl;
 export declare class ViewportDataGrid<T> extends ViewportDataGrid_base<ViewportDataGridNode<T>> {

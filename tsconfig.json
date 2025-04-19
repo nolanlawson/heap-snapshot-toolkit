@@ -1,6 +1,0 @@
-{
-  "include": ["index.js", "thirdparty"],
-  "compilerOptions": {
-    "checkJs": true
-  }
-}

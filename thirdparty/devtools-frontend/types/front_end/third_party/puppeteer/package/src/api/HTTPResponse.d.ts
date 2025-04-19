@@ -3,8 +3,6 @@
  * Copyright 2023 Google Inc.
  * SPDX-License-Identifier: Apache-2.0
  */
-/// <reference types="node" />
-/// <reference types="node" />
 import type Protocol from 'devtools-protocol';
 import type { SecurityDetails } from '../common/SecurityDetails.js';
 import type { Frame } from './Frame.js';

@@ -20,11 +20,11 @@ class DetachedElementsProfileView extends UI.View.SimpleView implements DataDisp
 declare const DetachedElementsProfileType_base: {
     new (...args: any[]): {
         "__#15@#events": Common.ObjectWrapper.ObjectWrapper<DetachedElementsProfileType.EventTypes>;
-        addEventListener<T extends keyof DetachedElementsProfileType.EventTypes>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<DetachedElementsProfileType.EventTypes[T], any>) => void, thisObject?: Object | undefined): Common.EventTarget.EventDescriptor<DetachedElementsProfileType.EventTypes, T>;
-        once<T_1 extends keyof DetachedElementsProfileType.EventTypes>(eventType: T_1): Promise<DetachedElementsProfileType.EventTypes[T_1]>;
-        removeEventListener<T_2 extends keyof DetachedElementsProfileType.EventTypes>(eventType: T_2, listener: (arg0: Common.EventTarget.EventTargetEvent<DetachedElementsProfileType.EventTypes[T_2], any>) => void, thisObject?: Object | undefined): void;
+        addEventListener<T extends keyof DetachedElementsProfileType.EventTypes>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<DetachedElementsProfileType.EventTypes[T], any>) => void, thisObject?: Object): Common.EventTarget.EventDescriptor<DetachedElementsProfileType.EventTypes, T>;
+        once<T extends keyof DetachedElementsProfileType.EventTypes>(eventType: T): Promise<DetachedElementsProfileType.EventTypes[T]>;
+        removeEventListener<T extends keyof DetachedElementsProfileType.EventTypes>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<DetachedElementsProfileType.EventTypes[T], any>) => void, thisObject?: Object): void;
         hasEventListeners(eventType: keyof DetachedElementsProfileType.EventTypes): boolean;
-        dispatchEventToListeners<T_3 extends keyof DetachedElementsProfileType.EventTypes>(eventType: import("../../core/platform/TypescriptUtilities.js").NoUnion<T_3>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<DetachedElementsProfileType.EventTypes, T_3>): void;
+        dispatchEventToListeners<T extends keyof DetachedElementsProfileType.EventTypes>(eventType: import("../../core/platform/TypescriptUtilities.js").NoUnion<T>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<DetachedElementsProfileType.EventTypes, T>): void;
     };
 } & typeof ProfileType;
 export declare class DetachedElementsProfileType extends DetachedElementsProfileType_base {

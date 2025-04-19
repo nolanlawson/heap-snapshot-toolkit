@@ -75,10 +75,10 @@ class HeapSnapshotView extends UI.View.SimpleView implements DataDisplayDelegate
     jumpToSearchResult(searchResultIndex: number): Promise<void>;
     refreshVisibleData(): void;
     changeBase(): void;
-    static readonly ALWAYS_AVAILABLE_FILTERS: readonly {
+    static readonly ALWAYS_AVAILABLE_FILTERS: ReadonlyArray<{
         uiName: string;
         filterName: string;
-    }[];
+    }>;
     changeFilter(): void;
     profiles(): ProfileHeader[];
     selectionChanged(event: Common.EventTarget.EventTargetEvent<DataGrid.DataGrid.DataGridNode<HeapSnapshotGridNode>>): void;
@@ -140,13 +140,11 @@ class StatisticsPerspective extends Perspective {
 declare const HeapSnapshotProfileType_base: {
     new (...args: any[]): {
         "__#15@#events": Common.ObjectWrapper.ObjectWrapper<HeapSnapshotProfileTypeEventTypes>;
-        addEventListener<T extends HeapSnapshotProfileTypeEvents.SNAPSHOT_RECEIVED>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<HeapSnapshotProfileTypeEventTypes[T], any>) => void, thisObject?: Object | undefined): Common.EventTarget.EventDescriptor<HeapSnapshotProfileTypeEventTypes, T>;
-        once<T_1 extends HeapSnapshotProfileTypeEvents.SNAPSHOT_RECEIVED>(eventType: T_1): Promise<HeapSnapshotProfileTypeEventTypes[T_1]>; /**
-         *@description Label on a pie chart in the statistics view for the Heap Snapshot tool
-         */
-        removeEventListener<T_2 extends HeapSnapshotProfileTypeEvents.SNAPSHOT_RECEIVED>(eventType: T_2, listener: (arg0: Common.EventTarget.EventTargetEvent<HeapSnapshotProfileTypeEventTypes[T_2], any>) => void, thisObject?: Object | undefined): void;
+        addEventListener<T extends HeapSnapshotProfileTypeEvents.SNAPSHOT_RECEIVED>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<HeapSnapshotProfileTypeEventTypes[T], any>) => void, thisObject?: Object): Common.EventTarget.EventDescriptor<HeapSnapshotProfileTypeEventTypes, T>;
+        once<T extends HeapSnapshotProfileTypeEvents.SNAPSHOT_RECEIVED>(eventType: T): Promise<HeapSnapshotProfileTypeEventTypes[T]>;
+        removeEventListener<T extends HeapSnapshotProfileTypeEvents.SNAPSHOT_RECEIVED>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<HeapSnapshotProfileTypeEventTypes[T], any>) => void, thisObject?: Object): void;
         hasEventListeners(eventType: HeapSnapshotProfileTypeEvents.SNAPSHOT_RECEIVED): boolean;
-        dispatchEventToListeners<T_3 extends HeapSnapshotProfileTypeEvents.SNAPSHOT_RECEIVED>(eventType: Platform.TypeScriptUtilities.NoUnion<T_3>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<HeapSnapshotProfileTypeEventTypes, T_3>): void;
+        dispatchEventToListeners<T extends HeapSnapshotProfileTypeEvents.SNAPSHOT_RECEIVED>(eventType: Platform.TypeScriptUtilities.NoUnion<T>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<HeapSnapshotProfileTypeEventTypes, T>): void;
     };
 } & typeof ProfileType;
 export declare class HeapSnapshotProfileType extends HeapSnapshotProfileType_base implements SDK.TargetManager.SDKModelObserver<SDK.HeapProfilerModel.HeapProfilerModel> {
@@ -182,13 +180,11 @@ interface HeapSnapshotProfileTypeEventTypes {
 declare const TrackingHeapSnapshotProfileType_base: {
     new (...args: any[]): {
         "__#15@#events": Common.ObjectWrapper.ObjectWrapper<TrackingHeapSnapshotProfileTypeEventTypes>;
-        addEventListener<T extends keyof TrackingHeapSnapshotProfileTypeEventTypes>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<TrackingHeapSnapshotProfileTypeEventTypes[T], any>) => void, thisObject?: Object | undefined): Common.EventTarget.EventDescriptor<TrackingHeapSnapshotProfileTypeEventTypes, T>;
-        once<T_1 extends keyof TrackingHeapSnapshotProfileTypeEventTypes>(eventType: T_1): Promise<TrackingHeapSnapshotProfileTypeEventTypes[T_1]>; /**
-         *@description Label on a pie chart in the statistics view for the Heap Snapshot tool
-         */
-        removeEventListener<T_2 extends keyof TrackingHeapSnapshotProfileTypeEventTypes>(eventType: T_2, listener: (arg0: Common.EventTarget.EventTargetEvent<TrackingHeapSnapshotProfileTypeEventTypes[T_2], any>) => void, thisObject?: Object | undefined): void;
+        addEventListener<T extends keyof TrackingHeapSnapshotProfileTypeEventTypes>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<TrackingHeapSnapshotProfileTypeEventTypes[T], any>) => void, thisObject?: Object): Common.EventTarget.EventDescriptor<TrackingHeapSnapshotProfileTypeEventTypes, T>;
+        once<T extends keyof TrackingHeapSnapshotProfileTypeEventTypes>(eventType: T): Promise<TrackingHeapSnapshotProfileTypeEventTypes[T]>;
+        removeEventListener<T extends keyof TrackingHeapSnapshotProfileTypeEventTypes>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<TrackingHeapSnapshotProfileTypeEventTypes[T], any>) => void, thisObject?: Object): void;
         hasEventListeners(eventType: keyof TrackingHeapSnapshotProfileTypeEventTypes): boolean;
-        dispatchEventToListeners<T_3 extends keyof TrackingHeapSnapshotProfileTypeEventTypes>(eventType: Platform.TypeScriptUtilities.NoUnion<T_3>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<TrackingHeapSnapshotProfileTypeEventTypes, T_3>): void;
+        dispatchEventToListeners<T extends keyof TrackingHeapSnapshotProfileTypeEventTypes>(eventType: Platform.TypeScriptUtilities.NoUnion<T>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<TrackingHeapSnapshotProfileTypeEventTypes, T>): void;
     };
 } & typeof HeapSnapshotProfileType;
 export declare class TrackingHeapSnapshotProfileType extends TrackingHeapSnapshotProfileType_base {

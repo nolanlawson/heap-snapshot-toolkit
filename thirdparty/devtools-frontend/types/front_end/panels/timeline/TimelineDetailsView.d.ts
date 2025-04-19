@@ -10,11 +10,11 @@ import * as Utils from './utils/utils.js';
 declare const TimelineDetailsPane_base: {
     new (...args: any[]): {
         "__#15@#events": Common.ObjectWrapper.ObjectWrapper<TimelineTreeView.EventTypes>;
-        addEventListener<T extends keyof TimelineTreeView.EventTypes>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<TimelineTreeView.EventTypes[T], any>) => void, thisObject?: Object | undefined): Common.EventTarget.EventDescriptor<TimelineTreeView.EventTypes, T>;
-        once<T_1 extends keyof TimelineTreeView.EventTypes>(eventType: T_1): Promise<TimelineTreeView.EventTypes[T_1]>;
-        removeEventListener<T_2 extends keyof TimelineTreeView.EventTypes>(eventType: T_2, listener: (arg0: Common.EventTarget.EventTargetEvent<TimelineTreeView.EventTypes[T_2], any>) => void, thisObject?: Object | undefined): void;
+        addEventListener<T extends keyof TimelineTreeView.EventTypes>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<TimelineTreeView.EventTypes[T], any>) => void, thisObject?: Object): Common.EventTarget.EventDescriptor<TimelineTreeView.EventTypes, T>;
+        once<T extends keyof TimelineTreeView.EventTypes>(eventType: T): Promise<TimelineTreeView.EventTypes[T]>;
+        removeEventListener<T extends keyof TimelineTreeView.EventTypes>(eventType: T, listener: (arg0: Common.EventTarget.EventTargetEvent<TimelineTreeView.EventTypes[T], any>) => void, thisObject?: Object): void;
         hasEventListeners(eventType: keyof TimelineTreeView.EventTypes): boolean;
-        dispatchEventToListeners<T_3 extends keyof TimelineTreeView.EventTypes>(eventType: Platform.TypeScriptUtilities.NoUnion<T_3>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<TimelineTreeView.EventTypes, T_3>): void;
+        dispatchEventToListeners<T extends keyof TimelineTreeView.EventTypes>(eventType: Platform.TypeScriptUtilities.NoUnion<T>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<TimelineTreeView.EventTypes, T>): void;
     };
 } & typeof UI.Widget.VBox;
 class TimelineDetailsPane extends TimelineDetailsPane_base {

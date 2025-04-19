@@ -1,4 +1,3 @@
-/// <reference types="filesystem" />
 import * as Common from '../../core/common/common.js';
 import * as Platform from '../../core/platform/platform.js';
 import * as TextUtils from '../text_utils/text_utils.js';
