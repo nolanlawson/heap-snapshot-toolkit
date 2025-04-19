@@ -139,14 +139,14 @@ This might log something like:
 ```
 
 You can also use the `diffFromStreams()` API to diff from two `ReadStream`/`ReadableStream`s. This is useful if you want to avoid using too
-much memory by reading in two entire heap snapshot files at once. `diffFromStreams()` will efficiently read in the start
+much memory by reading in two entire heap snapshot files at once. `diffFromStreams()` will instead efficiently read in the start
 snapshot, create a minimal object for diffing, read in the end snapshot, and then create the diff.
 
 In this mode, `diffFromStreams()` is an [async iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AsyncIterator)
 which emits 3 events: one for the start snapshot, one for the end snapshot, and one for the final diff.
 
 ```js
-import {createReadStream } from 'node:fs'
+import { createReadStream } from 'node:fs'
 import { diffFromStreams } from 'heap-snapshot-toolkit'
 
 const startStream = createReadStream('path/to/start.heapsnapshot', 'utf-8')
