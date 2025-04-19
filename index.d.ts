@@ -5,7 +5,7 @@ import {
 import {
     HeapSnapshotLoader
 } from './thirdparty/devtools-frontend/types/front_end/entrypoints/heap_snapshot_worker/HeapSnapshotLoader'
-import * as HeapSnapshotModel from './thirdparty/devtools-frontend/types/front_end/models/heap_snapshot_model/heap_snapshot_model'
+import { HeapSnapshotModel } from './thirdparty/devtools-frontend/types/front_end/models/heap_snapshot_model/heap_snapshot_model'
 
 export type JSHeapSnapshotDiff = {[name: string]: any}
 
@@ -53,6 +53,6 @@ export declare function diffFromStreams(startStream: any, endStream: any): Async
  */
 export declare const DevToolsAPI: {
     HeapSnapshotLoader: HeapSnapshotLoader,
-    HeapSnapshotModel: typeof HeapSnapshotModel,
+    HeapSnapshotModel: HeapSnapshotModel,
     SecondaryInitManager: SecondaryInitManager
 }
