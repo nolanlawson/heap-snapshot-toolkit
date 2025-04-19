@@ -4,7 +4,7 @@ Tools for parsing Chromium heap snapshot (`*.heapsnapshot`) files and doing usef
 
 This package mostly re-exports code from [the Chromium DevTools frontend](https://github.com/ChromeDevTools/devtools-frontend). You can refer to that project for the original source.
 
-The goal is to have a way to analyze and diff heap snapshots in any JavaScript environment, including the browser and Node.js
+The goal is to have a way to analyze and diff heap snapshots in any JavaScript environment, including the browser and Node.js.
 
 ## Installation
 
