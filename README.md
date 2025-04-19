@@ -19,7 +19,7 @@ npm install heap-snapshot-toolkit
 Parse a heap snapshot file from disk:
 
 ```js
-import {createReadStream } from 'node:fs'
+import { createReadStream } from 'node:fs'
 import { parse } from 'heap-snapshot-toolkit'
 
 const parsedHeapSnapshot = await parse(createReadStream('path/to/my.heapsnapshot', 'utf-8'))
@@ -30,7 +30,7 @@ You can either pass in a Node.js [`ReadStream`](https://nodejs.org/api/fs.html#c
 Passing in a file directly is not recommended, since heap snapshot files can be quite large. But if you really must:
 
 ```js
-import {readFileSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import { Readable } from 'node:stream'
 import { parse } from 'heap-snapshot-toolkit'
 
@@ -76,7 +76,7 @@ The exact output is determined by the internals of the Chromium DevTools fronten
 You can also diff two snapshots using the `diff()` method:
 
 ```js
-import {createReadStream } from 'node:fs'
+import { createReadStream } from 'node:fs'
 import { parse, diff } from 'heap-snapshot-toolkit'
 
 const startSnapshot = parse(createReadStream('path/to/start.heapsnapshot', 'utf-8'))
