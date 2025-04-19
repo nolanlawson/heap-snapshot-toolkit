@@ -159,7 +159,7 @@ class HeapSnapshotProgress {
     reportProblem(error: string): void;
     private sendUpdateEvent;
 }
-export interface Profile {
+interface Profile {
     root_index: number;
     nodes: Platform.TypedArrayUtilities.BigUint32Array;
     edges: Platform.TypedArrayUtilities.BigUint32Array;
@@ -170,7 +170,7 @@ export interface Profile {
     trace_function_infos: Uint32Array;
     trace_tree: Object;
 }
-export interface LiveObjects {
+interface LiveObjects {
     [x: number]: {
         count: number;
         size: number;
@@ -212,7 +212,7 @@ interface DominatedNodes {
     firstDominatedNodeIndex: Uint32Array;
     dominatedNodes: Uint32Array;
 }
-class SecondaryInitManager {
+export declare class SecondaryInitManager {
     argsStep1: Promise<SecondaryInitArgumentsStep1>;
     argsStep2: Promise<SecondaryInitArgumentsStep2>;
     argsStep3: Promise<SecondaryInitArgumentsStep3>;

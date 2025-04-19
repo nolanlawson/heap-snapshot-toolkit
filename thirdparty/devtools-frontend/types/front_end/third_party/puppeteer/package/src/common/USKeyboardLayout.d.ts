@@ -6,7 +6,7 @@
 /**
  * @internal
  */
-export interface KeyDefinition {
+interface KeyDefinition {
     keyCode?: number;
     shiftKeyCode?: number;
     key?: string;
@@ -26,4 +26,4 @@ export type KeyInput = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
 /**
  * @internal
  */
-export declare const _keyDefinitions: Readonly<Record<KeyInput, KeyDefinition>>;
+const _keyDefinitions: Readonly<Record<KeyInput, KeyDefinition>>;

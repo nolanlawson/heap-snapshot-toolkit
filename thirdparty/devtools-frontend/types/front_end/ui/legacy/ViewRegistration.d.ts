@@ -108,13 +108,13 @@ export interface ViewRegistration {
      */
     iconName?: string;
 }
-export declare function registerViewExtension(registration: ViewRegistration): void;
-export declare function getRegisteredViewExtensions(): PreRegisteredView[];
-export declare function maybeRemoveViewExtension(viewId: string): boolean;
-export declare function registerLocationResolver(registration: LocationResolverRegistration): void;
-export declare function getRegisteredLocationResolvers(): LocationResolverRegistration[];
-export declare function resetViewRegistration(): void;
-export declare const enum ViewLocationCategory {
+declare function registerViewExtension(registration: ViewRegistration): void;
+declare function getRegisteredViewExtensions(): PreRegisteredView[];
+declare function maybeRemoveViewExtension(viewId: string): boolean;
+declare function registerLocationResolver(registration: LocationResolverRegistration): void;
+declare function getRegisteredLocationResolvers(): LocationResolverRegistration[];
+declare function resetViewRegistration(): void;
+declare const enum ViewLocationCategory {
     NONE = "",// `NONE` must be a falsy value. Legacy code uses if-checks for the category.
     ELEMENTS = "ELEMENTS",
     DRAWER = "DRAWER",
@@ -124,7 +124,7 @@ export declare const enum ViewLocationCategory {
     SETTINGS = "SETTINGS",
     SOURCES = "SOURCES"
 }
-export declare function getLocalizedViewLocationCategory(category: ViewLocationCategory): Platform.UIString.LocalizedString;
+declare function getLocalizedViewLocationCategory(category: ViewLocationCategory): Platform.UIString.LocalizedString;
 interface LocationResolverRegistration {
     name: ViewLocationValues;
     category: ViewLocationCategory;

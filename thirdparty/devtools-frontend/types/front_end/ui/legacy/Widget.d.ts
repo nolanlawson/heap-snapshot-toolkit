@@ -11,7 +11,7 @@ class WidgetConfig<WidgetT extends Widget & WidgetParams, WidgetParams> {
     constructor(widgetClass: WidgetConstructor<WidgetT, WidgetParams>, widgetParams?: WidgetParams | undefined);
 }
 declare function widgetConfig<WidgetT extends Widget & WidgetParams, WidgetParams>(widgetClass: WidgetConstructor<WidgetT, WidgetParams>, widgetParams?: WidgetParams): WidgetConfig<any, any>;
-export declare class WidgetElement<WidgetT extends Widget & WidgetParams, WidgetParams = object> extends HTMLElement {
+class WidgetElement<WidgetT extends Widget & WidgetParams, WidgetParams = object> extends HTMLElement {
     #private;
     createWidget(): WidgetT;
     set widgetConfig(config: WidgetConfig<WidgetT, WidgetParams>);
@@ -142,7 +142,7 @@ export declare class VBox extends Widget {
     constructor(useShadowDom?: boolean | HTMLElement, delegatesFocus?: boolean, element?: HTMLElement);
     calculateConstraints(): Constraints;
 }
-export declare class HBox extends Widget {
+class HBox extends Widget {
     constructor(useShadowDom?: boolean);
     calculateConstraints(): Constraints;
 }

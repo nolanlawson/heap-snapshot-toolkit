@@ -1,7 +1,7 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import type * as Protocol from '../../generated/protocol.js';
 import * as Trace from '../../models/trace/trace.js';
-export declare class TimelineController implements Trace.TracingManager.TracingManagerClient {
+class TimelineController implements Trace.TracingManager.TracingManagerClient {
     #private;
     readonly primaryPageTarget: SDK.Target.Target;
     readonly rootTarget: SDK.Target.Target;

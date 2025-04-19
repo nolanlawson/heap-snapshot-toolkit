@@ -197,7 +197,7 @@ class TabbedPaneTab {
     private tabDragging;
     private endTabDragging;
 }
-export interface TabbedPaneTabDelegate {
+interface TabbedPaneTabDelegate {
     closeTabs(tabbedPane: TabbedPane, ids: string[]): void;
     onContextMenu(tabId: string, contextMenu: ContextMenu): void;
 }

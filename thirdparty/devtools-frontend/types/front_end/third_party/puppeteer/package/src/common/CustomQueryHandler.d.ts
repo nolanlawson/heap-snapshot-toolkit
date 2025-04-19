@@ -29,7 +29,7 @@ export interface CustomQueryHandler {
  *
  * @internal
  */
-export declare class CustomQueryHandlerRegistry {
+class CustomQueryHandlerRegistry {
     #private;
     get(name: string): typeof QueryHandler | undefined;
     /**
@@ -71,4 +71,4 @@ export declare class CustomQueryHandlerRegistry {
 /**
  * @internal
  */
-export declare const customQueryHandlers: CustomQueryHandlerRegistry;
+const customQueryHandlers: CustomQueryHandlerRegistry;

@@ -29,13 +29,13 @@ export interface NetworkConditions {
 /**
  * @public
  */
-export interface InternalNetworkConditions extends NetworkConditions {
+interface InternalNetworkConditions extends NetworkConditions {
     offline: boolean;
 }
 /**
  * @internal
  */
-export interface FrameProvider {
+interface FrameProvider {
     frame(id: string): Frame | null;
 }
 /**

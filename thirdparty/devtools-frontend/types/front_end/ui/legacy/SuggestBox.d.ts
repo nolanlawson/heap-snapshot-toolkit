@@ -1,7 +1,7 @@
 import type * as TextUtils from '../../models/text_utils/text_utils.js';
 import { AnchorBehavior } from './GlassPane.js';
 import { type ListDelegate } from './ListControl.js';
-export interface SuggestBoxDelegate {
+interface SuggestBoxDelegate {
     applySuggestion(suggestion: Suggestion | null, isIntermediateSuggestion?: boolean): void;
     /**
      * acceptSuggestion will be always called after call to applySuggestion with isIntermediateSuggestion being equal to false.
@@ -12,7 +12,7 @@ export interface SuggestBoxDelegate {
      */
     ownerElement(): Element;
 }
-export declare class SuggestBox implements ListDelegate<Suggestion> {
+class SuggestBox implements ListDelegate<Suggestion> {
     private readonly suggestBoxDelegate;
     private readonly maxItemsHeight;
     private rowHeight;
@@ -57,7 +57,7 @@ export interface Suggestion {
     hideGhostText?: boolean;
     iconElement?: HTMLElement;
 }
-export type Suggestions = Suggestion[];
+type Suggestions = Suggestion[];
 interface AutocompleteConfig {
     substituteRangeCallback?: ((arg0: number, arg1: number) => TextUtils.TextRange.TextRange | null);
     tooltipCallback?: ((arg0: number, arg1: number) => Promise<Element | null>);

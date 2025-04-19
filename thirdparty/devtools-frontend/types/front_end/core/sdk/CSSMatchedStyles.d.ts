@@ -89,14 +89,14 @@ export declare class CSSMatchedStyles {
     resetActiveProperties(): void;
     propertyMatchers(style: CSSStyleDeclaration, computedStyles: Map<string, string> | null): Array<Matcher<Match>>;
 }
-export declare class CSSValueSource {
+class CSSValueSource {
     readonly declaration: CSSProperty | CSSRegisteredProperty;
     constructor(declaration: CSSProperty | CSSRegisteredProperty);
     get value(): string | null;
     get style(): CSSStyleDeclaration;
     get name(): string;
 }
-export interface CSSVariableValue {
+interface CSSVariableValue {
     value: string;
     declaration: CSSValueSource;
 }

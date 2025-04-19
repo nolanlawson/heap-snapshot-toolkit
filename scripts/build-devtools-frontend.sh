@@ -13,6 +13,7 @@ cd ../heap-snapshot-toolkit
 rm -fr thirdparty/devtools-frontend/{front_end,inspector_overlay,test,tsconfig.tsbuildinfo}
 
 # remove unused .d.ts files since devtools-frontend has a lot
-echo '{ "include": ["index.js", "thirdparty"], "compilerOptions": { "checkJs": true } }' > tsconfig.json
-npx tsr --include-d-ts --write 'index\.js$'
-rm -f tsconfig.json
+echo '{ "include": ["tmp.d.ts", "thirdparty"] }' > tsconfig.json
+cp index.d.ts tmp.d.ts
+npx tsr --recursive --include-d-ts --write 'tmp\.d\.ts$'
+rm -f tsconfig.json tmp.d.ts

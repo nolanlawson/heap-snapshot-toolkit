@@ -13,7 +13,7 @@ import type { TargetManagerEvents } from './TargetManageEvents.js';
 /**
  * @internal
  */
-export type TargetFactory = (targetInfo: Protocol.Target.TargetInfo, session?: CdpCDPSession, parentSession?: CdpCDPSession) => CdpTarget;
+type TargetFactory = (targetInfo: Protocol.Target.TargetInfo, session?: CdpCDPSession, parentSession?: CdpCDPSession) => CdpTarget;
 /**
  * TargetManager encapsulates all interactions with CDP targets and is
  * responsible for coordinating the configuration of targets with the rest of

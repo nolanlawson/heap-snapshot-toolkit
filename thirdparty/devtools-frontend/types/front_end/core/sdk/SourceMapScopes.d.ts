@@ -29,7 +29,7 @@ export interface OriginalScope {
 /**
  * A range (can be a scope) in the generated JavaScript.
  */
-export interface GeneratedRange {
+interface GeneratedRange {
     start: Position;
     end: Position;
     originalScope?: OriginalScope;
@@ -72,7 +72,7 @@ export interface Position {
 }
 /** @returns 0 if both positions are equal, a negative number if a < b and a positive number if a > b */
 declare function comparePositions(a: Position, b: Position): number;
-export interface OriginalPosition extends Position {
+interface OriginalPosition extends Position {
     sourceIndex: number;
 }
 interface OriginalScopeTree {

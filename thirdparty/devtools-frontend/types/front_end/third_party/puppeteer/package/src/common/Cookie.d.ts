@@ -16,7 +16,7 @@ export type CookieSameSite = 'Strict' | 'Lax' | 'None';
  *
  * @public
  */
-export type CookiePriority = 'Low' | 'Medium' | 'High';
+type CookiePriority = 'Low' | 'Medium' | 'High';
 /**
  * Represents the source scheme of the origin that originally set the cookie. A value of
  * "Unset" allows protocol clients to emulate legacy cookie scope for the scheme.
@@ -24,7 +24,7 @@ export type CookiePriority = 'Low' | 'Medium' | 'High';
  *
  * @public
  */
-export type CookieSourceScheme = 'Unset' | 'NonSecure' | 'Secure';
+type CookieSourceScheme = 'Unset' | 'NonSecure' | 'Secure';
 /**
  * Represents a cookie partition key in Chrome.
  *

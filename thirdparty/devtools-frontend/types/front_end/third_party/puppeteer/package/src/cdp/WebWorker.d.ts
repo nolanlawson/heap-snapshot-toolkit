@@ -12,11 +12,11 @@ import { CdpJSHandle } from './JSHandle.js';
 /**
  * @internal
  */
-export type ConsoleAPICalledCallback = (eventType: string, handles: CdpJSHandle[], trace?: Protocol.Runtime.StackTrace) => void;
+type ConsoleAPICalledCallback = (eventType: string, handles: CdpJSHandle[], trace?: Protocol.Runtime.StackTrace) => void;
 /**
  * @internal
  */
-export type ExceptionThrownCallback = (event: Protocol.Runtime.ExceptionThrownEvent) => void;
+type ExceptionThrownCallback = (event: Protocol.Runtime.ExceptionThrownEvent) => void;
 /**
  * @internal
  */

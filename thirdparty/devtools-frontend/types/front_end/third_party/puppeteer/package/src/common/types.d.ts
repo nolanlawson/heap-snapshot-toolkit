@@ -14,7 +14,7 @@ export type AwaitablePredicate<T> = (value: T) => Awaitable<boolean>;
 /**
  * @public
  */
-export interface Moveable {
+interface Moveable {
     /**
      * Moves the resource when 'using'.
      */
@@ -23,13 +23,13 @@ export interface Moveable {
 /**
  * @internal
  */
-export interface Disposed {
+interface Disposed {
     get disposed(): boolean;
 }
 /**
  * @internal
  */
-export interface BindingPayload {
+interface BindingPayload {
     type: string;
     name: string;
     seq: number;
@@ -42,7 +42,7 @@ export interface BindingPayload {
 /**
  * @internal
  */
-export type AwaitableIterator<T> = Iterator<T> | AsyncIterator<T>;
+type AwaitableIterator<T> = Iterator<T> | AsyncIterator<T>;
 /**
  * @public
  */
@@ -62,11 +62,11 @@ export type HandleOr<T> = HandleFor<T> | JSHandle<T> | T;
 /**
  * @public
  */
-export type FlattenHandle<T> = T extends HandleOr<infer U> ? U : never;
+type FlattenHandle<T> = T extends HandleOr<infer U> ? U : never;
 /**
  * @internal
  */
-export type FlattenLazyArg<T> = T extends LazyArg<infer U> ? U : T;
+type FlattenLazyArg<T> = T extends LazyArg<infer U> ? U : T;
 /**
  * @internal
  */
@@ -76,7 +76,7 @@ export type InnerLazyParams<T extends unknown[]> = {
 /**
  * @public
  */
-export type InnerParams<T extends unknown[]> = {
+type InnerParams<T extends unknown[]> = {
     [K in keyof T]: FlattenHandle<T[K]>;
 };
 /**

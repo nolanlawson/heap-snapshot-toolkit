@@ -68,7 +68,7 @@ class MenuItem extends HTMLElement {
     get disabled(): boolean;
     set disabled(disabled: boolean);
 }
-export declare class MenuGroup extends HTMLElement {
+class MenuGroup extends HTMLElement {
     #private;
     connectedCallback(): void;
     get name(): string | null;

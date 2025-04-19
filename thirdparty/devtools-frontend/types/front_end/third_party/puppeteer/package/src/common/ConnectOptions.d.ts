@@ -15,7 +15,7 @@ export type ProtocolType = 'cdp' | 'webDriverBiDi';
 /**
  * @public
  */
-export type SupportedWebDriverCapability = Exclude<Session.CapabilityRequest, 'unhandledPromptBehavior' | 'acceptInsecureCerts'>;
+type SupportedWebDriverCapability = Exclude<Session.CapabilityRequest, 'unhandledPromptBehavior' | 'acceptInsecureCerts'>;
 /**
  * WebDriver BiDi capabilities that are not set by Puppeteer itself.
  *
@@ -30,7 +30,7 @@ export interface SupportedWebDriverCapabilities {
  * connecting to an existing browser instance.
  * @public
  */
-export interface ConnectOptions {
+interface ConnectOptions {
     /**
      * Whether to ignore HTTPS errors during navigation.
      * @defaultValue `false`

@@ -7,7 +7,7 @@ import { TimeoutError } from '../common/Errors.js';
 /**
  * @internal
  */
-export interface DeferredOptions {
+interface DeferredOptions {
     message: string;
     timeout: number;
 }

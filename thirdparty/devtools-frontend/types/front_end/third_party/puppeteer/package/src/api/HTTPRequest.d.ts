@@ -23,7 +23,7 @@ export interface ContinueRequestOverrides {
 /**
  * @public
  */
-export interface InterceptResolutionState {
+interface InterceptResolutionState {
     action: InterceptResolutionAction;
     priority?: number;
 }
@@ -57,7 +57,7 @@ export type ResourceType = Lowercase<Protocol.Network.ResourceType>;
  *
  * @public
  */
-export declare const DEFAULT_INTERCEPT_RESOLUTION_PRIORITY = 0;
+const DEFAULT_INTERCEPT_RESOLUTION_PRIORITY = 0;
 /**
  * Represents an HTTP request sent by a page.
  * @remarks
@@ -384,7 +384,7 @@ export declare abstract class HTTPRequest {
 /**
  * @public
  */
-export declare enum InterceptResolutionAction {
+declare enum InterceptResolutionAction {
     Abort = "abort",
     Respond = "respond",
     Continue = "continue",
@@ -395,15 +395,15 @@ export declare enum InterceptResolutionAction {
 /**
  * @public
  */
-export type ErrorCode = 'aborted' | 'accessdenied' | 'addressunreachable' | 'blockedbyclient' | 'blockedbyresponse' | 'connectionaborted' | 'connectionclosed' | 'connectionfailed' | 'connectionrefused' | 'connectionreset' | 'internetdisconnected' | 'namenotresolved' | 'timedout' | 'failed';
+type ErrorCode = 'aborted' | 'accessdenied' | 'addressunreachable' | 'blockedbyclient' | 'blockedbyresponse' | 'connectionaborted' | 'connectionclosed' | 'connectionfailed' | 'connectionrefused' | 'connectionreset' | 'internetdisconnected' | 'namenotresolved' | 'timedout' | 'failed';
 /**
  * @public
  */
-export type ActionResult = 'continue' | 'abort' | 'respond';
+type ActionResult = 'continue' | 'abort' | 'respond';
 /**
  * @internal
  */
-export declare function headersArray(headers: Record<string, string | string[]>): Array<{
+declare function headersArray(headers: Record<string, string | string[]>): Array<{
     name: string;
     value: string;
 }>;
@@ -414,8 +414,8 @@ export declare function headersArray(headers: Record<string, string | string[]>)
  * List taken from {@link https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml}
  * with extra 306 and 418 codes.
  */
-export declare const STATUS_TEXTS: Record<string, string>;
+const STATUS_TEXTS: Record<string, string>;
 /**
  * @internal
  */
-export declare function handleError(error: ProtocolError): void;
+declare function handleError(error: ProtocolError): void;

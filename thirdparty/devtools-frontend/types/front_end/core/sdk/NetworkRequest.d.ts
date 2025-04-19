@@ -321,7 +321,7 @@ interface ExemptedSetCookieWithReason {
     cookieLine: string;
     exemptionReason: Protocol.Network.CookieExemptionReason;
 }
-export interface EventSourceMessage {
+interface EventSourceMessage {
     time: number;
     eventName: string;
     eventId: string;

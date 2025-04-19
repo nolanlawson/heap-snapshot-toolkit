@@ -1,5 +1,5 @@
 import { type AreaBounds, type Bounds, type Position } from './common.js';
-export interface CanvasSize {
+interface CanvasSize {
     canvasWidth: number;
     canvasHeight: number;
 }
@@ -78,7 +78,7 @@ export interface GridLabelState {
  * column line number labels, and area labels.
  */
 declare function drawGridLabels(config: GridHighlightConfig, gridBounds: Bounds, areaBounds: AreaBounds[], canvasSize: CanvasSize, labelState: GridLabelState, emulationScaleFactor: number, writingModeMatrix?: DOMMatrix | undefined): void;
-export interface NormalizePositionDataConfig {
+interface NormalizePositionDataConfig {
     positiveRowLineNumberPositions?: Position[];
     negativeRowLineNumberPositions?: Position[];
     positiveColumnLineNumberPositions?: Position[];

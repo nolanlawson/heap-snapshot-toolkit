@@ -16,7 +16,7 @@ import { CdpWebWorker } from './WebWorker.js';
 /**
  * @internal
  */
-export declare enum InitializationStatus {
+declare enum InitializationStatus {
     SUCCESS = "success",
     ABORTED = "aborted"
 }
@@ -57,7 +57,7 @@ export declare class CdpTarget extends Target {
 /**
  * @internal
  */
-export declare class PageTarget extends CdpTarget {
+class PageTarget extends CdpTarget {
     #private;
     protected pagePromise?: Promise<Page>;
     constructor(targetInfo: Protocol.Target.TargetInfo, session: CdpCDPSession | undefined, browserContext: BrowserContext, targetManager: TargetManager, sessionFactory: (isAutoAttachEmulated: boolean) => Promise<CdpCDPSession>, defaultViewport: Viewport | null);
@@ -68,17 +68,17 @@ export declare class PageTarget extends CdpTarget {
 /**
  * @internal
  */
-export declare class DevToolsTarget extends PageTarget {
+class DevToolsTarget extends PageTarget {
 }
 /**
  * @internal
  */
-export declare class WorkerTarget extends CdpTarget {
+class WorkerTarget extends CdpTarget {
     #private;
     worker(): Promise<CdpWebWorker | null>;
 }
 /**
  * @internal
  */
-export declare class OtherTarget extends CdpTarget {
+class OtherTarget extends CdpTarget {
 }

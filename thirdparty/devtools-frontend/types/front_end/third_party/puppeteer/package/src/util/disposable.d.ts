@@ -104,7 +104,7 @@ export declare class DisposableStack {
 /**
  * @internal
  */
-export declare class AsyncDisposableStack {
+class AsyncDisposableStack {
     #private;
     /**
      * Returns a value indicating whether this stack has been disposed.

@@ -50,7 +50,7 @@ export type IsPageTargetCallback = (target: Target) => boolean;
 /**
  * @internal
  */
-export declare const WEB_PERMISSION_TO_PROTOCOL_PERMISSION: Map<Permission, Protocol.Browser.PermissionType>;
+const WEB_PERMISSION_TO_PROTOCOL_PERMISSION: Map<Permission, Protocol.Browser.PermissionType>;
 /**
  * @public
  */
@@ -75,7 +75,7 @@ export interface WaitForTargetOptions {
  *
  * @public
  */
-export declare const enum BrowserEvent {
+declare const enum BrowserEvent {
     /**
      * Emitted when Puppeteer gets disconnected from the browser instance. This
      * might happen because either:
@@ -119,7 +119,7 @@ export declare const enum BrowserEvent {
 /**
  * @public
  */
-export interface BrowserEvents extends Record<EventType, unknown> {
+interface BrowserEvents extends Record<EventType, unknown> {
     [BrowserEvent.Disconnected]: undefined;
     [BrowserEvent.TargetCreated]: Target;
     [BrowserEvent.TargetDestroyed]: Target;

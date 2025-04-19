@@ -8,7 +8,7 @@
  *
  * @public
  */
-export declare class PuppeteerError extends Error {
+class PuppeteerError extends Error {
     /**
      * @internal
      */
@@ -35,7 +35,7 @@ export declare class TimeoutError extends PuppeteerError {
  * not exist.
  * @public
  */
-export declare class TouchError extends PuppeteerError {
+class TouchError extends PuppeteerError {
 }
 /**
  * ProtocolError is emitted whenever there is an error from the protocol.
@@ -63,10 +63,10 @@ export declare class ProtocolError extends PuppeteerError {
  *
  * @public
  */
-export declare class UnsupportedOperation extends PuppeteerError {
+class UnsupportedOperation extends PuppeteerError {
 }
 /**
  * @internal
  */
-export declare class TargetCloseError extends ProtocolError {
+class TargetCloseError extends ProtocolError {
 }

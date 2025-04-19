@@ -9,7 +9,7 @@ import type { Realm } from '../api/Realm.js';
  * Represents a Node and the properties of it that are relevant to Accessibility.
  * @public
  */
-export interface SerializedAXNode {
+interface SerializedAXNode {
     /**
      * The {@link https://www.w3.org/TR/wai-aria/#usage_intro | role} of the node.
      */
@@ -87,7 +87,7 @@ export interface SerializedAXNode {
 /**
  * @public
  */
-export interface SnapshotOptions {
+interface SnapshotOptions {
     /**
      * Prune uninteresting nodes from the tree.
      * @defaultValue `true`

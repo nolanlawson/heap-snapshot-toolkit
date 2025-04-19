@@ -1,6 +1,6 @@
 import { type Color4D } from '../front_end/core/common/ColorUtils.js';
 import type { Bounds, PathCommands, Quad } from './common.js';
-export type PathBounds = Bounds & {
+type PathBounds = Bounds & {
     leftmostXForY: {
         [key: string]: number;
     };

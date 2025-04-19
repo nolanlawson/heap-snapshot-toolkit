@@ -78,4 +78,4 @@ export declare class Connection extends EventEmitter<CDPSessionEvents> {
 /**
  * @internal
  */
-export declare function isTargetClosedError(error: Error): boolean;
+declare function isTargetClosedError(error: Error): boolean;

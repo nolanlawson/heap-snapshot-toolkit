@@ -7,7 +7,7 @@ type DeepSelector = string[];
  * Represents a selector.
  */
 export type Selector = string | DeepSelector;
-export declare class SelectorPart {
+class SelectorPart {
     value: string;
     optimized: boolean;
     constructor(value: string, optimized: boolean);

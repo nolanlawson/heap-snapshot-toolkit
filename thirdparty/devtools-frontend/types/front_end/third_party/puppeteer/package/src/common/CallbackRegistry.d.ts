@@ -25,7 +25,7 @@ export declare class CallbackRegistry {
 /**
  * @internal
  */
-export declare class Callback {
+class Callback {
     #private;
     constructor(id: number, label: string, timeout?: number);
     resolve(value: unknown): void;

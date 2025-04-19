@@ -128,7 +128,7 @@ export declare class ContextMenu extends SubMenu {
     private static useSoftMenu;
     static readonly groupWeights: string[];
 }
-export interface Provider<T> {
+interface Provider<T> {
     appendApplicableItems(event: Event, contextMenu: ContextMenu, target: T): void;
 }
 declare function registerProvider<T>(registration: ProviderRegistration<T>): void;

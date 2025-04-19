@@ -7,7 +7,7 @@ import type { CDPSession } from '../api/CDPSession.js';
 /**
  * @public
  */
-export interface TracingOptions {
+interface TracingOptions {
     path?: string;
     screenshots?: boolean;
     categories?: string[];

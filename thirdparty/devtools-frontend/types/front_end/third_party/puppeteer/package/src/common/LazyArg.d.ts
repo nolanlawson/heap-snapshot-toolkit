@@ -8,7 +8,7 @@ import type PuppeteerUtil from '../injected/injected.js';
 /**
  * @internal
  */
-export interface PuppeteerUtilWrapper {
+interface PuppeteerUtilWrapper {
     puppeteerUtil: Promise<JSHandle<PuppeteerUtil>>;
 }
 /**

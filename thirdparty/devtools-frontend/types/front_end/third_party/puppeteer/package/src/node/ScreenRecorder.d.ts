@@ -10,7 +10,7 @@ import { asyncDisposeSymbol } from '../util/disposable.js';
 /**
  * @internal
  */
-export interface ScreenRecorderOptions {
+interface ScreenRecorderOptions {
     speed?: number;
     crop?: BoundingBox;
     format?: FileFormat;

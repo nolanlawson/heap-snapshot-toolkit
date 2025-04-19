@@ -1,4 +1,4 @@
-export declare class KeyboardShortcut {
+class KeyboardShortcut {
     descriptors: Descriptor[];
     action: string;
     type: Type;

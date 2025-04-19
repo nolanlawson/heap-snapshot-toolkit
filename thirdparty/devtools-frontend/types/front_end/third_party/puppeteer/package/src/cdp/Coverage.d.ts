@@ -9,7 +9,7 @@ import type { CDPSession } from '../api/CDPSession.js';
  * The CoverageEntry class represents one entry of the coverage report.
  * @public
  */
-export interface CoverageEntry {
+interface CoverageEntry {
     /**
      * The URL of the style sheet or script.
      */
@@ -30,7 +30,7 @@ export interface CoverageEntry {
  * The CoverageEntry class for JavaScript
  * @public
  */
-export interface JSCoverageEntry extends CoverageEntry {
+interface JSCoverageEntry extends CoverageEntry {
     /**
      * Raw V8 script coverage entry.
      */
@@ -40,7 +40,7 @@ export interface JSCoverageEntry extends CoverageEntry {
  * Set of configurable options for JS coverage.
  * @public
  */
-export interface JSCoverageOptions {
+interface JSCoverageOptions {
     /**
      * Whether to reset coverage on every navigation.
      */
@@ -64,7 +64,7 @@ export interface JSCoverageOptions {
  * Set of configurable options for CSS coverage.
  * @public
  */
-export interface CSSCoverageOptions {
+interface CSSCoverageOptions {
     /**
      * Whether to reset coverage on every navigation.
      */
@@ -159,7 +159,7 @@ export declare class Coverage {
 /**
  * @public
  */
-export declare class JSCoverage {
+class JSCoverage {
     #private;
     /**
      * @internal
@@ -180,7 +180,7 @@ export declare class JSCoverage {
 /**
  * @public
  */
-export declare class CSSCoverage {
+class CSSCoverage {
     #private;
     constructor(client: CDPSession);
     /**

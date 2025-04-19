@@ -13,7 +13,7 @@ import type { Target } from './Target.js';
 /**
  * @public
  */
-export declare const enum BrowserContextEvent {
+declare const enum BrowserContextEvent {
     /**
      * Emitted when the url of a target inside the browser context changes.
      * Contains a {@link Target} instance.

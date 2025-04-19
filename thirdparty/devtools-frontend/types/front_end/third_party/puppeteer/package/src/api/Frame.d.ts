@@ -141,7 +141,7 @@ export interface FrameAddStyleTagOptions {
 /**
  * @public
  */
-export interface FrameEvents extends Record<EventType, unknown> {
+interface FrameEvents extends Record<EventType, unknown> {
     /** @internal */
     [FrameEvent.FrameNavigated]: Protocol.Page.NavigationType;
     /** @internal */
@@ -172,7 +172,7 @@ export declare namespace FrameEvent {
 /**
  * @internal
  */
-export declare const throwIfDetached: (target: (this: Frame, ...args: any[]) => any, _: unknown) => (this: Frame, ...args: any[]) => any;
+const throwIfDetached: (target: (this: Frame, ...args: any[]) => any, _: unknown) => (this: Frame, ...args: any[]) => any;
 /**
  * Represents a DOM frame.
  *
