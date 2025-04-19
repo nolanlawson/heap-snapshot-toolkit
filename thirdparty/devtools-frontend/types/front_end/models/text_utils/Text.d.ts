@@ -13,7 +13,7 @@ export declare class Text {
     replaceRange(range: TextRange, replacement: string): string;
     extract(range: TextRange): string;
 }
-export interface Position {
+interface Position {
     lineNumber: number;
     columnNumber: number;
 }

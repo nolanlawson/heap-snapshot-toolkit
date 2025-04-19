@@ -1,6 +1,6 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import * as PerfUI from '../../ui/legacy/components/perf_ui/perf_ui.js';
-export declare class NetworkOverview extends PerfUI.TimelineOverviewPane.TimelineOverviewBase {
+class NetworkOverview extends PerfUI.TimelineOverviewPane.TimelineOverviewBase {
     private selectedFilmStripTime;
     private numBands;
     private highlightedRequest;
@@ -27,6 +27,6 @@ export declare class NetworkOverview extends PerfUI.TimelineOverviewPane.Timelin
     scheduleUpdate(): void;
     update(): void;
 }
-export declare const RequestTimeRangeNameToColor: {
+const RequestTimeRangeNameToColor: {
     [key: string]: string;
 };

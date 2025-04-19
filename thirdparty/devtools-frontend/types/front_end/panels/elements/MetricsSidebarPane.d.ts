@@ -1,7 +1,7 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import type { ComputedStyleModel } from './ComputedStyleModel.js';
 import { ElementsSidebarPane } from './ElementsSidebarPane.js';
-export declare class MetricsSidebarPane extends ElementsSidebarPane {
+class MetricsSidebarPane extends ElementsSidebarPane {
     originalPropertyData: SDK.CSSProperty.CSSProperty | null;
     previousPropertyDataCandidate: SDK.CSSProperty.CSSProperty | null;
     private inlineStyle;

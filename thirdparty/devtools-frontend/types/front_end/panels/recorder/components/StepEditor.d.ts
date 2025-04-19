@@ -55,7 +55,7 @@ export declare class StepEditedEvent extends Event {
     data: Models.Schema.Step;
     constructor(step: Models.Schema.Step);
 }
-export interface EditorState {
+interface EditorState {
     type: Models.Schema.StepType;
     target?: string;
     selectors?: string[][];
@@ -93,7 +93,7 @@ export interface EditorState {
         value: string;
     }>;
 }
-export declare class EditorState {
+class EditorState {
     #private;
     static default(type: Models.Schema.StepType): Promise<DeepImmutable<EditorState>>;
     static defaultByAttribute<Attribute extends keyof typeof defaultValuesByAttribute>(state: DeepImmutable<EditorState>, attribute: Attribute): Promise<DeepImmutable<typeof defaultValuesByAttribute[Attribute]>>;
@@ -116,7 +116,7 @@ declare class RecorderSelectorPickerButton extends LitElement {
  * @fires RequestSelectorAttributeEvent#requestselectorattribute
  * @fires StepEditedEvent#stepedited
  */
-export declare class StepEditor extends LitElement {
+class StepEditor extends LitElement {
     #private;
     static styles: CSSStyleSheet[];
     private state;
@@ -128,4 +128,3 @@ export declare class StepEditor extends LitElement {
     set step(step: DeepImmutable<Models.Schema.Step>);
     protected render(): Lit.TemplateResult;
 }
-export {};

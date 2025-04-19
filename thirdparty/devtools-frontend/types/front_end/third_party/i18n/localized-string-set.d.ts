@@ -26,14 +26,14 @@ export declare class RegisteredFileStrings {
     constructor(filename: string, stringStructure: UIStrings, localizedMessages: Map<Intl.UnicodeBCP47LocaleIdentifier, LocalizedMessages>);
     getLocalizedStringSetFor(locale: Intl.UnicodeBCP47LocaleIdentifier): LocalizedStringSet;
 }
-export type Values = Record<string, string | number | boolean>;
+type Values = Record<string, string | number | boolean>;
 /**
  * A set of translated strings for a single file in a specific locale.
  *
  * The class is a wrapper around `IntlMessageFormat#format` plus a cache
  * to speed up consecutive lookups of the same message.
  */
-export declare class LocalizedStringSet {
+class LocalizedStringSet {
     private filename;
     private stringStructure;
     private localizedMessages;

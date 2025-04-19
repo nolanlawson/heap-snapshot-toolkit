@@ -11,7 +11,7 @@ export declare class ResourceSourceFrame extends SourceFrameImpl {
     get resource(): TextUtils.ContentProvider.ContentProvider;
     protected populateTextAreaContextMenu(contextMenu: UI.ContextMenu.ContextMenu, lineNumber: number, columnNumber: number): void;
 }
-export declare class SearchableContainer extends UI.Widget.VBox {
+class SearchableContainer extends UI.Widget.VBox {
     private readonly sourceFrame;
     constructor(resource: TextUtils.ContentProvider.ContentProvider, contentType: string);
     revealPosition(position: RevealPosition): Promise<void>;

@@ -42,7 +42,7 @@ export declare abstract class RemoteObject {
     isLinearMemoryInspectable(): boolean;
     webIdl?: RemoteObjectWebIdlTypeMetadata;
 }
-export declare class RemoteObjectImpl extends RemoteObject {
+class RemoteObjectImpl extends RemoteObject {
     #private;
     constructor(runtimeModel: RuntimeModel, objectId: Protocol.Runtime.RemoteObjectId | undefined, type: string, subtype: string | undefined, value: typeof RemoteObject.prototype.value, unserializableValue?: string, description?: string, preview?: Protocol.Runtime.ObjectPreview, customPreview?: Protocol.Runtime.CustomPreview, className?: string);
     customPreview(): Protocol.Runtime.CustomPreview | null;
@@ -73,7 +73,7 @@ export declare class RemoteObjectImpl extends RemoteObject {
     isNode(): boolean;
     isLinearMemoryInspectable(): boolean;
 }
-export declare class ScopeRemoteObject extends RemoteObjectImpl {
+class ScopeRemoteObject extends RemoteObjectImpl {
     #private;
     constructor(runtimeModel: RuntimeModel, objectId: Protocol.Runtime.RemoteObjectId | undefined, scopeRef: ScopeRef, type: string, subtype: string | undefined, value: typeof RemoteObjectImpl.prototype.value, unserializableValue?: string, description?: string, preview?: Protocol.Runtime.ObjectPreview);
     doGetProperties(ownProperties: boolean, accessorPropertiesOnly: boolean, _generatePreview: boolean): Promise<GetPropertiesResult>;
@@ -107,7 +107,7 @@ export declare class RemoteObjectProperty {
     }): boolean;
     cloneWithNewName(newName: string): RemoteObjectProperty;
 }
-export declare class LocalJSONObject extends RemoteObject {
+class LocalJSONObject extends RemoteObject {
     #private;
     constructor(value: typeof RemoteObject.prototype.value);
     get objectId(): Protocol.Runtime.RemoteObjectId | undefined;
@@ -126,14 +126,14 @@ export declare class LocalJSONObject extends RemoteObject {
     callFunction<T, U>(functionDeclaration: (this: U, ...args: any[]) => T, args?: Protocol.Runtime.CallArgument[]): Promise<CallFunctionResult>;
     callFunctionJSON<T, U>(functionDeclaration: (this: U, ...args: any[]) => T, args: Protocol.Runtime.CallArgument[] | undefined): Promise<T | null>;
 }
-export declare class RemoteArrayBuffer {
+class RemoteArrayBuffer {
     #private;
     constructor(object: RemoteObject);
     byteLength(): number;
     bytes(start?: number, end?: number): Promise<number[] | null>;
     object(): RemoteObject;
 }
-export declare class RemoteArray {
+class RemoteArray {
     #private;
     constructor(object: RemoteObject);
     static objectAsArray(object: RemoteObject | null): RemoteArray;
@@ -143,14 +143,14 @@ export declare class RemoteArray {
     map<T>(func: (arg0: RemoteObject) => Promise<T>): Promise<T[]>;
     object(): RemoteObject;
 }
-export declare class RemoteFunction {
+class RemoteFunction {
     #private;
     constructor(object: RemoteObject);
     static objectAsFunction(object: RemoteObject): RemoteFunction;
     targetFunction(): Promise<RemoteObject>;
     targetFunctionDetails(): Promise<FunctionDetails | null>;
 }
-export declare class RemoteError {
+class RemoteError {
     #private;
     private constructor();
     static objectAsError(object: RemoteObject): RemoteError;
@@ -158,19 +158,19 @@ export declare class RemoteError {
     exceptionDetails(): Promise<Protocol.Runtime.ExceptionDetails | undefined>;
     cause(): Promise<RemoteObject | undefined>;
 }
-export interface CallFunctionResult {
+interface CallFunctionResult {
     object: RemoteObject | null;
     wasThrown?: boolean;
 }
-export interface GetPropertiesResult {
+interface GetPropertiesResult {
     properties: RemoteObjectProperty[] | null;
     internalProperties: RemoteObjectProperty[] | null;
 }
-export interface RemoteObjectWebIdlTypeMetadata {
+interface RemoteObjectWebIdlTypeMetadata {
     info: DOMPinnedWebIDLType;
     state: Map<string, string>;
 }
-export interface RemoteObjectWebIdlPropertyMetadata {
+interface RemoteObjectWebIdlPropertyMetadata {
     info: DOMPinnedWebIDLProp;
     applicable?: boolean;
 }
@@ -182,7 +182,7 @@ export interface RemoteObjectWebIdlPropertyMetadata {
  * This data structure is used to reveal an object in the Linear Memory
  * Inspector panel.
  */
-export declare class LinearMemoryInspectable {
+class LinearMemoryInspectable {
     /** The linear memory inspectable {@link RemoteObject}. */
     readonly object: RemoteObject;
     /** The name of the variable or the field holding the `object`. */

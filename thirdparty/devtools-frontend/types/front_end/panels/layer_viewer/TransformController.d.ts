@@ -1,7 +1,7 @@
 import '../../ui/legacy/legacy.js';
 import * as Common from '../../core/common/common.js';
 import * as UI from '../../ui/legacy/legacy.js';
-export declare class TransformController extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
+class TransformController extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
     private mode;
     private scaleInternal;
     private offsetXInternal;
@@ -42,13 +42,13 @@ export declare class TransformController extends Common.ObjectWrapper.ObjectWrap
     private onDragStart;
     private onDragEnd;
 }
-export declare const enum Events {
+declare const enum Events {
     TRANSFORM_CHANGED = "TransformChanged"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.TRANSFORM_CHANGED]: void;
 }
-export declare const enum Modes {
+declare const enum Modes {
     PAN = "Pan",
     ROTATE = "Rotate"
 }

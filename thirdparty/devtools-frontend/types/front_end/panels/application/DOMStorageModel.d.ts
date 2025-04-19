@@ -42,7 +42,7 @@ export declare namespace DOMStorage {
         [Events.DOM_STORAGE_ITEM_UPDATED]: DOMStorageItemUpdatedEvent;
     }
 }
-export declare class DOMStorageModel extends SDK.SDKModel.SDKModel<EventTypes> {
+class DOMStorageModel extends SDK.SDKModel.SDKModel<EventTypes> {
     private readonly storageKeyManagerInternal;
     private storagesInternal;
     readonly agent: ProtocolProxyApi.DOMStorageApi;
@@ -62,15 +62,15 @@ export declare class DOMStorageModel extends SDK.SDKModel.SDKModel<EventTypes> {
     storageForId(storageId: Protocol.DOMStorage.StorageId): DOMStorage;
     storages(): DOMStorage[];
 }
-export declare const enum Events {
+declare const enum Events {
     DOM_STORAGE_ADDED = "DOMStorageAdded",
     DOM_STORAGE_REMOVED = "DOMStorageRemoved"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.DOM_STORAGE_ADDED]: DOMStorage;
     [Events.DOM_STORAGE_REMOVED]: DOMStorage;
 }
-export declare class DOMStorageDispatcher implements ProtocolProxyApi.DOMStorageDispatcher {
+class DOMStorageDispatcher implements ProtocolProxyApi.DOMStorageDispatcher {
     private readonly model;
     constructor(model: DOMStorageModel);
     domStorageItemsCleared({ storageId }: Protocol.DOMStorage.DomStorageItemsClearedEvent): void;

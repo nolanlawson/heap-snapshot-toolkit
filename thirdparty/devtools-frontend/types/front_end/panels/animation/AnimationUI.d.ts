@@ -28,17 +28,17 @@ export declare class AnimationUI {
     private keydownMove;
     private onContextMenu;
 }
-export declare const enum Events {
+declare const enum Events {
     ANIMATION_DRAG = "AnimationDrag",
     KEYFRAME_MOVE = "KeyframeMove",
     START_ENDPOINT_MOVE = "StartEndpointMove",
     FINISH_ENDPOINT_MOVE = "FinishEndpointMove"
 }
-export declare const Options: {
+const Options: {
     AnimationHeight: number;
     AnimationSVGHeight: number;
     AnimationMargin: number;
     EndpointsClickRegionSize: number;
     GridCanvasHeight: number;
 };
-export declare const Colors: Map<string, Common.Color.Color | null>;
+const Colors: Map<string, Common.Color.Color | null>;

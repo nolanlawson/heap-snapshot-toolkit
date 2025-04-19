@@ -11,5 +11,4 @@ export interface ContainerQueryHighlight {
         descendantBorder?: LineStyle;
     };
 }
-export declare function drawContainerQueryHighlight(highlight: ContainerQueryHighlight, context: CanvasRenderingContext2D, emulationScaleFactor: number): void;
-export {};
+declare function drawContainerQueryHighlight(highlight: ContainerQueryHighlight, context: CanvasRenderingContext2D, emulationScaleFactor: number): void;

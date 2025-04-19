@@ -65,7 +65,7 @@ export declare class Linkifier extends Common.ObjectWrapper.ObjectWrapper<EventT
         handler: () => Promise<void> | void;
     }>;
 }
-export interface LinkDecorator extends Common.EventTarget.EventTarget<LinkDecorator.EventTypes> {
+interface LinkDecorator extends Common.EventTarget.EventTarget<LinkDecorator.EventTypes> {
     linkIcon(uiSourceCode: Workspace.UISourceCode.UISourceCode): IconButton.Icon.Icon | null;
 }
 export declare namespace LinkDecorator {
@@ -76,10 +76,10 @@ export declare namespace LinkDecorator {
         [Events.LINK_ICON_CHANGED]: Workspace.UISourceCode.UISourceCode;
     }
 }
-export declare class LinkContextMenuProvider implements UI.ContextMenu.Provider<Node> {
+class LinkContextMenuProvider implements UI.ContextMenu.Provider<Node> {
     appendApplicableItems(_event: Event, contextMenu: UI.ContextMenu.ContextMenu, target: Node): void;
 }
-export declare class LinkHandlerSettingUI implements UI.SettingsUI.SettingUI {
+class LinkHandlerSettingUI implements UI.SettingsUI.SettingUI {
     private element;
     private constructor();
     static instance(opts?: {
@@ -89,7 +89,7 @@ export declare class LinkHandlerSettingUI implements UI.SettingsUI.SettingUI {
     private onChange;
     settingElement(): Element | null;
 }
-export declare class ContentProviderContextMenuProvider implements UI.ContextMenu
+class ContentProviderContextMenuProvider implements UI.ContextMenu
     .Provider<Workspace.UISourceCode.UISourceCode | SDK.Resource.Resource | SDK.NetworkRequest.NetworkRequest> {
     appendApplicableItems(_event: Event, contextMenu: UI.ContextMenu.ContextMenu, contentProvider: Workspace.UISourceCode.UISourceCode | SDK.Resource.Resource | SDK.NetworkRequest.NetworkRequest): void;
 }
@@ -107,7 +107,7 @@ interface LinkInfo {
     userMetric?: Host.UserMetrics.Action;
     jslogContext?: string;
 }
-export interface LinkifyURLOptions {
+interface LinkifyURLOptions {
     text?: string;
     className?: string;
     lineNumber?: number;
@@ -122,7 +122,7 @@ export interface LinkifyURLOptions {
     jslogContext?: string;
     omitOrigin?: boolean;
 }
-export interface LinkifyOptions {
+interface LinkifyOptions {
     className?: string;
     columnNumber?: number;
     showColumnNumber?: boolean;
@@ -136,11 +136,10 @@ export interface LinkifyOptions {
      */
     revealBreakpoint?: boolean;
 }
-export type LinkHandler = (arg0: TextUtils.ContentProvider.ContentProvider, arg1: number) => void;
-export declare const enum Events {
+type LinkHandler = (arg0: TextUtils.ContentProvider.ContentProvider, arg1: number) => void;
+declare const enum Events {
     LIVE_LOCATION_UPDATED = "liveLocationUpdated"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.LIVE_LOCATION_UPDATED]: Bindings.LiveLocation.LiveLocation;
 }
-export {};

@@ -2,7 +2,7 @@ import type * as Trace from '../../../../models/trace/trace.js';
 import * as Lit from '../../../../ui/lit/lit.js';
 import type * as Overlays from '../../overlays/overlays.js';
 import type * as BaseInsightComponent from './BaseInsightComponent.js';
-export declare const i18nString: (id: string, values?: import("../../../../core/i18n/i18nTypes.js").Values | undefined) => import("../../../../core/platform/UIString.js").LocalizedString;
+const i18nString: (id: string, values?: import("../../../../core/i18n/i18nTypes.js").Values | undefined) => import("../../../../core/platform/UIString.js").LocalizedString;
 type BaseInsightComponent = BaseInsightComponent.BaseInsightComponent<Trace.Insights.Types.InsightModel>;
 /**
  * @fileoverview An interactive table component.
@@ -23,7 +23,7 @@ export interface TableState {
     selectedRowEl: HTMLElement | null;
     selectionIsSticky: boolean;
 }
-export interface TableData {
+interface TableData {
     insight: BaseInsightComponent;
     headers: string[];
     rows: TableDataRow[];
@@ -33,8 +33,8 @@ export interface TableDataRow {
     overlays?: Overlays.Overlays.TimelineOverlay[];
     subRows?: TableDataRow[];
 }
-export declare function renderOthersLabel(numOthers: number): string;
-export interface RowLimitAggregator<T> {
+declare function renderOthersLabel(numOthers: number): string;
+interface RowLimitAggregator<T> {
     mapToRow: (item: T) => TableDataRow;
     createAggregatedTableRow: (remaining: T[]) => TableDataRow;
 }
@@ -47,8 +47,8 @@ export interface RowLimitAggregator<T> {
  * Example: `arr` is a list of 15 items & `limit` is 10. The first 9 items in `arr` would be mapped to `TableDataRow`s using `aggregator.mapToRow` and
  * the 10th `TableDataRow` would be created by using `aggregator.createAggregatedTableRow` on the 6 items that were not sent through `aggregator.mapToRow`.
  */
-export declare function createLimitedRows<T>(arr: T[], aggregator: RowLimitAggregator<T>, limit?: number): TableDataRow[];
-export declare class Table extends HTMLElement {
+declare function createLimitedRows<T>(arr: T[], aggregator: RowLimitAggregator<T>, limit?: number): TableDataRow[];
+class Table extends HTMLElement {
     #private;
     set data(data: TableData);
     connectedCallback(): void;
@@ -58,4 +58,3 @@ declare global {
         'devtools-performance-table': Table;
     }
 }
-export {};

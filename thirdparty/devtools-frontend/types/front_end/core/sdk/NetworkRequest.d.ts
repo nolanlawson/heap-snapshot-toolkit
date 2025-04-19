@@ -253,7 +253,7 @@ export declare class NetworkRequest extends Common.ObjectWrapper.ObjectWrapper<E
     addDataReceivedEvent({ timestamp, dataLength, encodedDataLength, data }: Protocol.Network.DataReceivedEvent): void;
     waitForResponseReceived(): Promise<void>;
 }
-export declare enum Events {
+declare enum Events {
     FINISHED_LOADING = "FinishedLoading",
     TIMING_CHANGED = "TimingChanged",
     REMOTE_ADDRESS_CHANGED = "RemoteAddressChanged",
@@ -263,7 +263,7 @@ export declare enum Events {
     EVENT_SOURCE_MESSAGE_ADDED = "EventSourceMessageAdded",
     TRUST_TOKEN_RESULT_ADDED = "TrustTokenResultAdded"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.FINISHED_LOADING]: NetworkRequest;
     [Events.TIMING_CHANGED]: NetworkRequest;
     [Events.REMOTE_ADDRESS_CHANGED]: NetworkRequest;
@@ -273,7 +273,7 @@ export interface EventTypes {
     [Events.EVENT_SOURCE_MESSAGE_ADDED]: EventSourceMessage;
     [Events.TRUST_TOKEN_RESULT_ADDED]: void;
 }
-export declare const enum InitiatorType {
+declare const enum InitiatorType {
     OTHER = "other",
     PARSER = "parser",
     REDIRECT = "redirect",
@@ -282,41 +282,41 @@ export declare const enum InitiatorType {
     SIGNED_EXCHANGE = "signedExchange",
     PREFLIGHT = "preflight"
 }
-export declare enum WebSocketFrameType {
+declare enum WebSocketFrameType {
     Send = "send",
     Receive = "receive",
     Error = "error"
 }
-export declare const cookieExemptionReasonToUiString: (exemptionReason: Protocol.Network.CookieExemptionReason) => string;
-export declare const cookieBlockedReasonToUiString: (blockedReason: Protocol.Network.CookieBlockedReason) => string;
-export declare const setCookieBlockedReasonToUiString: (blockedReason: Protocol.Network.SetCookieBlockedReason) => string;
-export declare const cookieBlockedReasonToAttribute: (blockedReason: Protocol.Network.CookieBlockedReason) => Attribute | null;
-export declare const setCookieBlockedReasonToAttribute: (blockedReason: Protocol.Network.SetCookieBlockedReason) => Attribute | null;
+const cookieExemptionReasonToUiString: (exemptionReason: Protocol.Network.CookieExemptionReason) => string;
+const cookieBlockedReasonToUiString: (blockedReason: Protocol.Network.CookieBlockedReason) => string;
+const setCookieBlockedReasonToUiString: (blockedReason: Protocol.Network.SetCookieBlockedReason) => string;
+const cookieBlockedReasonToAttribute: (blockedReason: Protocol.Network.CookieBlockedReason) => Attribute | null;
+const setCookieBlockedReasonToAttribute: (blockedReason: Protocol.Network.SetCookieBlockedReason) => Attribute | null;
 export interface NameValue {
     name: string;
     value: string;
 }
-export interface WebSocketFrame {
+interface WebSocketFrame {
     type: WebSocketFrameType;
     time: number;
     text: string;
     opCode: number;
     mask: boolean;
 }
-export interface BlockedSetCookieWithReason {
+interface BlockedSetCookieWithReason {
     blockedReasons: Protocol.Network.SetCookieBlockedReason[];
     cookieLine: string;
     cookie: Cookie | null;
 }
-export interface BlockedCookieWithReason {
+interface BlockedCookieWithReason {
     cookie: Cookie;
     blockedReasons: Protocol.Network.CookieBlockedReason[];
 }
-export interface IncludedCookieWithReason {
+interface IncludedCookieWithReason {
     cookie: Cookie;
     exemptionReason: Protocol.Network.CookieExemptionReason | undefined;
 }
-export interface ExemptedSetCookieWithReason {
+interface ExemptedSetCookieWithReason {
     cookie: Cookie;
     cookieLine: string;
     exemptionReason: Protocol.Network.CookieExemptionReason;
@@ -327,7 +327,7 @@ export interface EventSourceMessage {
     eventId: string;
     data: string;
 }
-export interface ExtraRequestInfo {
+interface ExtraRequestInfo {
     blockedRequestCookies: Array<{
         blockedReasons: Protocol.Network.CookieBlockedReason[];
         cookie: Cookie;
@@ -338,7 +338,7 @@ export interface ExtraRequestInfo {
     connectTiming: Protocol.Network.ConnectTiming;
     siteHasCookieInOtherPartition?: boolean;
 }
-export interface ExtraResponseInfo {
+interface ExtraResponseInfo {
     blockedResponseCookies: Array<{
         blockedReasons: Protocol.Network.SetCookieBlockedReason[];
         cookieLine: string;
@@ -356,30 +356,30 @@ export interface ExtraResponseInfo {
         exemptionReason: Protocol.Network.CookieExemptionReason;
     }> | undefined;
 }
-export interface EarlyHintsInfo {
+interface EarlyHintsInfo {
     responseHeaders: NameValue[];
 }
-export interface WebBundleInfo {
+interface WebBundleInfo {
     resourceUrls?: Platform.DevToolsPath.UrlString[];
     errorMessage?: string;
 }
-export interface WebBundleInnerRequestInfo {
+interface WebBundleInnerRequestInfo {
     bundleRequestId?: string;
     errorMessage?: string;
 }
-export type OverrideType = 'content' | 'headers';
-export declare enum DirectSocketType {
+type OverrideType = 'content' | 'headers';
+declare enum DirectSocketType {
     TCP = 1,
     UDP_BOUND = 2,
     UDP_CONNECTED = 3
 }
-export declare enum DirectSocketStatus {
+declare enum DirectSocketStatus {
     OPENING = 1,
     OPEN = 2,
     CLOSED = 3,
     ABORTED = 4
 }
-export interface DirectSocketCreateOptions {
+interface DirectSocketCreateOptions {
     remoteAddr?: string;
     remotePort?: number;
     localAddr?: string;
@@ -390,13 +390,13 @@ export interface DirectSocketCreateOptions {
     receiveBufferSize?: number;
     dnsQueryType?: Protocol.Network.DirectSocketDnsQueryType;
 }
-export interface DirectSocketOpenInfo {
+interface DirectSocketOpenInfo {
     remoteAddr?: string;
     remotePort?: number;
     localAddr?: string;
     localPort?: number;
 }
-export interface DirectSocketInfo {
+interface DirectSocketInfo {
     type: DirectSocketType;
     status: DirectSocketStatus;
     errorMessage?: string;

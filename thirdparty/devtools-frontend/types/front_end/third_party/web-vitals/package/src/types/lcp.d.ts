@@ -11,7 +11,7 @@ export interface LCPMetric extends Metric {
  * can be sent along with the LCP value for the current page visit in order
  * to help identify issues happening to real-users in the field.
  */
-export interface LCPAttribution {
+interface LCPAttribution {
     /**
      * The element corresponding to the largest contentful paint for the page.
      */

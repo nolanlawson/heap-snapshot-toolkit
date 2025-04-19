@@ -84,7 +84,7 @@ export declare class DebuggerWorkspaceBinding implements SDK.TargetManager.SDKMo
     private debuggerResumed;
     private shouldPause;
 }
-export declare class Location extends LiveLocationWithPool {
+class Location extends LiveLocationWithPool {
     #private;
     readonly scriptId: string;
     readonly rawLocation: SDK.DebuggerModel.Location;
@@ -108,4 +108,3 @@ export interface DebuggerSourceMapping {
     uiLocationToRawLocations(uiSourceCode: Workspace.UISourceCode.UISourceCode, lineNumber: number, columnNumber?: number): SDK.DebuggerModel.Location[];
     uiLocationRangeToRawLocationRanges(uiSourceCode: Workspace.UISourceCode.UISourceCode, textRange: TextUtils.TextRange.TextRange): SDK.DebuggerModel.LocationRange[] | null;
 }
-export {};

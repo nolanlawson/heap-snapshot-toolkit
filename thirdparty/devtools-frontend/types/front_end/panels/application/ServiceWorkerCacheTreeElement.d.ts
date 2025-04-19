@@ -21,7 +21,7 @@ export declare class ServiceWorkerCacheTreeElement extends ExpandableApplication
     private removeCache;
     private cacheTreeElement;
 }
-export declare class SWCacheTreeElement extends ApplicationPanelTreeElement {
+class SWCacheTreeElement extends ApplicationPanelTreeElement {
     private readonly model;
     private cache;
     private view;

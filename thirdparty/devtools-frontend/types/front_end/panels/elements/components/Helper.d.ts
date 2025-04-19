@@ -12,4 +12,4 @@ export interface DOMNode {
     clearHighlight: () => void;
     getAttribute: (attr: string) => string | undefined;
 }
-export declare const legacyNodeToElementsComponentsNode: (node: SDK.DOMModel.DOMNode) => DOMNode;
+const legacyNodeToElementsComponentsNode: (node: SDK.DOMModel.DOMNode) => DOMNode;

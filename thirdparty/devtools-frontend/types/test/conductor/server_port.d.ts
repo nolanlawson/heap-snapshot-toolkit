@@ -1,3 +1,3 @@
-export declare const setTestServerPort: (port: number) => void;
+const setTestServerPort: (port: number) => void;
 export declare const getTestServerPort: () => number;
-export declare function clearServerPort(): void;
+declare function clearServerPort(): void;

@@ -27,7 +27,7 @@ export declare class HeapProfilerModel extends SDKModel<EventTypes> {
     reportHeapSnapshotProgress(done: number, total: number, finished?: boolean): void;
     resetProfiles(): void;
 }
-export declare const enum Events {
+declare const enum Events {
     HEAP_STATS_UPDATED = "HeapStatsUpdate",
     LAST_SEEN_OBJECT_ID = "LastSeenObjectId",
     ADD_HEAP_SNAPSHOT_CHUNK = "AddHeapSnapshotChunk",
@@ -39,37 +39,37 @@ export declare const enum Events {
  * index, the second number is a total count of objects for the fragment, the third number is
  * a total size of the objects for the fragment.
  */
-export type HeapStatsUpdateSamples = number[];
-export interface LastSeenObjectId {
+type HeapStatsUpdateSamples = number[];
+interface LastSeenObjectId {
     lastSeenObjectId: number;
     timestamp: number;
 }
-export interface HeapSnapshotProgress {
+interface HeapSnapshotProgress {
     done: number;
     total: number;
     finished?: boolean;
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.HEAP_STATS_UPDATED]: HeapStatsUpdateSamples;
     [Events.LAST_SEEN_OBJECT_ID]: LastSeenObjectId;
     [Events.ADD_HEAP_SNAPSHOT_CHUNK]: string;
     [Events.REPORT_HEAP_SNAPSHOT_PROGRESS]: HeapSnapshotProgress;
     [Events.RESET_PROFILES]: HeapProfilerModel;
 }
-export interface NativeProfilerCallFrame {
+interface NativeProfilerCallFrame {
     functionName: string;
     url: Platform.DevToolsPath.UrlString;
     scriptId?: string;
     lineNumber?: number;
     columnNumber?: number;
 }
-export interface CommonHeapProfileNode {
+interface CommonHeapProfileNode {
     callFrame: NativeProfilerCallFrame;
     selfSize: number;
     id?: number;
     children: CommonHeapProfileNode[];
 }
-export interface CommonHeapProfile {
+interface CommonHeapProfile {
     head: CommonHeapProfileNode;
     modules: Protocol.Memory.Module[];
 }

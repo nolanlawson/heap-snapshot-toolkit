@@ -1,6 +1,6 @@
 import type * as Common from '../../core/common/common.js';
 import * as UI from '../../ui/legacy/legacy.js';
-export declare class ConsolePanel extends UI.Panel.Panel {
+class ConsolePanel extends UI.Panel.Panel {
     private readonly view;
     constructor();
     static instance(opts?: {
@@ -11,7 +11,7 @@ export declare class ConsolePanel extends UI.Panel.Panel {
     willHide(): void;
     searchableView(): UI.SearchableView.SearchableView | null;
 }
-export declare class WrapperView extends UI.Widget.VBox {
+class WrapperView extends UI.Widget.VBox {
     private readonly view;
     private constructor();
     static instance(): WrapperView;
@@ -19,6 +19,6 @@ export declare class WrapperView extends UI.Widget.VBox {
     willHide(): void;
     showViewInWrapper(): void;
 }
-export declare class ConsoleRevealer implements Common.Revealer.Revealer<Common.Console.Console> {
+class ConsoleRevealer implements Common.Revealer.Revealer<Common.Console.Console> {
     reveal(_object: Common.Console.Console): Promise<void>;
 }

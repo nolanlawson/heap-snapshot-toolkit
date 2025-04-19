@@ -45,7 +45,7 @@ export declare class PreloadingAttemptView extends UI.Widget.VBox {
     getPreloadingDetailsForTest(): PreloadingComponents.PreloadingDetailsReportView.PreloadingDetailsReportView;
     selectRuleSetOnFilterForTest(id: Protocol.Preload.RuleSetId | null): void;
 }
-export declare class PreloadingSummaryView extends UI.Widget.VBox {
+class PreloadingSummaryView extends UI.Widget.VBox {
     private model;
     private readonly warningsContainer;
     private readonly warningsView;
@@ -56,7 +56,7 @@ export declare class PreloadingSummaryView extends UI.Widget.VBox {
     render(): void;
     getUsedPreloadingForTest(): PreloadingComponents.UsedPreloadingView.UsedPreloadingView;
 }
-export declare class PreloadingWarningsView extends UI.Widget.VBox {
+class PreloadingWarningsView extends UI.Widget.VBox {
     private readonly infobar;
     constructor();
     wasShown(): void;

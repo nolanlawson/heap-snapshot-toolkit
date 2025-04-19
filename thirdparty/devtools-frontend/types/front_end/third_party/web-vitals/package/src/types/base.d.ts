@@ -56,7 +56,7 @@ export interface Metric {
 /** The union of supported metric types. */
 export type MetricType = CLSMetric | FCPMetric | FIDMetric | INPMetric | LCPMetric | TTFBMetric;
 /** The union of supported metric attribution types. */
-export type MetricWithAttribution = CLSMetricWithAttribution | FCPMetricWithAttribution | FIDMetricWithAttribution | INPMetricWithAttribution | LCPMetricWithAttribution | TTFBMetricWithAttribution;
+type MetricWithAttribution = CLSMetricWithAttribution | FCPMetricWithAttribution | FIDMetricWithAttribution | INPMetricWithAttribution | LCPMetricWithAttribution | TTFBMetricWithAttribution;
 /**
  * The thresholds of metric's "good", "needs improvement", and "poor" ratings.
  *
@@ -76,7 +76,7 @@ export type MetricRatingThresholds = [number, number];
  * `(metric: LCPMetric) => void`. If a single callback type is needed for
  * multiple metrics, use `(metric: MetricType) => void`.
  */
-export interface ReportCallback {
+interface ReportCallback {
     (metric: MetricType): void;
 }
 export interface ReportOpts {

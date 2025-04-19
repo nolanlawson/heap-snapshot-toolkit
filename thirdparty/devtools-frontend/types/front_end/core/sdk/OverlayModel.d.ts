@@ -6,13 +6,13 @@ import { DeferredDOMNode, DOMModel, type DOMNode } from './DOMModel.js';
 import type { RemoteObject } from './RemoteObject.js';
 import { SDKModel } from './SDKModel.js';
 import { type Target } from './Target.js';
-export interface HighlightColor {
+interface HighlightColor {
     r: number;
     g: number;
     b: number;
     a: number;
 }
-export interface HighlightRect {
+interface HighlightRect {
     x: number;
     y: number;
     width: number;
@@ -20,7 +20,7 @@ export interface HighlightRect {
     color: HighlightColor;
     outlineColor: HighlightColor;
 }
-export interface Hinge {
+interface Hinge {
     width: number;
     height: number;
     x: number;
@@ -28,7 +28,7 @@ export interface Hinge {
     contentColor: HighlightColor;
     outlineColor: HighlightColor;
 }
-export declare const enum EmulatedOSType {
+declare const enum EmulatedOSType {
     WINDOWS = "Windows",
     MAC = "Mac",
     LINUX = "Linux"
@@ -93,7 +93,7 @@ export declare class OverlayModel extends SDKModel<EventTypes> implements Protoc
     getOverlayAgent(): ProtocolProxyApi.OverlayApi;
     hasStyleSheetText(url: Platform.DevToolsPath.UrlString): Promise<boolean>;
 }
-export declare class WindowControls {
+class WindowControls {
     #private;
     constructor(cssModel: CSSModel);
     get selectedPlatform(): string;
@@ -105,7 +105,7 @@ export declare class WindowControls {
     toggleEmulatedOverlay(showOverlay: boolean): Promise<void>;
     transformStyleSheetforTesting(x: number, y: number, width: number, height: number, originalStyleSheet: string | undefined): string | undefined;
 }
-export declare const enum Events {
+declare const enum Events {
     INSPECT_MODE_WILL_BE_TOGGLED = "InspectModeWillBeToggled",
     EXITED_INSPECT_MODE = "InspectModeExited",
     HIGHLIGHT_NODE_REQUESTED = "HighlightNodeRequested",
@@ -115,11 +115,11 @@ export declare const enum Events {
     PERSISTENT_SCROLL_SNAP_OVERLAY_STATE_CHANGED = "PersistentScrollSnapOverlayStateChanged",
     PERSISTENT_CONTAINER_QUERY_OVERLAY_STATE_CHANGED = "PersistentContainerQueryOverlayStateChanged"
 }
-export interface ChangedNodeId {
+interface ChangedNodeId {
     nodeId: number;
     enabled: boolean;
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.INSPECT_MODE_WILL_BE_TOGGLED]: OverlayModel;
     [Events.EXITED_INSPECT_MODE]: void;
     [Events.HIGHLIGHT_NODE_REQUESTED]: DOMNode;
@@ -129,28 +129,28 @@ export interface EventTypes {
     [Events.PERSISTENT_SCROLL_SNAP_OVERLAY_STATE_CHANGED]: ChangedNodeId;
     [Events.PERSISTENT_CONTAINER_QUERY_OVERLAY_STATE_CHANGED]: ChangedNodeId;
 }
-export interface Highlighter {
+interface Highlighter {
     highlightInOverlay(data: HighlightData, config: Protocol.Overlay.HighlightConfig): void;
     setInspectMode(mode: Protocol.Overlay.InspectMode, config: Protocol.Overlay.HighlightConfig): Promise<void>;
     highlightFrame(frameId: Protocol.Page.FrameId): void;
 }
-export declare class SourceOrderHighlighter {
+class SourceOrderHighlighter {
     #private;
     constructor(model: OverlayModel);
     highlightSourceOrderInOverlay(node: DOMNode, sourceOrderConfig: Protocol.Overlay.SourceOrderConfig): void;
     hideSourceOrderHighlight(): void;
 }
-export interface HighlightNodeData {
+interface HighlightNodeData {
     node: DOMNode;
     selectorList?: string;
 }
-export interface HighlightDeferredNode {
+interface HighlightDeferredNode {
     deferredNode: DeferredDOMNode;
 }
-export interface HighlightObjectData {
+interface HighlightObjectData {
     object: RemoteObject;
     selectorList?: string;
 }
-export type HighlightData = HighlightNodeData | HighlightDeferredNode | HighlightObjectData | {
+type HighlightData = HighlightNodeData | HighlightDeferredNode | HighlightObjectData | {
     clear: boolean;
 };

@@ -2,7 +2,7 @@ import type * as Platform from '../../core/platform/platform.js';
 import type * as Protocol from '../../generated/protocol.js';
 import { ApplicationPanelTreeElement } from './ApplicationPanelTreeElement.js';
 import type { ResourcesPanel } from './ResourcesPanel.js';
-export declare const i18nString: (id: string, values?: import("../../core/i18n/i18nTypes.js").Values | undefined) => Platform.UIString.LocalizedString;
+const i18nString: (id: string, values?: import("../../core/i18n/i18nTypes.js").Values | undefined) => Platform.UIString.LocalizedString;
 export declare class InterestGroupTreeElement extends ApplicationPanelTreeElement {
     private view;
     constructor(storagePanel: ResourcesPanel);

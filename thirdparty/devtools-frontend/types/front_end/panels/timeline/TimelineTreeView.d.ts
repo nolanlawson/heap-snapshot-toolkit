@@ -115,7 +115,7 @@ export declare namespace TimelineTreeView {
  *
  * `TimelineStackView` (aka heaviest stack) uses GridNode directly (as there's no hierarchy there), otherwise these TreeGridNode could probably be consolidated.
  */
-export declare class GridNode extends DataGrid.SortableDataGrid.SortableDataGridNode<GridNode> {
+class GridNode extends DataGrid.SortableDataGrid.SortableDataGridNode<GridNode> {
     #private;
     protected populated: boolean;
     profileNode: Trace.Extras.TraceTree.Node;
@@ -133,7 +133,7 @@ export declare class GridNode extends DataGrid.SortableDataGrid.SortableDataGrid
 /**
  * `TreeGridNode` lets a `GridNode` (row) populate based on its tree children.
  */
-export declare class TreeGridNode extends GridNode {
+class TreeGridNode extends GridNode {
     constructor(profileNode: Trace.Extras.TraceTree.Node, grandTotalTime: number, maxSelfTime: number, maxTotalTime: number, treeView: TimelineTreeView);
     populate(): void;
 }
@@ -176,11 +176,11 @@ export declare namespace AggregatedTimelineTreeView {
         ThirdParties = "ThirdParties"
     }
 }
-export declare class CallTreeTimelineTreeView extends AggregatedTimelineTreeView {
+class CallTreeTimelineTreeView extends AggregatedTimelineTreeView {
     constructor();
     buildTree(): Trace.Extras.TraceTree.Node;
 }
-export declare class BottomUpTimelineTreeView extends AggregatedTimelineTreeView {
+class BottomUpTimelineTreeView extends AggregatedTimelineTreeView {
     constructor();
     buildTree(): Trace.Extras.TraceTree.Node;
 }
@@ -194,7 +194,7 @@ declare const TimelineStackView_base: {
         dispatchEventToListeners<T extends keyof TimelineStackView.EventTypes>(eventType: Platform.TypeScriptUtilities.NoUnion<T>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<TimelineStackView.EventTypes, T>): void;
     };
 } & typeof UI.Widget.VBox;
-export declare class TimelineStackView extends TimelineStackView_base {
+class TimelineStackView extends TimelineStackView_base {
     private readonly treeView;
     private readonly dataGrid;
     constructor(treeView: TimelineTreeView);
@@ -213,4 +213,3 @@ export declare namespace TimelineStackView {
         [Events.SELECTION_CHANGED]: void;
     }
 }
-export {};

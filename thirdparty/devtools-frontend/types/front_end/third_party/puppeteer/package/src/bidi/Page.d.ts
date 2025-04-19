@@ -118,12 +118,12 @@ export declare class BidiPage extends Page {
     goForward(options?: WaitForOptions): Promise<HTTPResponse | null>;
     waitForDevicePrompt(): never;
 }
-export declare function bidiToPuppeteerCookie(bidiCookie: Bidi.Network.Cookie, returnCompositePartitionKey?: boolean): Cookie;
+declare function bidiToPuppeteerCookie(bidiCookie: Bidi.Network.Cookie, returnCompositePartitionKey?: boolean): Cookie;
 /**
  * Gets CDP-specific properties from the cookie, adds CDP-specific prefixes and returns
  * them as a new object which can be used in BiDi.
  */
-export declare function cdpSpecificCookiePropertiesFromPuppeteerToBidi(cookieParam: CookieParam, ...propertyNames: Array<keyof CookieParam>): Record<string, unknown>;
-export declare function convertCookiesSameSiteCdpToBiDi(sameSite: CookieSameSite | undefined): Bidi.Network.SameSite;
-export declare function convertCookiesExpiryCdpToBiDi(expiry: number | undefined): number | undefined;
-export declare function convertCookiesPartitionKeyFromPuppeteerToBiDi(partitionKey: CookiePartitionKey | string | undefined): string | undefined;
+declare function cdpSpecificCookiePropertiesFromPuppeteerToBidi(cookieParam: CookieParam, ...propertyNames: Array<keyof CookieParam>): Record<string, unknown>;
+declare function convertCookiesSameSiteCdpToBiDi(sameSite: CookieSameSite | undefined): Bidi.Network.SameSite;
+declare function convertCookiesExpiryCdpToBiDi(expiry: number | undefined): number | undefined;
+declare function convertCookiesPartitionKeyFromPuppeteerToBiDi(partitionKey: CookiePartitionKey | string | undefined): string | undefined;

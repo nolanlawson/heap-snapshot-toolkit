@@ -33,9 +33,9 @@ export declare class StubIssue extends Issue {
     static createFromIssueId(issueId: Protocol.Audits.IssueId): StubIssue;
     static createCookieIssue(code: string): StubIssue;
 }
-export declare class ThirdPartyStubIssue extends StubIssue {
+class ThirdPartyStubIssue extends StubIssue {
     private isThirdParty;
     constructor(code: string, isThirdParty: boolean);
     isCausedByThirdParty(): boolean;
 }
-export declare function mkInspectorCspIssue(blockedURL: string): Protocol.Audits.InspectorIssue;
+declare function mkInspectorCspIssue(blockedURL: string): Protocol.Audits.InspectorIssue;

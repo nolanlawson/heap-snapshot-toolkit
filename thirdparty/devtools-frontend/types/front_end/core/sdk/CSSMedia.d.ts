@@ -2,14 +2,14 @@ import type * as Protocol from '../../generated/protocol.js';
 import * as TextUtils from '../../models/text_utils/text_utils.js';
 import type { CSSModel } from './CSSModel.js';
 import { CSSQuery } from './CSSQuery.js';
-export declare class CSSMediaQuery {
+class CSSMediaQuery {
     #private;
     constructor(payload: Protocol.CSS.MediaQuery);
     static parsePayload(payload: Protocol.CSS.MediaQuery): CSSMediaQuery;
     active(): boolean;
     expressions(): CSSMediaQueryExpression[] | null;
 }
-export declare class CSSMediaQueryExpression {
+class CSSMediaQueryExpression {
     #private;
     constructor(payload: Protocol.CSS.MediaQueryExpression);
     static parsePayload(payload: Protocol.CSS.MediaQueryExpression): CSSMediaQueryExpression;
@@ -28,7 +28,7 @@ export declare class CSSMedia extends CSSQuery {
     reinitialize(payload: Protocol.CSS.CSSMedia): void;
     active(): boolean;
 }
-export declare const Source: {
+const Source: {
     LINKED_SHEET: string;
     INLINE_SHEET: string;
     MEDIA_RULE: string;

@@ -14,14 +14,14 @@ declare global {
         };
     }
 }
-export declare class HostsPolicy {
+class HostsPolicy {
     readonly runtimeAllowedHosts: HostUrlPattern[];
     readonly runtimeBlockedHosts: HostUrlPattern[];
     static create(policy?: Host.InspectorFrontendHostAPI.ExtensionHostsPolicy): HostsPolicy | null;
     private constructor();
     isAllowedOnURL(inspectedURL?: Platform.DevToolsPath.UrlString): boolean;
 }
-export declare class RevealableNetworkRequestFilter {
+class RevealableNetworkRequestFilter {
     readonly filter: string | undefined;
     constructor(filter: string | undefined);
 }
@@ -130,13 +130,13 @@ export declare class ExtensionServer extends Common.ObjectWrapper.ObjectWrapper<
     private disableExtensions;
     private enableExtensions;
 }
-export declare const enum Events {
+declare const enum Events {
     SidebarPaneAdded = "SidebarPaneAdded"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.SidebarPaneAdded]: ExtensionSidebarPane;
 }
-export declare class ExtensionStatus {
+class ExtensionStatus {
     OK: (...args: unknown[]) => Record;
     E_EXISTS: (...args: unknown[]) => Record;
     E_BADARG: (...args: unknown[]) => Record;
@@ -147,7 +147,7 @@ export declare class ExtensionStatus {
     E_FAILED: (...args: unknown[]) => Record;
     constructor();
 }
-export interface Record {
+interface Record {
     code: string;
     description: string;
     details: unknown[];

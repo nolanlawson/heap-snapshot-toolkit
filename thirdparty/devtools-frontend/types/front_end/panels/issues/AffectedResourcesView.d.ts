@@ -7,15 +7,15 @@ import type * as NetworkForward from '../../panels/network/forward/forward.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import type { AggregatedIssue } from './IssueAggregator.js';
 import type { IssueView } from './IssueView.js';
-export declare const enum AffectedItem {
+declare const enum AffectedItem {
     COOKIE = "Cookie",
     DIRECTIVE = "Directive",
     ELEMENT = "Element",
     REQUEST = "Request",
     SOURCE = "Source"
 }
-export declare const extractShortPath: (path: Platform.DevToolsPath.UrlString) => string;
-export interface CreateRequestCellOptions {
+const extractShortPath: (path: Platform.DevToolsPath.UrlString) => string;
+interface CreateRequestCellOptions {
     linkToPreflight?: boolean;
     highlightHeader?: {
         section: NetworkForward.UIRequestLocation.UIHeaderSection;

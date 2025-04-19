@@ -34,14 +34,14 @@ export declare class IsolatedFileSystemManager extends Common.ObjectWrapper.Obje
     private onIndexingDone;
     private onSearchCompleted;
 }
-export declare enum Events {
+declare enum Events {
     FileSystemAdded = "FileSystemAdded",
     FileSystemRemoved = "FileSystemRemoved",
     FileSystemFilesChanged = "FileSystemFilesChanged",
     ExcludedFolderAdded = "ExcludedFolderAdded",
     ExcludedFolderRemoved = "ExcludedFolderRemoved"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.FileSystemAdded]: PlatformFileSystem;
     [Events.FileSystemRemoved]: PlatformFileSystem;
     [Events.FileSystemFilesChanged]: FilesChangedData;

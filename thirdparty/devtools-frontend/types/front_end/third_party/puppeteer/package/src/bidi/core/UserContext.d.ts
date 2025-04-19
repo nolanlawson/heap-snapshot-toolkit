@@ -12,7 +12,7 @@ import { BrowsingContext } from './BrowsingContext.js';
 /**
  * @internal
  */
-export type CreateBrowsingContextOptions = Omit<Bidi.BrowsingContext.CreateParameters, 'type' | 'referenceContext'> & {
+type CreateBrowsingContextOptions = Omit<Bidi.BrowsingContext.CreateParameters, 'type' | 'referenceContext'> & {
     referenceContext?: BrowsingContext;
 };
 /**

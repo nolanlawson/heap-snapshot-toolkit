@@ -7,7 +7,7 @@ import type { Match, Matcher } from './CSSPropertyParser.js';
 import { CSSFontPaletteValuesRule, CSSFunctionRule, CSSKeyframesRule, CSSPositionTryRule, CSSPropertyRule, CSSStyleRule } from './CSSRule.js';
 import { CSSStyleDeclaration } from './CSSStyleDeclaration.js';
 import type { DOMNode } from './DOMModel.js';
-export interface CSSMatchedStylesPayload {
+interface CSSMatchedStylesPayload {
     cssModel: CSSModel;
     node: DOMNode;
     activePositionFallbackIndex: number;
@@ -28,7 +28,7 @@ export interface CSSMatchedStylesPayload {
     inheritedAnimatedPayload: Protocol.CSS.InheritedAnimatedStyleEntry[];
     functionRules: Protocol.CSS.CSSFunctionRule[];
 }
-export declare class CSSRegisteredProperty {
+class CSSRegisteredProperty {
     #private;
     constructor(cssModel: CSSModel, registration: CSSPropertyRule | Protocol.CSS.CSSPropertyRegistration);
     propertyName(): string;
@@ -100,7 +100,7 @@ export interface CSSVariableValue {
     value: string;
     declaration: CSSValueSource;
 }
-export declare const enum PropertyState {
+declare const enum PropertyState {
     ACTIVE = "Active",
     OVERLOADED = "Overloaded"
 }

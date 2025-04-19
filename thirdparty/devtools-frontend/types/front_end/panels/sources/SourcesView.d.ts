@@ -76,28 +76,27 @@ export declare class SourcesView extends SourcesView_base implements TabbedEdito
     private saveSourceFrame;
     toggleBreakpointsActiveState(active: boolean): void;
 }
-export declare const enum Events {
+declare const enum Events {
     EDITOR_CLOSED = "EditorClosed",
     EDITOR_SELECTED = "EditorSelected"
 }
-export interface EditorClosedEvent {
+interface EditorClosedEvent {
     uiSourceCode: Workspace.UISourceCode.UISourceCode;
     wasSelected: boolean;
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.EDITOR_CLOSED]: EditorClosedEvent;
     [Events.EDITOR_SELECTED]: Workspace.UISourceCode.UISourceCode;
 }
 export interface EditorAction {
     getOrCreateButton(sourcesView: SourcesView): UI.Toolbar.ToolbarButton;
 }
-export declare function registerEditorAction(editorAction: () => EditorAction): void;
-export declare function getRegisteredEditorActions(): EditorAction[];
-export declare class SwitchFileActionDelegate implements UI.ActionRegistration.ActionDelegate {
+declare function registerEditorAction(editorAction: () => EditorAction): void;
+declare function getRegisteredEditorActions(): EditorAction[];
+class SwitchFileActionDelegate implements UI.ActionRegistration.ActionDelegate {
     private static nextFile;
     handleAction(context: UI.Context.Context, _actionId: string): boolean;
 }
-export declare class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
+class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(context: UI.Context.Context, actionId: string): boolean;
 }
-export {};

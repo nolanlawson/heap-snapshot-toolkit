@@ -4,12 +4,12 @@ export declare class BrowserWrapper {
     constructor(b: puppeteer.Browser);
     createBrowserContext(): Promise<puppeteer.BrowserContext>;
 }
-export declare class Launcher {
+class Launcher {
     static browserSetup(settings: BrowserSettings): Promise<BrowserWrapper>;
     private static launchChrome;
 }
-export interface BrowserSettings {
+interface BrowserSettings {
     enabledBlinkFeatures: string[];
     disabledFeatures: string[];
 }
-export declare const DEFAULT_BROWSER_SETTINGS: BrowserSettings;
+const DEFAULT_BROWSER_SETTINGS: BrowserSettings;

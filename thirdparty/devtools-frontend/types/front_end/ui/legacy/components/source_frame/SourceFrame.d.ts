@@ -8,16 +8,16 @@ export interface SourceFrameOptions {
     lineNumbers?: boolean;
     lineWrapping?: boolean;
 }
-export declare const enum Events {
+declare const enum Events {
     EDITOR_UPDATE = "EditorUpdate",
     EDITOR_SCROLL = "EditorScroll"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.EDITOR_UPDATE]: CodeMirror.ViewUpdate;
     [Events.EDITOR_SCROLL]: void;
 }
 type FormatFn = (lineNo: number, state: CodeMirror.EditorState) => string;
-export declare const LINE_NUMBER_FORMATTER: CodeMirror.Facet<FormatFn, FormatFn>;
+const LINE_NUMBER_FORMATTER: CodeMirror.Facet<FormatFn, FormatFn>;
 declare const SourceFrameImpl_base: {
     new (...args: any[]): {
         "__#15@#events": Common.ObjectWrapper.ObjectWrapper<EventTypes>;
@@ -137,7 +137,7 @@ export declare class SourceFrameImpl extends SourceFrameImpl_base implements UI.
     protected populateLineGutterContextMenu(_menu: UI.ContextMenu.ContextMenu, _lineNumber: number): void;
     focus(): void;
 }
-export interface Transformer {
+interface Transformer {
     editorLocationToUILocation(lineNumber: number, columnNumber: number): {
         lineNumber: number;
         columnNumber: number;
@@ -151,13 +151,13 @@ export interface Transformer {
         columnNumber: number;
     };
 }
-export declare const enum DecoratorType {
+declare const enum DecoratorType {
     PERFORMANCE = "performance",
     MEMORY = "memory",
     COVERAGE = "coverage"
 }
-export declare const addNonBreakableLines: CodeMirror.StateEffectType<readonly number[]>;
-export declare function isBreakableLine(state: CodeMirror.EditorState, line: CodeMirror.Line): boolean;
+const addNonBreakableLines: CodeMirror.StateEffectType<readonly number[]>;
+declare function isBreakableLine(state: CodeMirror.EditorState, line: CodeMirror.Line): boolean;
 /**
  * Reveal position can either be a single point or a range.
  *
@@ -177,6 +177,5 @@ export type RevealPosition = number | {
         columnNumber: number;
     };
 };
-export declare const addInfobar: CodeMirror.StateEffectType<UI.Infobar.Infobar>;
-export declare const removeInfobar: CodeMirror.StateEffectType<UI.Infobar.Infobar>;
-export {};
+const addInfobar: CodeMirror.StateEffectType<UI.Infobar.Infobar>;
+const removeInfobar: CodeMirror.StateEffectType<UI.Infobar.Infobar>;

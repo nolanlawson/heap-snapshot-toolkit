@@ -115,26 +115,25 @@ export declare class SplitWidget extends SplitWidget_base {
     toggleSidebar(): boolean;
     private updateShowHideSidebarButton;
 }
-export declare class SplitWidgetElement extends WidgetElement<SplitWidget> {
+class SplitWidgetElement extends WidgetElement<SplitWidget> {
     static readonly observedAttributes: string[];
     createWidget(): SplitWidget;
     attributeChangedCallback(name: string, _oldValue: string, newValue: string): void;
 }
-export declare const enum ShowMode {
+declare const enum ShowMode {
     BOTH = "Both",
     ONLY_MAIN = "OnlyMain",
     ONLY_SIDEBAR = "OnlySidebar"
 }
-export declare const enum Events {
+declare const enum Events {
     SIDEBAR_SIZE_CHANGED = "SidebarSizeChanged",
     SHOW_MODE_CHANGED = "ShowModeChanged"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.SIDEBAR_SIZE_CHANGED]: number;
     [Events.SHOW_MODE_CHANGED]: string;
 }
-export interface SettingForOrientation {
+interface SettingForOrientation {
     showMode: string;
     size: number;
 }
-export {};

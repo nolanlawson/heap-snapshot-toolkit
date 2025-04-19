@@ -7,21 +7,21 @@ import * as UI from '../../ui/legacy/legacy.js';
 import { CookieReportView } from './CookieReportView.js';
 import { type PageVisibleSecurityState, SecurityModel } from './SecurityModel.js';
 import { SecurityPanelSidebar } from './SecurityPanelSidebar.js';
-export declare function getSecurityStateIconForDetailedView(securityState: Protocol.Security.SecurityState, className: string): IconButton.Icon.Icon;
-export declare function getSecurityStateIconForOverview(securityState: Protocol.Security.SecurityState, className: string): IconButton.Icon.Icon;
-export declare function createHighlightedUrl(url: Platform.DevToolsPath.UrlString, securityState: string): Element;
-export interface ViewInput {
+declare function getSecurityStateIconForDetailedView(securityState: Protocol.Security.SecurityState, className: string): IconButton.Icon.Icon;
+declare function getSecurityStateIconForOverview(securityState: Protocol.Security.SecurityState, className: string): IconButton.Icon.Icon;
+declare function createHighlightedUrl(url: Platform.DevToolsPath.UrlString, securityState: string): Element;
+interface ViewInput {
     panel: SecurityPanel;
 }
-export interface ViewOutput {
+interface ViewOutput {
     setVisibleView: (view: UI.Widget.VBox) => void;
     splitWidget: UI.SplitWidget.SplitWidget;
     mainView: SecurityMainView;
     visibleView: UI.Widget.VBox | null;
     sidebar: SecurityPanelSidebar;
 }
-export type View = (input: ViewInput, output: ViewOutput, target: HTMLElement) => void;
-export declare class SecurityPanel extends UI.Panel.Panel implements SDK.TargetManager.SDKModelObserver<SecurityModel> {
+type View = (input: ViewInput, output: ViewOutput, target: HTMLElement) => void;
+class SecurityPanel extends UI.Panel.Panel implements SDK.TargetManager.SDKModelObserver<SecurityModel> {
     private view;
     readonly mainView: SecurityMainView;
     readonly sidebar: SecurityPanelSidebar;
@@ -62,7 +62,7 @@ export declare enum OriginGroup {
     Secure = "Secure",
     Unknown = "Unknown"
 }
-export declare class SecurityMainView extends UI.Widget.VBox {
+class SecurityMainView extends UI.Widget.VBox {
     panel: SecurityPanel;
     private readonly summarySection;
     private readonly securityExplanationsMain;
@@ -85,25 +85,25 @@ export declare class SecurityMainView extends UI.Widget.VBox {
     private addMixedContentExplanation;
     showNetworkFilter(filterKey: string, e: Event): void;
 }
-export declare class SecurityOriginView extends UI.Widget.VBox {
+class SecurityOriginView extends UI.Widget.VBox {
     private readonly originLockIcon;
     constructor(origin: Platform.DevToolsPath.UrlString, originState: OriginState);
     private createSanDiv;
     setSecurityState(newSecurityState: Protocol.Security.SecurityState): void;
 }
-export declare class SecurityDetailsTable {
+class SecurityDetailsTable {
     private readonly elementInternal;
     constructor();
     element(): HTMLTableElement;
     addRow(key: string, value: string | Node): void;
 }
-export interface OriginState {
+interface OriginState {
     securityState: Protocol.Security.SecurityState;
     securityDetails: Protocol.Network.SecurityDetails | null;
     loadedFromCache: boolean;
     originView?: SecurityOriginView | null;
 }
-export type Origin = Platform.DevToolsPath.UrlString;
-export declare class SecurityRevealer implements Common.Revealer.Revealer<CookieReportView> {
+type Origin = Platform.DevToolsPath.UrlString;
+class SecurityRevealer implements Common.Revealer.Revealer<CookieReportView> {
     reveal(): Promise<void>;
 }

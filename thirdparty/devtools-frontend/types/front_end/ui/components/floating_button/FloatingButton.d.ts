@@ -4,7 +4,7 @@ interface FloatingButtonData {
     title?: string;
     disabled?: boolean;
 }
-export declare class FloatingButton extends HTMLElement {
+class FloatingButton extends HTMLElement {
     #private;
     constructor(data: FloatingButtonData);
     connectedCallback(): void;

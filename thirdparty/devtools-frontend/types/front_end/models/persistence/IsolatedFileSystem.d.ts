@@ -48,4 +48,4 @@ export declare class IsolatedFileSystem extends PlatformFileSystem {
     tooltipForURL(url: Platform.DevToolsPath.UrlString): string;
     supportsAutomapping(): boolean;
 }
-export declare const BinaryExtensions: Set<string>;
+const BinaryExtensions: Set<string>;

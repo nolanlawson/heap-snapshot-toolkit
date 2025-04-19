@@ -1,12 +1,12 @@
 import * as Common from '../../core/common/common.js';
 import type * as SDK from '../../core/sdk/sdk.js';
 import type * as PerfUI from '../../ui/legacy/components/perf_ui/perf_ui.js';
-export interface Label {
+interface Label {
     left: string;
     right: string;
     tooltip?: string;
 }
-export declare class NetworkTimeBoundary {
+class NetworkTimeBoundary {
     minimum: number;
     maximum: number;
     constructor(minimum: number, maximum: number);
@@ -44,10 +44,10 @@ export declare class NetworkTimeCalculator extends Common.ObjectWrapper.ObjectWr
     lowerBound(_request: SDK.NetworkRequest.NetworkRequest): number;
     upperBound(_request: SDK.NetworkRequest.NetworkRequest): number;
 }
-export declare const enum Events {
+declare const enum Events {
     BOUNDARIES_CHANGED = "BoundariesChanged"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.BOUNDARIES_CHANGED]: void;
 }
 export declare class NetworkTransferTimeCalculator extends NetworkTimeCalculator {

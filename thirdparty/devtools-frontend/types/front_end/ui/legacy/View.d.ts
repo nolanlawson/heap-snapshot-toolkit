@@ -13,7 +13,7 @@ export interface View {
     widget(): Promise<Widget>;
     disposeView(): void | Promise<void>;
 }
-export declare class SimpleView extends VBox implements View {
+class SimpleView extends VBox implements View {
     #private;
     constructor(title: Platform.UIString.LocalizedString, useShadowDom?: boolean, viewId?: Lowercase<string>);
     viewId(): string;

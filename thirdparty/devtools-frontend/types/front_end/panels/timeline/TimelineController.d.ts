@@ -57,7 +57,7 @@ export interface Client {
     loadingComplete(collectedEvents: Trace.Types.Events.Event[], exclusiveFilter: Trace.Extras.TraceFilter.TraceFilter | null, metadata: Trace.Types.File.MetaData | null): Promise<void>;
     loadingCompleteForTest(): void;
 }
-export interface RecordingOptions {
+interface RecordingOptions {
     enableJSSampling?: boolean;
     capturePictures?: boolean;
     captureFilmStrip?: boolean;

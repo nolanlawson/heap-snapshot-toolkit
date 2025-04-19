@@ -5,7 +5,7 @@ import * as Protocol from '../../generated/protocol.js';
 import * as TextUtils from '../text_utils/text_utils.js';
 import * as Workspace from '../workspace/workspace.js';
 import { type DebuggerSourceMapping, DebuggerWorkspaceBinding } from './DebuggerWorkspaceBinding.js';
-export declare class ResourceScriptMapping implements DebuggerSourceMapping {
+class ResourceScriptMapping implements DebuggerSourceMapping {
     #private;
     readonly debuggerModel: SDK.DebuggerModel.DebuggerModel;
     readonly debuggerWorkspaceBinding: DebuggerWorkspaceBinding;

@@ -1,6 +1,6 @@
 import * as Common from '../common/common.js';
 import type { Target } from './Target.js';
-export interface RegistrationInfo {
+interface RegistrationInfo {
     capabilities: number;
     autostart: boolean;
     early?: boolean;
@@ -26,4 +26,3 @@ export declare class SDKModel<Events = any> extends Common.ObjectWrapper.ObjectW
     static register(modelClass: new (arg1: Target) => SDKModel, registrationInfo: RegistrationInfo): void;
     static get registeredModels(): typeof registeredModels;
 }
-export {};

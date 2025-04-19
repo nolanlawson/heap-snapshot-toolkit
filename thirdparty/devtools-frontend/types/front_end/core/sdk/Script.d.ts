@@ -117,5 +117,5 @@ export declare class Script implements TextUtils.ContentProvider.ContentProvider
         columnNumber: number | undefined;
     };
 }
-export declare const sourceURLRegex: RegExp;
-export declare function disassembleWasm(content: string): Promise<TextUtils.WasmDisassembly.WasmDisassembly>;
+const sourceURLRegex: RegExp;
+declare function disassembleWasm(content: string): Promise<TextUtils.WasmDisassembly.WasmDisassembly>;

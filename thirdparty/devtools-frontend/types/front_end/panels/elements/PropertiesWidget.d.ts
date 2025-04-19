@@ -1,6 +1,6 @@
 import '../../ui/legacy/legacy.js';
 import * as UI from '../../ui/legacy/legacy.js';
-export declare class PropertiesWidget extends UI.ThrottledWidget.ThrottledWidget {
+class PropertiesWidget extends UI.ThrottledWidget.ThrottledWidget {
     private node;
     private readonly showAllPropertiesSetting;
     private filterRegex;

@@ -39,7 +39,7 @@ export declare class HeapTimelineOverview extends HeapTimelineOverview_base {
     update(): void;
     updateGrid(): void;
 }
-export declare const enum Events {
+declare const enum Events {
     IDS_RANGE_CHANGED = "IdsRangeChanged"
 }
 export interface IdsRangeChangedEvent {
@@ -47,10 +47,10 @@ export interface IdsRangeChangedEvent {
     maxId: number;
     size: number;
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.IDS_RANGE_CHANGED]: IdsRangeChangedEvent;
 }
-export declare class SmoothScale {
+class SmoothScale {
     lastUpdate: number;
     currentScale: number;
     constructor();
@@ -64,7 +64,7 @@ export declare class Samples {
     totalTime: number;
     constructor();
 }
-export declare class OverviewCalculator implements PerfUI.TimelineGrid.Calculator {
+class OverviewCalculator implements PerfUI.TimelineGrid.Calculator {
     maximumBoundaries: number;
     minimumBoundaries: number;
     xScaleFactor: number;
@@ -77,4 +77,3 @@ export declare class OverviewCalculator implements PerfUI.TimelineGrid.Calculato
     zeroTime(): number;
     boundarySpan(): number;
 }
-export {};

@@ -46,7 +46,7 @@ export declare class Finding {
 /**
  * Finding severities.
  */
-export declare enum Severity {
+declare enum Severity {
     HIGH = 10,
     SYNTAX = 20,
     MEDIUM = 30,
@@ -59,7 +59,7 @@ export declare enum Severity {
 /**
  * Finding types for evluator checks.
  */
-export declare enum Type {
+declare enum Type {
     MISSING_SEMICOLON = 100,
     UNKNOWN_DIRECTIVE = 101,
     INVALID_KEYWORD = 102,

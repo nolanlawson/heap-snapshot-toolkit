@@ -1,7 +1,7 @@
 import * as Platform from '../../../core/platform/platform.js';
 import type * as Trace from '../../../models/trace/trace.js';
 import type { CompareRating } from './MetricCompareStrings.js';
-export declare enum NetworkCategory {
+declare enum NetworkCategory {
     DOC = "Doc",
     CSS = "CSS",
     JS = "JS",
@@ -11,22 +11,22 @@ export declare enum NetworkCategory {
     WASM = "Wasm",
     OTHER = "Other"
 }
-export declare function networkResourceCategory(request: Trace.Types.Events.SyntheticNetworkRequest): NetworkCategory;
-export declare function colorForNetworkCategory(category: NetworkCategory): string;
-export declare function colorForNetworkRequest(request: Trace.Types.Events.SyntheticNetworkRequest): string;
+declare function networkResourceCategory(request: Trace.Types.Events.SyntheticNetworkRequest): NetworkCategory;
+declare function colorForNetworkCategory(category: NetworkCategory): string;
+declare function colorForNetworkRequest(request: Trace.Types.Events.SyntheticNetworkRequest): string;
 export type MetricRating = 'good' | 'needs-improvement' | 'poor';
-export type MetricThresholds = [number, number];
-export declare const LCP_THRESHOLDS: MetricThresholds;
-export declare const CLS_THRESHOLDS: MetricThresholds;
-export declare const INP_THRESHOLDS: MetricThresholds;
-export declare function rateMetric(value: number, thresholds: MetricThresholds): MetricRating;
+type MetricThresholds = [number, number];
+const LCP_THRESHOLDS: MetricThresholds;
+const CLS_THRESHOLDS: MetricThresholds;
+const INP_THRESHOLDS: MetricThresholds;
+declare function rateMetric(value: number, thresholds: MetricThresholds): MetricRating;
 /**
  * Ensure to also include `metricValueStyles.css` when generating metric value elements.
  */
-export declare function renderMetricValue(jslogContext: string, value: number | undefined, thresholds: MetricThresholds, format: (value: number) => string, options?: {
+declare function renderMetricValue(jslogContext: string, value: number | undefined, thresholds: MetricThresholds, format: (value: number) => string, options?: {
     dim?: boolean;
 }): HTMLElement;
-export interface NumberWithUnitString {
+interface NumberWithUnitString {
     element: HTMLElement;
     text: string;
 }
@@ -63,4 +63,4 @@ export declare namespace NumberWithUnit {
 /**
  * Returns if the local value is better/worse/similar compared to field.
  */
-export declare function determineCompareRating(metric: 'LCP' | 'CLS' | 'INP', localValue: Trace.Types.Timing.Milli | number, fieldValue: Trace.Types.Timing.Milli | number): CompareRating | undefined;
+declare function determineCompareRating(metric: 'LCP' | 'CLS' | 'INP', localValue: Trace.Types.Timing.Milli | number, fieldValue: Trace.Types.Timing.Milli | number): CompareRating | undefined;

@@ -39,7 +39,7 @@ export interface Project {
      */
     uiSourceCodes(): Iterable<UISourceCode>;
 }
-export declare enum projectTypes {
+declare enum projectTypes {
     Debugger = "debugger",
     Formatter = "formatter",
     Inspector = "inspector",
@@ -49,7 +49,7 @@ export declare enum projectTypes {
     ContentScripts = "contentscripts",
     Service = "service"
 }
-export declare abstract class ProjectStore implements Project {
+class ProjectStore implements Project {
     #private;
     private readonly workspaceInternal;
     private readonly idInternal;
@@ -87,7 +87,7 @@ export declare abstract class ProjectStore implements Project {
     abstract searchInFileContent(uiSourceCode: UISourceCode, query: string, caseSensitive: boolean, isRegex: boolean): Promise<TextUtils.ContentProvider.SearchMatch[]>;
     abstract findFilesMatchingSearchRequest(searchConfig: SearchConfig, filesMatchingFileQuery: UISourceCode[], progress: Common.Progress.Progress): Promise<Map<UISourceCode, TextUtils.ContentProvider.SearchMatch[] | null>>;
 }
-export declare class WorkspaceImpl extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
+class WorkspaceImpl extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
     private projectsInternal;
     private hasResourceContentTrackingExtensionsInternal;
     private constructor();
@@ -109,7 +109,7 @@ export declare class WorkspaceImpl extends Common.ObjectWrapper.ObjectWrapper<Ev
     setHasResourceContentTrackingExtensions(hasExtensions: boolean): void;
     hasResourceContentTrackingExtensions(): boolean;
 }
-export declare enum Events {
+declare enum Events {
     UISourceCodeAdded = "UISourceCodeAdded",
     UISourceCodeRemoved = "UISourceCodeRemoved",
     UISourceCodeRenamed = "UISourceCodeRenamed",
@@ -119,19 +119,19 @@ export declare enum Events {
     ProjectAdded = "ProjectAdded",
     ProjectRemoved = "ProjectRemoved"
 }
-export interface UISourceCodeRenamedEvent {
+interface UISourceCodeRenamedEvent {
     oldURL: Platform.DevToolsPath.UrlString;
     uiSourceCode: UISourceCode;
 }
-export interface WorkingCopyChangedEvent {
+interface WorkingCopyChangedEvent {
     uiSourceCode: UISourceCode;
 }
-export interface WorkingCopyCommitedEvent {
+interface WorkingCopyCommitedEvent {
     uiSourceCode: UISourceCode;
     content: string;
     encoded?: boolean;
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.UISourceCodeAdded]: UISourceCode;
     [Events.UISourceCodeRemoved]: UISourceCode;
     [Events.UISourceCodeRenamed]: UISourceCodeRenamedEvent;

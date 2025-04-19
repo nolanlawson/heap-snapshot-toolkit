@@ -4,7 +4,7 @@ interface Hint {
     getPossibleFixMessage(): string | null;
     getLearnMoreLink(): string | undefined;
 }
-export declare class CSSHintDetailsView extends HTMLElement {
+class CSSHintDetailsView extends HTMLElement {
     #private;
     constructor(authoringHint: Hint);
 }

@@ -61,7 +61,7 @@ export interface GeneratedRange {
     values: Array<string | undefined | BindingRange[]>;
     children: GeneratedRange[];
 }
-export interface BindingRange {
+interface BindingRange {
     value?: string;
     from: Position;
     to: Position;
@@ -71,7 +71,7 @@ export interface Position {
     column: number;
 }
 /** @returns 0 if both positions are equal, a negative number if a < b and a positive number if a > b */
-export declare function comparePositions(a: Position, b: Position): number;
+declare function comparePositions(a: Position, b: Position): number;
 export interface OriginalPosition extends Position {
     sourceIndex: number;
 }
@@ -79,21 +79,20 @@ interface OriginalScopeTree {
     readonly root: OriginalScope;
     readonly scopeForItemIndex: Map<number, OriginalScope>;
 }
-export declare function decodeScopes(map: Pick<SourceMapV3Object, 'names' | 'originalScopes' | 'generatedRanges'>, basePosition?: Position): {
+declare function decodeScopes(map: Pick<SourceMapV3Object, 'names' | 'originalScopes' | 'generatedRanges'>, basePosition?: Position): {
     originalScopes: OriginalScope[];
     generatedRanges: GeneratedRange[];
 };
-export declare function decodeOriginalScopes(encodedOriginalScopes: string[], names: string[]): OriginalScopeTree[];
-export declare const enum EncodedOriginalScopeFlag {
+declare function decodeOriginalScopes(encodedOriginalScopes: string[], names: string[]): OriginalScopeTree[];
+declare const enum EncodedOriginalScopeFlag {
     HAS_NAME = 1,
     HAS_KIND = 2,
     IS_STACK_FRAME = 4
 }
-export declare function decodeGeneratedRanges(encodedGeneratedRange: string, originalScopeTrees: OriginalScopeTree[], names: string[], basePosition?: Position): GeneratedRange[];
-export declare const enum EncodedGeneratedRangeFlag {
+declare function decodeGeneratedRanges(encodedGeneratedRange: string, originalScopeTrees: OriginalScopeTree[], names: string[], basePosition?: Position): GeneratedRange[];
+declare const enum EncodedGeneratedRangeFlag {
     HAS_DEFINITION = 1,
     HAS_CALLSITE = 2,
     IS_STACK_FRAME = 4,
     IS_HIDDEN = 8
 }
-export {};

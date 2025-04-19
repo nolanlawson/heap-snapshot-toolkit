@@ -5,10 +5,10 @@ import type { CSSMatchedStyles } from './CSSMatchedStyles.js';
 import type { Edit } from './CSSModel.js';
 import { type BottomUpTreeMatching } from './CSSPropertyParser.js';
 import type { CSSStyleDeclaration } from './CSSStyleDeclaration.js';
-export declare const enum Events {
+declare const enum Events {
     LOCAL_VALUE_UPDATED = "localValueUpdated"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.LOCAL_VALUE_UPDATED]: void;
 }
 export declare class CSSProperty extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {

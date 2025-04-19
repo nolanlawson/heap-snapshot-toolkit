@@ -6,7 +6,7 @@ export type LocalizedMessages = Record<string, {
 /**
  * Encapsulates the global state of the i18n runtime.
  */
-export declare class I18n {
+class I18n {
     readonly supportedLocales: ReadonlySet<Intl.UnicodeBCP47LocaleIdentifier>;
     private localeData;
     readonly defaultLocale: string;

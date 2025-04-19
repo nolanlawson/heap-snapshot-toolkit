@@ -2,18 +2,18 @@ import type * as Protocol from '../../generated/protocol.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import type { MainView, TriggerDispatcher } from './MainView.js';
 import type { PlayerEvent } from './MediaModel.js';
-export interface PlayerStatus {
+interface PlayerStatus {
     playerTitle: string;
     playerID: string;
     exists: boolean;
     playing: boolean;
     titleEdited: boolean;
 }
-export interface PlayerStatusMapElement {
+interface PlayerStatusMapElement {
     playerStatus: PlayerStatus;
     playerTitleElement: HTMLElement | null;
 }
-export declare class PlayerListView extends UI.Widget.VBox implements TriggerDispatcher {
+class PlayerListView extends UI.Widget.VBox implements TriggerDispatcher {
     private readonly playerEntryFragments;
     private readonly playerEntriesWithHostnameFrameTitle;
     private readonly mainContainer;

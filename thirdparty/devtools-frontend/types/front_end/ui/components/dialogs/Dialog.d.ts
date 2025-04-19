@@ -1,12 +1,12 @@
 import * as WindowBoundsService from '../../../services/window_bounds/window_bounds.js';
-export declare const CONNECTOR_HEIGHT = 10;
-export declare const DIALOG_SIDE_PADDING = 5;
-export declare const DIALOG_VERTICAL_PADDING = 3;
-export declare const DIALOG_PADDING_FROM_WINDOW: number;
+const CONNECTOR_HEIGHT = 10;
+const DIALOG_SIDE_PADDING = 5;
+const DIALOG_VERTICAL_PADDING = 3;
+const DIALOG_PADDING_FROM_WINDOW: number;
 type DialogAnchor = HTMLElement | DOMRect | DOMPoint;
-export declare const MODAL = "MODAL";
-export type DialogOrigin = DialogAnchor | null | (() => DialogAnchor) | typeof MODAL;
-export declare class Dialog extends HTMLElement {
+const MODAL = "MODAL";
+type DialogOrigin = DialogAnchor | null | (() => DialogAnchor) | typeof MODAL;
+class Dialog extends HTMLElement {
     #private;
     get origin(): DialogOrigin;
     set origin(origin: DialogOrigin);
@@ -39,15 +39,15 @@ declare global {
         'devtools-dialog': Dialog;
     }
 }
-export declare class PointerLeftDialogEvent extends Event {
+class PointerLeftDialogEvent extends Event {
     static readonly eventName = "pointerleftdialog";
     constructor();
 }
-export declare class ClickOutsideDialogEvent extends Event {
+class ClickOutsideDialogEvent extends Event {
     static readonly eventName = "clickoutsidedialog";
     constructor();
 }
-export declare class ForcedDialogClose extends Event {
+class ForcedDialogClose extends Event {
     static readonly eventName = "forceddialogclose";
     constructor();
 }
@@ -62,4 +62,3 @@ export declare const enum DialogHorizontalAlignment {
     CENTER = "center",
     AUTO = "auto"
 }
-export {};

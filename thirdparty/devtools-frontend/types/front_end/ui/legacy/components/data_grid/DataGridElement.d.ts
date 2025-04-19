@@ -51,4 +51,3 @@ declare global {
 export interface DataGridInternalToken {
     token: 'DataGridInternalToken';
 }
-export {};

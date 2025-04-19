@@ -1,5 +1,5 @@
 import type * as Common from '../../core/common/common.js';
-export declare class AdvancedApp implements Common.App.App {
+class AdvancedApp implements Common.App.App {
     private rootSplitWidget;
     private deviceModeView;
     private inspectedPagePlaceholder;
@@ -23,7 +23,7 @@ export declare class AdvancedApp implements Common.App.App {
     private isDocked;
     private onSetInspectedPageBounds;
 }
-export declare class AdvancedAppProvider implements Common.AppProvider.AppProvider {
+class AdvancedAppProvider implements Common.AppProvider.AppProvider {
     static instance(opts?: {
         forceNew: boolean | null;
     }): AdvancedAppProvider;

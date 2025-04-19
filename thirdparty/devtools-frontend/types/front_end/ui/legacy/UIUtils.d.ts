@@ -14,49 +14,49 @@ declare global {
         'dt-small-bubble': DevToolsSmallBubble;
     }
 }
-export declare const highlightedSearchResultClassName = "highlighted-search-result";
-export declare const highlightedCurrentSearchResultClassName = "current-search-result";
-export declare function installDragHandle(element: Element, elementDragStart: ((arg0: MouseEvent) => boolean) | null, elementDrag: (arg0: MouseEvent) => void, elementDragEnd: ((arg0: MouseEvent) => void) | null, cursor: string | null, hoverCursor?: string | null, startDelay?: number): void;
-export declare function elementDragStart(targetElement: Element, elementDragStart: ((arg0: MouseEvent) => boolean) | null, elementDrag: (arg0: MouseEvent) => void, elementDragEnd: ((arg0: MouseEvent) => void) | null, cursor: string | null, event: Event): void;
-export declare function isBeingEdited(node?: Node | null): boolean;
-export declare function isEditing(): boolean;
-export declare function markBeingEdited(element: Element, value: boolean): boolean;
-export declare const StyleValueDelimiters = " \u00A0\t\n\"':;,/()";
-export declare function getValueModificationDirection(event: Event): string | null;
-export declare function modifiedFloatNumber(number: number, event: Event, modifierMultiplier?: number): number | null;
-export declare function createReplacementString(wordString: string, event: Event, customNumberHandler?: ((arg0: string, arg1: number, arg2: string) => string)): string | null;
-export declare function isElementValueModification(event: Event): boolean;
-export declare function handleElementValueModifications(event: Event, element: Element, finishHandler?: ((arg0: string, arg1: string) => void), suggestionHandler?: ((arg0: string) => boolean), customNumberHandler?: ((arg0: string, arg1: number, arg2: string) => string)): boolean;
-export declare function openLinkExternallyLabel(): string;
-export declare function copyLinkAddressLabel(): string;
-export declare function copyFileNameLabel(): string;
-export declare function anotherProfilerActiveLabel(): string;
-export declare function asyncStackTraceLabel(description: string | undefined, previousCallFrames: Array<{
+const highlightedSearchResultClassName = "highlighted-search-result";
+const highlightedCurrentSearchResultClassName = "current-search-result";
+declare function installDragHandle(element: Element, elementDragStart: ((arg0: MouseEvent) => boolean) | null, elementDrag: (arg0: MouseEvent) => void, elementDragEnd: ((arg0: MouseEvent) => void) | null, cursor: string | null, hoverCursor?: string | null, startDelay?: number): void;
+declare function elementDragStart(targetElement: Element, elementDragStart: ((arg0: MouseEvent) => boolean) | null, elementDrag: (arg0: MouseEvent) => void, elementDragEnd: ((arg0: MouseEvent) => void) | null, cursor: string | null, event: Event): void;
+declare function isBeingEdited(node?: Node | null): boolean;
+declare function isEditing(): boolean;
+declare function markBeingEdited(element: Element, value: boolean): boolean;
+const StyleValueDelimiters = " \u00A0\t\n\"':;,/()";
+declare function getValueModificationDirection(event: Event): string | null;
+declare function modifiedFloatNumber(number: number, event: Event, modifierMultiplier?: number): number | null;
+declare function createReplacementString(wordString: string, event: Event, customNumberHandler?: ((arg0: string, arg1: number, arg2: string) => string)): string | null;
+declare function isElementValueModification(event: Event): boolean;
+declare function handleElementValueModifications(event: Event, element: Element, finishHandler?: ((arg0: string, arg1: string) => void), suggestionHandler?: ((arg0: string) => boolean), customNumberHandler?: ((arg0: string, arg1: number, arg2: string) => string)): boolean;
+declare function openLinkExternallyLabel(): string;
+declare function copyLinkAddressLabel(): string;
+declare function copyFileNameLabel(): string;
+declare function anotherProfilerActiveLabel(): string;
+declare function asyncStackTraceLabel(description: string | undefined, previousCallFrames: Array<{
     functionName: string;
 }>): string;
-export declare function addPlatformClass(element: HTMLElement): void;
-export declare function installComponentRootStyles(element: HTMLElement): void;
-export declare class ElementFocusRestorer {
+declare function addPlatformClass(element: HTMLElement): void;
+declare function installComponentRootStyles(element: HTMLElement): void;
+class ElementFocusRestorer {
     private element;
     private previous;
     constructor(element: Element);
     restore(): void;
 }
-export declare function highlightSearchResult(element: Element, offset: number, length: number, domChanges?: HighlightChange[]): Element | null;
-export declare function highlightSearchResults(element: Element, resultRanges: TextUtils.TextRange.SourceRange[], changes?: HighlightChange[]): Element[];
-export declare function runCSSAnimationOnce(element: Element, className: string): void;
-export declare function highlightRangesWithStyleClass(element: Element, resultRanges: TextUtils.TextRange.SourceRange[], styleClass: string, changes?: HighlightChange[]): Element[];
-export declare function applyDomChanges(domChanges: HighlightChange[]): void;
-export declare function revertDomChanges(domChanges: HighlightChange[]): void;
-export declare function measurePreferredSize(element: Element, containerElement?: Element | null): Size;
-export declare function startBatchUpdate(): void;
-export declare function endBatchUpdate(): void;
-export declare function invokeOnceAfterBatchUpdate(object: Object, method: () => void): void;
-export declare function animateFunction(window: Window, func: (...args: any[]) => void, params: Array<{
+declare function highlightSearchResult(element: Element, offset: number, length: number, domChanges?: HighlightChange[]): Element | null;
+declare function highlightSearchResults(element: Element, resultRanges: TextUtils.TextRange.SourceRange[], changes?: HighlightChange[]): Element[];
+declare function runCSSAnimationOnce(element: Element, className: string): void;
+declare function highlightRangesWithStyleClass(element: Element, resultRanges: TextUtils.TextRange.SourceRange[], styleClass: string, changes?: HighlightChange[]): Element[];
+declare function applyDomChanges(domChanges: HighlightChange[]): void;
+declare function revertDomChanges(domChanges: HighlightChange[]): void;
+declare function measurePreferredSize(element: Element, containerElement?: Element | null): Size;
+declare function startBatchUpdate(): void;
+declare function endBatchUpdate(): void;
+declare function invokeOnceAfterBatchUpdate(object: Object, method: () => void): void;
+declare function animateFunction(window: Window, func: (...args: any[]) => void, params: Array<{
     from: number;
     to: number;
 }>, duration: number, animationComplete?: (() => void)): () => void;
-export declare class LongClickController {
+class LongClickController {
     private readonly element;
     private readonly callback;
     private readonly editKey;
@@ -68,23 +68,23 @@ export declare class LongClickController {
     dispose(): void;
     static readonly TIME_MS = 200;
 }
-export declare function initializeUIUtils(document: Document): void;
-export declare function beautifyFunctionName(name: string): string;
-export declare const createTextChild: (element: Element | DocumentFragment, text: string) => Text;
-export declare const createTextChildren: (element: Element | DocumentFragment, ...childrenText: string[]) => void;
-export declare function createTextButton(text: string, clickHandler?: ((arg0: Event) => void), opts?: {
+declare function initializeUIUtils(document: Document): void;
+declare function beautifyFunctionName(name: string): string;
+const createTextChild: (element: Element | DocumentFragment, text: string) => Text;
+const createTextChildren: (element: Element | DocumentFragment, ...childrenText: string[]) => void;
+declare function createTextButton(text: string, clickHandler?: ((arg0: Event) => void), opts?: {
     className?: string;
     jslogContext?: string;
     variant?: Buttons.Button.Variant;
     title?: string;
     icon?: string;
 }): Buttons.Button.Button;
-export declare function createInput(className?: string, type?: string, jslogContext?: string): HTMLInputElement;
-export declare function createHistoryInput(type?: string, className?: string): HTMLInputElement;
-export declare function createSelect(name: string, options: string[] | Array<Map<string, string[]>> | Set<string>): HTMLSelectElement;
-export declare function createOption(title: string, value?: string, jslogContext?: string): HTMLOptionElement;
-export declare function createLabel(title: string, className?: string, associatedControl?: Element): Element;
-export declare function createIconLabel(options: {
+declare function createInput(className?: string, type?: string, jslogContext?: string): HTMLInputElement;
+declare function createHistoryInput(type?: string, className?: string): HTMLInputElement;
+declare function createSelect(name: string, options: string[] | Array<Map<string, string[]>> | Set<string>): HTMLSelectElement;
+declare function createOption(title: string, value?: string, jslogContext?: string): HTMLOptionElement;
+declare function createLabel(title: string, className?: string, associatedControl?: Element): Element;
+declare function createIconLabel(options: {
     title?: string;
     iconName: string;
     color?: string;
@@ -113,7 +113,7 @@ export declare function createIconLabel(options: {
  * @returns the pair of `HTMLLabelElement` and `HTMLInputElement`.
  * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
  */
-export declare function createRadioButton(name: string, title: string, jslogContext: string): {
+declare function createRadioButton(name: string, title: string, jslogContext: string): {
     label: HTMLLabelElement;
     radio: HTMLInputElement;
 };
@@ -135,8 +135,8 @@ export declare function createRadioButton(name: string, title: string, jslogCont
  * @returns the newly created `HTMLInputElement` for the slider.
  * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range
  */
-export declare function createSlider(min: number, max: number, tabIndex: number): HTMLInputElement;
-export declare function setTitle(element: HTMLElement, title: string): void;
+declare function createSlider(min: number, max: number, tabIndex: number): HTMLInputElement;
+declare function setTitle(element: HTMLElement, title: string): void;
 export declare class CheckboxLabel extends HTMLElement {
     #private;
     static readonly observedAttributes: string[];
@@ -156,47 +156,47 @@ export declare class CheckboxLabel extends HTMLElement {
     static createWithStringLiteral(title?: string, checked?: boolean, jslogContext?: string, small?: boolean): CheckboxLabel;
     private static lastId;
 }
-export declare class DevToolsIconLabel extends HTMLElement {
+class DevToolsIconLabel extends HTMLElement {
     #private;
     constructor();
     set data(data: IconButton.Icon.IconData);
 }
-export declare class DevToolsSmallBubble extends HTMLElement {
+class DevToolsSmallBubble extends HTMLElement {
     private textElement;
     constructor();
     set type(type: string);
 }
-export declare class DevToolsCloseButton extends HTMLElement {
+class DevToolsCloseButton extends HTMLElement {
     #private;
     constructor();
     setAccessibleName(name: string): void;
     setSize(size: Buttons.Button.Size): void;
     setTabbable(tabbable: boolean): void;
 }
-export declare function bindInput(input: HTMLInputElement, apply: (arg0: string) => void, validate: (arg0: string) => {
+declare function bindInput(input: HTMLInputElement, apply: (arg0: string) => void, validate: (arg0: string) => {
     valid: boolean;
     errorMessage: (string | undefined);
 }, numeric: boolean, modifierMultiplier?: number): (arg0: string) => void;
-export declare function trimText(context: CanvasRenderingContext2D, text: string, maxWidth: number, trimFunction: (arg0: string, arg1: number) => string): string;
-export declare function trimTextMiddle(context: CanvasRenderingContext2D, text: string, maxWidth: number): string;
-export declare function trimTextEnd(context: CanvasRenderingContext2D, text: string, maxWidth: number): string;
-export declare function measureTextWidth(context: CanvasRenderingContext2D, text: string): number;
-export declare function loadImage(url: string): Promise<HTMLImageElement | null>;
+declare function trimText(context: CanvasRenderingContext2D, text: string, maxWidth: number, trimFunction: (arg0: string, arg1: number) => string): string;
+declare function trimTextMiddle(context: CanvasRenderingContext2D, text: string, maxWidth: number): string;
+declare function trimTextEnd(context: CanvasRenderingContext2D, text: string, maxWidth: number): string;
+declare function measureTextWidth(context: CanvasRenderingContext2D, text: string): number;
+declare function loadImage(url: string): Promise<HTMLImageElement | null>;
 /**
  * Creates a file selector element.
  * @param callback - the function that will be called with the file the user selected
  * @param accept - optionally used to set the [`accept`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept) parameter to limit file-types the user can pick.
  */
-export declare function createFileSelectorElement(callback: (arg0: File) => void, accept?: string): HTMLInputElement;
-export declare const MaxLengthForDisplayedURLs = 150;
-export declare class MessageDialog {
+declare function createFileSelectorElement(callback: (arg0: File) => void, accept?: string): HTMLInputElement;
+const MaxLengthForDisplayedURLs = 150;
+class MessageDialog {
     static show(header: string, message: string, where?: Element | Document, jslogContext?: string): Promise<void>;
 }
-export declare class ConfirmDialog {
+class ConfirmDialog {
     static show(message: string, header?: string, where?: Element | Document, options?: ConfirmDialogOptions): Promise<boolean>;
 }
-export declare function createInlineButton(toolbarButton: ToolbarButton): Element;
-export declare abstract class Renderer {
+declare function createInlineButton(toolbarButton: ToolbarButton): Element;
+class Renderer {
     abstract render(object: Object, options?: Options): Promise<{
         node: Node;
         tree: TreeOutline | null;
@@ -206,12 +206,12 @@ export declare abstract class Renderer {
         tree: TreeOutline | null;
     } | null>;
 }
-export declare function formatTimestamp(timestamp: number, full: boolean): string;
-export interface Options {
+declare function formatTimestamp(timestamp: number, full: boolean): string;
+interface Options {
     title?: string | Element;
     editable?: boolean;
 }
-export interface HighlightChange {
+interface HighlightChange {
     node: Element | Text;
     type: string;
     oldText?: string;
@@ -219,24 +219,24 @@ export interface HighlightChange {
     nextSibling?: Node;
     parent?: Node;
 }
-export declare const isScrolledToBottom: (element: Element) => boolean;
-export declare function createSVGChild(element: Element, childType: string, className?: string): Element;
-export declare const enclosingNodeOrSelfWithNodeNameInArray: (initialNode: Node, nameArray: string[]) => Node | null;
-export declare const enclosingNodeOrSelfWithNodeName: (node: Node, nodeName: string) => Node | null;
-export declare const deepElementFromPoint: (document: Document | ShadowRoot | null | undefined, x: number, y: number) => Node | null;
-export declare const deepElementFromEvent: (ev: Event) => Node | null;
-export declare function registerRenderer(registration: RendererRegistration): void;
-export declare function getApplicableRegisteredRenderers(object: Object): RendererRegistration[];
-export interface RendererRegistration {
+const isScrolledToBottom: (element: Element) => boolean;
+declare function createSVGChild(element: Element, childType: string, className?: string): Element;
+const enclosingNodeOrSelfWithNodeNameInArray: (initialNode: Node, nameArray: string[]) => Node | null;
+const enclosingNodeOrSelfWithNodeName: (node: Node, nodeName: string) => Node | null;
+const deepElementFromPoint: (document: Document | ShadowRoot | null | undefined, x: number, y: number) => Node | null;
+const deepElementFromEvent: (ev: Event) => Node | null;
+declare function registerRenderer(registration: RendererRegistration): void;
+declare function getApplicableRegisteredRenderers(object: Object): RendererRegistration[];
+interface RendererRegistration {
     loadRenderer: () => Promise<Renderer>;
     contextTypes: () => Array<Platform.Constructor.ConstructorOrAbstract<unknown>>;
 }
-export interface ConfirmDialogOptions {
+interface ConfirmDialogOptions {
     okButtonLabel?: string;
     cancelButtonLabel?: string;
     jslogContext?: string;
 }
-export declare function injectCoreStyles(elementOrShadowRoot: Element | ShadowRoot): void;
+declare function injectCoreStyles(elementOrShadowRoot: Element | ShadowRoot): void;
 /**
  * Creates a new shadow DOM tree with the core styles and an optional list of
  * additional styles, and attaches it to the specified `element`.
@@ -246,7 +246,7 @@ export declare function injectCoreStyles(elementOrShadowRoot: Element | ShadowRo
  * @returns the newly created `ShadowRoot`.
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow
  */
-export declare function createShadowRootWithCoreStyles(element: Element, options?: {
+declare function createShadowRootWithCoreStyles(element: Element, options?: {
     cssFile?: Array<{
         cssText: string;
     }> | {
@@ -254,8 +254,8 @@ export declare function createShadowRootWithCoreStyles(element: Element, options
     };
     delegatesFocus?: boolean;
 }): ShadowRoot;
-export declare function resetMeasuredScrollbarWidthForTest(): void;
-export declare function measuredScrollbarWidth(document?: Document | null): number;
+declare function resetMeasuredScrollbarWidthForTest(): void;
+declare function measuredScrollbarWidth(document?: Document | null): number;
 /**
  * Opens the given `url` in a new Chrome tab.
  *
@@ -274,4 +274,4 @@ export declare function measuredScrollbarWidth(document?: Document | null): numb
  * @throws TypeError if `url` is not a valid URL.
  * @see https://en.wikipedia.org/wiki/UTM_parameters
  */
-export declare function openInNewTab(url: URL | string): void;
+declare function openInNewTab(url: URL | string): void;

@@ -6,7 +6,7 @@
 /**
  * @internal
  */
-export interface Poller<T> {
+interface Poller<T> {
     start(): Promise<void>;
     stop(): Promise<void>;
     result(): Promise<T>;

@@ -11,4 +11,4 @@ export interface AccessibilityBindings {
  *
  * @internal
  */
-export declare const computeARIASelector: (node: Node, bindings: AccessibilityBindings) => Selector | undefined;
+const computeARIASelector: (node: Node, bindings: AccessibilityBindings) => Selector | undefined;

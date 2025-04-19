@@ -1,7 +1,7 @@
 import '../../ui/legacy/legacy.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import { ChangesSidebar } from './ChangesSidebar.js';
-export declare class ChangesView extends UI.Widget.VBox {
+class ChangesView extends UI.Widget.VBox {
     #private;
     private emptyWidget;
     private readonly workspaceDiff;
@@ -24,6 +24,6 @@ export declare class ChangesView extends UI.Widget.VBox {
     private hideDiff;
     private renderDiffRows;
 }
-export declare class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
+class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(context: UI.Context.Context, actionId: string): boolean;
 }

@@ -4,7 +4,7 @@ import * as PerfUI from '../../ui/legacy/components/perf_ui/perf_ui.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import * as TimelineComponents from './components/components.js';
 import { type TimelineEventOverview } from './TimelineEventOverview.js';
-export interface OverviewData {
+interface OverviewData {
     parsedTrace: Trace.Handlers.Types.ParsedTrace;
     isCpuProfile?: boolean;
     settings: {
@@ -42,4 +42,3 @@ export declare class TimelineMiniMap extends TimelineMiniMap_base {
     getControls(): TimelineEventOverview[];
     setData(data: OverviewData): void;
 }
-export {};

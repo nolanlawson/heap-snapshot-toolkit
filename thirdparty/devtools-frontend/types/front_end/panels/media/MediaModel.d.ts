@@ -6,14 +6,14 @@ export interface PlayerEvent extends Protocol.Media.PlayerEvent {
     displayTimestamp: string;
     event: string;
 }
-export declare const enum Events {
+declare const enum Events {
     PLAYER_PROPERTIES_CHANGED = "PlayerPropertiesChanged",
     PLAYER_EVENTS_ADDED = "PlayerEventsAdded",
     PLAYER_MESSAGES_LOGGED = "PlayerMessagesLogged",
     PLAYER_ERRORS_RAISED = "PlayerErrorsRaised",
     PLAYERS_CREATED = "PlayersCreated"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.PLAYER_PROPERTIES_CHANGED]: Protocol.Media.PlayerPropertiesChangedEvent;
     [Events.PLAYER_EVENTS_ADDED]: Protocol.Media.PlayerEventsAddedEvent;
     [Events.PLAYER_MESSAGES_LOGGED]: Protocol.Media.PlayerMessagesLoggedEvent;

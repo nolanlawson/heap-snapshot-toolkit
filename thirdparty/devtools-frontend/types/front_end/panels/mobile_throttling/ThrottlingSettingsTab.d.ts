@@ -2,7 +2,7 @@ import '../../ui/components/cards/cards.js';
 import * as SDK from '../../core/sdk/sdk.js';
 import type * as Cards from '../../ui/components/cards/cards.js';
 import * as UI from '../../ui/legacy/legacy.js';
-export declare class CPUThrottlingCard {
+class CPUThrottlingCard {
     element: Cards.Card.Card;
     private readonly setting;
     private computePressurePromise?;
@@ -26,7 +26,7 @@ export declare class CPUThrottlingCard {
     private cancelButtonClicked;
     private runCalibration;
 }
-export declare class ThrottlingSettingsTab extends UI.Widget.VBox implements UI.ListWidget.Delegate<SDK.NetworkManager.Conditions> {
+class ThrottlingSettingsTab extends UI.Widget.VBox implements UI.ListWidget.Delegate<SDK.NetworkManager.Conditions> {
     private readonly list;
     private readonly customSetting;
     private editor?;

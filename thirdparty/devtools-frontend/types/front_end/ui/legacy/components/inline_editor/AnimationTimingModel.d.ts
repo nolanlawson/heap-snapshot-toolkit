@@ -3,4 +3,4 @@ export declare abstract class AnimationTimingModel {
     abstract asCSSText(): string;
     static parse(text: string): AnimationTimingModel | null;
 }
-export declare const LINEAR_BEZIER: UI.Geometry.CubicBezier;
+const LINEAR_BEZIER: UI.Geometry.CubicBezier;

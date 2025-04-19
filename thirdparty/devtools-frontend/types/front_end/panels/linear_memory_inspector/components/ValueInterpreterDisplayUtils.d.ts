@@ -1,4 +1,4 @@
-export declare const VALUE_INTEPRETER_MAX_NUM_BYTES = 8;
+const VALUE_INTEPRETER_MAX_NUM_BYTES = 8;
 export declare const enum ValueType {
     INT8 = "Integer 8-bit",
     INT16 = "Integer 16-bit",
@@ -19,20 +19,20 @@ export declare const enum ValueTypeMode {
     OCTAL = "oct",
     SCIENTIFIC = "sci"
 }
-export declare function getDefaultValueTypeMapping(): Map<ValueType, ValueTypeMode>;
-export declare const VALUE_TYPE_MODE_LIST: ValueTypeMode[];
-export declare function valueTypeToLocalizedString(valueType: ValueType): string;
-export declare function isValidMode(type: ValueType, mode: ValueTypeMode): boolean;
-export declare function isNumber(type: ValueType): boolean;
-export declare function getPointerAddress(type: ValueType, buffer: ArrayBuffer, endianness: Endianness): number | bigint;
-export declare function isPointer(type: ValueType): boolean;
-export interface FormatData {
+declare function getDefaultValueTypeMapping(): Map<ValueType, ValueTypeMode>;
+const VALUE_TYPE_MODE_LIST: ValueTypeMode[];
+declare function valueTypeToLocalizedString(valueType: ValueType): string;
+declare function isValidMode(type: ValueType, mode: ValueTypeMode): boolean;
+declare function isNumber(type: ValueType): boolean;
+declare function getPointerAddress(type: ValueType, buffer: ArrayBuffer, endianness: Endianness): number | bigint;
+declare function isPointer(type: ValueType): boolean;
+interface FormatData {
     buffer: ArrayBuffer;
     type: ValueType;
     endianness: Endianness;
     signed: boolean;
     mode?: ValueTypeMode;
 }
-export declare function format(formatData: FormatData): string;
-export declare function formatFloat(value: number, mode: ValueTypeMode): string;
-export declare function formatInteger(value: number | bigint, mode: ValueTypeMode): string;
+declare function format(formatData: FormatData): string;
+declare function formatFloat(value: number, mode: ValueTypeMode): string;
+declare function formatInteger(value: number | bigint, mode: ValueTypeMode): string;

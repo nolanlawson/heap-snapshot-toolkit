@@ -1,6 +1,6 @@
 import type * as SDK from '../../core/sdk/sdk.js';
 import * as UI from '../../ui/legacy/legacy.js';
-export declare class LayerPaintProfilerView extends UI.SplitWidget.SplitWidget {
+class LayerPaintProfilerView extends UI.SplitWidget.SplitWidget {
     private readonly logTreeView;
     private readonly paintProfilerView;
     constructor(showImageCallback: (arg0?: string | undefined) => void);

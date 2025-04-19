@@ -2,7 +2,7 @@ import * as Common from '../../core/common/common.js';
 import * as SDK from '../../core/sdk/sdk.js';
 import type * as Protocol from '../../generated/protocol.js';
 import { Insets } from './DeviceModeModel.js';
-export declare function computeRelativeImageURL(cssURLValue: string): string;
+declare function computeRelativeImageURL(cssURLValue: string): string;
 export declare class EmulatedDevice {
     #private;
     title: string;
@@ -36,10 +36,10 @@ export declare class EmulatedDevice {
     touch(): boolean;
     mobile(): boolean;
 }
-export declare const Horizontal = "horizontal";
-export declare const Vertical = "vertical";
-export declare const HorizontalSpanned = "horizontal-spanned";
-export declare const VerticalSpanned = "vertical-spanned";
+const Horizontal = "horizontal";
+const Vertical = "vertical";
+const HorizontalSpanned = "horizontal-spanned";
+const VerticalSpanned = "vertical-spanned";
 declare enum Type {
     Phone = "phone",
     Tablet = "tablet",
@@ -47,11 +47,11 @@ declare enum Type {
     Desktop = "desktop",
     Unknown = "unknown"
 }
-export declare const enum Capability {
+declare const enum Capability {
     TOUCH = "touch",
     MOBILE = "mobile"
 }
-export declare class EmulatedDevicesList extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
+class EmulatedDevicesList extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
     #private;
     constructor();
     static instance(): EmulatedDevicesList;
@@ -67,11 +67,11 @@ export declare class EmulatedDevicesList extends Common.ObjectWrapper.ObjectWrap
     saveStandardDevices(): void;
     private copyShowValues;
 }
-export declare const enum Events {
+declare const enum Events {
     CUSTOM_DEVICES_UPDATED = "CustomDevicesUpdated",
     STANDARD_DEVICES_UPDATED = "StandardDevicesUpdated"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.CUSTOM_DEVICES_UPDATED]: void;
     [Events.STANDARD_DEVICES_UPDATED]: void;
 }
@@ -81,14 +81,14 @@ export interface Mode {
     insets: Insets;
     image: string | null;
 }
-export interface Orientation {
+interface Orientation {
     width: number;
     height: number;
     outlineInsets: Insets | null;
     outlineImage: string | null;
     hinge: SDK.OverlayModel.Hinge | null;
 }
-export interface JSONMode {
+interface JSONMode {
     title: string;
     orientation: string;
     image?: string;
@@ -671,4 +671,3 @@ declare const emulatedDevices: ({
     'dual-screen'?: undefined;
     'foldable-screen'?: undefined;
 })[];
-export {};

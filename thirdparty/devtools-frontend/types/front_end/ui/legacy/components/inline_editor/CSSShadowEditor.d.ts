@@ -14,7 +14,7 @@ export interface CSSShadowModel {
     blurRadius(): CSSLength;
     spreadRadius(): CSSLength;
 }
-export declare class CSSLength {
+class CSSLength {
     amount: number;
     unit: string;
     constructor(amount: number, unit: string);
@@ -32,7 +32,7 @@ declare const CSSShadowEditor_base: {
         dispatchEventToListeners<T extends Events.SHADOW_CHANGED>(eventType: Platform.TypeScriptUtilities.NoUnion<T>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<EventTypes, T>): void;
     };
 } & typeof UI.Widget.VBox;
-export declare class CSSShadowEditor extends CSSShadowEditor_base {
+class CSSShadowEditor extends CSSShadowEditor_base {
     private readonly typeField;
     private readonly outsetButton;
     private readonly insetButton;
@@ -70,10 +70,9 @@ export declare class CSSShadowEditor extends CSSShadowEditor_base {
     private snapToClosestDirection;
     private sliderThumbPosition;
 }
-export declare const enum Events {
+declare const enum Events {
     SHADOW_CHANGED = "ShadowChanged"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.SHADOW_CHANGED]: CSSShadowModel;
 }
-export {};

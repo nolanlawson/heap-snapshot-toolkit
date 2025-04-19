@@ -3,7 +3,7 @@ export declare const enum ResizerType {
     HEIGHT = "height",
     BIDIRECTION = "bidirection"
 }
-export interface Draggable {
+interface Draggable {
     type: ResizerType;
     initialWidth?: number;
     initialHeight?: number;
@@ -12,10 +12,10 @@ export interface Draggable {
         height?: number;
     }): void;
 }
-export interface Delegate {
+interface Delegate {
     getDraggable(x: number, y: number): Draggable | undefined;
 }
-export declare class DragResizeHandler {
+class DragResizeHandler {
     private document;
     private delegate;
     private originX?;

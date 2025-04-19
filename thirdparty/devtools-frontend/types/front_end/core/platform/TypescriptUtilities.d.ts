@@ -11,10 +11,10 @@ export declare function assertNever(_type: never, message: string): never;
  * @param caseVariable
  */
 export declare function assertUnhandled<T>(_caseVariable: T): T;
-export type FieldsThatExtend<Type, Selector> = {
+type FieldsThatExtend<Type, Selector> = {
     [Key in keyof Type]: Type[Key] extends Selector ? Key : never;
 }[keyof Type];
-export type PickFieldsThatExtend<Type, Selector> = Pick<Type, FieldsThatExtend<Type, Selector>>;
+type PickFieldsThatExtend<Type, Selector> = Pick<Type, FieldsThatExtend<Type, Selector>>;
 /**
  * Turns a Union type (a | b) into an Intersection type (a & b).
  * This is a helper type to implement the "NoUnion" guard.
@@ -52,15 +52,14 @@ type IntersectionFromUnion<T> = (T extends any ? (arg: T) => void : never) exten
  * instead of `T extends IntersectionFromUnion<T>`.
  * See: https://www.typescriptlang.org/docs/handbook/2/conditional-types.html
  */
-export type NoUnion<T> = [T] extends [IntersectionFromUnion<T>] ? T : never;
-export type RecursivePartial<T> = {
+type NoUnion<T> = [T] extends [IntersectionFromUnion<T>] ? T : never;
+type RecursivePartial<T> = {
     [P in keyof T]?: RecursivePartial<T[P]>;
 };
 /**
  * Note this does not recursively
  * make Array items readonly at the moment
  */
-export type RecursiveReadonly<T> = {
+type RecursiveReadonly<T> = {
     [P in keyof T]: Readonly<RecursiveReadonly<T[P]>>;
 };
-export {};

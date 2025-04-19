@@ -1,7 +1,7 @@
 import type * as Platform from '../../core/platform/platform.js';
 import * as Protocol from '../../generated/protocol.js';
 import { SecurityPanelSidebarTreeElement } from './SecurityPanelSidebarTreeElement.js';
-export declare class ShowOriginEvent extends Event {
+class ShowOriginEvent extends Event {
     static readonly eventName = "showorigin";
     origin: Platform.DevToolsPath.UrlString | null;
     constructor(origin: Platform.DevToolsPath.UrlString | null);

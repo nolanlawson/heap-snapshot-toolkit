@@ -1,23 +1,23 @@
 import type * as Common from '../../../core/common/common.js';
-export interface BaseSettingOption {
+interface BaseSettingOption {
     title: string;
 }
-export interface BooleanSettingOption extends BaseSettingOption {
+interface BooleanSettingOption extends BaseSettingOption {
     value: boolean;
 }
-export interface EnumSettingOption extends BaseSettingOption {
+interface EnumSettingOption extends BaseSettingOption {
     value: string;
 }
-export interface BaseSetting {
+interface BaseSetting {
     name: string;
     type: Common.Settings.SettingType.BOOLEAN | Common.Settings.SettingType.ENUM;
     title: string;
 }
-export type BooleanSetting = BaseSetting & {
+type BooleanSetting = BaseSetting & {
     options: BooleanSettingOption[];
     value: boolean;
 };
-export type EnumSetting = BaseSetting & {
+type EnumSetting = BaseSetting & {
     options: EnumSettingOption[];
     value: string;
 };

@@ -11,7 +11,7 @@ export interface FIDMetric extends Metric {
  * can be sent along with the FID value for the current page visit in order
  * to help identify issues happening to real-users in the field.
  */
-export interface FIDAttribution {
+interface FIDAttribution {
     /**
      * A selector identifying the element that the user interacted with. This
      * element will be the `target` of the `event` dispatched.

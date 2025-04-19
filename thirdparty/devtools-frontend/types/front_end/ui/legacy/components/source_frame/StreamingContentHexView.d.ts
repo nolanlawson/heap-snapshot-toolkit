@@ -22,4 +22,3 @@ export declare class StreamingContentHexView extends LinearMemoryInspectorView {
     wasShown(): void;
     willHide(): void;
 }
-export {};

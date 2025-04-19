@@ -31,7 +31,7 @@ export declare class EmulationModel extends SDKModel<void> {
     private updateTouch;
     private updateCssMedia;
 }
-export declare class Location {
+class Location {
     latitude: number;
     longitude: number;
     timezoneId: string;
@@ -59,7 +59,7 @@ export declare class Location {
     toSetting(): string;
     static defaultGeoMockAccuracy: number;
 }
-export declare class DeviceOrientation {
+class DeviceOrientation {
     alpha: number;
     beta: number;
     gamma: number;

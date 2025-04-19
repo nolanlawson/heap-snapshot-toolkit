@@ -11,7 +11,7 @@ import type { BidiEvents, Commands as BidiCommands, Connection } from './core/Co
 /**
  * @internal
  */
-export interface Commands extends BidiCommands {
+interface Commands extends BidiCommands {
     'goog:cdp.sendCommand': {
         params: Bidi.Cdp.SendCommandParameters;
         returnType: Bidi.Cdp.SendCommandResult;

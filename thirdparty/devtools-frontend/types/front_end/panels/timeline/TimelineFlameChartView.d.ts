@@ -17,7 +17,7 @@ import type { TimelineMarkerStyle } from './TimelineUIUtils.js';
  * MarkLCPCandidate have the same timestamp, visually we
  * will render [Nav][FCP][DCL][LCP] everytime.
  */
-export declare const SORT_ORDER_PAGE_LOAD_MARKERS: Readonly<Record<string, number>>;
+const SORT_ORDER_PAGE_LOAD_MARKERS: Readonly<Record<string, number>>;
 declare const TimelineFlameChartView_base: {
     new (...args: any[]): {
         "__#15@#events": Common.ObjectWrapper.ObjectWrapper<EventTypes>;
@@ -146,15 +146,15 @@ export declare class TimelineFlameChartView extends TimelineFlameChartView_base 
     overlays(): Overlays.Overlays.Overlays;
     selectDetailsViewTab(tabName: Tab, node: Trace.Extras.TraceTree.Node | null): void;
 }
-export declare class Selection {
+class Selection {
     timelineSelection: TimelineSelection;
     entryIndex: number;
     constructor(selection: TimelineSelection, entryIndex: number);
 }
-export declare const FlameChartStyle: {
+const FlameChartStyle: {
     textColor: string;
 };
-export declare class TimelineFlameChartMarker implements PerfUI.FlameChart.FlameChartMarker {
+class TimelineFlameChartMarker implements PerfUI.FlameChart.FlameChartMarker {
     private readonly startTimeInternal;
     private readonly startOffset;
     private style;
@@ -164,20 +164,19 @@ export declare class TimelineFlameChartMarker implements PerfUI.FlameChart.Flame
     title(): string | null;
     draw(context: CanvasRenderingContext2D, x: number, _height: number, pixelsPerMillisecond: number): void;
 }
-export declare const enum ColorBy {
+declare const enum ColorBy {
     URL = "URL"
 }
 /**
  * Find the Group that contains the provided level, or `null` if no group is
  * found.
  */
-export declare function groupForLevel(groups: PerfUI.FlameChart.Group[], level: number): PerfUI.FlameChart.Group | null;
-export declare const enum Events {
+declare function groupForLevel(groups: PerfUI.FlameChart.Group[], level: number): PerfUI.FlameChart.Group | null;
+declare const enum Events {
     ENTRY_LABEL_ANNOTATION_CLICKED = "EntryLabelAnnotationClicked"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.ENTRY_LABEL_ANNOTATION_CLICKED]: {
         entry: Trace.Types.Events.Event;
     };
 }
-export {};

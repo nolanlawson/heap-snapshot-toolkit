@@ -1,7 +1,7 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import * as Protocol from '../../generated/protocol.js';
 import type * as Trace from '../../models/trace/trace.js';
-export declare class TracingLayerTree extends SDK.LayerTreeBase.LayerTreeBase {
+class TracingLayerTree extends SDK.LayerTreeBase.LayerTreeBase {
     private tileById;
     private paintProfilerModel;
     constructor(target: SDK.Target.Target | null);
@@ -18,7 +18,7 @@ export declare class TracingFrameLayerTree {
     layerTreePromise(): Promise<TracingLayerTree | null>;
     paints(): Trace.Types.Events.LegacyLayerPaintEvent[];
 }
-export declare class TracingLayer implements SDK.LayerTreeBase.Layer {
+class TracingLayer implements SDK.LayerTreeBase.Layer {
     private parentLayerId;
     private parentInternal;
     private layerId;
@@ -69,7 +69,7 @@ export declare class TracingLayer implements SDK.LayerTreeBase.Layer {
     requestCompositingReasonIds(): Promise<string[]>;
     drawsContent(): boolean;
 }
-export interface TracingLayerPayload {
+interface TracingLayerPayload {
     bounds: {
         height: number;
         width: number;
@@ -90,7 +90,7 @@ export interface TracingLayerPayload {
     wheel_event_handler_region: number[];
     scroll_event_handler_region: number[];
 }
-export interface TracingLayerTile {
+interface TracingLayerTile {
     id: string;
     layer_id: string;
     gpu_memory_usage: number;
