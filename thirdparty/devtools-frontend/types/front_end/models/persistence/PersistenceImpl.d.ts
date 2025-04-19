@@ -41,18 +41,18 @@ export declare class PersistenceImpl extends Common.ObjectWrapper.ObjectWrapper<
     network(uiSourceCode: Workspace.UISourceCode.UISourceCode): Workspace.UISourceCode.UISourceCode | null;
     filePathHasBindings(filePath: Platform.DevToolsPath.UrlString): boolean;
 }
-const NodePrefix = "(function (exports, require, module, __filename, __dirname) { ";
-const NodeSuffix = "\n});";
-const NodeShebang = "#!/usr/bin/env node";
-declare enum Events {
+export declare const NodePrefix = "(function (exports, require, module, __filename, __dirname) { ";
+export declare const NodeSuffix = "\n});";
+export declare const NodeShebang = "#!/usr/bin/env node";
+export declare enum Events {
     BindingCreated = "BindingCreated",
     BindingRemoved = "BindingRemoved"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.BindingCreated]: PersistenceBinding;
     [Events.BindingRemoved]: PersistenceBinding;
 }
-class PersistenceBinding {
+export declare class PersistenceBinding {
     network: Workspace.UISourceCode.UISourceCode;
     fileSystem: Workspace.UISourceCode.UISourceCode;
     constructor(network: Workspace.UISourceCode.UISourceCode, fileSystem: Workspace.UISourceCode.UISourceCode);

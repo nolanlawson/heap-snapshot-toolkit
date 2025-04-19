@@ -8,7 +8,7 @@ import type { TimelineMarkerStyle } from './TimelineUIUtils.js';
  * MarkDOMContent and MarkLCPCandidate have the same timestamp, visually we
  * will render [FCP][DCL][LCP] everytime.
  */
-const SORT_ORDER_PAGE_LOAD_MARKERS: Readonly<Record<string, number>>;
+export declare const SORT_ORDER_PAGE_LOAD_MARKERS: Readonly<Record<string, number>>;
 export declare class TimingsTrackAppender implements TrackAppender {
     #private;
     readonly appenderName: TrackAppenderName;

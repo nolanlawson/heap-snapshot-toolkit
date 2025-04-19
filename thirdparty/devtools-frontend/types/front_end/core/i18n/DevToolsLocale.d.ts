@@ -1,9 +1,9 @@
-interface DevToolsLocaleData {
+export interface DevToolsLocaleData {
     settingLanguage: string;
     navigatorLanguage: string;
     lookupClosestDevToolsLocale: (locale: string) => string;
 }
-type DevToolsLocaleCreationOptions = {
+export type DevToolsLocaleCreationOptions = {
     create: true;
     data: DevToolsLocaleData;
 } | {
@@ -38,4 +38,4 @@ export declare class DevToolsLocale {
  * passing 'de-AT' and 'de-DE' will return true, while 'de-DE' and 'en' will
  * return false.
  */
-declare function localeLanguagesMatch(localeString1: string, localeString2: string): boolean;
+export declare function localeLanguagesMatch(localeString1: string, localeString2: string): boolean;

@@ -1,7 +1,7 @@
 import type * as Buttons from '../../../components/buttons/buttons.js';
 import { DataGridNode } from './DataGrid.js';
 type ShowMoreDataGridNodeCallback = (arg0: number, arg1: number) => Promise<void>;
-class ShowMoreDataGridNode extends DataGridNode<ShowMoreDataGridNode> {
+export declare class ShowMoreDataGridNode extends DataGridNode<ShowMoreDataGridNode> {
     private readonly callback;
     private startPosition;
     private endPosition;

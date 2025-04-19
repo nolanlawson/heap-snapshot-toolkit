@@ -6,7 +6,7 @@ export interface MarkerDecorator {
         color: string;
     } | null;
 }
-class GenericDecorator implements MarkerDecorator {
+export declare class GenericDecorator implements MarkerDecorator {
     private readonly title;
     private readonly color;
     constructor(extension: {
@@ -19,7 +19,7 @@ class GenericDecorator implements MarkerDecorator {
         color: string;
     } | null;
 }
-declare function getRegisteredDecorators(): MarkerDecoratorRegistration[];
+export declare function getRegisteredDecorators(): MarkerDecoratorRegistration[];
 export interface MarkerDecoratorRegistration {
     decorator: () => MarkerDecorator;
     marker: string;

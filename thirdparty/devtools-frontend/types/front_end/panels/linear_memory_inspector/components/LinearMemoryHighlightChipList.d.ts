@@ -1,6 +1,6 @@
 import '../../../ui/components/icon_button/icon_button.js';
 import type { HighlightInfo } from './LinearMemoryViewerUtils.js';
-interface LinearMemoryHighlightChipListData {
+export interface LinearMemoryHighlightChipListData {
     highlightInfos: HighlightInfo[];
     focusedMemoryHighlight?: HighlightInfo;
 }
@@ -9,12 +9,12 @@ export declare class DeleteMemoryHighlightEvent extends Event {
     data: HighlightInfo;
     constructor(highlightInfo: HighlightInfo);
 }
-class JumpToHighlightedMemoryEvent extends Event {
+export declare class JumpToHighlightedMemoryEvent extends Event {
     static readonly eventName = "jumptohighlightedmemory";
     data: number;
     constructor(address: number);
 }
-class LinearMemoryHighlightChipList extends HTMLElement {
+export declare class LinearMemoryHighlightChipList extends HTMLElement {
     #private;
     set data(data: LinearMemoryHighlightChipListData);
 }

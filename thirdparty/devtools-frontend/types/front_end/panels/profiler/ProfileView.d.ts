@@ -70,8 +70,8 @@ export declare class ProfileView extends UI.View.SimpleView implements UI.Search
     resetClicked(): void;
     sortProfile(): void;
 }
-const maxLinkLength = 30;
-declare const enum ViewTypes {
+export declare const maxLinkLength = 30;
+export declare const enum ViewTypes {
     FLAME = "Flame",
     TREE = "Tree",
     HEAVY = "Heavy"

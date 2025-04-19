@@ -70,8 +70,8 @@ export declare class AnimationTimeline extends UI.Widget.VBox implements SDK.Tar
     private scrubberDragMove;
     private scrubberDragEnd;
 }
-const GlobalPlaybackRates: number[];
-class NodeUI {
+export declare const GlobalPlaybackRates: number[];
+export declare class NodeUI {
     #private;
     element: HTMLDivElement;
     constructor(_animationEffect: SDK.AnimationModel.AnimationEffect);
@@ -81,12 +81,12 @@ class NodeUI {
     hasActiveNode(): boolean;
     nodeChanged(): void;
 }
-class StepTimingFunction {
+export declare class StepTimingFunction {
     steps: number;
     stepAtPosition: string;
     constructor(steps: number, stepAtPosition: string);
     static parse(text: string): StepTimingFunction | null;
 }
-class AnimationGroupRevealer implements Common.Revealer.Revealer<SDK.AnimationModel.AnimationGroup> {
+export declare class AnimationGroupRevealer implements Common.Revealer.Revealer<SDK.AnimationModel.AnimationGroup> {
     reveal(animationGroup: SDK.AnimationModel.AnimationGroup): Promise<void>;
 }

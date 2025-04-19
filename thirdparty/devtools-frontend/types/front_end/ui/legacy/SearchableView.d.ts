@@ -60,7 +60,7 @@ export declare class SearchableView extends VBox {
     private onInput;
     private onValueChanged;
 }
-interface Searchable {
+export interface Searchable {
     onSearchCanceled(): void;
     onSearchClosed?: () => void;
     performSearch(searchConfig: SearchConfig, shouldJump: boolean, jumpBackwards?: boolean): void;
@@ -69,15 +69,15 @@ interface Searchable {
     supportsCaseSensitiveSearch(): boolean;
     supportsRegexSearch(): boolean;
 }
-interface Replaceable {
+export interface Replaceable {
     replaceSelectionWith(searchConfig: SearchConfig, replacement: string): void;
     replaceAllWith(searchConfig: SearchConfig, replacement: string): void;
 }
-interface SearchRegexResult {
+export interface SearchRegexResult {
     regex: RegExp;
     fromQuery: boolean;
 }
-class SearchConfig {
+export declare class SearchConfig {
     query: string;
     caseSensitive: boolean;
     isRegex: boolean;

@@ -2,7 +2,7 @@ import type * as ProtocolProxyApi from '../../generated/protocol-proxy-api.js';
 import type * as Protocol from '../../generated/protocol.js';
 import { SDKModel } from './SDKModel.js';
 import { type Target } from './Target.js';
-declare const enum ScreenshotMode {
+export declare const enum ScreenshotMode {
     FROM_VIEWPORT = "fromViewport",
     FROM_CLIP = "fromClip",
     FULLPAGE = "fullpage"
@@ -46,3 +46,4 @@ export declare class ScreenCaptureModel extends SDKModel<void> implements Protoc
     prefetchStatusUpdated(_params: Protocol.Preload.PrefetchStatusUpdatedEvent): void;
     prerenderStatusUpdated(_params: Protocol.Preload.PrerenderStatusUpdatedEvent): void;
 }
+export {};

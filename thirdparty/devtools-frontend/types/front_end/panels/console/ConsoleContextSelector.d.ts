@@ -1,6 +1,6 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import * as UI from '../../ui/legacy/legacy.js';
-class ConsoleContextSelector implements SDK.TargetManager.SDKModelObserver<SDK.RuntimeModel.RuntimeModel>, UI.SoftDropDown.Delegate<SDK.RuntimeModel.ExecutionContext> {
+export declare class ConsoleContextSelector implements SDK.TargetManager.SDKModelObserver<SDK.RuntimeModel.RuntimeModel>, UI.SoftDropDown.Delegate<SDK.RuntimeModel.ExecutionContext> {
     readonly items: UI.ListModel.ListModel<SDK.RuntimeModel.ExecutionContext>;
     private readonly dropDown;
     private readonly toolbarItemInternal;

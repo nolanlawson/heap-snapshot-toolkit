@@ -1,7 +1,7 @@
 import '../../../ui/components/menus/menus.js';
 import type { LocalizedString } from '../../../core/platform/UIString.js';
 import type * as Actions from '../recorder-actions/recorder-actions.js';
-declare const enum Variant {
+export declare const enum Variant {
     PRIMARY = "primary",
     OUTLINED = "outlined"
 }
@@ -9,7 +9,7 @@ interface SelectMenuGroup {
     name: string;
     items: SelectButtonItem[];
 }
-interface SelectButtonItem {
+export interface SelectButtonItem {
     /**
      * Specifies the clicked item
      */
@@ -27,12 +27,17 @@ interface SelectButtonItem {
      */
     buttonLabel?: () => string;
 }
-class SelectButtonClickEvent extends Event {
+export declare class SelectButtonClickEvent extends Event {
     value?: string | undefined;
     static readonly eventName = "selectbuttonclick";
     constructor(value?: string | undefined);
 }
-class SelectButton extends HTMLElement {
+export declare class SelectMenuSelectedEvent extends Event {
+    value: string;
+    static readonly eventName = "selectmenuselected";
+    constructor(value: string);
+}
+export declare class SelectButton extends HTMLElement {
     #private;
     connectedCallback(): void;
     get disabled(): boolean;

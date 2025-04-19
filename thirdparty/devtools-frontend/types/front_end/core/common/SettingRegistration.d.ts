@@ -2,7 +2,7 @@ import type * as Platform from '../platform/platform.js';
 import * as Root from '../root/root.js';
 import type { SettingStorageType } from './Settings.js';
 export declare function registerSettingExtension(registration: SettingRegistration): void;
-declare function getRegisteredSettings(): SettingRegistration[];
+export declare function getRegisteredSettings(): SettingRegistration[];
 export declare function registerSettingsForTest(settings: SettingRegistration[], forceReset?: boolean): void;
 export declare function resetSettings(): void;
 export declare function maybeRemoveSettingExtension(settingName: string): boolean;
@@ -162,9 +162,10 @@ interface RawSettingExtensionOption {
     raw: true;
 }
 export type SettingExtensionOption = LocalizedSettingExtensionOption | RawSettingExtensionOption;
-type DisabledConditionResult = {
+export type DisabledConditionResult = {
     disabled: true;
     reasons: string[];
 } | {
     disabled: false;
 };
+export {};

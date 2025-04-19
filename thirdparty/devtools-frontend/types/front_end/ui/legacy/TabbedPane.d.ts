@@ -128,25 +128,25 @@ export declare class TabbedPane extends TabbedPane_base {
     setAllowTabReorder(allow: boolean, automatic?: boolean): void;
     private keyDown;
 }
-interface EventData {
+export interface EventData {
     prevTabId?: string;
     tabId: string;
     view?: Widget;
     isUserGesture?: boolean;
 }
-declare enum Events {
+export declare enum Events {
     TabInvoked = "TabInvoked",
     TabSelected = "TabSelected",
     TabClosed = "TabClosed",
     TabOrderChanged = "TabOrderChanged"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.TabInvoked]: EventData;
     [Events.TabSelected]: EventData;
     [Events.TabClosed]: EventData;
     [Events.TabOrderChanged]: EventData;
 }
-class TabbedPaneTab {
+export declare class TabbedPaneTab {
     closeable: boolean;
     previewFeature: boolean;
     private readonly tabbedPane;
@@ -201,3 +201,4 @@ export interface TabbedPaneTabDelegate {
     closeTabs(tabbedPane: TabbedPane, ids: string[]): void;
     onContextMenu(tabId: string, contextMenu: ContextMenu): void;
 }
+export {};

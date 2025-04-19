@@ -23,8 +23,8 @@ interface OpeningTagContext {
 interface ClosingTagContext {
     tagType: TagType.CLOSING;
 }
-type TagTypeContext = OpeningTagContext | ClosingTagContext;
-declare function isOpeningTag(context: TagTypeContext): context is OpeningTagContext;
+export type TagTypeContext = OpeningTagContext | ClosingTagContext;
+export declare function isOpeningTag(context: TagTypeContext): context is OpeningTagContext;
 export declare class ElementsTreeElement extends UI.TreeOutline.TreeElement {
     #private;
     nodeInternal: SDK.DOMModel.DOMNode;
@@ -144,17 +144,18 @@ export declare class ElementsTreeElement extends UI.TreeOutline.TreeElement {
     updateScrollAdorner(): void;
     pushScrollAdorner(): void;
 }
-const InitialChildrenLimit = 500;
-const ForbiddenClosingTagElements: Set<string>;
-const EditTagBlocklist: Set<string>;
-declare function adornerComparator(adornerA: Adorners.Adorner.Adorner, adornerB: Adorners.Adorner.Adorner): number;
-declare function convertUnicodeCharsToHTMLEntities(text: string): {
+export declare const InitialChildrenLimit = 500;
+export declare const ForbiddenClosingTagElements: Set<string>;
+export declare const EditTagBlocklist: Set<string>;
+export declare function adornerComparator(adornerA: Adorners.Adorner.Adorner, adornerB: Adorners.Adorner.Adorner): number;
+export declare function convertUnicodeCharsToHTMLEntities(text: string): {
     text: string;
     entityRanges: TextUtils.TextRange.SourceRange[];
 };
-interface EditorHandles {
+export interface EditorHandles {
     commit: () => void;
     cancel: () => void;
     editor?: TextEditor.TextEditor.TextEditor;
     resize: () => void;
 }
+export {};

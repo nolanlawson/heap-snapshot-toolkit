@@ -2,14 +2,14 @@ import * as Common from '../../core/common/common.js';
 import type * as Buttons from '../components/buttons/buttons.js';
 import type * as IconButton from '../components/icon_button/icon_button.js';
 import { type Config } from './InplaceEditor.js';
-declare enum Events {
+export declare enum Events {
     ElementAttached = "ElementAttached",
     ElementsDetached = "ElementsDetached",
     ElementExpanded = "ElementExpanded",
     ElementCollapsed = "ElementCollapsed",
     ElementSelected = "ElementSelected"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.ElementAttached]: TreeElement;
     [Events.ElementsDetached]: void;
     [Events.ElementExpanded]: TreeElement;
@@ -59,11 +59,11 @@ export declare class TreeOutline extends Common.ObjectWrapper.ObjectWrapper<Even
     deferredScrollIntoView(treeElement: TreeElement, center: boolean): void;
     onStartedEditingTitle(_treeElement: TreeElement): void;
 }
-declare const enum TreeVariant {
+export declare const enum TreeVariant {
     NAVIGATION_TREE = "NavigationTree",
     OTHER = "Other"
 }
-class TreeOutlineInShadow extends TreeOutline {
+export declare class TreeOutlineInShadow extends TreeOutline {
     element: HTMLElement;
     shadowRoot: ShadowRoot;
     private readonly disclosureElement;
@@ -76,8 +76,8 @@ class TreeOutlineInShadow extends TreeOutline {
     makeDense(): void;
     onStartedEditingTitle(treeElement: TreeElement): void;
 }
-const treeElementBylistItemNode: WeakMap<Node, TreeElement>;
-class TreeElement {
+export declare const treeElementBylistItemNode: WeakMap<Node, TreeElement>;
+export declare class TreeElement {
     #private;
     treeOutline: TreeOutline | null;
     parent: TreeElement | null;

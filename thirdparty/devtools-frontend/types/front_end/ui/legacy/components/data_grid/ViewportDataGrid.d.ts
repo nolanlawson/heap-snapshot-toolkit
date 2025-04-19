@@ -52,10 +52,10 @@ export declare class ViewportDataGrid<T> extends ViewportDataGrid_base<ViewportD
     revealViewportNode(node: ViewportDataGridNode<T>): void;
     private filteredNodes;
 }
-declare const enum Events {
+export declare const enum Events {
     VIEWPORT_CALCULATED = "ViewportCalculated"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.VIEWPORT_CALCULATED]: void;
 }
 export declare class ViewportDataGridNode<T> extends DataGridNode<ViewportDataGridNode<T>> {
@@ -84,3 +84,4 @@ export declare class ViewportDataGridNode<T> extends DataGridNode<ViewportDataGr
     reveal(): void;
     recalculateSiblings(index: number): void;
 }
+export {};

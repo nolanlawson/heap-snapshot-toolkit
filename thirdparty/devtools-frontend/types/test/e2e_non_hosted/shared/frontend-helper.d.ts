@@ -1,8 +1,8 @@
 import type * as puppeteer from 'puppeteer-core';
 import { AsyncScope } from '../../conductor/async-scope.js';
 import { PageWrapper } from './page-wrapper.js';
-type Action = (element: puppeteer.ElementHandle) => Promise<void>;
-interface ClickOptions {
+export type Action = (element: puppeteer.ElementHandle) => Promise<void>;
+export interface ClickOptions {
     root?: puppeteer.ElementHandle;
     clickOptions?: puppeteer.ClickOptions;
     maxPixelsFromLeft?: number;
@@ -56,18 +56,19 @@ export declare class DevToolsPage extends PageWrapper {
     waitForElementWithTextContent(textContent: string, root?: puppeteer.ElementHandle, asyncScope?: AsyncScope): Promise<puppeteer.ElementHandle<Element>>;
     scrollElementIntoView(selector: string, root?: puppeteer.ElementHandle): Promise<void>;
 }
-interface DevtoolsSettings {
+export interface DevtoolsSettings {
     enabledDevToolsExperiments: string[];
     devToolsSettings: {
         [key: string]: string | boolean;
     };
     dockingMode: string;
 }
-const DEFAULT_DEVTOOLS_SETTINGS: {
+export declare const DEFAULT_DEVTOOLS_SETTINGS: {
     enabledDevToolsExperiments: never[];
     devToolsSettings: {
         isUnderTest: boolean;
     };
     dockingMode: string;
 };
-declare function setupDevToolsPage(context: puppeteer.BrowserContext, settings: DevtoolsSettings): Promise<DevToolsPage>;
+export declare function setupDevToolsPage(context: puppeteer.BrowserContext, settings: DevtoolsSettings): Promise<DevToolsPage>;
+export {};

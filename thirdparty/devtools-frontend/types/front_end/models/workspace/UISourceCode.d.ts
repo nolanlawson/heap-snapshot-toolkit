@@ -69,7 +69,7 @@ export declare class UISourceCode extends Common.ObjectWrapper.ObjectWrapper<Eve
     disableEdit(): void;
     editDisabled(): boolean;
 }
-declare enum Events {
+export declare enum Events {
     WorkingCopyChanged = "WorkingCopyChanged",
     WorkingCopyCommitted = "WorkingCopyCommitted",
     TitleChanged = "TitleChanged",
@@ -77,12 +77,12 @@ declare enum Events {
     MessageRemoved = "MessageRemoved",
     DecorationChanged = "DecorationChanged"
 }
-interface WorkingCopyCommittedEvent {
+export interface WorkingCopyCommittedEvent {
     uiSourceCode: UISourceCode;
     content: string;
     encoded: boolean | undefined;
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.WorkingCopyChanged]: UISourceCode;
     [Events.WorkingCopyCommitted]: WorkingCopyCommittedEvent;
     [Events.TitleChanged]: UISourceCode;
@@ -90,7 +90,7 @@ interface EventTypes {
     [Events.MessageRemoved]: Message;
     [Events.DecorationChanged]: string;
 }
-class UILocation {
+export declare class UILocation {
     uiSourceCode: UISourceCode;
     lineNumber: number;
     columnNumber: number | undefined;
@@ -107,7 +107,7 @@ class UILocation {
  *
  * We use a class instead of an interface so we can implement a revealer for it.
  */
-class UILocationRange {
+export declare class UILocationRange {
     readonly uiSourceCode: UISourceCode;
     readonly range: TextUtils.TextRange.TextRange;
     constructor(uiSourceCode: UISourceCode, range: TextUtils.TextRange.TextRange);
@@ -120,7 +120,7 @@ class UILocationRange {
  * `level` of the Message. This is only the model; displaying is handled
  * where UISourceCode displaying is handled.
  */
-class Message {
+export declare class Message {
     private readonly levelInternal;
     private readonly textInternal;
     range: TextUtils.TextRange.TextRange;

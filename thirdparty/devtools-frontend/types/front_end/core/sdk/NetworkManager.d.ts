@@ -9,7 +9,7 @@ import { NetworkRequest } from './NetworkRequest.js';
 import { SDKModel } from './SDKModel.js';
 import { type Target } from './Target.js';
 import { type SDKModelObserver } from './TargetManager.js';
-class NetworkManager extends SDKModel<EventTypes> {
+export declare class NetworkManager extends SDKModel<EventTypes> {
     #private;
     readonly dispatcher: NetworkDispatcher;
     readonly fetchDispatcher: FetchDispatcher;
@@ -39,7 +39,7 @@ class NetworkManager extends SDKModel<EventTypes> {
     loadNetworkResource(frameId: Protocol.Page.FrameId | null, url: Platform.DevToolsPath.UrlString, options: Protocol.Network.LoadNetworkResourceOptions): Promise<Protocol.Network.LoadNetworkResourcePageResult>;
     clearRequests(): void;
 }
-declare enum Events {
+export declare enum Events {
     RequestStarted = "RequestStarted",
     RequestUpdated = "RequestUpdated",
     RequestFinished = "RequestFinished",
@@ -52,20 +52,20 @@ declare enum Events {
     ReportingApiReportUpdated = "ReportingApiReportUpdated",
     ReportingApiEndpointsChangedForOrigin = "ReportingApiEndpointsChangedForOrigin"
 }
-interface RequestStartedEvent {
+export interface RequestStartedEvent {
     request: NetworkRequest;
     originalRequest: Protocol.Network.Request | null;
 }
-interface ResponseReceivedEvent {
+export interface ResponseReceivedEvent {
     request: NetworkRequest;
     response: Protocol.Network.Response;
 }
-interface MessageGeneratedEvent {
+export interface MessageGeneratedEvent {
     message: Common.UIString.LocalizedString;
     requestId: string;
     warning: boolean;
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.RequestStarted]: RequestStartedEvent;
     [Events.RequestUpdated]: NetworkRequest;
     [Events.RequestFinished]: NetworkRequest;
@@ -84,18 +84,18 @@ interface EventTypes {
  * @see https://docs.google.com/document/d/10lfVdS1iDWCRKQXPfbxEn4Or99D64mvNlugP1AQuFlE/edit for historical context.
  * @see https://crbug.com/342406608#comment10 for context around the addition of 4G presets in June 2024.
  */
-const NoThrottlingConditions: Conditions;
-const OfflineConditions: Conditions;
-const Slow3GConditions: Conditions;
-const Slow4GConditions: Conditions;
-const Fast4GConditions: Conditions;
-class FetchDispatcher implements ProtocolProxyApi.FetchDispatcher {
+export declare const NoThrottlingConditions: Conditions;
+export declare const OfflineConditions: Conditions;
+export declare const Slow3GConditions: Conditions;
+export declare const Slow4GConditions: Conditions;
+export declare const Fast4GConditions: Conditions;
+export declare class FetchDispatcher implements ProtocolProxyApi.FetchDispatcher {
     #private;
     constructor(agent: ProtocolProxyApi.FetchApi, manager: NetworkManager);
     requestPaused({ requestId, request, resourceType, responseStatusCode, responseHeaders, networkId }: Protocol.Fetch.RequestPausedEvent): void;
     authRequired({}: Protocol.Fetch.AuthRequiredEvent): void;
 }
-class NetworkDispatcher implements ProtocolProxyApi.NetworkDispatcher {
+export declare class NetworkDispatcher implements ProtocolProxyApi.NetworkDispatcher {
     #private;
     constructor(manager: NetworkManager);
     private headersMapToHeadersArray;
@@ -156,7 +156,7 @@ class NetworkDispatcher implements ProtocolProxyApi.NetworkDispatcher {
      */
     protected createNetworkRequest(requestId: Protocol.Network.RequestId, frameId: Protocol.Page.FrameId, loaderId: Protocol.Network.LoaderId, url: string, documentURL: string, initiator: Protocol.Network.Initiator | null): NetworkRequest;
 }
-class MultitargetNetworkManager extends Common.ObjectWrapper.ObjectWrapper<MultitargetNetworkManager.EventTypes> implements SDKModelObserver<NetworkManager> {
+export declare class MultitargetNetworkManager extends Common.ObjectWrapper.ObjectWrapper<MultitargetNetworkManager.EventTypes> implements SDKModelObserver<NetworkManager> {
     #private;
     readonly inflightMainResourceRequests: Map<string, NetworkRequest>;
     constructor();
@@ -223,7 +223,7 @@ export declare namespace MultitargetNetworkManager {
         [Events.REQUEST_FULFILLED]: Platform.DevToolsPath.UrlString;
     }
 }
-class InterceptedRequest {
+export declare class InterceptedRequest {
     #private;
     request: Protocol.Network.Request;
     resourceType: Protocol.Network.ResourceType;
@@ -249,12 +249,12 @@ class InterceptedRequest {
         charset: string | null;
     };
 }
-class ConditionsSerializer implements Serializer<Conditions, Conditions> {
+export declare class ConditionsSerializer implements Serializer<Conditions, Conditions> {
     stringify(value: unknown): string;
     parse(serialized: string): Conditions;
 }
-declare function networkConditionsEqual(first: Conditions, second: Conditions): boolean;
-interface Conditions {
+export declare function networkConditionsEqual(first: Conditions, second: Conditions): boolean;
+export interface Conditions {
     download: number;
     upload: number;
     latency: number;
@@ -270,21 +270,21 @@ interface Conditions {
      */
     targetLatency?: number;
 }
-interface BlockedPattern {
+export interface BlockedPattern {
     url: string;
     enabled: boolean;
 }
-interface Message {
+export interface Message {
     message: string;
     requestId: string;
     warning: boolean;
 }
-interface InterceptionPattern {
+export interface InterceptionPattern {
     urlPattern: string;
     requestStage: Protocol.Fetch.RequestStage;
 }
-type RequestInterceptor = (request: InterceptedRequest) => Promise<void>;
-interface RequestUpdateDroppedEventData {
+export type RequestInterceptor = (request: InterceptedRequest) => Promise<void>;
+export interface RequestUpdateDroppedEventData {
     url: Platform.DevToolsPath.UrlString;
     frameId: Protocol.Page.FrameId | null;
     loaderId: Protocol.Network.LoaderId;

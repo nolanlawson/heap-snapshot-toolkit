@@ -77,7 +77,7 @@ export declare class CSSKeyframesRule {
     name(): CSSValue;
     keyframes(): CSSKeyframeRule[];
 }
-class CSSKeyframeRule extends CSSRule {
+export declare class CSSKeyframeRule extends CSSRule {
     #private;
     constructor(cssModel: CSSModel, payload: Protocol.CSS.CSSKeyframeRule);
     key(): CSSValue;
@@ -92,10 +92,10 @@ export declare class CSSPositionTryRule extends CSSRule {
     name(): CSSValue;
     active(): boolean;
 }
-interface CSSNestedStyleLeaf {
+export interface CSSNestedStyleLeaf {
     style: CSSStyleDeclaration;
 }
-type CSSNestedStyleCondition = {
+export type CSSNestedStyleCondition = {
     children: CSSNestedStyle[];
 } & ({
     media: CSSMedia;
@@ -104,7 +104,7 @@ type CSSNestedStyleCondition = {
 } | {
     supports: CSSSupports;
 });
-type CSSNestedStyle = CSSNestedStyleLeaf | CSSNestedStyleCondition;
+export type CSSNestedStyle = CSSNestedStyleLeaf | CSSNestedStyleCondition;
 export declare class CSSFunctionRule extends CSSRule {
     #private;
     constructor(cssModel: CSSModel, payload: Protocol.CSS.CSSFunctionRule);
@@ -114,3 +114,4 @@ export declare class CSSFunctionRule extends CSSRule {
     protocolNodesToNestedStyles(nodes: Protocol.CSS.CSSFunctionNode[]): CSSNestedStyle[];
     protocolNodeToNestedStyle(node: Protocol.CSS.CSSFunctionNode): CSSNestedStyle | undefined;
 }
+export {};

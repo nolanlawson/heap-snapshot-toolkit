@@ -15,21 +15,21 @@ export declare class Selection {
     layer(): SDK.LayerTreeBase.Layer;
     isEqual(_other: Selection): boolean;
 }
-declare const enum Type {
+export declare const enum Type {
     LAYER = "Layer",
     SCROLL_RECT = "ScrollRect",
     SNAPSHOT = "Snapshot"
 }
-class LayerSelection extends Selection {
+export declare class LayerSelection extends Selection {
     constructor(layer: SDK.LayerTreeBase.Layer);
     isEqual(other: Selection): boolean;
 }
-class ScrollRectSelection extends Selection {
+export declare class ScrollRectSelection extends Selection {
     scrollRectIndex: number;
     constructor(layer: SDK.LayerTreeBase.Layer, scrollRectIndex: number);
     isEqual(other: Selection): boolean;
 }
-class SnapshotSelection extends Selection {
+export declare class SnapshotSelection extends Selection {
     private readonly snapshotInternal;
     constructor(layer: SDK.LayerTreeBase.Layer, snapshot: SDK.PaintProfiler.SnapshotWithRect);
     isEqual(other: Selection): boolean;

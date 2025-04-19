@@ -25,7 +25,7 @@ interface GridPositionNormalizedData {
     columns: TracksPositionData;
     bounds: Bounds;
 }
-interface GridPositionNormalizedDataWithNames {
+export interface GridPositionNormalizedDataWithNames {
     rows: TracksPositionDataWithNames;
     columns: TracksPositionDataWithNames;
     bounds: Bounds;
@@ -36,7 +36,7 @@ interface TrackSize {
     x: number;
     y: number;
 }
-interface GridHighlightOptions {
+export interface GridHighlightOptions {
     gridBorderDash: boolean;
     rowLineDash: boolean;
     columnLineDash: boolean;
@@ -49,7 +49,7 @@ interface GridHighlightOptions {
     columnHatchColor: string;
     showLineNames: boolean;
 }
-interface GridHighlightConfig {
+export interface GridHighlightConfig {
     rotationAngle?: number;
     writingMode?: string;
     columnTrackSizes?: TrackSize[];
@@ -77,7 +77,7 @@ export interface GridLabelState {
  * Places all of the required grid labels on the overlay. This includes row and
  * column line number labels, and area labels.
  */
-declare function drawGridLabels(config: GridHighlightConfig, gridBounds: Bounds, areaBounds: AreaBounds[], canvasSize: CanvasSize, labelState: GridLabelState, emulationScaleFactor: number, writingModeMatrix?: DOMMatrix | undefined): void;
+export declare function drawGridLabels(config: GridHighlightConfig, gridBounds: Bounds, areaBounds: AreaBounds[], canvasSize: CanvasSize, labelState: GridLabelState, emulationScaleFactor: number, writingModeMatrix?: DOMMatrix | undefined): void;
 export interface NormalizePositionDataConfig {
     positiveRowLineNumberPositions?: Position[];
     negativeRowLineNumberPositions?: Position[];
@@ -106,7 +106,7 @@ export interface NormalizePositionDataConfig {
  *   positions (on high-dpi monitors floats are passed by the backend, this means
  *   checking if a position is at either edges of the container can't be done).
  */
-declare function normalizePositionData(config: NormalizePositionDataConfig, bounds: Bounds): GridPositionNormalizedData;
+export declare function normalizePositionData(config: NormalizePositionDataConfig, bounds: Bounds): GridPositionNormalizedData;
 /**
  * Places the grid row and column number labels on the overlay.
  *
@@ -115,19 +115,19 @@ declare function normalizePositionData(config: NormalizePositionDataConfig, boun
  * @param {DOMMatrix=} writingModeMatrix The transformation matrix in case a vertical writing-mode is applied, to map label positions
  * @param {string=} writingMode The current writing-mode value
  */
-declare function drawGridLineNumbers(container: HTMLElement, data: GridPositionNormalizedData, canvasSize: CanvasSize, emulationScaleFactor: number, writingModeMatrix?: DOMMatrix | undefined, writingMode?: string | undefined): void;
+export declare function drawGridLineNumbers(container: HTMLElement, data: GridPositionNormalizedData, canvasSize: CanvasSize, emulationScaleFactor: number, writingModeMatrix?: DOMMatrix | undefined, writingMode?: string | undefined): void;
 /**
  * Places the grid track size labels on the overlay.
  */
-declare function drawGridTrackSizes(container: HTMLElement, trackSizes: TrackSize[], direction: 'row' | 'column', canvasSize: CanvasSize, emulationScaleFactor: number, writingModeMatrix?: DOMMatrix | undefined, writingMode?: string | undefined): void;
+export declare function drawGridTrackSizes(container: HTMLElement, trackSizes: TrackSize[], direction: 'row' | 'column', canvasSize: CanvasSize, emulationScaleFactor: number, writingModeMatrix?: DOMMatrix | undefined, writingMode?: string | undefined): void;
 /**
  * Places the grid row and column name labels on the overlay.
  */
-declare function drawGridLineNames(container: HTMLElement, data: GridPositionNormalizedDataWithNames, canvasSize: CanvasSize, emulationScaleFactor: number, writingModeMatrix?: DOMMatrix | undefined, writingMode?: string | undefined): void;
+export declare function drawGridLineNames(container: HTMLElement, data: GridPositionNormalizedDataWithNames, canvasSize: CanvasSize, emulationScaleFactor: number, writingModeMatrix?: DOMMatrix | undefined, writingMode?: string | undefined): void;
 /**
  * Places the grid area name labels on the overlay.
  */
-declare function drawGridAreaNames(container: HTMLElement, areaBounds: AreaBounds[], writingModeMatrix?: DOMMatrix | undefined, writingMode?: string | undefined): void;
+export declare function drawGridAreaNames(container: HTMLElement, areaBounds: AreaBounds[], writingModeMatrix?: DOMMatrix | undefined, writingMode?: string | undefined): void;
 /**
  * Given a background color, generate a color for text to be legible.
  * This assumes the background color is given as either a "rgba(r, g, b, a)" string or a #rrggbb string.
@@ -142,8 +142,9 @@ declare function drawGridAreaNames(container: HTMLElement, areaBounds: AreaBound
  * This is also made to generate the defaultLabelTextColor for all of the default label colors that the
  * OverlayColorGenerator produces.
  */
-declare function generateLegibleTextColor(backgroundColor: string): "white" | "#121212" | null;
+export declare function generateLegibleTextColor(backgroundColor: string): "white" | "#121212" | null;
 /**
  * Returns true if the specified string starts with 'horizontal'.
  */
-declare function isHorizontalWritingMode(writingMode: string): boolean;
+export declare function isHorizontalWritingMode(writingMode: string): boolean;
+export {};

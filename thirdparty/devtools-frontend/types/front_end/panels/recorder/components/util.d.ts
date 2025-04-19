@@ -1,30 +1,30 @@
-const mod: (a: number, n: number) => number;
-declare function assert<T>(predicate: T, message?: string): asserts predicate;
-type Keys<T> = T extends T ? keyof T : never;
-type RequiredKeys<T> = {
+export declare const mod: (a: number, n: number) => number;
+export declare function assert<T>(predicate: T, message?: string): asserts predicate;
+export type Keys<T> = T extends T ? keyof T : never;
+export type RequiredKeys<T> = {
     [K in keyof T]-?: Record<string | number | symbol, unknown> extends Pick<T, K> ? never : K;
 }[keyof T];
-type OptionalKeys<T> = {
+export type OptionalKeys<T> = {
     [K in keyof T]-?: Record<string | number | symbol, unknown> extends Pick<T, K> ? K : never;
 }[keyof T];
 export type DeepImmutable<T> = {
     readonly [K in keyof T]: DeepImmutable<T[K]>;
 };
-type DeepMutable<T> = {
+export type DeepMutable<T> = {
     -readonly [K in keyof T]: DeepMutable<T[K]>;
 };
-type DeepPartial<T> = {
+export type DeepPartial<T> = {
     [K in keyof T]?: DeepPartial<Exclude<T[K], undefined>>;
 };
-type Mutable<T> = {
+export type Mutable<T> = {
     -readonly [K in keyof T]: T[K];
 };
-const deepFreeze: <T extends object>(object: T) => DeepImmutable<T>;
-class InsertAssignment<T> {
+export declare const deepFreeze: <T extends object>(object: T) => DeepImmutable<T>;
+export declare class InsertAssignment<T> {
     value: T;
     constructor(value: T);
 }
-class ArrayAssignments<T> {
+export declare class ArrayAssignments<T> {
     value: {
         [n: number]: T;
     };
@@ -32,7 +32,7 @@ class ArrayAssignments<T> {
         [n: number]: T;
     });
 }
-type Assignments<T> = T extends Readonly<Array<infer R>> ? R[] | ArrayAssignments<Assignments<R> | InsertAssignment<R>> : {
+export type Assignments<T> = T extends Readonly<Array<infer R>> ? R[] | ArrayAssignments<Assignments<R> | InsertAssignment<R>> : {
     [K in keyof T]: Assignments<T[K]>;
 };
-const immutableDeepAssign: <T>(object: DeepImmutable<T>, assignments: DeepImmutable<DeepPartial<Assignments<T>>>) => DeepImmutable<T>;
+export declare const immutableDeepAssign: <T>(object: DeepImmutable<T>, assignments: DeepImmutable<DeepPartial<Assignments<T>>>) => DeepImmutable<T>;

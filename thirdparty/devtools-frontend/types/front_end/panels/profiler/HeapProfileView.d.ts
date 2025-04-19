@@ -10,7 +10,7 @@ import type { Formatter, ProfileDataGridNode } from './ProfileDataGrid.js';
 import { ProfileFlameChartDataProvider } from './ProfileFlameChartDataProvider.js';
 import { type ProfileHeader, ProfileType } from './ProfileHeader.js';
 import { ProfileView, WritableProfileHeader } from './ProfileView.js';
-class HeapProfileView extends ProfileView implements UI.SearchableView.Searchable {
+export declare class HeapProfileView extends ProfileView implements UI.SearchableView.Searchable {
     profileHeader: SamplingHeapProfileHeader;
     readonly profileType: SamplingHeapProfileTypeBase;
     adjustedTotal: number;
@@ -40,7 +40,7 @@ declare const SamplingHeapProfileTypeBase_base: {
         dispatchEventToListeners<T extends keyof SamplingHeapProfileType.EventTypes>(eventType: Platform.TypeScriptUtilities.NoUnion<T>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<SamplingHeapProfileType.EventTypes, T>): void;
     };
 } & typeof ProfileType;
-class SamplingHeapProfileTypeBase extends SamplingHeapProfileTypeBase_base {
+export declare class SamplingHeapProfileTypeBase extends SamplingHeapProfileTypeBase_base {
     recording: boolean;
     clearedDuringRecording: boolean;
     constructor(typeId: string, description: string);
@@ -80,7 +80,7 @@ export declare namespace SamplingHeapProfileType {
         [Events.STATS_UPDATE]: Protocol.HeapProfiler.SamplingHeapProfile | null;
     }
 }
-class SamplingHeapProfileHeader extends WritableProfileHeader {
+export declare class SamplingHeapProfileHeader extends WritableProfileHeader {
     readonly heapProfilerModelInternal: SDK.HeapProfilerModel.HeapProfilerModel | null;
     protocolProfileInternal: {
         head: {
@@ -106,15 +106,15 @@ class SamplingHeapProfileHeader extends WritableProfileHeader {
     heapProfilerModel(): SDK.HeapProfilerModel.HeapProfilerModel | null;
     profileType(): SamplingHeapProfileTypeBase;
 }
-class SamplingHeapProfileNode extends CPUProfile.ProfileTreeModel.ProfileNode {
+export declare class SamplingHeapProfileNode extends CPUProfile.ProfileTreeModel.ProfileNode {
     self: number;
     constructor(node: Protocol.HeapProfiler.SamplingHeapProfileNode);
 }
-class SamplingHeapProfileModel extends CPUProfile.ProfileTreeModel.ProfileTreeModel {
+export declare class SamplingHeapProfileModel extends CPUProfile.ProfileTreeModel.ProfileTreeModel {
     modules: any;
     constructor(profile: Protocol.HeapProfiler.SamplingHeapProfile, minOrdinal?: number, maxOrdinal?: number);
 }
-class NodeFormatter implements Formatter {
+export declare class NodeFormatter implements Formatter {
     readonly profileView: HeapProfileView;
     constructor(profileView: HeapProfileView);
     formatValue(value: number): string;
@@ -122,7 +122,7 @@ class NodeFormatter implements Formatter {
     formatPercent(value: number, _node: ProfileDataGridNode): string;
     linkifyNode(node: ProfileDataGridNode): Element | null;
 }
-class HeapFlameChartDataProvider extends ProfileFlameChartDataProvider {
+export declare class HeapFlameChartDataProvider extends ProfileFlameChartDataProvider {
     readonly profile: CPUProfile.ProfileTreeModel.ProfileTreeModel;
     readonly heapProfilerModel: SDK.HeapProfilerModel.HeapProfilerModel | null;
     constructor(profile: CPUProfile.ProfileTreeModel.ProfileTreeModel, heapProfilerModel: SDK.HeapProfilerModel.HeapProfilerModel | null);
@@ -133,3 +133,4 @@ class HeapFlameChartDataProvider extends ProfileFlameChartDataProvider {
     calculateTimelineData(): PerfUI.FlameChart.FlameChartTimelineData;
     preparePopoverElement(entryIndex: number): Element | null;
 }
+export {};

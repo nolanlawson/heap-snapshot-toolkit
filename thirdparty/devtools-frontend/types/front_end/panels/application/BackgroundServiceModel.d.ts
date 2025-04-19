@@ -12,11 +12,11 @@ export declare class BackgroundServiceModel extends SDK.SDKModel.SDKModel<EventT
     recordingStateChanged({ isRecording, service }: Protocol.BackgroundService.RecordingStateChangedEvent): void;
     backgroundServiceEventReceived({ backgroundServiceEvent }: Protocol.BackgroundService.BackgroundServiceEventReceivedEvent): void;
 }
-declare enum Events {
+export declare enum Events {
     RecordingStateChanged = "RecordingStateChanged",
     BackgroundServiceEventReceived = "BackgroundServiceEventReceived"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.RecordingStateChanged]: {
         isRecording: boolean;
         serviceName: Protocol.BackgroundService.ServiceName;

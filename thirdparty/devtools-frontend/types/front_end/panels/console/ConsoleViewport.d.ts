@@ -1,4 +1,4 @@
-class ConsoleViewport {
+export declare class ConsoleViewport {
     element: HTMLElement;
     private topGapElement;
     private topGapElementActive;

@@ -2,20 +2,22 @@ import '../../../ui/components/icon_button/icon_button.js';
 import './ExtensionView.js';
 import './ControlButton.js';
 import './ReplaySection.js';
+import * as SDK from '../../../core/sdk/sdk.js';
 import type * as PublicExtensions from '../../../models/extensions/extensions.js';
 import type * as Converters from '../converters/converters.js';
 import type * as Extensions from '../extensions/extensions.js';
 import * as Models from '../models/models.js';
+import { PlayRecordingSpeed } from '../models/RecordingPlayer.js';
 declare global {
     interface HTMLElementTagNameMap {
         'devtools-recording-view': RecordingView;
     }
 }
-interface ReplayState {
+export interface ReplayState {
     isPlaying: boolean;
     isPausedOnBreakpoint: boolean;
 }
-interface RecordingViewData {
+export interface RecordingViewData {
     replayState: ReplayState;
     isRecording: boolean;
     recordingTogglingInProgress: boolean;
@@ -33,7 +35,56 @@ interface RecordingViewData {
     replayExtensions: Extensions.ExtensionManager.Extension[];
     extensionDescriptor?: PublicExtensions.RecorderPluginManager.ViewDescriptor;
 }
-class RecordingView extends HTMLElement {
+export declare class RecordingFinishedEvent extends Event {
+    static readonly eventName = "recordingfinished";
+    constructor();
+}
+export declare const enum TargetPanel {
+    PERFORMANCE_PANEL = "timeline",
+    DEFAULT = "chrome-recorder"
+}
+interface PlayRecordingEventData {
+    targetPanel: TargetPanel;
+    speed: PlayRecordingSpeed;
+    extension?: Extensions.ExtensionManager.Extension;
+}
+export declare class PlayRecordingEvent extends Event {
+    static readonly eventName = "playrecording";
+    readonly data: PlayRecordingEventData;
+    constructor(data?: PlayRecordingEventData);
+}
+export declare class AbortReplayEvent extends Event {
+    static readonly eventName = "abortreplay";
+    constructor();
+}
+export declare class RecordingChangedEvent extends Event {
+    static readonly eventName = "recordingchanged";
+    data: {
+        currentStep: Models.Schema.Step;
+        newStep: Models.Schema.Step;
+    };
+    constructor(currentStep: Models.Schema.Step, newStep: Models.Schema.Step);
+}
+export declare class AddAssertionEvent extends Event {
+    static readonly eventName = "addassertion";
+    constructor();
+}
+export declare class RecordingTitleChangedEvent extends Event {
+    static readonly eventName = "recordingtitlechanged";
+    title: string;
+    constructor(title: string);
+}
+export declare class NetworkConditionsChanged extends Event {
+    static readonly eventName = "networkconditionschanged";
+    data?: SDK.NetworkManager.Conditions;
+    constructor(data?: SDK.NetworkManager.Conditions);
+}
+export declare class TimeoutChanged extends Event {
+    static readonly eventName = "timeoutchanged";
+    data?: number;
+    constructor(data?: number);
+}
+export declare class RecordingView extends HTMLElement {
     #private;
     constructor();
     set data(data: RecordingViewData);

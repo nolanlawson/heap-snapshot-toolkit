@@ -6,7 +6,7 @@ interface SharedStorageMetadataGetter {
     getMetadata: () => Promise<Protocol.Storage.SharedStorageMetadata | null>;
     resetBudget: () => Promise<void>;
 }
-class SharedStorageMetadataView extends StorageMetadataView {
+export declare class SharedStorageMetadataView extends StorageMetadataView {
     #private;
     constructor(sharedStorageMetadataGetter: SharedStorageMetadataGetter, owner: string);
     connectedCallback(): void;

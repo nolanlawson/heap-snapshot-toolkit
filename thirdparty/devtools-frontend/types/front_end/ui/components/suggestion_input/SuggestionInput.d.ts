@@ -36,7 +36,7 @@ declare class SuggestionBox extends LitElement {
     willUpdate(changedProperties: Lit.PropertyValues<this>): void;
     protected render(): Lit.TemplateResult | undefined;
 }
-class SuggestionInput extends LitElement {
+export declare class SuggestionInput extends LitElement {
     #private;
     static shadowRootOptions: {
         readonly delegatesFocus: true;

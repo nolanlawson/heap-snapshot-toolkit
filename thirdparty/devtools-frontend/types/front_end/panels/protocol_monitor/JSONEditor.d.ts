@@ -3,7 +3,7 @@ import '../../ui/components/menus/menus.js';
 import * as Common from '../../core/common/common.js';
 import * as SDK from '../../core/sdk/sdk.js';
 import * as UI from '../../ui/legacy/legacy.js';
-declare const enum ParameterType {
+export declare const enum ParameterType {
     STRING = "string",
     NUMBER = "number",
     BOOLEAN = "boolean",
@@ -39,7 +39,7 @@ interface ObjectParameter extends BaseParameter {
     value?: Parameter[];
 }
 export type Parameter = ArrayParameter | NumberParameter | StringParameter | BooleanParameter | ObjectParameter;
-interface Command {
+export interface Command {
     command: string;
     parameters: {
         [x: string]: unknown;
@@ -71,12 +71,12 @@ interface ViewInput {
     onParameterKeyBlur: (event: Event) => void;
     onParameterValueBlur: (event: Event) => void;
 }
-type View = (input: ViewInput, output: object, targer: HTMLElement) => void;
-declare function suggestionFilter(option: string, query: string): boolean;
-declare const enum Events {
+export type View = (input: ViewInput, output: object, targer: HTMLElement) => void;
+export declare function suggestionFilter(option: string, query: string): boolean;
+export declare const enum Events {
     SUBMIT_EDITOR = "submiteditor"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.SUBMIT_EDITOR]: Command;
 }
 declare const JSONEditor_base: {
@@ -124,4 +124,5 @@ export declare class JSONEditor extends JSONEditor_base {
     populateParametersForCommandWithDefaultValues(): void;
     performUpdate(): void;
 }
-const DEFAULT_VIEW: View;
+export declare const DEFAULT_VIEW: View;
+export {};

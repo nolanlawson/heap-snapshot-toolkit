@@ -11,7 +11,7 @@ export interface INPMetric extends Metric {
  * can be sent along with the INP value for the current page visit in order
  * to help identify issues happening to real-users in the field.
  */
-interface INPAttribution {
+export interface INPAttribution {
     /**
      * A selector identifying the element that the user first interacted with
      * as part of the frame where the INP candidate interaction occurred.

@@ -12,7 +12,7 @@ declare const LayerTreeOutline_base: {
         dispatchEventToListeners<T extends Events.PAINT_PROFILER_REQUESTED>(eventType: import("../../core/platform/TypescriptUtilities.js").NoUnion<T>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<EventTypes, T>): void;
     };
 } & typeof UI.TreeOutline.TreeOutline;
-class LayerTreeOutline extends LayerTreeOutline_base implements Common.EventTarget.EventTarget<EventTypes>, LayerView {
+export declare class LayerTreeOutline extends LayerTreeOutline_base implements Common.EventTarget.EventTarget<EventTypes>, LayerView {
     private layerViewHost;
     private treeOutline;
     private lastHoveredNode;
@@ -32,13 +32,13 @@ class LayerTreeOutline extends LayerTreeOutline_base implements Common.EventTarg
     private onContextMenu;
     private selectionForNode;
 }
-declare const enum Events {
+export declare const enum Events {
     PAINT_PROFILER_REQUESTED = "PaintProfilerRequested"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.PAINT_PROFILER_REQUESTED]: Selection;
 }
-class LayerTreeElement extends UI.TreeOutline.TreeElement {
+export declare class LayerTreeElement extends UI.TreeOutline.TreeElement {
     treeOutlineInternal: LayerTreeOutline;
     layer: SDK.LayerTreeBase.Layer;
     constructor(tree: LayerTreeOutline, layer: SDK.LayerTreeBase.Layer);
@@ -46,4 +46,5 @@ class LayerTreeElement extends UI.TreeOutline.TreeElement {
     onselect(): boolean;
     setHovered(hovered: boolean): void;
 }
+export declare const layerToTreeElement: WeakMap<SDK.LayerTreeBase.Layer, LayerTreeElement>;
 export {};

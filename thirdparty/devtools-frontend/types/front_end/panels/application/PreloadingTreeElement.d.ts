@@ -23,7 +23,8 @@ export declare class PreloadingSummaryTreeElement extends ExpandableApplicationP
     expandAndRevealRuleSet(revealInfo: PreloadingHelper.PreloadingForward.RuleSetView): void;
     expandAndRevealAttempts(filter: PreloadingHelper.PreloadingForward.AttemptViewWithFilter): void;
 }
-class PreloadingRuleSetTreeElement extends PreloadingTreeElementBase<PreloadingRuleSetView> {
+export declare class PreloadingRuleSetTreeElement extends PreloadingTreeElementBase<PreloadingRuleSetView> {
     constructor(panel: ResourcesPanel);
     revealRuleSet(revealInfo: PreloadingHelper.PreloadingForward.RuleSetView): void;
 }
+export {};

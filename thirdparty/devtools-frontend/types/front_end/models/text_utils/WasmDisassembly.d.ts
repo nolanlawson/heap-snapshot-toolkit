@@ -26,3 +26,4 @@ export declare class WasmDisassembly extends ContentData {
      */
     asDeferedContent(): DeferredContent;
 }
+export {};

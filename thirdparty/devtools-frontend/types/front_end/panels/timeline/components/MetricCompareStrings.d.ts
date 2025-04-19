@@ -1,12 +1,12 @@
 import type { MetricRating } from './Utils.js';
 export type CompareRating = 'better' | 'worse' | 'similar';
-declare function renderCompareText(options: {
+export declare function renderCompareText(options: {
     metric: string;
     rating: MetricRating;
     compare?: CompareRating;
     localValue: Element;
 }): Element;
-declare function renderDetailedCompareText(options: {
+export declare function renderDetailedCompareText(options: {
     metric: string;
     localRating: MetricRating;
     fieldRating?: MetricRating;

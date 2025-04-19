@@ -10,7 +10,7 @@ declare global {
         'devtools-step-view': StepView;
     }
 }
-declare const enum State {
+export declare const enum State {
     DEFAULT = "default",
     SUCCESS = "success",
     CURRENT = "current",
@@ -18,7 +18,7 @@ declare const enum State {
     ERROR = "error",
     STOPPED = "stopped"
 }
-interface StepViewData {
+export interface StepViewData {
     state: State;
     step?: Models.Schema.Step;
     section?: Models.Section.Section;
@@ -38,6 +38,51 @@ interface StepViewData {
     isSelected: boolean;
     recorderSettings?: Models.RecorderSettings.RecorderSettings;
 }
+export declare class CaptureSelectorsEvent extends Event {
+    static readonly eventName = "captureselectors";
+    data: Models.Schema.StepWithSelectors & Partial<Models.Schema.ClickAttributes>;
+    constructor(step: Models.Schema.StepWithSelectors & Partial<Models.Schema.ClickAttributes>);
+}
+export declare class StopSelectorsCaptureEvent extends Event {
+    static readonly eventName = "stopselectorscapture";
+    constructor();
+}
+export declare class CopyStepEvent extends Event {
+    static readonly eventName = "copystep";
+    step: Models.Schema.Step;
+    constructor(step: Models.Schema.Step);
+}
+export declare class StepChanged extends Event {
+    static readonly eventName = "stepchanged";
+    currentStep: Models.Schema.Step;
+    newStep: Models.Schema.Step;
+    constructor(currentStep: Models.Schema.Step, newStep: Models.Schema.Step);
+}
+export declare const enum AddStepPosition {
+    BEFORE = "before",
+    AFTER = "after"
+}
+export declare class AddStep extends Event {
+    static readonly eventName = "addstep";
+    position: AddStepPosition;
+    stepOrSection: Models.Schema.Step | Models.Section.Section;
+    constructor(stepOrSection: Models.Schema.Step | Models.Section.Section, position: AddStepPosition);
+}
+export declare class RemoveStep extends Event {
+    static readonly eventName = "removestep";
+    step: Models.Schema.Step;
+    constructor(step: Models.Schema.Step);
+}
+export declare class AddBreakpointEvent extends Event {
+    static readonly eventName = "addbreakpoint";
+    index: number;
+    constructor(index: number);
+}
+export declare class RemoveBreakpointEvent extends Event {
+    static readonly eventName = "removebreakpoint";
+    index: number;
+    constructor(index: number);
+}
 interface Action {
     id: string;
     label: string;
@@ -45,7 +90,7 @@ interface Action {
     groupTitle: string;
     jslogContext?: string;
 }
-interface ViewInput extends StepViewData {
+export interface ViewInput extends StepViewData {
     step?: Models.Schema.Step;
     section?: Models.Section.Section;
     state: State;
@@ -74,9 +119,9 @@ interface ViewInput extends StepViewData {
     onToggleShowDetailsKeydown: (event: Event) => void;
     onStepContextMenu: (event: MouseEvent) => void;
 }
-type ViewOutput = unknown;
+export type ViewOutput = unknown;
 declare function viewFunction(input: ViewInput, _output: ViewOutput, target: HTMLElement | ShadowRoot): void;
-class StepView extends HTMLElement {
+export declare class StepView extends HTMLElement {
     #private;
     constructor(view?: typeof viewFunction);
     set data(data: StepViewData);

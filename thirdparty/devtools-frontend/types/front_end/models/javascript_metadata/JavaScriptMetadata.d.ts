@@ -1,5 +1,5 @@
 import type * as Common from '../../core/common/common.js';
-class JavaScriptMetadataImpl implements Common.JavaScriptMetaData.JavaScriptMetaData {
+export declare class JavaScriptMetadataImpl implements Common.JavaScriptMetaData.JavaScriptMetaData {
     private readonly uniqueFunctions;
     private readonly receiverMethods;
     static instance(opts?: {

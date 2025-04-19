@@ -15,4 +15,5 @@ export interface ScrollSnapHighlight {
     scrollMarginColor: string;
     scrollPaddingColor: string;
 }
-declare function drawScrollSnapHighlight(highlight: ScrollSnapHighlight, context: CanvasRenderingContext2D, emulationScaleFactor: number): void;
+export declare function drawScrollSnapHighlight(highlight: ScrollSnapHighlight, context: CanvasRenderingContext2D, emulationScaleFactor: number): void;
+export {};

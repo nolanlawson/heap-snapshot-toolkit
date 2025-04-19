@@ -1,4 +1,4 @@
-const NativeFunctions: ({
+export const NativeFunctions: ({
     name: string;
     signatures: string[][];
     receivers?: undefined;

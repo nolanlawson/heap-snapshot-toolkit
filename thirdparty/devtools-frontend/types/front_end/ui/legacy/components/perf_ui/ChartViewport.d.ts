@@ -5,10 +5,10 @@ export interface ChartViewportDelegate {
     setSize(width: number, height: number): void;
     update(): void;
 }
-interface Config {
+export interface Config {
     enableCursorElement: boolean;
 }
-class ChartViewport extends UI.Widget.VBox {
+export declare class ChartViewport extends UI.Widget.VBox {
     #private;
     private readonly delegate;
     viewportElement: HTMLElement;

@@ -73,15 +73,16 @@ export declare class Overlay {
     get window(): Window;
     get installed(): boolean;
 }
-declare function log(text: string): void;
-declare function createChild(parent: HTMLElement, tagName: string, className?: string): HTMLElement;
-declare function createTextChild(parent: HTMLElement, text: string): Text;
-declare function createElement(tagName: string, className?: string): HTMLElement;
-declare function ellipsify(str: string, maxLength: number): string;
-declare function constrainNumber(num: number, min: number, max: number): number;
+export declare function log(text: string): void;
+export declare function createChild(parent: HTMLElement, tagName: string, className?: string): HTMLElement;
+export declare function createTextChild(parent: HTMLElement, text: string): Text;
+export declare function createElement(tagName: string, className?: string): HTMLElement;
+export declare function ellipsify(str: string, maxLength: number): string;
+export declare function constrainNumber(num: number, min: number, max: number): number;
 declare global {
     interface Document {
         adoptedStyleSheets: CSSStyleSheet[];
     }
 }
-declare function adoptStyleSheet(styleSheet: CSSStyleSheet): void;
+export declare function adoptStyleSheet(styleSheet: CSSStyleSheet): void;
+export {};

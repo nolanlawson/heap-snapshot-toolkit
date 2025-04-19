@@ -28,7 +28,7 @@ export declare class CSSStyleDeclaration {
     insertPropertyAt(index: number, name: string, value: string, userCallback?: ((arg0: boolean) => void)): void;
     appendProperty(name: string, value: string, userCallback?: ((arg0: boolean) => void)): void;
 }
-declare enum Type {
+export declare enum Type {
     Regular = "Regular",
     Inline = "Inline",
     Attributes = "Attributes",

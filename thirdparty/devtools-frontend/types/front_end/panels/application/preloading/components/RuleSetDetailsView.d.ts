@@ -2,8 +2,8 @@ import type * as Protocol from '../../../../generated/protocol.js';
 import * as LegacyWrapper from '../../../../ui/components/legacy_wrapper/legacy_wrapper.js';
 import type * as UI from '../../../../ui/legacy/legacy.js';
 type RuleSet = Protocol.Preload.RuleSet;
-type RuleSetDetailsViewData = RuleSet | null;
-class RuleSetDetailsView extends LegacyWrapper.LegacyWrapper.WrappableComponent<UI.Widget.VBox> {
+export type RuleSetDetailsViewData = RuleSet | null;
+export declare class RuleSetDetailsView extends LegacyWrapper.LegacyWrapper.WrappableComponent<UI.Widget.VBox> {
     #private;
     set data(data: RuleSetDetailsViewData);
     set shouldPrettyPrint(shouldPrettyPrint: boolean);

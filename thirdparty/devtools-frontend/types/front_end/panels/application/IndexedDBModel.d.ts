@@ -50,14 +50,14 @@ export declare class IndexedDBModel extends SDK.SDKModel.SDKModel<EventTypes> im
     storageBucketDeleted(_event: Protocol.Storage.StorageBucketDeletedEvent): void;
     attributionReportingSourceRegistered(_event: Protocol.Storage.AttributionReportingSourceRegisteredEvent): void;
 }
-declare enum Events {
+export declare enum Events {
     DatabaseAdded = "DatabaseAdded",
     DatabaseRemoved = "DatabaseRemoved",
     DatabaseLoaded = "DatabaseLoaded",
     DatabaseNamesRefreshed = "DatabaseNamesRefreshed",
     IndexedDBContentUpdated = "IndexedDBContentUpdated"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.DatabaseAdded]: {
         model: IndexedDBModel;
         databaseId: DatabaseId;
@@ -78,7 +78,7 @@ interface EventTypes {
         objectStoreName: string;
     };
 }
-class Entry {
+export declare class Entry {
     key: SDK.RemoteObject.RemoteObject;
     primaryKey: SDK.RemoteObject.RemoteObject;
     value: SDK.RemoteObject.RemoteObject;
@@ -114,7 +114,7 @@ export declare class Index {
     constructor(name: string, keyPath: any, unique: boolean, multiEntry: boolean);
     get keyPathString(): string;
 }
-interface ObjectStoreMetadata {
+export interface ObjectStoreMetadata {
     entriesCount: number;
     keyGeneratorValue: number;
 }

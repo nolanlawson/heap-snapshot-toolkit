@@ -29,7 +29,7 @@ export declare namespace SharedStorageForOrigin {
         [Events.SHARED_STORAGE_CHANGED]: SharedStorageChangedEvent;
     }
 }
-class SharedStorageModel extends SDK.SDKModel.SDKModel<EventTypes> implements ProtocolProxyApi.StorageDispatcher {
+export declare class SharedStorageModel extends SDK.SDKModel.SDKModel<EventTypes> implements ProtocolProxyApi.StorageDispatcher {
     #private;
     readonly storageAgent: ProtocolProxyApi.StorageApi;
     constructor(target: SDK.Target.Target);
@@ -53,12 +53,12 @@ class SharedStorageModel extends SDK.SDKModel.SDKModel<EventTypes> implements Pr
     storageBucketDeleted(_event: Protocol.Storage.StorageBucketDeletedEvent): void;
     attributionReportingSourceRegistered(_event: Protocol.Storage.AttributionReportingSourceRegisteredEvent): void;
 }
-declare const enum Events {
+export declare const enum Events {
     SHARED_STORAGE_ACCESS = "SharedStorageAccess",
     SHARED_STORAGE_ADDED = "SharedStorageAdded",
     SHARED_STORAGE_REMOVED = "SharedStorageRemoved"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.SHARED_STORAGE_ACCESS]: Protocol.Storage.SharedStorageAccessedEvent;
     [Events.SHARED_STORAGE_ADDED]: SharedStorageForOrigin;
     [Events.SHARED_STORAGE_REMOVED]: SharedStorageForOrigin;

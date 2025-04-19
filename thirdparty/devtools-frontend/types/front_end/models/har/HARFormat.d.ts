@@ -12,7 +12,7 @@ declare class HARBase {
     customAsArray(name: string): any[] | undefined;
     customInitiator(): HARInitiator | undefined;
 }
-class HARRoot extends HARBase {
+export declare class HARRoot extends HARBase {
     log: HARLog;
     constructor(data: any);
 }
@@ -115,7 +115,7 @@ declare class HARPostData extends HARBase {
     comment: string | undefined;
     constructor(data: any);
 }
-class HARParam extends HARBase {
+export declare class HARParam extends HARBase {
     name: string;
     value: string | undefined;
     fileName: string | undefined;
@@ -143,7 +143,7 @@ export declare class HARTimings extends HARBase {
     comment: string | undefined;
     constructor(data: any);
 }
-class HARInitiator extends HARBase {
+export declare class HARInitiator extends HARBase {
     type: Protocol.Network.InitiatorType;
     url?: string;
     lineNumber?: number;
@@ -154,7 +154,7 @@ class HARInitiator extends HARBase {
      */
     constructor(data: any);
 }
-class HARStack extends HARBase {
+export declare class HARStack extends HARBase {
     description?: string;
     callFrames: HARCallFrame[];
     parent?: HARStack;
@@ -167,7 +167,7 @@ class HARStack extends HARBase {
      */
     constructor(data: any);
 }
-class HARCallFrame extends HARBase {
+export declare class HARCallFrame extends HARBase {
     functionName: string;
     scriptId: Protocol.Runtime.ScriptId;
     url: string;
@@ -178,3 +178,4 @@ class HARCallFrame extends HARBase {
      */
     constructor(data: any);
 }
+export {};

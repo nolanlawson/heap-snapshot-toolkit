@@ -1,7 +1,7 @@
 import '../../ui/legacy/legacy.js';
 import * as Common from '../../core/common/common.js';
 import * as EmulationModel from '../../models/emulation/emulation.js';
-class DeviceModeToolbar {
+export declare class DeviceModeToolbar {
     private model;
     private readonly showMediaInspectorSetting;
     private readonly showRulersSetting;

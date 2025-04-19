@@ -1,5 +1,5 @@
 import type * as puppeteer from 'puppeteer-core';
-interface DevToolsFrontendCreationOptions {
+export interface DevToolsFrontendCreationOptions {
     browser: puppeteer.Browser;
     testServerPort: number;
     targetId: string;
@@ -36,4 +36,4 @@ export declare class DevToolsFrontendTab {
      */
     hostname(): string;
 }
-declare function loadEmptyPageAndWaitForContent(target: puppeteer.Page): Promise<void>;
+export declare function loadEmptyPageAndWaitForContent(target: puppeteer.Page): Promise<void>;

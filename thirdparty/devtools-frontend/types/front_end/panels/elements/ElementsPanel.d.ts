@@ -9,11 +9,11 @@ import { StylesSidebarPane } from './StylesSidebarPane.js';
  * These strings need to match the `SidebarPaneCodes` in UserMetrics.ts. DevTools
  * collects usage metrics for the different sidebar tabs.
  */
-declare const enum SidebarPaneTabId {
+export declare const enum SidebarPaneTabId {
     COMPUTED = "computed",
     STYLES = "styles"
 }
-class ElementsPanel extends UI.Panel.Panel implements UI.SearchableView.Searchable, SDK.TargetManager.SDKModelObserver<SDK.DOMModel.DOMModel>, UI.View.ViewLocationResolver {
+export declare class ElementsPanel extends UI.Panel.Panel implements UI.SearchableView.Searchable, SDK.TargetManager.SDKModelObserver<SDK.DOMModel.DOMModel>, UI.View.ViewLocationResolver {
     private splitWidget;
     private readonly searchableViewInternal;
     private mainContainer;
@@ -104,19 +104,19 @@ class ElementsPanel extends UI.Panel.Panel implements UI.SearchableView.Searchab
     protected static firstInspectElementCompletedForTest: () => void;
     protected static firstInspectElementNodeNameForTest: string;
 }
-class ContextMenuProvider implements UI.ContextMenu.Provider<SDK.RemoteObject.RemoteObject | SDK.DOMModel.DOMNode | SDK.DOMModel.DeferredDOMNode> {
+export declare class ContextMenuProvider implements UI.ContextMenu.Provider<SDK.RemoteObject.RemoteObject | SDK.DOMModel.DOMNode | SDK.DOMModel.DeferredDOMNode> {
     appendApplicableItems(event: Event, contextMenu: UI.ContextMenu.ContextMenu, object: SDK.RemoteObject.RemoteObject | SDK.DOMModel.DOMNode | SDK.DOMModel.DeferredDOMNode): void;
 }
-class DOMNodeRevealer implements Common.Revealer.Revealer<SDK.DOMModel.DOMNode | SDK.DOMModel.DeferredDOMNode | SDK.RemoteObject.RemoteObject> {
+export declare class DOMNodeRevealer implements Common.Revealer.Revealer<SDK.DOMModel.DOMNode | SDK.DOMModel.DeferredDOMNode | SDK.RemoteObject.RemoteObject> {
     reveal(node: SDK.DOMModel.DOMNode | SDK.DOMModel.DeferredDOMNode | SDK.RemoteObject.RemoteObject, omitFocus?: boolean): Promise<void>;
 }
-class CSSPropertyRevealer implements Common.Revealer.Revealer<SDK.CSSProperty.CSSProperty> {
+export declare class CSSPropertyRevealer implements Common.Revealer.Revealer<SDK.CSSProperty.CSSProperty> {
     reveal(property: SDK.CSSProperty.CSSProperty): Promise<void>;
 }
-class ElementsActionDelegate implements UI.ActionRegistration.ActionDelegate {
+export declare class ElementsActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(context: UI.Context.Context, actionId: string): boolean;
 }
-class PseudoStateMarkerDecorator implements MarkerDecorator {
+export declare class PseudoStateMarkerDecorator implements MarkerDecorator {
     static instance(opts?: {
         forceNew: boolean | null;
     }): PseudoStateMarkerDecorator;

@@ -18,7 +18,7 @@ interface LinkifyLocationOptions {
 interface TimeRangeCategoryStats {
     [categoryName: string]: number;
 }
-class TimelineUIUtils {
+export declare class TimelineUIUtils {
     /**
      * use getGetDebugModeEnabled() to query this variable.
      */
@@ -67,15 +67,15 @@ class TimelineUIUtils {
     static displayNameForFrame(frame: Trace.Types.Events.TraceFrame, trimAt?: number): string;
     static getOriginWithEntity(entityMapper: Utils.EntityMapper.EntityMapper | null, parsedTrace: Trace.Handlers.Types.ParsedTrace, event: Trace.Types.Events.Event): string | null;
 }
-const aggregatedStatsKey: unique symbol;
-const previewElementSymbol: unique symbol;
-class EventDispatchTypeDescriptor {
+export declare const aggregatedStatsKey: unique symbol;
+export declare const previewElementSymbol: unique symbol;
+export declare class EventDispatchTypeDescriptor {
     priority: number;
     color: string;
     eventTypes: string[];
     constructor(priority: number, color: string, eventTypes: string[]);
 }
-class TimelineDetailsContentHelper {
+export declare class TimelineDetailsContentHelper {
     fragment: DocumentFragment;
     private linkifierInternal;
     private target;
@@ -90,7 +90,7 @@ class TimelineDetailsContentHelper {
     appendLocationRange(title: string, url: Platform.DevToolsPath.UrlString, startLine: number, endLine?: number): void;
     createChildStackTraceElement(stackTrace: Protocol.Runtime.StackTrace): void;
 }
-const categoryBreakdownCacheSymbol: unique symbol;
+export declare const categoryBreakdownCacheSymbol: unique symbol;
 export interface TimelineMarkerStyle {
     title: string;
     color: string;
@@ -105,11 +105,12 @@ export interface TimelineMarkerStyle {
  * where the user has navigated multiple times in the trace, so that we can show
  * the LCP (for example) relative to the last navigation.
  **/
-declare function timeStampForEventAdjustedForClosestNavigationIfPossible(event: Trace.Types.Events.Event, parsedTrace: Trace.Handlers.Types.ParsedTrace | null): Trace.Types.Timing.Milli;
+export declare function timeStampForEventAdjustedForClosestNavigationIfPossible(event: Trace.Types.Events.Event, parsedTrace: Trace.Handlers.Types.ParsedTrace | null): Trace.Types.Timing.Milli;
 /**
  * Determines if an event is potentially a marker event. A marker event here
  * is a single moment in time that we want to highlight on the timeline, such as
  * the LCP time. This method does not filter out events: for example, it treats
  * every LCP Candidate event as a potential marker event.
  **/
-declare function isMarkerEvent(parsedTrace: Trace.Handlers.Types.ParsedTrace, event: Trace.Types.Events.Event): boolean;
+export declare function isMarkerEvent(parsedTrace: Trace.Handlers.Types.ParsedTrace, event: Trace.Types.Events.Event): boolean;
+export {};

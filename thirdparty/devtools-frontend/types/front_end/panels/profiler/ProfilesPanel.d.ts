@@ -54,7 +54,7 @@ export declare class ProfilesPanel extends UI.Panel.PanelWithSidebar implements 
     wasShown(): void;
     willHide(): void;
 }
-class ProfileTypeSidebarSection extends UI.TreeOutline.TreeElement {
+export declare class ProfileTypeSidebarSection extends UI.TreeOutline.TreeElement {
     dataDisplayDelegate: DataDisplayDelegate;
     readonly profileTreeElements: ProfileSidebarTreeElement[];
     profileGroups: {
@@ -67,12 +67,12 @@ class ProfileTypeSidebarSection extends UI.TreeOutline.TreeElement {
     sidebarElementIndex(profile: ProfileHeader): number;
     onattach(): void;
 }
-class ProfileGroup {
+export declare class ProfileGroup {
     profileSidebarTreeElements: ProfileSidebarTreeElement[];
     sidebarTreeElement: ProfileGroupSidebarTreeElement | null;
     constructor();
 }
-class ProfileGroupSidebarTreeElement extends UI.TreeOutline.TreeElement {
+export declare class ProfileGroupSidebarTreeElement extends UI.TreeOutline.TreeElement {
     readonly dataDisplayDelegate: DataDisplayDelegate;
     profileTitle: string;
     toggleOnClick: boolean;
@@ -80,12 +80,12 @@ class ProfileGroupSidebarTreeElement extends UI.TreeOutline.TreeElement {
     onselect(): boolean;
     onattach(): void;
 }
-class ProfilesSidebarTreeElement extends UI.TreeOutline.TreeElement {
+export declare class ProfilesSidebarTreeElement extends UI.TreeOutline.TreeElement {
     readonly panel: ProfilesPanel;
     constructor(panel: ProfilesPanel);
     onselect(): boolean;
     onattach(): void;
 }
-class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
+export declare class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(context: UI.Context.Context, actionId: string): boolean;
 }

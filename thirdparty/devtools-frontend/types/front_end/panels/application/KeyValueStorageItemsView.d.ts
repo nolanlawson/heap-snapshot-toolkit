@@ -2,7 +2,7 @@ import * as UI from '../../ui/legacy/legacy.js';
 import type * as ApplicationComponents from './components/components.js';
 import { StorageItemsView } from './StorageItemsView.js';
 type Widget = UI.Widget.Widget;
-interface ViewInput {
+export interface ViewInput {
     items: Array<{
         key: string;
         value: string;
@@ -54,3 +54,4 @@ export declare abstract class KeyValueStorageItemsView extends StorageItemsView 
     protected abstract removeItem(key: string): void;
     protected abstract createPreview(key: string, value: string): Promise<Widget | null>;
 }
+export {};

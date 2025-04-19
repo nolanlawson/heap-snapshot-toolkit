@@ -1,4 +1,4 @@
-class Vector {
+export declare class Vector {
     x: number;
     y: number;
     z: number;
@@ -6,7 +6,7 @@ class Vector {
     length(): number;
     normalize(): void;
 }
-class Point {
+export declare class Point {
     x: number;
     y: number;
     constructor(x: number, y: number);
@@ -15,7 +15,7 @@ class Point {
     scale(scalar: number): Point;
     toString(): string;
 }
-class CubicBezier {
+export declare class CubicBezier {
     controlPoints: Point[];
     constructor(point1: Point, point2: Point);
     static parse(text: string): CubicBezier | null;
@@ -23,8 +23,8 @@ class CubicBezier {
     asCSSText(): string;
     static readonly Regex: RegExp;
 }
-const LINEAR_BEZIER: CubicBezier;
-class EulerAngles {
+export declare const LINEAR_BEZIER: CubicBezier;
+export declare class EulerAngles {
     alpha: number;
     beta: number;
     gamma: number;
@@ -57,20 +57,20 @@ class EulerAngles {
      */
     static fromDeviceOrientationRotationMatrix(rotationMatrix: DOMMatrixReadOnly): EulerAngles;
 }
-const scalarProduct: (u: Vector, v: Vector) => number;
-const crossProduct: (u: Vector, v: Vector) => Vector;
-const subtract: (u: Vector, v: Vector) => Vector;
-const multiplyVectorByMatrixAndNormalize: (v: Vector, m: DOMMatrix) => Vector;
-const calculateAngle: (u: Vector, v: Vector) => number;
-const degreesToRadians: (deg: number) => number;
-const degreesToGradians: (deg: number) => number;
-const degreesToTurns: (deg: number) => number;
-const radiansToDegrees: (rad: number) => number;
-const radiansToGradians: (rad: number) => number;
-const radiansToTurns: (rad: number) => number;
-const gradiansToRadians: (grad: number) => number;
-const turnsToRadians: (turns: number) => number;
-const boundsForTransformedPoints: (matrix: DOMMatrix, points: number[], aggregateBounds?: {
+export declare const scalarProduct: (u: Vector, v: Vector) => number;
+export declare const crossProduct: (u: Vector, v: Vector) => Vector;
+export declare const subtract: (u: Vector, v: Vector) => Vector;
+export declare const multiplyVectorByMatrixAndNormalize: (v: Vector, m: DOMMatrix) => Vector;
+export declare const calculateAngle: (u: Vector, v: Vector) => number;
+export declare const degreesToRadians: (deg: number) => number;
+export declare const degreesToGradians: (deg: number) => number;
+export declare const degreesToTurns: (deg: number) => number;
+export declare const radiansToDegrees: (rad: number) => number;
+export declare const radiansToGradians: (rad: number) => number;
+export declare const radiansToTurns: (rad: number) => number;
+export declare const gradiansToRadians: (grad: number) => number;
+export declare const turnsToRadians: (turns: number) => number;
+export declare const boundsForTransformedPoints: (matrix: DOMMatrix, points: number[], aggregateBounds?: {
     minX: number;
     maxX: number;
     minY: number;

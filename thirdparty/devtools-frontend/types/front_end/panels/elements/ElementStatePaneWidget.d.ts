@@ -1,5 +1,5 @@
 import * as UI from '../../ui/legacy/legacy.js';
-class ElementStatePaneWidget extends UI.Widget.Widget {
+export declare class ElementStatePaneWidget extends UI.Widget.Widget {
     private readonly inputs;
     private readonly inputStates;
     private readonly duals;
@@ -14,7 +14,7 @@ class ElementStatePaneWidget extends UI.Widget.Widget {
     private updateElementSpecificStatesTable;
     updateElementSpecificStatesTableForTest(): void;
 }
-class ButtonProvider implements UI.Toolbar.Provider {
+export declare class ButtonProvider implements UI.Toolbar.Provider {
     private readonly button;
     private view;
     private constructor();

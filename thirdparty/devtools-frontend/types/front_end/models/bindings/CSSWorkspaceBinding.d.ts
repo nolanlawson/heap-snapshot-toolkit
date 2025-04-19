@@ -3,7 +3,7 @@ import * as SDK from '../../core/sdk/sdk.js';
 import type * as Workspace from '../workspace/workspace.js';
 import { type LiveLocation as LiveLocationInterface, type LiveLocationPool, LiveLocationWithPool } from './LiveLocation.js';
 import type { ResourceMapping } from './ResourceMapping.js';
-class CSSWorkspaceBinding implements SDK.TargetManager.SDKModelObserver<SDK.CSSModel.CSSModel> {
+export declare class CSSWorkspaceBinding implements SDK.TargetManager.SDKModelObserver<SDK.CSSModel.CSSModel> {
     #private;
     private constructor();
     static instance(opts?: {
@@ -33,7 +33,7 @@ export interface SourceMapping {
     rawLocationToUILocation(rawLocation: SDK.CSSModel.CSSLocation): Workspace.UISourceCode.UILocation | null;
     uiLocationToRawLocations(uiLocation: Workspace.UISourceCode.UILocation): SDK.CSSModel.CSSLocation[];
 }
-class ModelInfo {
+export declare class ModelInfo {
     #private;
     constructor(cssModel: SDK.CSSModel.CSSModel, resourceMapping: ResourceMapping);
     get locations(): Platform.MapUtilities.Multimap<SDK.CSSStyleSheetHeader.CSSStyleSheetHeader, LiveLocation>;
@@ -47,7 +47,7 @@ class ModelInfo {
     uiLocationToRawLocations(uiLocation: Workspace.UISourceCode.UILocation): SDK.CSSModel.CSSLocation[];
     dispose(): void;
 }
-class LiveLocation extends LiveLocationWithPool {
+export declare class LiveLocation extends LiveLocationWithPool {
     #private;
     readonly url: Platform.DevToolsPath.UrlString;
     headerInternal: SDK.CSSStyleSheetHeader.CSSStyleSheetHeader | null;

@@ -1,11 +1,11 @@
 import * as Platform from '../../core/platform/platform.js';
 import * as HeapSnapshotModel from '../../models/heap_snapshot_model/heap_snapshot_model.js';
 import type { HeapSnapshotWorkerDispatcher } from './HeapSnapshotWorkerDispatcher.js';
-interface HeapSnapshotItem {
+export interface HeapSnapshotItem {
     itemIndex(): number;
     serialize(): Object;
 }
-class HeapSnapshotEdge implements HeapSnapshotItem {
+export declare class HeapSnapshotEdge implements HeapSnapshotItem {
     snapshot: HeapSnapshot;
     protected readonly edges: Platform.TypedArrayUtilities.BigUint32Array;
     edgeIndex: number;
@@ -26,30 +26,30 @@ class HeapSnapshotEdge implements HeapSnapshotItem {
     getValueForSorting(_fieldName: string): number;
     nameIndex(): number;
 }
-interface HeapSnapshotItemIterator {
+export interface HeapSnapshotItemIterator {
     hasNext(): boolean;
     item(): HeapSnapshotItem;
     next(): void;
 }
-interface HeapSnapshotItemIndexProvider {
+export interface HeapSnapshotItemIndexProvider {
     itemForIndex(newIndex: number): HeapSnapshotItem;
 }
-class HeapSnapshotNodeIndexProvider implements HeapSnapshotItemIndexProvider {
+export declare class HeapSnapshotNodeIndexProvider implements HeapSnapshotItemIndexProvider {
     #private;
     constructor(snapshot: HeapSnapshot);
     itemForIndex(index: number): HeapSnapshotNode;
 }
-class HeapSnapshotEdgeIndexProvider implements HeapSnapshotItemIndexProvider {
+export declare class HeapSnapshotEdgeIndexProvider implements HeapSnapshotItemIndexProvider {
     #private;
     constructor(snapshot: HeapSnapshot);
     itemForIndex(index: number): HeapSnapshotEdge;
 }
-class HeapSnapshotRetainerEdgeIndexProvider implements HeapSnapshotItemIndexProvider {
+export declare class HeapSnapshotRetainerEdgeIndexProvider implements HeapSnapshotItemIndexProvider {
     #private;
     constructor(snapshot: HeapSnapshot);
     itemForIndex(index: number): HeapSnapshotRetainerEdge;
 }
-class HeapSnapshotEdgeIterator implements HeapSnapshotItemIterator {
+export declare class HeapSnapshotEdgeIterator implements HeapSnapshotItemIterator {
     #private;
     edge: JSHeapSnapshotEdge;
     constructor(node: HeapSnapshotNode);
@@ -57,7 +57,7 @@ class HeapSnapshotEdgeIterator implements HeapSnapshotItemIterator {
     item(): HeapSnapshotEdge;
     next(): void;
 }
-class HeapSnapshotRetainerEdge implements HeapSnapshotItem {
+export declare class HeapSnapshotRetainerEdge implements HeapSnapshotItem {
     #private;
     protected snapshot: HeapSnapshot;
     constructor(snapshot: HeapSnapshot, retainerIndex: number);
@@ -79,7 +79,7 @@ class HeapSnapshotRetainerEdge implements HeapSnapshotItem {
     isInternal(): boolean;
     getValueForSorting(fieldName: string): number;
 }
-class HeapSnapshotRetainerEdgeIterator implements HeapSnapshotItemIterator {
+export declare class HeapSnapshotRetainerEdgeIterator implements HeapSnapshotItemIterator {
     #private;
     retainer: JSHeapSnapshotRetainerEdge;
     constructor(retainedNode: HeapSnapshotNode);
@@ -87,7 +87,7 @@ class HeapSnapshotRetainerEdgeIterator implements HeapSnapshotItemIterator {
     item(): HeapSnapshotRetainerEdge;
     next(): void;
 }
-class HeapSnapshotNode implements HeapSnapshotItem {
+export declare class HeapSnapshotNode implements HeapSnapshotItem {
     #private;
     snapshot: HeapSnapshot;
     nodeIndex: number;
@@ -128,7 +128,7 @@ class HeapSnapshotNode implements HeapSnapshotItem {
     detachedness(): DOMLinkState;
     setDetachedness(detachedness: DOMLinkState): void;
 }
-class HeapSnapshotNodeIterator implements HeapSnapshotItemIterator {
+export declare class HeapSnapshotNodeIterator implements HeapSnapshotItemIterator {
     #private;
     node: HeapSnapshotNode;
     constructor(node: HeapSnapshotNode);
@@ -136,14 +136,14 @@ class HeapSnapshotNodeIterator implements HeapSnapshotItemIterator {
     item(): HeapSnapshotNode;
     next(): void;
 }
-class HeapSnapshotIndexRangeIterator implements HeapSnapshotItemIterator {
+export declare class HeapSnapshotIndexRangeIterator implements HeapSnapshotItemIterator {
     #private;
     constructor(itemProvider: HeapSnapshotItemIndexProvider, indexes: number[] | Uint32Array);
     hasNext(): boolean;
     item(): HeapSnapshotItem;
     next(): void;
 }
-class HeapSnapshotFilteredIterator implements HeapSnapshotItemIterator {
+export declare class HeapSnapshotFilteredIterator implements HeapSnapshotItemIterator {
     #private;
     constructor(iterator: HeapSnapshotItemIterator, filter?: ((arg0: HeapSnapshotItem) => boolean));
     hasNext(): boolean;
@@ -151,7 +151,7 @@ class HeapSnapshotFilteredIterator implements HeapSnapshotItemIterator {
     next(): void;
     private skipFilteredItems;
 }
-class HeapSnapshotProgress {
+export declare class HeapSnapshotProgress {
     #private;
     constructor(dispatcher?: HeapSnapshotWorkerDispatcher);
     updateStatus(status: string): void;
@@ -228,7 +228,7 @@ declare const enum DOMLinkState {
     ATTACHED = 1,
     DETACHED = 2
 }
-class HeapSnapshot {
+export declare abstract class HeapSnapshot {
     #private;
     nodes: Platform.TypedArrayUtilities.BigUint32Array;
     containmentEdges: Platform.TypedArrayUtilities.BigUint32Array;
@@ -403,7 +403,7 @@ interface HeapSnapshotMetaInfo {
         [key: string]: string;
     };
 }
-interface HeapSnapshotHeader {
+export interface HeapSnapshotHeader {
     title: string;
     meta: HeapSnapshotMetaInfo;
     node_count: number;
@@ -412,7 +412,7 @@ interface HeapSnapshotHeader {
     root_index: number;
     extra_native_bytes?: number;
 }
-class HeapSnapshotItemProvider {
+export declare abstract class HeapSnapshotItemProvider {
     #private;
     protected readonly iterator: HeapSnapshotItemIterator;
     protected iterationOrder: number[] | null;
@@ -424,12 +424,12 @@ class HeapSnapshotItemProvider {
     sortAndRewind(comparator: HeapSnapshotModel.HeapSnapshotModel.ComparatorConfig): void;
     abstract sort(comparator: HeapSnapshotModel.HeapSnapshotModel.ComparatorConfig, leftBound: number, rightBound: number, windowLeft: number, windowRight: number): void;
 }
-class HeapSnapshotEdgesProvider extends HeapSnapshotItemProvider {
+export declare class HeapSnapshotEdgesProvider extends HeapSnapshotItemProvider {
     snapshot: HeapSnapshot;
     constructor(snapshot: HeapSnapshot, filter: ((arg0: HeapSnapshotEdge) => boolean) | null, edgesIter: HeapSnapshotEdgeIterator | HeapSnapshotRetainerEdgeIterator, indexProvider: HeapSnapshotItemIndexProvider);
     sort(comparator: HeapSnapshotModel.HeapSnapshotModel.ComparatorConfig, leftBound: number, rightBound: number, windowLeft: number, windowRight: number): void;
 }
-class HeapSnapshotNodesProvider extends HeapSnapshotItemProvider {
+export declare class HeapSnapshotNodesProvider extends HeapSnapshotItemProvider {
     snapshot: HeapSnapshot;
     constructor(snapshot: HeapSnapshot, nodeIndexes: number[] | Uint32Array);
     nodePosition(snapshotObjectId: number): number;
@@ -466,8 +466,8 @@ export declare class JSHeapSnapshot extends HeapSnapshot {
     private calculateArraySize;
     getStatistics(): HeapSnapshotModel.HeapSnapshotModel.Statistics;
 }
-declare function createJSHeapSnapshotForTesting(profile: Profile): Promise<JSHeapSnapshot>;
-class JSHeapSnapshotNode extends HeapSnapshotNode {
+export declare function createJSHeapSnapshotForTesting(profile: Profile): Promise<JSHeapSnapshot>;
+export declare class JSHeapSnapshotNode extends HeapSnapshotNode {
     #private;
     constructor(snapshot: JSHeapSnapshot, nodeIndex?: number);
     canBeQueried(): boolean;
@@ -483,7 +483,7 @@ class JSHeapSnapshotNode extends HeapSnapshotNode {
     isDocumentDOMTreesRoot(): boolean;
     serialize(): HeapSnapshotModel.HeapSnapshotModel.Node;
 }
-class JSHeapSnapshotEdge extends HeapSnapshotEdge {
+export declare class JSHeapSnapshotEdge extends HeapSnapshotEdge {
     constructor(snapshot: JSHeapSnapshot, edgeIndex?: number);
     clone(): JSHeapSnapshotEdge;
     hasStringName(): boolean;
@@ -501,7 +501,7 @@ class JSHeapSnapshotEdge extends HeapSnapshotEdge {
     rawType(): number;
     nameIndex(): number;
 }
-class JSHeapSnapshotRetainerEdge extends HeapSnapshotRetainerEdge {
+export declare class JSHeapSnapshotRetainerEdge extends HeapSnapshotRetainerEdge {
     constructor(snapshot: JSHeapSnapshot, retainerIndex: number);
     clone(): JSHeapSnapshotRetainerEdge;
     isHidden(): boolean;
@@ -509,7 +509,7 @@ class JSHeapSnapshotRetainerEdge extends HeapSnapshotRetainerEdge {
     isShortcut(): boolean;
     isWeak(): boolean;
 }
-interface AggregatedInfo {
+export interface AggregatedInfo {
     count: number;
     distance: number;
     self: number;
@@ -517,3 +517,4 @@ interface AggregatedInfo {
     name: string;
     idxs: number[];
 }
+export {};

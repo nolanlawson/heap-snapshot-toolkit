@@ -5,7 +5,7 @@ import type * as DataGrid from '../../ui/legacy/components/data_grid/data_grid.j
 import * as UI from '../../ui/legacy/legacy.js';
 import { type DataDisplayDelegate, type ProfileHeader, ProfileType } from './ProfileHeader.js';
 import { WritableProfileHeader } from './ProfileView.js';
-class DetachedElementsProfileView extends UI.View.SimpleView implements DataDisplayDelegate {
+export declare class DetachedElementsProfileView extends UI.View.SimpleView implements DataDisplayDelegate {
     readonly selectedSizeText: UI.Toolbar.ToolbarText;
     dataGrid: DataGrid.DataGrid.DataGridImpl<unknown>;
     profile: DetachedElementsProfileHeader;
@@ -50,7 +50,7 @@ export declare namespace DetachedElementsProfileType {
         [Events.DETACHED_ELEMENTS_OBTAINED]: Protocol.DOM.DetachedElementInfo[] | null;
     }
 }
-class DetachedElementsProfileHeader extends WritableProfileHeader {
+export declare class DetachedElementsProfileHeader extends WritableProfileHeader {
     readonly heapProfilerModelInternal: SDK.HeapProfilerModel.HeapProfilerModel | null;
     readonly detachedElements: Protocol.DOM.DetachedElementInfo[] | null;
     constructor(heapProfilerModel: SDK.HeapProfilerModel.HeapProfilerModel | null, type: DetachedElementsProfileType, detachedElements: Protocol.DOM.DetachedElementInfo[] | null, title?: string);
@@ -58,3 +58,4 @@ class DetachedElementsProfileHeader extends WritableProfileHeader {
     heapProfilerModel(): SDK.HeapProfilerModel.HeapProfilerModel | null;
     profileType(): DetachedElementsProfileType;
 }
+export {};

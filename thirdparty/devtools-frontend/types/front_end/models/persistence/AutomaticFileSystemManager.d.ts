@@ -19,7 +19,7 @@ export interface AutomaticFileSystem {
  * providing a `com.chrome.devtools.json` or not, and whether or not that file
  * (if it exists) provides workspace information.
  */
-type AutomaticFileSystemAvailability = 'available' | 'unavailable';
+export type AutomaticFileSystemAvailability = 'available' | 'unavailable';
 /**
  * Automatically connects and disconnects workspace folders.
  *
@@ -85,7 +85,7 @@ export declare class AutomaticFileSystemManager extends Common.ObjectWrapper.Obj
 /**
  * Events emitted by the `AutomaticFileSystemManager`.
  */
-declare const enum Events {
+export declare const enum Events {
     /**
      * Emitted whenever the `automaticFileSystem` property of the
      * `AutomaticFileSystemManager` changes.
@@ -100,7 +100,7 @@ declare const enum Events {
 /**
  * @internal
  */
-interface EventTypes {
+export interface EventTypes {
     [Events.AUTOMATIC_FILE_SYSTEM_CHANGED]: Readonly<AutomaticFileSystem> | null;
     [Events.AVAILABILITY_CHANGED]: AutomaticFileSystemAvailability;
 }

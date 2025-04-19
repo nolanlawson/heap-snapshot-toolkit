@@ -2,7 +2,7 @@
  * Represents a selector that pierces shadow roots. Each selector before the
  * last one is matches a shadow root for which we pierce through.
  */
-type DeepSelector = string[];
+export type DeepSelector = string[];
 /**
  * Represents a selector.
  */

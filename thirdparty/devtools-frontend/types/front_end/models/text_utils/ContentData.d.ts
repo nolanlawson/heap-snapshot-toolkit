@@ -68,7 +68,7 @@ export declare class ContentData {
      */
     static asDeferredContent(contentDataOrError: ContentDataOrError): DeferredContent;
 }
-const EMPTY_TEXT_CONTENT_DATA: ContentData;
+export declare const EMPTY_TEXT_CONTENT_DATA: ContentData;
 export type ContentDataOrError = ContentData | {
     error: string;
 };

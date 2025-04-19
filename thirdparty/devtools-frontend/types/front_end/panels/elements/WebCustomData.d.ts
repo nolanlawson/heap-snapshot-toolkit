@@ -24,7 +24,7 @@ export declare class WebCustomData {
      */
     findCssProperty(name: string): CSSProperty | undefined;
 }
-interface CSSProperty {
+export interface CSSProperty {
     name: string;
     description?: string;
     references?: Array<{

@@ -1,11 +1,11 @@
 import * as Trace from '../../models/trace/trace.js';
-class IsLong extends Trace.Extras.TraceFilter.TraceFilter {
+export declare class IsLong extends Trace.Extras.TraceFilter.TraceFilter {
     #private;
     constructor();
     setMinimumRecordDuration(value: Trace.Types.Timing.Milli): void;
     accept(event: Trace.Types.Events.Event): boolean;
 }
-class Category extends Trace.Extras.TraceFilter.TraceFilter {
+export declare class Category extends Trace.Extras.TraceFilter.TraceFilter {
     constructor();
     accept(event: Trace.Types.Events.Event): boolean;
 }

@@ -3,14 +3,14 @@ import type * as SDK from '../../../core/sdk/sdk.js';
 import type * as Protocol from '../../../generated/protocol.js';
 import * as Components from '../../../ui/legacy/components/utils/utils.js';
 import * as Lit from '../../../ui/lit/lit.js';
-interface StackTraceData {
+export interface StackTraceData {
     frame: SDK.ResourceTreeModel.ResourceTreeFrame;
     buildStackTraceRows: (stackTrace: Protocol.Runtime.StackTrace, target: SDK.Target.Target | null, linkifier: Components.Linkifier.Linkifier, tabStops: boolean | undefined, updateCallback?: (arg0: Array<Components.JSPresentationUtils.StackTraceRegularRow | Components.JSPresentationUtils.StackTraceAsyncRow>) => void) => Array<Components.JSPresentationUtils.StackTraceRegularRow | Components.JSPresentationUtils.StackTraceAsyncRow>;
 }
 interface StackTraceRowData {
     stackTraceRowItem: Components.JSPresentationUtils.StackTraceRegularRow;
 }
-class StackTraceRow extends HTMLElement {
+export declare class StackTraceRow extends HTMLElement {
     #private;
     set data(data: StackTraceRowData);
 }
@@ -19,11 +19,11 @@ interface StackTraceLinkButtonData {
     hiddenCallFramesCount: number;
     expandedView: boolean;
 }
-class StackTraceLinkButton extends HTMLElement {
+export declare class StackTraceLinkButton extends HTMLElement {
     #private;
     set data(data: StackTraceLinkButtonData);
 }
-class StackTrace extends HTMLElement {
+export declare class StackTrace extends HTMLElement {
     #private;
     set data(data: StackTraceData);
     createRowTemplates(): Lit.TemplateResult[];

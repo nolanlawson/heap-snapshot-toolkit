@@ -14,7 +14,7 @@ interface EditableProperty {
     propertyName: string;
     propertyValues: string[];
 }
-class PropertySelectedEvent extends Event {
+export declare class PropertySelectedEvent extends Event {
     static readonly eventName = "propertyselected";
     data: {
         name: string;
@@ -22,7 +22,7 @@ class PropertySelectedEvent extends Event {
     };
     constructor(name: string, value: string);
 }
-class PropertyDeselectedEvent extends Event {
+export declare class PropertyDeselectedEvent extends Event {
     static readonly eventName = "propertydeselected";
     data: {
         name: string;
@@ -30,7 +30,7 @@ class PropertyDeselectedEvent extends Event {
     };
     constructor(name: string, value: string);
 }
-class StylePropertyEditor extends HTMLElement {
+export declare class StylePropertyEditor extends HTMLElement {
     #private;
     protected readonly editableProperties: EditableProperty[];
     constructor();
@@ -39,7 +39,7 @@ class StylePropertyEditor extends HTMLElement {
     set data(data: FlexEditorData);
     protected findIcon(_query: string, _computedProperties: Map<string, string>): IconInfo | null;
 }
-class FlexboxEditor extends StylePropertyEditor {
+export declare class FlexboxEditor extends StylePropertyEditor {
     readonly jslogContext = "cssFlexboxEditor";
     protected readonly editableProperties: EditableProperty[];
     protected findIcon(query: string, computedProperties: Map<string, string>): IconInfo | null;
@@ -49,7 +49,7 @@ declare global {
         'devtools-flexbox-editor': FlexboxEditor;
     }
 }
-class GridEditor extends StylePropertyEditor {
+export declare class GridEditor extends StylePropertyEditor {
     readonly jslogContext = "cssGridEditor";
     protected readonly editableProperties: EditableProperty[];
     protected findIcon(query: string, computedProperties: Map<string, string>): IconInfo | null;
@@ -59,4 +59,12 @@ declare global {
         'devtools-grid-editor': GridEditor;
     }
 }
+export declare const FlexboxEditableProperties: {
+    propertyName: string;
+    propertyValues: string[];
+}[];
+export declare const GridEditableProperties: {
+    propertyName: string;
+    propertyValues: string[];
+}[];
 export {};

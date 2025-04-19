@@ -7,7 +7,7 @@ export declare class OverviewController extends Common.ObjectWrapper.ObjectWrapp
     currentUrl: string;
     constructor();
 }
-type PopulateNodesEvent = {
+export type PopulateNodesEvent = {
     type: 'contrast';
     key: string;
     section: string | undefined;
@@ -36,7 +36,7 @@ type PopulateNodesEvent = {
 };
 export type PopulateNodesEventNodes = PopulateNodesEvent['nodes'];
 export type PopulateNodesEventNodeTypes = PopulateNodesEventNodes[0];
-declare const enum Events {
+export declare const enum Events {
     REQUEST_OVERVIEW_START = "RequestOverviewStart",
     REQUEST_NODE_HIGHLIGHT = "RequestNodeHighlight",
     POPULATE_NODES = "PopulateNodes",
@@ -44,7 +44,7 @@ declare const enum Events {
     OVERVIEW_COMPLETED = "OverviewCompleted",
     RESET = "Reset"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.REQUEST_OVERVIEW_START]: void;
     [Events.REQUEST_NODE_HIGHLIGHT]: number;
     [Events.POPULATE_NODES]: {

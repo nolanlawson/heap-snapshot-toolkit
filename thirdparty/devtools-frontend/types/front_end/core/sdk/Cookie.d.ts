@@ -43,7 +43,7 @@ export declare class Cookie {
     matchesSecurityOrigin(securityOrigin: string): boolean;
     static isDomainMatch(domain: string, hostname: string): boolean;
 }
-declare const enum Type {
+export declare const enum Type {
     REQUEST = 0,
     RESPONSE = 1
 }

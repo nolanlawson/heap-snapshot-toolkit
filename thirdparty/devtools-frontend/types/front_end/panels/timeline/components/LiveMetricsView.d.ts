@@ -6,7 +6,7 @@ import '../../../ui/components/menus/menus.js';
 import './MetricCard.js';
 import * as LegacyWrapper from '../../../ui/components/legacy_wrapper/legacy_wrapper.js';
 import * as UI from '../../../ui/legacy/legacy.js';
-class LiveMetricsView extends LegacyWrapper.LegacyWrapper.WrappableComponent {
+export declare class LiveMetricsView extends LegacyWrapper.LegacyWrapper.WrappableComponent {
     #private;
     constructor();
     set isNode(isNode: boolean);

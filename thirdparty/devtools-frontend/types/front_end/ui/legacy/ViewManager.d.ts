@@ -3,9 +3,9 @@ import * as Common from '../../core/common/common.js';
 import type * as Root from '../../core/root/root.js';
 import { type ToolbarItem } from './Toolbar.js';
 import type { TabbedViewLocation, View, ViewLocation } from './View.js';
-import { ViewLocationValues, ViewPersistence, type ViewRegistration } from './ViewRegistration.js';
+import { getLocalizedViewLocationCategory, getRegisteredLocationResolvers, getRegisteredViewExtensions, maybeRemoveViewExtension, registerLocationResolver, registerViewExtension, resetViewRegistration, ViewLocationCategory, ViewLocationValues, ViewPersistence, type ViewRegistration } from './ViewRegistration.js';
 import { VBox, type Widget } from './Widget.js';
-const defaultOptionsForTabs: {
+export declare const defaultOptionsForTabs: {
     security: boolean;
     freestyler: boolean;
 };
@@ -31,7 +31,7 @@ export declare class PreRegisteredView implements View {
     experiment(): string | undefined;
     condition(): Root.Runtime.Condition | undefined;
 }
-class ViewManager {
+export declare class ViewManager {
     readonly views: Map<string, View>;
     private readonly locationNameByViewId;
     private readonly locationOverrideSetting;
@@ -63,7 +63,7 @@ class ViewManager {
     hasViewsForLocation(location: string): boolean;
     viewsForLocation(location: string): View[];
 }
-class ContainerWidget extends VBox {
+export declare class ContainerWidget extends VBox {
     private readonly view;
     private materializePromise?;
     constructor(view: View);
@@ -81,3 +81,4 @@ declare class Location {
     showView(_view: View, _insertBefore?: View | null, _userGesture?: boolean, _omitFocus?: boolean, _shouldSelectTab?: boolean): Promise<void>;
     removeView(_view: View): void;
 }
+export { getLocalizedViewLocationCategory, getRegisteredLocationResolvers, getRegisteredViewExtensions, maybeRemoveViewExtension, registerLocationResolver, registerViewExtension, resetViewRegistration, ViewLocationCategory, ViewLocationValues, ViewPersistence, ViewRegistration, };

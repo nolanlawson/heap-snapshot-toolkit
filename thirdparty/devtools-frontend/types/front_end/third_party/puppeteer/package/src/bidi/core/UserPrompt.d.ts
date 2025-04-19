@@ -10,11 +10,11 @@ import type { BrowsingContext } from './BrowsingContext.js';
 /**
  * @internal
  */
-type HandleOptions = Omit<Bidi.BrowsingContext.HandleUserPromptParameters, 'context'>;
+export type HandleOptions = Omit<Bidi.BrowsingContext.HandleUserPromptParameters, 'context'>;
 /**
  * @internal
  */
-type UserPromptResult = Omit<Bidi.BrowsingContext.UserPromptClosedParameters, 'context'>;
+export type UserPromptResult = Omit<Bidi.BrowsingContext.UserPromptClosedParameters, 'context'>;
 /**
  * @internal
  */

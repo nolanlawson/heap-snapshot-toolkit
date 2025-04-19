@@ -1,14 +1,14 @@
 import * as Common from '../../core/common/common.js';
 import * as PerfUI from '../../ui/legacy/components/perf_ui/perf_ui.js';
 import * as UI from '../../ui/legacy/legacy.js';
-const HotColorScheme: string[];
-const ColdColorScheme: string[];
+export declare const HotColorScheme: string[];
+export declare const ColdColorScheme: string[];
 interface EventHandlers {
     setLive: (arg0: number) => number;
     setComplete: (arg0: number) => void;
     updateMaxTime: (arg0: number) => void;
 }
-interface EventProperties {
+export interface EventProperties {
     level: number;
     startTime: number;
     duration?: number;
@@ -18,7 +18,7 @@ interface EventProperties {
 /**
  * Wrapper class for each event displayed on the timeline.
  */
-class Event {
+export declare class Event {
     private timelineData;
     private setLive;
     private readonly setComplete;
@@ -82,3 +82,4 @@ export declare class TickingFlameChart extends UI.Widget.VBox {
     private stop;
     private updateRender;
 }
+export {};

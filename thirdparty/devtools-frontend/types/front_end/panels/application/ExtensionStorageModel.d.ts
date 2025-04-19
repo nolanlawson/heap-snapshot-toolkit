@@ -18,7 +18,7 @@ export declare class ExtensionStorage extends Common.ObjectWrapper.ObjectWrapper
     clear(): Promise<void>;
     matchesTarget(target: SDK.Target.Target | undefined): boolean;
 }
-class ExtensionStorageModel extends SDK.SDKModel.SDKModel<EventTypes> {
+export declare class ExtensionStorageModel extends SDK.SDKModel.SDKModel<EventTypes> {
     #private;
     readonly agent: ProtocolProxyApi.ExtensionsApi;
     constructor(target: SDK.Target.Target);
@@ -26,11 +26,11 @@ class ExtensionStorageModel extends SDK.SDKModel.SDKModel<EventTypes> {
     storageForIdAndArea(id: string, storageArea: Protocol.Extensions.StorageArea): ExtensionStorage | undefined;
     storages(): ExtensionStorage[];
 }
-declare const enum Events {
+export declare const enum Events {
     EXTENSION_STORAGE_ADDED = "ExtensionStorageAdded",
     EXTENSION_STORAGE_REMOVED = "ExtensionStorageRemoved"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.EXTENSION_STORAGE_ADDED]: ExtensionStorage;
     [Events.EXTENSION_STORAGE_REMOVED]: ExtensionStorage;
 }

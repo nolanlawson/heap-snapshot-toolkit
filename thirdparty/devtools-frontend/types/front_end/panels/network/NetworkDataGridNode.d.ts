@@ -6,11 +6,11 @@ import * as DataGrid from '../../ui/legacy/components/data_grid/data_grid.js';
 import * as Components from '../../ui/legacy/components/utils/utils.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import type { NetworkTimeCalculator } from './NetworkTimeCalculator.js';
-declare const enum Events {
+export declare const enum Events {
     RequestSelected = "RequestSelected",
     RequestActivated = "RequestActivated"
 }
-interface RequestActivatedEvent {
+export interface RequestActivatedEvent {
     showPanel: boolean;
     takeFocus?: boolean;
     tab?: NetworkForward.UIRequestLocation.UIRequestTabs;
@@ -81,7 +81,7 @@ export declare class NetworkNode extends DataGrid.SortableDataGrid.SortableDataG
     clearFlatNodes(): void;
     requestOrFirstKnownChildRequest(): SDK.NetworkRequest.NetworkRequest | null;
 }
-const _backgroundColors: {
+export declare const _backgroundColors: {
     [x: string]: string;
 };
 export declare class NetworkRequestNode extends NetworkNode {

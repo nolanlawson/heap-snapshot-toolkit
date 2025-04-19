@@ -31,7 +31,7 @@ export declare namespace HeapSnapshotWorkerProxy {
         [Events.WAIT]: boolean;
     }
 }
-class HeapSnapshotProxyObject {
+export declare class HeapSnapshotProxyObject {
     readonly worker: HeapSnapshotWorkerProxy;
     readonly objectId: number;
     constructor(worker: HeapSnapshotWorkerProxy, objectId: number);
@@ -41,7 +41,7 @@ class HeapSnapshotProxyObject {
     callFactoryMethodPromise<T extends Object>(methodName: string, proxyConstructor: new (...arg1: any[]) => T, transfer: Transferable[], ...args: any[]): Promise<T>;
     callMethodPromise<T>(methodName: string, ...args: any[]): Promise<T>;
 }
-class HeapSnapshotLoaderProxy extends HeapSnapshotProxyObject implements Common.StringOutputStream.OutputStream {
+export declare class HeapSnapshotLoaderProxy extends HeapSnapshotProxyObject implements Common.StringOutputStream.OutputStream {
     readonly profileUid: number;
     readonly snapshotReceivedCallback: (arg0: HeapSnapshotProxy) => void;
     constructor(worker: HeapSnapshotWorkerProxy, objectId: number, profileUid: number, snapshotReceivedCallback: (arg0: HeapSnapshotProxy) => void);

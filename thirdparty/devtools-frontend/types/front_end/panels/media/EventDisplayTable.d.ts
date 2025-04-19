@@ -1,23 +1,23 @@
 import * as DataGrid from '../../ui/legacy/components/data_grid/data_grid.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import type { PlayerEvent } from './MediaModel.js';
-interface EventDisplayColumnConfig {
+export interface EventDisplayColumnConfig {
     id: string;
     title: string;
     sortable: boolean;
     weight?: number;
 }
-declare const enum MediaEventColumnKeys {
+export declare const enum MediaEventColumnKeys {
     TIMESTAMP = "display-timestamp",
     EVENT = "event",
     VALUE = "value"
 }
-class EventNode extends DataGrid.DataGrid.DataGridNode<EventNode> {
+export declare class EventNode extends DataGrid.DataGrid.DataGridNode<EventNode> {
     private expandableElement;
     constructor(event: PlayerEvent);
     createCell(columnId: string): HTMLElement;
 }
-class PlayerEventsView extends UI.Widget.VBox {
+export declare class PlayerEventsView extends UI.Widget.VBox {
     private readonly dataGrid;
     private firstEventTime;
     constructor();

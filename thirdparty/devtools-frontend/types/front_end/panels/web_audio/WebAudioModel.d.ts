@@ -24,7 +24,7 @@ export declare class WebAudioModel extends SDK.SDKModel.SDKModel<EventTypes> imp
     nodeParamDisconnected({ contextId, sourceId, destinationId, sourceOutputIndex }: Protocol.WebAudio.NodeParamDisconnectedEvent): void;
     requestRealtimeData(contextId: Protocol.WebAudio.GraphObjectId): Promise<Protocol.WebAudio.ContextRealtimeData | null>;
 }
-declare const enum Events {
+export declare const enum Events {
     CONTEXT_CREATED = "ContextCreated",
     CONTEXT_DESTROYED = "ContextDestroyed",
     CONTEXT_CHANGED = "ContextChanged",
@@ -41,7 +41,7 @@ declare const enum Events {
     NODE_PARAM_CONNECTED = "NodeParamConnected",
     NODE_PARAM_DISCONNECTED = "NodeParamDisconnected"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.CONTEXT_CREATED]: Protocol.WebAudio.BaseAudioContext;
     [Events.CONTEXT_DESTROYED]: Protocol.WebAudio.GraphObjectId;
     [Events.CONTEXT_CHANGED]: Protocol.WebAudio.BaseAudioContext;

@@ -2,8 +2,8 @@ import * as Platform from '../platform/platform.js';
 import * as Root from '../root/root.js';
 import type { EventDescriptor, EventTargetEvent, GenericEvents } from './EventTarget.js';
 import { ObjectWrapper } from './Object.js';
-import { type LearnMore, type RegExpSettingItem, SettingCategory, type SettingRegistration, SettingType } from './SettingRegistration.js';
-class Settings {
+import { getLocalizedSettingsCategory, type LearnMore, maybeRemoveSettingExtension, type RegExpSettingItem, registerSettingExtension, registerSettingsForTest, resetSettings, SettingCategory, type SettingExtensionOption, type SettingRegistration, SettingType } from './SettingRegistration.js';
+export declare class Settings {
     #private;
     readonly syncedStorage: SettingsStorage;
     readonly globalStorage: SettingsStorage;
@@ -47,15 +47,15 @@ class Settings {
     private storageFromType;
     getRegistry(): Map<string, Setting<unknown>>;
 }
-interface SettingsBackingStore {
+export interface SettingsBackingStore {
     register(setting: string): void;
     get(setting: string): Promise<string>;
     set(setting: string, value: string): void;
     remove(setting: string): void;
     clear(): void;
 }
-const NOOP_STORAGE: SettingsBackingStore;
-class SettingsStorage {
+export declare const NOOP_STORAGE: SettingsBackingStore;
+export declare class SettingsStorage {
     private object;
     private readonly backingStore;
     private readonly storagePrefix;
@@ -70,13 +70,13 @@ class SettingsStorage {
     keys(): string[];
     dumpSizes(): void;
 }
-class Deprecation {
+export declare class Deprecation {
     readonly disabled: boolean;
     readonly warning: Platform.UIString.LocalizedString;
     readonly experiment?: Root.Runtime.Experiment;
     constructor({ deprecationNotice }: SettingRegistration);
 }
-class Setting<V> {
+export declare class Setting<V> {
     #private;
     readonly name: string;
     readonly defaultValue: V;
@@ -108,7 +108,7 @@ class Setting<V> {
     get deprecation(): Deprecation | null;
     private printSettingsSavingError;
 }
-class RegExpSetting extends Setting<any> {
+export declare class RegExpSetting extends Setting<any> {
     #private;
     constructor(name: string, defaultValue: string, eventSupport: ObjectWrapper<GenericEvents>, storage: SettingsStorage, regexFlags?: string, logSettingAccess?: (name: string, value: number | string | boolean) => Promise<void>);
     get(): string;
@@ -117,7 +117,7 @@ class RegExpSetting extends Setting<any> {
     setAsArray(value: RegExpSettingItem[]): void;
     asRegExp(): RegExp | null;
 }
-class VersionController {
+export declare class VersionController {
     #private;
     static readonly GLOBAL_VERSION_SETTING_NAME = "inspectorVersion";
     static readonly SYNCED_VERSION_SETTING_NAME = "syncedInspectorVersion";
@@ -191,13 +191,14 @@ export declare const enum SettingStorageType {
      * user is done with their task. (eg Emulation modes, Debug overlays). These are also not carried into/out of incognito */
     SESSION = "Session"
 }
-declare function moduleSetting(settingName: string): Setting<unknown>;
-declare function settingForTest(settingName: string): Setting<unknown>;
+export declare function moduleSetting(settingName: string): Setting<unknown>;
+export declare function settingForTest(settingName: string): Setting<unknown>;
+export { getLocalizedSettingsCategory, maybeRemoveSettingExtension, RegExpSettingItem, registerSettingExtension, registerSettingsForTest, resetSettings, SettingCategory, SettingExtensionOption, SettingRegistration, SettingType, };
 export interface Serializer<I, O> {
     stringify: (value: I) => string;
     parse: (value: string) => O;
 }
-interface SimpleSettingOption {
+export interface SimpleSettingOption {
     value: string | boolean;
     title: string;
     text?: string;

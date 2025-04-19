@@ -131,7 +131,7 @@ export declare class StylePropertiesSection {
      */
     closestPropertyForEditing(propertyIndex: number): UI.TreeOutline.TreeElement | null;
 }
-class BlankStylePropertiesSection extends StylePropertiesSection {
+export declare class BlankStylePropertiesSection extends StylePropertiesSection {
     private normal;
     private readonly ruleLocation;
     private readonly styleSheetId;
@@ -143,24 +143,24 @@ class BlankStylePropertiesSection extends StylePropertiesSection {
     editingSelectorCancelled(): void;
     private makeNormal;
 }
-class RegisteredPropertiesSection extends StylePropertiesSection {
+export declare class RegisteredPropertiesSection extends StylePropertiesSection {
     constructor(stylesPane: StylesSidebarPane, matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, style: SDK.CSSStyleDeclaration.CSSStyleDeclaration, sectionIdx: number, propertyName: string, expandedByDefault: boolean);
     setHeaderText(rule: SDK.CSSRule.CSSRule, newContent: string): Promise<void>;
     createRuleOriginNode(matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, linkifier: Components.Linkifier.Linkifier, rule: SDK.CSSRule.CSSRule | null): Node;
 }
-class FunctionRuleSection extends StylePropertiesSection {
+export declare class FunctionRuleSection extends StylePropertiesSection {
     constructor(stylesPane: StylesSidebarPane, matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, style: SDK.CSSStyleDeclaration.CSSStyleDeclaration, children: SDK.CSSRule.CSSNestedStyle[], sectionIdx: number, functionName: string, parameters: string[], expandedByDefault: boolean);
     createConditionElement(condition: SDK.CSSRule.CSSNestedStyleCondition): HTMLElement | undefined;
     positionNestingElement(element: HTMLElement): HTMLElement;
     addChildren(children: SDK.CSSRule.CSSNestedStyle[], parent: TreeElementParent): void;
 }
-class FontPaletteValuesRuleSection extends StylePropertiesSection {
+export declare class FontPaletteValuesRuleSection extends StylePropertiesSection {
     constructor(stylesPane: StylesSidebarPane, matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, style: SDK.CSSStyleDeclaration.CSSStyleDeclaration, sectionIdx: number);
 }
-class PositionTryRuleSection extends StylePropertiesSection {
+export declare class PositionTryRuleSection extends StylePropertiesSection {
     constructor(stylesPane: StylesSidebarPane, matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, style: SDK.CSSStyleDeclaration.CSSStyleDeclaration, sectionIdx: number, active: boolean);
 }
-class KeyframePropertiesSection extends StylePropertiesSection {
+export declare class KeyframePropertiesSection extends StylePropertiesSection {
     constructor(stylesPane: StylesSidebarPane, matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, style: SDK.CSSStyleDeclaration.CSSStyleDeclaration, sectionIdx: number);
     headerText(): string;
     setHeaderText(rule: SDK.CSSRule.CSSRule, newContent: string): Promise<void>;
@@ -170,9 +170,10 @@ class KeyframePropertiesSection extends StylePropertiesSection {
     markSelectorMatches(): void;
     highlight(): void;
 }
-class HighlightPseudoStylePropertiesSection extends StylePropertiesSection {
+export declare class HighlightPseudoStylePropertiesSection extends StylePropertiesSection {
     isPropertyInherited(_propertyName: string): boolean;
 }
 interface TreeElementParent {
     appendChild(child: UI.TreeOutline.TreeElement): void;
 }
+export {};

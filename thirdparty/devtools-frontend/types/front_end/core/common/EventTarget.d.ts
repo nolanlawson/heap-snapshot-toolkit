@@ -5,7 +5,7 @@ export interface EventDescriptor<Events = any, T extends keyof Events = any> {
     thisObject?: Object;
     listener: EventListener<Events, T>;
 }
-declare function removeEventListeners(eventList: EventDescriptor[]): void;
+export declare function removeEventListeners(eventList: EventDescriptor[]): void;
 export interface GenericEvents {
     [eventName: string]: any;
 }
@@ -18,7 +18,7 @@ export interface EventTarget<Events> {
     hasEventListeners(eventType: keyof Events): boolean;
     dispatchEventToListeners<T extends keyof Events>(eventType: Platform.TypeScriptUtilities.NoUnion<T>, ...[eventData]: EventPayloadToRestParameters<Events, T>): void;
 }
-declare function fireEvent(name: string, detail?: unknown, target?: HTMLElement | Window): void;
+export declare function fireEvent(name: string, detail?: unknown, target?: HTMLElement | Window): void;
 export interface EventTargetEvent<T, Events = any> {
     data: T;
     source?: EventTarget<Events>;

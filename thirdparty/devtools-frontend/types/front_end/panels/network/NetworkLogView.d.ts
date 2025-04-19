@@ -201,9 +201,9 @@ export declare class NetworkLogView extends NetworkLogView_base implements SDK.T
     static getDCLEventColor(): string;
     static getLoadEventColor(): string;
 }
-declare function computeStackTraceText(stackTrace: Protocol.Runtime.StackTrace): string;
-declare function isRequestFilteredOut(request: NetworkRequestNode): boolean;
-const HTTPSchemas: {
+export declare function computeStackTraceText(stackTrace: Protocol.Runtime.StackTrace): string;
+export declare function isRequestFilteredOut(request: NetworkRequestNode): boolean;
+export declare const HTTPSchemas: {
     http: boolean;
     https: boolean;
     ws: boolean;
@@ -213,14 +213,14 @@ export interface GroupLookupInterface {
     groupNodeForRequest(request: SDK.NetworkRequest.NetworkRequest): NetworkGroupNode | null;
     reset(): void;
 }
-const overrideFilter: {
+export declare const overrideFilter: {
     yes: string;
     no: string;
     content: string;
     headers: string;
 };
-type Filter = (request: SDK.NetworkRequest.NetworkRequest) => boolean;
-class MoreFiltersDropDownUI extends Common.ObjectWrapper.ObjectWrapper<UI.FilterBar.FilterUIEventTypes> implements UI.FilterBar.FilterUI {
+export type Filter = (request: SDK.NetworkRequest.NetworkRequest) => boolean;
+export declare class MoreFiltersDropDownUI extends Common.ObjectWrapper.ObjectWrapper<UI.FilterBar.FilterUIEventTypes> implements UI.FilterBar.FilterUI {
     #private;
     private readonly filterElement;
     private readonly dropDownButton;
@@ -239,3 +239,4 @@ class MoreFiltersDropDownUI extends Common.ObjectWrapper.ObjectWrapper<UI.Filter
     isActive(): boolean;
     element(): HTMLDivElement;
 }
+export {};

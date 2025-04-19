@@ -18,7 +18,7 @@ export declare class ConsoleFilter {
     parentGroupHasMatch(viewMessage: ConsoleGroupViewMessage | null): boolean;
     applyFilter(viewMessage: ConsoleViewMessage): boolean;
 }
-declare enum FilterType {
+export declare enum FilterType {
     Context = "context",
     Source = "source",
     Url = "url"

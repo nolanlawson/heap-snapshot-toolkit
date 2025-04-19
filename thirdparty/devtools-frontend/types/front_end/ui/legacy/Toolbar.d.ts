@@ -71,7 +71,7 @@ export declare class Toolbar extends HTMLElement {
     hideSeparatorDupes(): void;
     appendItemsAtLocation(location: string): Promise<void>;
 }
-interface ToolbarButtonOptions {
+export interface ToolbarButtonOptions {
     label?: () => Platform.UIString.LocalizedString;
 }
 export declare class ToolbarItem<T = any, E extends HTMLElement = HTMLElement> extends Common.ObjectWrapper.ObjectWrapper<T> {
@@ -88,16 +88,16 @@ export declare class ToolbarItem<T = any, E extends HTMLElement = HTMLElement> e
     setVisible(x: boolean): void;
     setCompactLayout(_enable: boolean): void;
 }
-declare const enum ToolbarItemWithCompactLayoutEvents {
+export declare const enum ToolbarItemWithCompactLayoutEvents {
     COMPACT_LAYOUT_UPDATED = "CompactLayoutUpdated"
 }
 interface ToolbarItemWithCompactLayoutEventTypes {
     [ToolbarItemWithCompactLayoutEvents.COMPACT_LAYOUT_UPDATED]: boolean;
 }
-class ToolbarItemWithCompactLayout extends ToolbarItem<ToolbarItemWithCompactLayoutEventTypes> {
+export declare class ToolbarItemWithCompactLayout extends ToolbarItem<ToolbarItemWithCompactLayoutEventTypes> {
     setCompactLayout(enable: boolean): void;
 }
-class ToolbarText extends ToolbarItem<void, HTMLElement> {
+export declare class ToolbarText extends ToolbarItem<void, HTMLElement> {
     constructor(text?: string);
     text(): string;
     setText(text: string): void;
@@ -133,7 +133,7 @@ export declare namespace ToolbarButton {
         [Events.CLICK]: Event;
     }
 }
-class ToolbarInput extends ToolbarItem<ToolbarInput.EventTypes> {
+export declare class ToolbarInput extends ToolbarItem<ToolbarInput.EventTypes> {
     private prompt;
     private readonly proxyElement;
     constructor(placeholder: string, accessiblePlaceholder?: string, growFactor?: number, shrinkFactor?: number, tooltip?: string, completions?: ((arg0: string, arg1: string, arg2?: boolean | undefined) => Promise<Suggestion[]>), dynamicCompletions?: boolean, jslogContext?: string, element?: HTMLElement);
@@ -147,7 +147,7 @@ class ToolbarInput extends ToolbarItem<ToolbarInput.EventTypes> {
     private onChangeCallback;
     private updateEmptyStyles;
 }
-class ToolbarFilter extends ToolbarInput {
+export declare class ToolbarFilter extends ToolbarInput {
     constructor(filterBy?: Common.UIString.LocalizedString, growFactor?: number, shrinkFactor?: number, tooltip?: string, completions?: ((arg0: string, arg1: string, arg2?: boolean | undefined) => Promise<Suggestion[]>), dynamicCompletions?: boolean, jslogContext?: string, element?: HTMLElement);
 }
 export declare namespace ToolbarInput {
@@ -160,7 +160,7 @@ export declare namespace ToolbarInput {
         [Event.ENTER_PRESSED]: string;
     }
 }
-class ToolbarToggle extends ToolbarButton {
+export declare class ToolbarToggle extends ToolbarButton {
     private readonly toggledGlyph;
     constructor(title: string, glyph?: string, toggledGlyph?: string, jslogContext?: string, toggleOnClick?: boolean);
     setToggleOnClick(toggleOnClick: boolean): void;
@@ -188,7 +188,7 @@ export declare class ToolbarMenuButton extends ToolbarItem<ToolbarButton.EventTy
     private trigger;
     clicked(event: Event): void;
 }
-class ToolbarSettingToggle extends ToolbarToggle {
+export declare class ToolbarSettingToggle extends ToolbarToggle {
     private readonly defaultTitle;
     private readonly setting;
     private willAnnounceState;
@@ -196,16 +196,16 @@ class ToolbarSettingToggle extends ToolbarToggle {
     private settingChanged;
     clicked(event: Event): void;
 }
-class ToolbarSeparator extends ToolbarItem<void> {
+export declare class ToolbarSeparator extends ToolbarItem<void> {
     constructor(spacer?: boolean);
 }
 export interface Provider {
     item(): ToolbarItem | null;
 }
-interface ItemsProvider {
+export interface ItemsProvider {
     toolbarItems(): ToolbarItem[];
 }
-class ToolbarComboBox extends ToolbarItem<void, HTMLSelectElement> {
+export declare class ToolbarComboBox extends ToolbarItem<void, HTMLSelectElement> {
     constructor(changeHandler: ((arg0: Event) => void) | null, title: string, className?: string, jslogContext?: string, element?: HTMLSelectElement);
     size(): number;
     options(): HTMLOptionElement[];
@@ -221,11 +221,11 @@ class ToolbarComboBox extends ToolbarItem<void, HTMLSelectElement> {
     setMaxWidth(width: number): void;
     setMinWidth(width: number): void;
 }
-interface Option {
+export interface Option {
     value: string;
     label: string;
 }
-class ToolbarSettingComboBox extends ToolbarComboBox {
+export declare class ToolbarSettingComboBox extends ToolbarComboBox {
     private optionsInternal;
     private readonly setting;
     private muteSettingListener?;
@@ -248,18 +248,18 @@ class ToolbarSettingComboBox extends ToolbarComboBox {
      */
     private onSelectValueChange;
 }
-class ToolbarCheckbox extends ToolbarItem<void> {
+export declare class ToolbarCheckbox extends ToolbarItem<void> {
     constructor(text: Common.UIString.LocalizedString, tooltip?: Common.UIString.LocalizedString, listener?: ((arg0: MouseEvent) => void), jslogContext?: string);
     checked(): boolean;
     setChecked(value: boolean): void;
     applyEnabledState(enabled: boolean): void;
     setIndeterminate(indeterminate: boolean): void;
 }
-class ToolbarSettingCheckbox extends ToolbarCheckbox {
+export declare class ToolbarSettingCheckbox extends ToolbarCheckbox {
     constructor(setting: Common.Settings.Setting<boolean>, tooltip?: Common.UIString.LocalizedString, alternateTitle?: Common.UIString.LocalizedString);
 }
-declare function registerToolbarItem(registration: ToolbarItemRegistration): void;
-interface ToolbarItemRegistration {
+export declare function registerToolbarItem(registration: ToolbarItemRegistration): void;
+export interface ToolbarItemRegistration {
     order?: number;
     location: ToolbarItemLocation;
     separator?: boolean;
@@ -270,7 +270,7 @@ interface ToolbarItemRegistration {
     experiment?: string;
     jslog?: string;
 }
-declare const enum ToolbarItemLocation {
+export declare const enum ToolbarItemLocation {
     FILES_NAVIGATION_TOOLBAR = "files-navigator-toolbar",
     MAIN_TOOLBAR_RIGHT = "main-toolbar-right",
     MAIN_TOOLBAR_LEFT = "main-toolbar-left",
@@ -281,3 +281,4 @@ declare global {
         'devtools-toolbar': Toolbar;
     }
 }
+export {};

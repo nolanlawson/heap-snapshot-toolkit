@@ -9,7 +9,7 @@ export type LastTimestampByLevel = number[];
  * @param extra the customized fields with value.
  * @returns the built GroupStyle
  */
-declare function buildGroupStyle(extra?: Partial<PerfUI.FlameChart.GroupStyle>): PerfUI.FlameChart.GroupStyle;
+export declare function buildGroupStyle(extra?: Partial<PerfUI.FlameChart.GroupStyle>): PerfUI.FlameChart.GroupStyle;
 /**
  * Builds the header corresponding to the track. A header is added in the shape of a group in the flame chart data.
  * @param jslogContext the text that will be set as the logging context
@@ -25,18 +25,18 @@ declare function buildGroupStyle(extra?: Partial<PerfUI.FlameChart.GroupStyle>):
  * @param showStackContextMenu whether menu with options to merge/collapse entries in track is shown.
  * @returns the group that built from the give data
  */
-declare function buildTrackHeader(jslogContext: VisualLoggingTrackName | null, startLevel: number, name: string, style: PerfUI.FlameChart.GroupStyle, selectable: boolean, expanded?: boolean, showStackContextMenu?: boolean): PerfUI.FlameChart.Group;
+export declare function buildTrackHeader(jslogContext: VisualLoggingTrackName | null, startLevel: number, name: string, style: PerfUI.FlameChart.GroupStyle, selectable: boolean, expanded?: boolean, showStackContextMenu?: boolean): PerfUI.FlameChart.Group;
 /**
  * Returns the time info shown when an event is hovered in the timeline.
  * @param totalTime the total time of the hovered event.
  * @param selfTime the self time of the hovered event.
  * @returns the formatted time string for popoverInfo
  */
-declare function getDurationString(totalTime?: Trace.Types.Timing.Micro, selfTime?: Trace.Types.Timing.Micro): string;
+export declare function getDurationString(totalTime?: Trace.Types.Timing.Micro, selfTime?: Trace.Types.Timing.Micro): string;
 /**
  * Returns the first level that is available for an event.
  * Important: if you are walking through an array of events and calling this,
  * the events MUST be sorted.
  */
-declare function getEventLevel(event: Trace.Types.Events.Event, lastTimestampByLevel: LastTimestampByLevel): number;
-declare function addDecorationToEvent(timelineData: PerfUI.FlameChart.FlameChartTimelineData, eventIndex: number, decoration: PerfUI.FlameChart.FlameChartDecoration): void;
+export declare function getEventLevel(event: Trace.Types.Events.Event, lastTimestampByLevel: LastTimestampByLevel): number;
+export declare function addDecorationToEvent(timelineData: PerfUI.FlameChart.FlameChartTimelineData, eventIndex: number, decoration: PerfUI.FlameChart.FlameChartDecoration): void;

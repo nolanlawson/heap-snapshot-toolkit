@@ -33,9 +33,9 @@ import * as Trace from '../../../../models/trace/trace.js';
 import * as UI from '../../legacy.js';
 import { type ChartViewportDelegate } from './ChartViewport.js';
 import { type Calculator } from './TimelineGrid.js';
-const ARROW_SIDE = 8;
-const EDIT_ICON_WIDTH = 16;
-declare const enum HoverType {
+export declare const ARROW_SIDE = 8;
+export declare const EDIT_ICON_WIDTH = 16;
+export declare const enum HoverType {
     TRACK_CONFIG_UP_BUTTON = "TRACK_CONFIG_UP_BUTTON",
     TRACK_CONFIG_DOWN_BUTTON = "TRACK_CONFIG_DOWN_BUTTON",
     TRACK_CONFIG_HIDE_BUTTON = "TRACK_CONFIG_HIDE_BUTTON",
@@ -45,7 +45,7 @@ declare const enum HoverType {
     OUTSIDE_TRACKS = "OUTSIDE_TRACKS",
     ERROR = "ERROR"
 }
-interface FlameChartDelegate {
+export interface FlameChartDelegate {
     windowChanged(_startTime: number, _endTime: number, _animate: boolean): void;
     updateRangeSelection(_startTime: number, _endTime: number): void;
     updateSelectedGroup(_flameChart: FlameChart, _group: Group | null): void;
@@ -65,7 +65,7 @@ interface GroupTreeNode {
     endLevel: number;
     children: GroupTreeNode[];
 }
-interface OptionalFlameChartConfig {
+export interface OptionalFlameChartConfig {
     /**
      * The FlameChart will highlight the entry that is selected by default. In
      * some cases (Performance Panel) we manage this ourselves with the Overlays
@@ -82,31 +82,31 @@ interface OptionalFlameChartConfig {
      */
     useOverlaysForCursorRuler?: boolean;
 }
-declare const enum FilterAction {
+export declare const enum FilterAction {
     MERGE_FUNCTION = "MERGE_FUNCTION",
     COLLAPSE_FUNCTION = "COLLAPSE_FUNCTION",
     COLLAPSE_REPEATING_DESCENDANTS = "COLLAPSE_REPEATING_DESCENDANTS",
     RESET_CHILDREN = "RESET_CHILDREN",
     UNDO_ALL_ACTIONS = "UNDO_ALL_ACTIONS"
 }
-interface UserFilterAction {
+export interface UserFilterAction {
     type: FilterAction;
     entry: Trace.Types.Events.Event;
 }
-interface PossibleFilterActions {
+export interface PossibleFilterActions {
     [FilterAction.MERGE_FUNCTION]: boolean;
     [FilterAction.COLLAPSE_FUNCTION]: boolean;
     [FilterAction.COLLAPSE_REPEATING_DESCENDANTS]: boolean;
     [FilterAction.RESET_CHILDREN]: boolean;
     [FilterAction.UNDO_ALL_ACTIONS]: boolean;
 }
-interface PositionOverride {
+export interface PositionOverride {
     x: number;
     width: number;
     /** The z index of this entry. Use -1 if placing it underneath other entries. A z of 0 is assumed, otherwise, much like CSS's z-index */
     z?: number;
 }
-type DrawOverride = (context: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, timeToPosition: (time: number) => number, transformColor: (color: string) => string) => PositionOverride;
+export type DrawOverride = (context: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, timeToPosition: (time: number) => number, transformColor: (color: string) => string) => PositionOverride;
 declare const FlameChart_base: {
     new (...args: any[]): {
         "__#15@#events": Common.ObjectWrapper.ObjectWrapper<EventTypes>;
@@ -491,8 +491,8 @@ export declare class FlameChart extends FlameChart_base implements Calculator, C
     boundarySpan(): Trace.Types.Timing.Milli;
     getDimIndices(): Uint8Array<ArrayBufferLike> | null;
 }
-const RulerHeight = 15;
-const MinimalTimeWindowMs = 0.5;
+export declare const RulerHeight = 15;
+export declare const MinimalTimeWindowMs = 0.5;
 /**
  * initiatorIndex is the index of the initiator entry and
  * eventIndex is the entry initiated by it.
@@ -502,13 +502,13 @@ const MinimalTimeWindowMs = 0.5;
  * or/and eventIndex are for the entries that are the closest
  * modified by an actions ancestors to them.
  */
-interface FlameChartInitiatorData {
+export interface FlameChartInitiatorData {
     initiatorIndex: number;
     eventIndex: number;
     isEntryHidden?: boolean;
     isInitiatorHidden?: boolean;
 }
-declare const enum FlameChartDecorationType {
+export declare const enum FlameChartDecorationType {
     CANDY = "CANDY",
     WARNING_TRIANGLE = "WARNING_TRIANGLE",
     HIDDEN_DESCENDANTS_ARROW = "HIDDEN_DESCENDANTS_ARROW"
@@ -522,7 +522,7 @@ declare const enum FlameChartDecorationType {
  *
  * This work is being tracked in crbug.com/1434297.
  **/
-type FlameChartDecoration = {
+export type FlameChartDecoration = {
     type: FlameChartDecorationType.CANDY;
     startAtTime: Trace.Types.Timing.Micro;
     endAtTime?: Trace.Types.Timing.Micro;
@@ -533,8 +533,8 @@ type FlameChartDecoration = {
 } | {
     type: FlameChartDecorationType.HIDDEN_DESCENDANTS_ARROW;
 };
-declare function sortDecorationsForRenderingOrder(decorations: FlameChartDecoration[]): void;
-class FlameChartTimelineData {
+export declare function sortDecorationsForRenderingOrder(decorations: FlameChartDecoration[]): void;
+export declare class FlameChartTimelineData {
     entryLevels: number[] | Uint16Array;
     entryTotalTimes: number[] | Float32Array;
     entryStartTimes: number[] | Float64Array;
@@ -559,17 +559,17 @@ class FlameChartTimelineData {
     static createEmpty(): FlameChartTimelineData;
     emptyInitiators(): void;
 }
-interface DataProviderSearchResult {
+export interface DataProviderSearchResult {
     index: number;
     startTimeMilli: Trace.Types.Timing.Milli;
     provider: 'main' | 'network' | 'other';
 }
-interface DataProviderSearchResult {
+export interface DataProviderSearchResult {
     index: number;
     startTimeMilli: Trace.Types.Timing.Milli;
     provider: 'main' | 'network' | 'other';
 }
-interface FlameChartDataProvider {
+export interface FlameChartDataProvider {
     minimumBoundary(): number;
     totalTime(): number;
     formatValue(value: number, precision?: number): string;
@@ -600,13 +600,13 @@ interface FlameChartDataProvider {
     groupForEvent?(entryIndex: number): Group | null;
     getDrawOverride?(entryIndex: number): DrawOverride | undefined;
 }
-interface FlameChartMarker {
+export interface FlameChartMarker {
     startTime(): number;
     color(): string;
     title(): string | null;
     draw(context: CanvasRenderingContext2D, x: number, height: number, pixelsPerMillisecond: number): void;
 }
-declare const enum Events {
+export declare const enum Events {
     /**
      * Emitted when the <canvas> element of the FlameChart is focused by the user.
      **/
@@ -649,7 +649,7 @@ declare const enum Events {
     LATEST_DRAW_DIMENSIONS = "LatestDrawDimensions",
     MOUSE_MOVE = "MouseMove"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.ENTRY_LABEL_ANNOTATION_ADDED]: {
         entryIndex: number;
         withLinkCreationButton: boolean;
@@ -677,7 +677,7 @@ interface EventTypes {
         timeInMicroSeconds: Trace.Types.Timing.Micro;
     };
 }
-interface Group {
+export interface Group {
     name: Common.UIString.LocalizedString;
     startLevel: number;
     expanded?: boolean;
@@ -689,7 +689,7 @@ interface Group {
     jslogContext?: string;
     description?: string;
 }
-interface GroupStyle {
+export interface GroupStyle {
     height: number;
     padding: number;
     collapsible: boolean;
@@ -705,3 +705,4 @@ interface GroupStyle {
     useFirstLineForOverview?: boolean;
     useDecoratorsForOverview?: boolean;
 }
+export {};

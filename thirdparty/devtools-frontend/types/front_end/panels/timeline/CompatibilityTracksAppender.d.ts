@@ -15,7 +15,7 @@ export interface PopoverInfo {
     warningElements: HTMLSpanElement[];
     additionalElements: HTMLElement[];
 }
-declare function entryIsVisibleInTimeline(entry: Trace.Types.Events.Event, parsedTrace?: Trace.Handlers.Types.ParsedTrace): boolean;
+export declare function entryIsVisibleInTimeline(entry: Trace.Types.Events.Event, parsedTrace?: Trace.Handlers.Types.ParsedTrace): boolean;
 /**
  * Track appenders add the data of each track into the timeline flame
  * chart. Each track appender also implements functions tha allow the
@@ -67,7 +67,7 @@ export interface TrackAppender {
      */
     getDrawOverride?(event: Trace.Types.Events.Event): DrawOverride | undefined;
 }
-const TrackNames: readonly ["Animations", "Timings", "Interactions", "GPU", "LayoutShifts", "Thread", "Thread_AuctionWorklet", "Extension", "ServerTimings"];
+export declare const TrackNames: readonly ["Animations", "Timings", "Interactions", "GPU", "LayoutShifts", "Thread", "Thread_AuctionWorklet", "Extension", "ServerTimings"];
 export type TrackAppenderName = typeof TrackNames[number] | 'Network';
 export type DrawOverride = PerfUI.FlameChart.DrawOverride;
 /**

@@ -2,7 +2,7 @@ import '../../ui/legacy/legacy.js';
 import * as SDK from '../../core/sdk/sdk.js';
 import * as DataGrid from '../../ui/legacy/components/data_grid/data_grid.js';
 import * as UI from '../../ui/legacy/legacy.js';
-class EventSourceMessagesView extends UI.Widget.VBox {
+export declare class EventSourceMessagesView extends UI.Widget.VBox {
     private readonly request;
     private dataGrid;
     private readonly mainToolbar;
@@ -22,10 +22,10 @@ class EventSourceMessagesView extends UI.Widget.VBox {
     private onRowContextMenu;
     refresh(): void;
 }
-class EventSourceMessageNode extends DataGrid.SortableDataGrid.SortableDataGridNode<EventSourceMessageNode> {
+export declare class EventSourceMessageNode extends DataGrid.SortableDataGrid.SortableDataGridNode<EventSourceMessageNode> {
     readonly message: SDK.NetworkRequest.EventSourceMessage;
     constructor(message: SDK.NetworkRequest.EventSourceMessage);
 }
-const Comparators: {
+export declare const Comparators: {
     [x: string]: (arg0: EventSourceMessageNode, arg1: EventSourceMessageNode) => number;
 };

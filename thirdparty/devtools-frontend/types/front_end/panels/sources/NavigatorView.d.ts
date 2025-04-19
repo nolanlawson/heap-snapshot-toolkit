@@ -2,7 +2,7 @@ import * as Platform from '../../core/platform/platform.js';
 import * as SDK from '../../core/sdk/sdk.js';
 import * as Workspace from '../../models/workspace/workspace.js';
 import * as UI from '../../ui/legacy/legacy.js';
-const Types: {
+export declare const Types: {
     Authored: string;
     AutomaticFileSystem: string;
     Deployed: string;
@@ -102,7 +102,7 @@ export declare class NavigatorView extends UI.Widget.VBox implements SDK.TargetM
     targetRemoved(target: SDK.Target.Target): void;
     private targetNameChanged;
 }
-class NavigatorFolderTreeElement extends UI.TreeOutline.TreeElement {
+export declare class NavigatorFolderTreeElement extends UI.TreeOutline.TreeElement {
     #private;
     private readonly nodeType;
     private readonly navigatorView;
@@ -121,7 +121,7 @@ class NavigatorFolderTreeElement extends UI.TreeOutline.TreeElement {
     private mouseMove;
     private mouseLeave;
 }
-class NavigatorSourceTreeElement extends UI.TreeOutline.TreeElement {
+export declare class NavigatorSourceTreeElement extends UI.TreeOutline.TreeElement {
     readonly nodeType: string;
     readonly node: NavigatorUISourceCodeTreeNode;
     private readonly navigatorView;
@@ -143,13 +143,13 @@ class NavigatorSourceTreeElement extends UI.TreeOutline.TreeElement {
     ondelete(): boolean;
     private handleContextMenuEvent;
 }
-interface NavigatorRecursiveTreeNodeProperties {
+export interface NavigatorRecursiveTreeNodeProperties {
     exclusivelySourceMapped: boolean | null;
     exclusivelyIgnored: boolean | null;
     exclusivelyThirdParty: boolean | null;
     exclusivelyContentScripts: boolean | null;
 }
-class NavigatorTreeNode {
+export declare class NavigatorTreeNode {
     #private;
     id: string;
     protected navigatorView: NavigatorView;
@@ -183,7 +183,7 @@ class NavigatorTreeNode {
     reset(): void;
     updateId(newId: string): void;
 }
-class NavigatorRootTreeNode extends NavigatorTreeNode {
+export declare class NavigatorRootTreeNode extends NavigatorTreeNode {
     constructor(navigatorView: NavigatorView);
     isRoot(): boolean;
     treeNode(): UI.TreeOutline.TreeElement;
@@ -203,7 +203,7 @@ export declare class NavigatorUISourceCodeTreeNode extends NavigatorTreeNode {
     reveal(select?: boolean): void;
     rename(callback?: ((committed: boolean) => void)): void;
 }
-class NavigatorFolderTreeNode extends NavigatorTreeNode {
+export declare class NavigatorFolderTreeNode extends NavigatorTreeNode {
     project: Workspace.Workspace.Project | null;
     readonly folderPath: Platform.DevToolsPath.EncodedPathString;
     readonly origin: Platform.DevToolsPath.UrlString;
@@ -219,7 +219,7 @@ class NavigatorFolderTreeNode extends NavigatorTreeNode {
     didAddChild(node: NavigatorTreeNode): void;
     willRemoveChild(node: NavigatorTreeNode): void;
 }
-class NavigatorGroupTreeNode extends NavigatorTreeNode {
+export declare class NavigatorGroupTreeNode extends NavigatorTreeNode {
     private readonly project;
     title: string;
     private hoverCallback?;

@@ -1,5 +1,5 @@
 import * as UI from '../../ui/legacy/legacy.js';
-class NodeStackTraceWidget extends UI.ThrottledWidget.ThrottledWidget {
+export declare class NodeStackTraceWidget extends UI.ThrottledWidget.ThrottledWidget {
     private readonly noStackTraceElement;
     private readonly creationStackTraceElement;
     private readonly linkifier;
@@ -8,4 +8,4 @@ class NodeStackTraceWidget extends UI.ThrottledWidget.ThrottledWidget {
     willHide(): void;
     doUpdate(): Promise<void>;
 }
-const MaxLengthForLinks = 40;
+export declare const MaxLengthForLinks = 40;

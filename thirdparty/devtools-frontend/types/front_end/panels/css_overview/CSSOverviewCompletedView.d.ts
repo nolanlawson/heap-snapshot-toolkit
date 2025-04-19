@@ -7,7 +7,7 @@ import * as Components from '../../ui/legacy/components/utils/utils.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import { type OverviewController, type PopulateNodesEventNodes, type PopulateNodesEventNodeTypes } from './CSSOverviewController.js';
 import type { UnusedDeclaration } from './CSSOverviewUnusedDeclarations.js';
-type NodeStyleStats = Map<string, Set<number>>;
+export type NodeStyleStats = Map<string, Set<number>>;
 export interface ContrastIssue {
     nodeId: Protocol.DOM.BackendNodeId;
     contrastRatio: number;
@@ -19,7 +19,7 @@ export interface ContrastIssue {
         apca: boolean;
     };
 }
-interface OverviewData {
+export interface OverviewData {
     backgroundColors: Map<string, Set<Protocol.DOM.BackendNodeId>>;
     textColors: Map<string, Set<Protocol.DOM.BackendNodeId>>;
     textColorContrastIssues: Map<string, ContrastIssue[]>;
@@ -43,8 +43,8 @@ interface OverviewData {
     mediaQueries: Map<string, Protocol.CSS.CSSMedia[]>;
     unusedDeclarations: Map<string, UnusedDeclaration[]>;
 }
-type FontInfo = Map<string, Map<string, Map<string, number[]>>>;
-class CSSOverviewCompletedView extends UI.Widget.VBox {
+export type FontInfo = Map<string, Map<string, Map<string, number[]>>>;
+export declare class CSSOverviewCompletedView extends UI.Widget.VBox {
     #private;
     constructor(controller: OverviewController);
     initializeModels(target: SDK.Target.Target): void;
@@ -61,25 +61,26 @@ declare const DetailsView_base: {
         dispatchEventToListeners<T extends Events.TAB_CLOSED>(eventType: Platform.TypeScriptUtilities.NoUnion<T>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<EventTypes, T>): void;
     };
 } & typeof UI.Widget.VBox;
-class DetailsView extends DetailsView_base {
+export declare class DetailsView extends DetailsView_base {
     #private;
     constructor();
     appendTab(id: string, tabTitle: string, view: UI.Widget.Widget, jslogContext?: string): void;
     closeTabs(): void;
 }
-declare const enum Events {
+export declare const enum Events {
     TAB_CLOSED = "TabClosed"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.TAB_CLOSED]: number;
 }
-class ElementDetailsView extends UI.Widget.Widget {
+export declare class ElementDetailsView extends UI.Widget.Widget {
     #private;
     constructor(controller: OverviewController, domModel: SDK.DOMModel.DOMModel, cssModel: SDK.CSSModel.CSSModel, linkifier: Components.Linkifier.Linkifier);
     populateNodes(data: PopulateNodesEventNodes): Promise<void>;
 }
-class ElementNode extends DataGrid.SortableDataGrid.SortableDataGridNode<ElementNode> {
+export declare class ElementNode extends DataGrid.SortableDataGrid.SortableDataGridNode<ElementNode> {
     #private;
     constructor(data: PopulateNodesEventNodeTypes, frontendNode: SDK.DOMModel.DOMNode | null | undefined, linkifier: Components.Linkifier.Linkifier, cssModel: SDK.CSSModel.CSSModel);
     createCell(columnId: string): HTMLElement;
 }
+export {};

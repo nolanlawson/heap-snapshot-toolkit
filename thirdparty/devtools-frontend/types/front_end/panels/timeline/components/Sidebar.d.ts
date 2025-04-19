@@ -4,12 +4,12 @@ export interface ActiveInsight {
     model: Trace.Insights.Types.InsightModel;
     insightSetKey: string;
 }
-class RemoveAnnotation extends Event {
+export declare class RemoveAnnotation extends Event {
     removedAnnotation: Trace.Types.File.Annotation;
     static readonly eventName = "removeannotation";
     constructor(removedAnnotation: Trace.Types.File.Annotation);
 }
-class RevealAnnotation extends Event {
+export declare class RevealAnnotation extends Event {
     annotation: Trace.Types.File.Annotation;
     static readonly eventName = "revealannotation";
     constructor(annotation: Trace.Types.File.Annotation);
@@ -19,13 +19,13 @@ declare global {
         [RevealAnnotation.eventName]: RevealAnnotation;
     }
 }
-declare const enum SidebarTabs {
+export declare const enum SidebarTabs {
     INSIGHTS = "insights",
     ANNOTATIONS = "annotations"
 }
-const DEFAULT_SIDEBAR_TAB = SidebarTabs.INSIGHTS;
-const DEFAULT_SIDEBAR_WIDTH_PX = 240;
-class SidebarWidget extends UI.Widget.VBox {
+export declare const DEFAULT_SIDEBAR_TAB = SidebarTabs.INSIGHTS;
+export declare const DEFAULT_SIDEBAR_WIDTH_PX = 240;
+export declare class SidebarWidget extends UI.Widget.VBox {
     #private;
     userHasOpenedSidebarOnce(): boolean;
     constructor();

@@ -7,7 +7,7 @@ interface CSSProperty {
         url: string;
     }>;
 }
-class CSSPropertyDocsView extends HTMLElement {
+export declare class CSSPropertyDocsView extends HTMLElement {
     #private;
     constructor(cssProperty: CSSProperty);
 }

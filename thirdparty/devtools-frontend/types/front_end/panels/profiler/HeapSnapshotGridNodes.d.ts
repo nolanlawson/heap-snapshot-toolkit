@@ -74,7 +74,7 @@ export declare namespace HeapSnapshotGridNode {
         [Events.PopulateComplete]: void;
     }
 }
-class HeapSnapshotGenericObjectNode extends HeapSnapshotGridNode {
+export declare abstract class HeapSnapshotGenericObjectNode extends HeapSnapshotGridNode {
     referenceName?: string | null;
     readonly nameInternal: string | undefined;
     readonly type: string | undefined;
@@ -144,7 +144,7 @@ export declare class HeapSnapshotRetainingObjectNode extends HeapSnapshotObjectN
     expandRetainersChain(maxExpandLevels: number): void;
     comparator(): HeapSnapshotModel.HeapSnapshotModel.ComparatorConfig;
 }
-class HeapSnapshotInstanceNode extends HeapSnapshotGenericObjectNode {
+export declare class HeapSnapshotInstanceNode extends HeapSnapshotGenericObjectNode {
     readonly baseSnapshotOrSnapshot: HeapSnapshotProxy;
     readonly isDeletedNode: boolean;
     constructor(dataGrid: HeapSnapshotSortableDataGrid, snapshot: HeapSnapshotProxy, node: HeapSnapshotModel.HeapSnapshotModel.Node, isDeletedNode: boolean);
@@ -158,7 +158,7 @@ class HeapSnapshotInstanceNode extends HeapSnapshotGenericObjectNode {
     getHash(): number;
     comparator(): HeapSnapshotModel.HeapSnapshotModel.ComparatorConfig;
 }
-class HeapSnapshotConstructorNode extends HeapSnapshotGridNode {
+export declare class HeapSnapshotConstructorNode extends HeapSnapshotGridNode {
     readonly nameInternal: string;
     readonly nodeFilter: HeapSnapshotModel.HeapSnapshotModel.NodeFilter;
     readonly distance: number;
@@ -175,7 +175,7 @@ class HeapSnapshotConstructorNode extends HeapSnapshotGridNode {
     createChildNode(item: HeapSnapshotModel.HeapSnapshotModel.Node | HeapSnapshotModel.HeapSnapshotModel.Edge): HeapSnapshotInstanceNode;
     comparator(): HeapSnapshotModel.HeapSnapshotModel.ComparatorConfig;
 }
-class HeapSnapshotDiffNodesProvider implements ChildrenProvider {
+export declare class HeapSnapshotDiffNodesProvider implements ChildrenProvider {
     addedNodesProvider: HeapSnapshotProviderProxy;
     deletedNodesProvider: HeapSnapshotProviderProxy;
     addedCount: number;
@@ -187,7 +187,7 @@ class HeapSnapshotDiffNodesProvider implements ChildrenProvider {
     serializeItemsRange(beginPosition: number, endPosition: number): Promise<HeapSnapshotModel.HeapSnapshotModel.ItemsRange>;
     sortAndRewind(comparator: HeapSnapshotModel.HeapSnapshotModel.ComparatorConfig): Promise<void>;
 }
-class HeapSnapshotDiffNode extends HeapSnapshotGridNode {
+export declare class HeapSnapshotDiffNode extends HeapSnapshotGridNode {
     readonly nameInternal: string;
     readonly addedCount: number;
     readonly removedCount: number;
@@ -206,7 +206,7 @@ class HeapSnapshotDiffNode extends HeapSnapshotGridNode {
     filteredOut(filterValue: string): boolean;
     signForDelta(delta: number): '' | '+' | '−';
 }
-class AllocationGridNode extends HeapSnapshotGridNode {
+export declare class AllocationGridNode extends HeapSnapshotGridNode {
     populated: boolean;
     readonly allocationNode: HeapSnapshotModel.HeapSnapshotModel.SerializedAllocationNode;
     constructor(dataGrid: AllocationDataGrid, data: HeapSnapshotModel.HeapSnapshotModel.SerializedAllocationNode);
@@ -216,3 +216,4 @@ class AllocationGridNode extends HeapSnapshotGridNode {
     createCell(columnId: string): HTMLElement;
     allocationNodeId(): number;
 }
+export {};

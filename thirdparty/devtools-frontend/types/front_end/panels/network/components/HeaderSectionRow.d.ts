@@ -2,28 +2,28 @@ import '../../../ui/legacy/legacy.js';
 import * as Platform from '../../../core/platform/platform.js';
 import type * as Protocol from '../../../generated/protocol.js';
 import type { EditableSpan } from './EditableSpan.js';
-const isValidHeaderName: (headerName: string) => boolean;
-const compareHeaders: (first: string | null | undefined, second: string | null | undefined) => boolean;
-class HeaderEditedEvent extends Event {
+export declare const isValidHeaderName: (headerName: string) => boolean;
+export declare const compareHeaders: (first: string | null | undefined, second: string | null | undefined) => boolean;
+export declare class HeaderEditedEvent extends Event {
     static readonly eventName = "headeredited";
     headerName: Platform.StringUtilities.LowerCaseString;
     headerValue: string;
     constructor(headerName: Platform.StringUtilities.LowerCaseString, headerValue: string);
 }
-class HeaderRemovedEvent extends Event {
+export declare class HeaderRemovedEvent extends Event {
     static readonly eventName = "headerremoved";
     headerName: Platform.StringUtilities.LowerCaseString;
     headerValue: string;
     constructor(headerName: Platform.StringUtilities.LowerCaseString, headerValue: string);
 }
-class EnableHeaderEditingEvent extends Event {
+export declare class EnableHeaderEditingEvent extends Event {
     static readonly eventName = "enableheaderediting";
     constructor();
 }
-interface HeaderSectionRowData {
+export interface HeaderSectionRowData {
     header: HeaderDescriptor;
 }
-class HeaderSectionRow extends HTMLElement {
+export declare class HeaderSectionRow extends HTMLElement {
     #private;
     connectedCallback(): void;
     set data(data: HeaderSectionRowData);
@@ -49,7 +49,7 @@ interface BlockedDetailsDescriptor {
     } | null;
     reveal?: () => void;
 }
-declare const enum EditingAllowedStatus {
+export declare const enum EditingAllowedStatus {
     DISABLED = 0,// Local overrides are currently disabled.
     ENABLED = 1,// The header is free to be edited.
     FORBIDDEN = 2
@@ -64,7 +64,7 @@ export interface HeaderDetailsDescriptor {
     highlight?: boolean;
     isResponseHeader?: boolean;
 }
-interface HeaderEditorDescriptor {
+export interface HeaderEditorDescriptor {
     name: Platform.StringUtilities.LowerCaseString;
     value: string | null;
     originalName?: string | null;
@@ -74,4 +74,5 @@ interface HeaderEditorDescriptor {
     nameEditable?: boolean;
     isDeleted?: boolean;
 }
-type HeaderDescriptor = HeaderDetailsDescriptor & HeaderEditorDescriptor;
+export type HeaderDescriptor = HeaderDetailsDescriptor & HeaderEditorDescriptor;
+export {};

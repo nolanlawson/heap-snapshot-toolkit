@@ -105,12 +105,12 @@ export declare class TimelineFlameChartDataProvider extends Common.ObjectWrapper
     buildFlowForInitiator(entryIndex: number): boolean;
     eventByIndex(entryIndex: number): Trace.Types.Events.Event | null;
 }
-const InstantEventVisibleDurationMs: Trace.Types.Timing.Milli;
-declare const enum Events {
+export declare const InstantEventVisibleDurationMs: Trace.Types.Timing.Milli;
+export declare const enum Events {
     DATA_CHANGED = "DataChanged",
     FLAME_CHART_ITEM_HOVERED = "FlameChartItemHovered"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.DATA_CHANGED]: void;
     [Events.FLAME_CHART_ITEM_HOVERED]: Trace.Types.Events.Event | null;
 }

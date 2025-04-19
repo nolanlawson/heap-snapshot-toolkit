@@ -1,7 +1,7 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import * as Components from '../../ui/legacy/components/utils/utils.js';
 import * as UI from '../../ui/legacy/legacy.js';
-class RequestInitiatorView extends UI.Widget.VBox {
+export declare class RequestInitiatorView extends UI.Widget.VBox {
     private readonly linkifier;
     private readonly request;
     private readonly emptyWidget;

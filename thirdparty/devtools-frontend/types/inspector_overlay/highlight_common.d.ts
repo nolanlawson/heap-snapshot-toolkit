@@ -22,16 +22,16 @@ export interface BoxStyle {
     fillColor?: string;
     hatchColor?: string;
 }
-declare const enum LinePattern {
+export declare const enum LinePattern {
     SOLID = "solid",
     DOTTED = "dotted",
     DASHED = "dashed"
 }
-declare function drawPathWithLineStyle(context: CanvasRenderingContext2D, path: Path2D, lineStyle?: LineStyle, lineWidth?: number): void;
-declare function fillPathWithBoxStyle(context: CanvasRenderingContext2D, path: Path2D, bounds: PathBounds, angle: number, boxStyle?: BoxStyle): void;
-declare function buildPath(commands: Array<string | number>, bounds: PathBounds, emulationScaleFactor: number): Path2D;
-declare function emptyBounds(): PathBounds;
-declare function applyMatrixToPoint(point: {
+export declare function drawPathWithLineStyle(context: CanvasRenderingContext2D, path: Path2D, lineStyle?: LineStyle, lineWidth?: number): void;
+export declare function fillPathWithBoxStyle(context: CanvasRenderingContext2D, path: Path2D, bounds: PathBounds, angle: number, boxStyle?: BoxStyle): void;
+export declare function buildPath(commands: Array<string | number>, bounds: PathBounds, emulationScaleFactor: number): Path2D;
+export declare function emptyBounds(): PathBounds;
+export declare function applyMatrixToPoint(point: {
     x: number;
     y: number;
 }, matrix: DOMMatrix): {
@@ -48,13 +48,13 @@ declare function applyMatrixToPoint(point: {
  *   |\  \  \ |
  *   **********
  */
-declare function hatchFillPath(context: CanvasRenderingContext2D, path: Path2D, bounds: Bounds, delta: number, color: string, rotationAngle: number, flipDirection: boolean | undefined): void;
+export declare function hatchFillPath(context: CanvasRenderingContext2D, path: Path2D, bounds: Bounds, delta: number, color: string, rotationAngle: number, flipDirection: boolean | undefined): void;
 /**
  * Given a quad, create the corresponding path object. This also accepts a list of quads to clip from the resulting
  * path.
  */
-declare function createPathForQuad(outerQuad: Quad, quadsToClip: Quad[], bounds: PathBounds, emulationScaleFactor: number): Path2D;
-declare function parseHexa(hexa: string): Color4D;
-declare function formatRgba(rgba: Color4D, colorFormat: 'rgb' | 'hsl' | 'hwb'): string;
-declare function formatColor(hexa: string, colorFormat: string): string;
-declare function drawPath(context: CanvasRenderingContext2D, commands: PathCommands, fillColor: string | undefined, outlineColor: string | undefined, outlinePattern: LinePattern | undefined, bounds: PathBounds, emulationScaleFactor: number): Path2D;
+export declare function createPathForQuad(outerQuad: Quad, quadsToClip: Quad[], bounds: PathBounds, emulationScaleFactor: number): Path2D;
+export declare function parseHexa(hexa: string): Color4D;
+export declare function formatRgba(rgba: Color4D, colorFormat: 'rgb' | 'hsl' | 'hwb'): string;
+export declare function formatColor(hexa: string, colorFormat: string): string;
+export declare function drawPath(context: CanvasRenderingContext2D, commands: PathCommands, fillColor: string | undefined, outlineColor: string | undefined, outlinePattern: LinePattern | undefined, bounds: PathBounds, emulationScaleFactor: number): Path2D;

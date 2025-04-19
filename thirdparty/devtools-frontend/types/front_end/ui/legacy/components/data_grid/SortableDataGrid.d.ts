@@ -1,6 +1,6 @@
 import { type DataGridData, type Parameters } from './DataGrid.js';
 import { ViewportDataGrid, ViewportDataGridNode } from './ViewportDataGrid.js';
-class SortableDataGrid<T> extends ViewportDataGrid<SortableDataGridNode<T>> {
+export declare class SortableDataGrid<T> extends ViewportDataGrid<SortableDataGridNode<T>> {
     sortingFunction: <T>(a: SortableDataGridNode<T>, b: SortableDataGridNode<T>) => number;
     constructor(dataGridParameters: Parameters);
     static TrivialComparator<T>(_a: SortableDataGridNode<T>, _b: SortableDataGridNode<T>): number;
@@ -11,7 +11,7 @@ class SortableDataGrid<T> extends ViewportDataGrid<SortableDataGridNode<T>> {
     insertChild(node: SortableDataGridNode<T>): void;
     sortNodes(comparator: (arg0: SortableDataGridNode<T>, arg1: SortableDataGridNode<T>) => number, reverseMode: boolean): void;
 }
-class SortableDataGridNode<T> extends ViewportDataGridNode<SortableDataGridNode<T>> {
+export declare class SortableDataGridNode<T> extends ViewportDataGridNode<SortableDataGridNode<T>> {
     constructor(data?: DataGridData | null, hasChildren?: boolean);
     insertChildOrdered(node: SortableDataGridNode<T>): void;
     sortChildren(): void;

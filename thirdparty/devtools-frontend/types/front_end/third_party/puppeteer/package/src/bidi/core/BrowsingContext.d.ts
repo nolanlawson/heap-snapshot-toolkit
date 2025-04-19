@@ -16,27 +16,27 @@ import { UserPrompt } from './UserPrompt.js';
 /**
  * @internal
  */
-type AddInterceptOptions = Omit<Bidi.Network.AddInterceptParameters, 'contexts'>;
+export type AddInterceptOptions = Omit<Bidi.Network.AddInterceptParameters, 'contexts'>;
 /**
  * @internal
  */
-type CaptureScreenshotOptions = Omit<Bidi.BrowsingContext.CaptureScreenshotParameters, 'context'>;
+export type CaptureScreenshotOptions = Omit<Bidi.BrowsingContext.CaptureScreenshotParameters, 'context'>;
 /**
  * @internal
  */
-type ReloadOptions = Omit<Bidi.BrowsingContext.ReloadParameters, 'context'>;
+export type ReloadOptions = Omit<Bidi.BrowsingContext.ReloadParameters, 'context'>;
 /**
  * @internal
  */
-type PrintOptions = Omit<Bidi.BrowsingContext.PrintParameters, 'context'>;
+export type PrintOptions = Omit<Bidi.BrowsingContext.PrintParameters, 'context'>;
 /**
  * @internal
  */
-type HandleUserPromptOptions = Omit<Bidi.BrowsingContext.HandleUserPromptParameters, 'context'>;
+export type HandleUserPromptOptions = Omit<Bidi.BrowsingContext.HandleUserPromptParameters, 'context'>;
 /**
  * @internal
  */
-type SetViewportOptions = Omit<Bidi.BrowsingContext.SetViewportParameters, 'context'>;
+export type SetViewportOptions = Omit<Bidi.BrowsingContext.SetViewportParameters, 'context'>;
 /**
  * @internal
  */

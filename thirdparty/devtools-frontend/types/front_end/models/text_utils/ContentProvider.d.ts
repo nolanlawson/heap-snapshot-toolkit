@@ -19,7 +19,7 @@ export declare class SearchMatch {
     constructor(lineNumber: number, lineContent: string, columnNumber: number, matchLength: number);
     static comparator(a: SearchMatch, b: SearchMatch): number;
 }
-const contentAsDataURL: (content: string | null, mimeType: string, contentEncoded: boolean, charset?: string | null, limitSize?: boolean) => string | null;
+export declare const contentAsDataURL: (content: string | null, mimeType: string, contentEncoded: boolean, charset?: string | null, limitSize?: boolean) => string | null;
 export type DeferredContent = {
     content: string;
     isEncoded: boolean;
@@ -32,7 +32,7 @@ export type DeferredContent = {
     error: string;
     isEncoded: boolean;
 };
-interface StreamingContentProvider extends ContentProvider {
+export interface StreamingContentProvider extends ContentProvider {
     requestStreamingContent(): Promise<StreamingContentDataOrError>;
 }
-const isStreamingContentProvider: (provider: ContentProvider) => provider is StreamingContentProvider;
+export declare const isStreamingContentProvider: (provider: ContentProvider) => provider is StreamingContentProvider;

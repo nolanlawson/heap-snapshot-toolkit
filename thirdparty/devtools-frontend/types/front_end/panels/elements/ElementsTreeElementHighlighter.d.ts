@@ -1,6 +1,6 @@
 import * as Common from '../../core/common/common.js';
 import { ElementsTreeOutline } from './ElementsTreeOutline.js';
-class ElementsTreeElementHighlighter {
+export declare class ElementsTreeElementHighlighter {
     private readonly throttler;
     private treeOutline;
     private currentHighlightedElement;

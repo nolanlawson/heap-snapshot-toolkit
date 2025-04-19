@@ -10,7 +10,7 @@ import type { Request } from './Request.js';
 /**
  * @internal
  */
-interface NavigationInfo {
+export interface NavigationInfo {
     url: string;
     timestamp: Date;
 }

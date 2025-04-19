@@ -6,14 +6,14 @@ import * as Protocol from '../../../../generated/protocol.js';
 import * as Logs from '../../../../models/logs/logs.js';
 import * as LegacyWrapper from '../../../../ui/components/legacy_wrapper/legacy_wrapper.js';
 import * as UI from '../../../../ui/legacy/legacy.js';
-type PreloadingDetailsReportViewData = PreloadingDetailsReportViewDataInternal | null;
+export type PreloadingDetailsReportViewData = PreloadingDetailsReportViewDataInternal | null;
 interface PreloadingDetailsReportViewDataInternal {
     pipeline: SDK.PreloadingModel.PreloadPipeline;
     ruleSets: Protocol.Preload.RuleSet[];
     pageURL: Platform.DevToolsPath.UrlString;
     requestResolver?: Logs.RequestResolver.RequestResolver;
 }
-class PreloadingDetailsReportView extends LegacyWrapper.LegacyWrapper.WrappableComponent<UI.Widget.VBox> {
+export declare class PreloadingDetailsReportView extends LegacyWrapper.LegacyWrapper.WrappableComponent<UI.Widget.VBox> {
     #private;
     set data(data: PreloadingDetailsReportViewData);
 }

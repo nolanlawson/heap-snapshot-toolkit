@@ -11,6 +11,6 @@ declare global {
         }
     }
 }
-type Platform = 'mac' | 'win32' | 'linux';
+export type Platform = 'mac' | 'win32' | 'linux';
 export declare let platform: Platform;
-declare function makeInstrumentedTestFunction(fn: Mocha.AsyncFunc, label: string): (this: Mocha.Context) => Promise<unknown>;
+export declare function makeInstrumentedTestFunction(fn: Mocha.AsyncFunc, label: string): (this: Mocha.Context) => Promise<unknown>;

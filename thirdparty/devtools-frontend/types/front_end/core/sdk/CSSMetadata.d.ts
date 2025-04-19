@@ -1,5 +1,5 @@
 import * as Protocol from '../../generated/protocol.js';
-class CSSMetadata {
+export declare class CSSMetadata {
     #private;
     constructor(properties: CSSPropertyDefinition[], aliasesFor: Map<string, string>);
     static isCSSWideKeyword(a: string): a is CSSWideKeyword;
@@ -38,7 +38,7 @@ class CSSMetadata {
     } | null;
     isHighlightPseudoType(pseudoType: Protocol.DOM.PseudoType): boolean;
 }
-const CubicBezierKeywordValues: Map<string, string>;
+export declare const CubicBezierKeywordValues: Map<string, string>;
 export declare const enum CSSWideKeyword {
     INHERIT = "inherit",
     INITIAL = "initial",
@@ -46,19 +46,19 @@ export declare const enum CSSWideKeyword {
     REVERT_LAYER = "revert-layer",
     UNSET = "unset"
 }
-const CSSWideKeywords: CSSWideKeyword[];
-declare const enum PositionTryOrderKeyword {
+export declare const CSSWideKeywords: CSSWideKeyword[];
+export declare const enum PositionTryOrderKeyword {
     NORMAL = "normal",
     MOST_HEIGHT = "most-height",
     MOST_WIDTH = "most-width",
     MOST_BLOCK_SIZE = "most-block-size",
     MOST_INLINE_SIZE = "most-inline-size"
 }
-const PositionTryOrderKeywords: PositionTryOrderKeyword[];
-const VariableNameRegex: RegExp;
-const VariableRegex: RegExp;
-const CustomVariableRegex: RegExp;
-const URLRegex: RegExp;
+export declare const PositionTryOrderKeywords: PositionTryOrderKeyword[];
+export declare const VariableNameRegex: RegExp;
+export declare const VariableRegex: RegExp;
+export declare const CustomVariableRegex: RegExp;
+export declare const URLRegex: RegExp;
 /**
  * Matches an instance of a grid area 'row' definition.
  * 'grid-template-areas', e.g.
@@ -67,9 +67,9 @@ const URLRegex: RegExp;
  * 'grid', 'grid-template', e.g.
  *    [track-#name] "a a ." minmax(50px, auto) [track-#name]
  */
-const GridAreaRowRegex: RegExp;
-declare function cssMetadata(): CSSMetadata;
-interface CSSPropertyDefinition {
+export declare const GridAreaRowRegex: RegExp;
+export declare function cssMetadata(): CSSMetadata;
+export interface CSSPropertyDefinition {
     name: string;
     longhands: string[] | null;
     inherited: boolean | null;

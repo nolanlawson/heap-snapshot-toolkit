@@ -17,7 +17,7 @@ export declare class ConsolePinPane extends UI.ThrottledWidget.ThrottledWidget {
     doUpdate(): Promise<void>;
     private updatedForTest;
 }
-class ConsolePin {
+export declare class ConsolePin {
     private readonly pinPane;
     private readonly focusOut;
     private readonly pinElement;

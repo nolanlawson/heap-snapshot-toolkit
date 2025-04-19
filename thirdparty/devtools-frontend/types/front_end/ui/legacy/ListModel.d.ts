@@ -21,15 +21,15 @@ export declare class ListModel<T> extends Common.ObjectWrapper.ObjectWrapper<Eve
     some(callback: (arg0: T) => boolean): boolean;
     private replaced;
 }
-declare const enum Events {
+export declare const enum Events {
     ITEMS_REPLACED = "ItemsReplaced"
 }
-interface ItemsReplacedEvent<T> {
+export interface ItemsReplacedEvent<T> {
     index: number;
     removed: T[];
     inserted: number;
     keepSelectedIndex?: boolean;
 }
-interface EventTypes<T> {
+export interface EventTypes<T> {
     [Events.ITEMS_REPLACED]: ItemsReplacedEvent<T>;
 }

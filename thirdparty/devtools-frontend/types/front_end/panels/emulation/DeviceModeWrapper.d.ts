@@ -1,7 +1,7 @@
 import type * as Protocol from '../../generated/protocol.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import type { InspectedPagePlaceholder } from './InspectedPagePlaceholder.js';
-class DeviceModeWrapper extends UI.Widget.VBox {
+export declare class DeviceModeWrapper extends UI.Widget.VBox {
     private readonly inspectedPagePlaceholder;
     private deviceModeView;
     private readonly toggleDeviceModeAction;
@@ -17,6 +17,6 @@ class DeviceModeWrapper extends UI.Widget.VBox {
     private screenshotRequestedFromOverlay;
     update(force?: boolean): void;
 }
-class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
+export declare class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(context: UI.Context.Context, actionId: string): boolean;
 }

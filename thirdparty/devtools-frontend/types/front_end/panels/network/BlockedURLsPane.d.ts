@@ -1,7 +1,7 @@
 import '../../ui/legacy/legacy.js';
 import * as SDK from '../../core/sdk/sdk.js';
 import * as UI from '../../ui/legacy/legacy.js';
-class BlockedURLsPane extends UI.Widget.VBox implements UI.ListWidget.Delegate<SDK.NetworkManager.BlockedPattern> {
+export declare class BlockedURLsPane extends UI.Widget.VBox implements UI.ListWidget.Delegate<SDK.NetworkManager.BlockedPattern> {
     private manager;
     private readonly toolbar;
     private readonly enabledCheckbox;
@@ -27,6 +27,6 @@ class BlockedURLsPane extends UI.Widget.VBox implements UI.ListWidget.Delegate<S
     wasShown(): void;
     willHide(): void;
 }
-class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
+export declare class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(context: UI.Context.Context, actionId: string): boolean;
 }

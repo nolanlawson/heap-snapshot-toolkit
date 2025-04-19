@@ -2,13 +2,13 @@ import type * as Protocol from '../../generated/protocol.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import type { TriggerHandler } from './MainView.js';
 import type { PlayerEvent } from './MediaModel.js';
-declare const enum PlayerDetailViewTabs {
+export declare const enum PlayerDetailViewTabs {
     EVENTS = "events",
     PROPERTIES = "properties",
     MESSAGES = "messages",
     TIMELINE = "timeline"
 }
-class PlayerDetailView extends UI.TabbedPane.TabbedPane implements TriggerHandler {
+export declare class PlayerDetailView extends UI.TabbedPane.TabbedPane implements TriggerHandler {
     private readonly eventView;
     private readonly propertyView;
     private readonly messageView;

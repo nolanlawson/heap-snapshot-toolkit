@@ -1,9 +1,9 @@
-declare function formatMillisecondsToSeconds(ms: number, decimalPlaces: number): string;
+export declare function formatMillisecondsToSeconds(ms: number, decimalPlaces: number): string;
 /**
  * Manage the bounding box properties for the ticking flame chart.
  * kept in a separate file for unit testing.
  */
-class Bounds {
+export declare class Bounds {
     private minInternal;
     private maxInternal;
     private lowInternal;

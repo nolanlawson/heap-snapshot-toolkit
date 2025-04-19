@@ -1,3 +1,3 @@
-class NetworkPanelIndicator {
+export declare class NetworkPanelIndicator {
     constructor();
 }

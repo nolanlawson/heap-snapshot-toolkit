@@ -71,9 +71,9 @@ export declare class GraphView extends Common.ObjectWrapper.ObjectWrapper<EventT
     private removeEdge;
     private notifyShouldRedraw;
 }
-declare const enum Events {
+export declare const enum Events {
     SHOULD_REDRAW = "ShouldRedraw"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.SHOULD_REDRAW]: GraphView;
 }

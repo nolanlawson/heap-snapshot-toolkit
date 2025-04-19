@@ -3,7 +3,7 @@ import * as SDK from '../../core/sdk/sdk.js';
 import * as TreeOutline from '../../ui/components/tree_outline/tree_outline.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import * as AccessibilityTreeUtils from './AccessibilityTreeUtils.js';
-class AccessibilityTreeView extends UI.Widget.VBox implements SDK.TargetManager.SDKModelObserver<SDK.AccessibilityModel.AccessibilityModel> {
+export declare class AccessibilityTreeView extends UI.Widget.VBox implements SDK.TargetManager.SDKModelObserver<SDK.AccessibilityModel.AccessibilityModel> {
     private accessibilityTreeComponent;
     private readonly toggleButton;
     private inspectedDOMNode;

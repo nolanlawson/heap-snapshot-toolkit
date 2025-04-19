@@ -8,13 +8,13 @@ export interface LazyUint8Array {
     getRange(start: number, end: number): Promise<Uint8Array<ArrayBuffer>>;
     length(): number;
 }
-class RemoteArrayBufferWrapper implements LazyUint8Array {
+export declare class RemoteArrayBufferWrapper implements LazyUint8Array {
     #private;
     constructor(arrayBuffer: SDK.RemoteObject.RemoteArrayBuffer);
     length(): number;
     getRange(start: number, end: number): Promise<Uint8Array<ArrayBuffer>>;
 }
-class LinearMemoryInspectorController extends SDK.TargetManager.SDKModelObserver<SDK.RuntimeModel.RuntimeModel> implements Common.Revealer.Revealer<SDK.RemoteObject.LinearMemoryInspectable>, UI.ContextMenu.Provider<ObjectUI.ObjectPropertiesSection.ObjectPropertyTreeElement> {
+export declare class LinearMemoryInspectorController extends SDK.TargetManager.SDKModelObserver<SDK.RuntimeModel.RuntimeModel> implements Common.Revealer.Revealer<SDK.RemoteObject.LinearMemoryInspectable>, UI.ContextMenu.Provider<ObjectUI.ObjectPropertiesSection.ObjectPropertyTreeElement> {
     #private;
     private constructor();
     static instance(): LinearMemoryInspectorController;

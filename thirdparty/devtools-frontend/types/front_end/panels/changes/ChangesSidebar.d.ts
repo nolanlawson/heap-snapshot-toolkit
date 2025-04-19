@@ -24,16 +24,17 @@ export declare class ChangesSidebar extends ChangesSidebar_base {
     private removeUISourceCode;
     private addUISourceCode;
 }
-declare const enum Events {
+export declare const enum Events {
     SELECTED_UI_SOURCE_CODE_CHANGED = "SelectedUISourceCodeChanged"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.SELECTED_UI_SOURCE_CODE_CHANGED]: void;
 }
-class UISourceCodeTreeElement extends UI.TreeOutline.TreeElement {
+export declare class UISourceCodeTreeElement extends UI.TreeOutline.TreeElement {
     uiSourceCode: Workspace.UISourceCode.UISourceCode;
     private readonly eventListeners;
     constructor(uiSourceCode: Workspace.UISourceCode.UISourceCode);
     private updateTitle;
     dispose(): void;
 }
+export {};

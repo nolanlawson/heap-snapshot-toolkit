@@ -3,7 +3,7 @@ import type * as Platform from '../../core/platform/platform.js';
 import * as Root from '../../core/root/root.js';
 import type { Key, Modifier } from './KeyboardShortcut.js';
 import { type SoftContextMenuDescriptor } from './SoftContextMenu.js';
-class Item {
+export declare class Item {
     #private;
     private readonly typeInternal;
     protected readonly label: string | undefined;
@@ -28,7 +28,7 @@ class Item {
     setIsDevToolsPerformanceMenuItem(isDevToolsPerformanceMenuItem: boolean): void;
     setShortcut(shortcut: string): void;
 }
-class Section {
+export declare class Section {
     readonly contextMenu: ContextMenu | null;
     readonly items: Item[];
     constructor(contextMenu: ContextMenu | null);
@@ -52,7 +52,7 @@ class Section {
         jslogContext?: string;
     }): Item;
 }
-class SubMenu extends Item {
+export declare class SubMenu extends Item {
     readonly sections: Map<string, Section>;
     private readonly sectionList;
     constructor(contextMenu: ContextMenu | null, label?: string, disabled?: boolean, jslogContext?: string);
@@ -73,7 +73,7 @@ class SubMenu extends Item {
     buildDescriptor(): SoftContextMenuDescriptor | Host.InspectorFrontendHostAPI.ContextMenuDescriptor;
     appendItemsAtLocation(location: string): void;
 }
-interface ContextMenuOptions {
+export interface ContextMenuOptions {
     useSoftMenu?: boolean;
     keepOpen?: boolean;
     onSoftMenuClosed?: () => void;
@@ -131,10 +131,10 @@ export declare class ContextMenu extends SubMenu {
 export interface Provider<T> {
     appendApplicableItems(event: Event, contextMenu: ContextMenu, target: T): void;
 }
-declare function registerProvider<T>(registration: ProviderRegistration<T>): void;
-declare function registerItem(registration: ContextMenuItemRegistration): void;
-declare function maybeRemoveItem(registration: ContextMenuItemRegistration): boolean;
-declare const enum ItemLocation {
+export declare function registerProvider<T>(registration: ProviderRegistration<T>): void;
+export declare function registerItem(registration: ContextMenuItemRegistration): void;
+export declare function maybeRemoveItem(registration: ContextMenuItemRegistration): boolean;
+export declare const enum ItemLocation {
     DEVICE_MODE_MENU_SAVE = "deviceModeMenu/save",
     MAIN_MENU = "mainMenu",
     MAIN_MENU_DEFAULT = "mainMenu/default",
@@ -144,12 +144,12 @@ declare const enum ItemLocation {
     PROFILER_MENU_DEFAULT = "profilerMenu/default",
     TIMELINE_MENU_OPEN = "timelineMenu/open"
 }
-interface ProviderRegistration<T> {
+export interface ProviderRegistration<T> {
     contextTypes: () => Array<abstract new (...any: any[]) => T>;
     loadProvider: () => Promise<Provider<T>>;
     experiment?: Root.Runtime.ExperimentName;
 }
-interface ContextMenuItemRegistration {
+export interface ContextMenuItemRegistration {
     location: ItemLocation;
     actionId: string;
     order?: number;

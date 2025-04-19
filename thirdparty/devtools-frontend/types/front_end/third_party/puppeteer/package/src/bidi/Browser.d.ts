@@ -17,7 +17,7 @@ import { BidiBrowserTarget } from './Target.js';
 /**
  * @internal
  */
-interface BidiBrowserOptions {
+export interface BidiBrowserOptions {
     process?: ChildProcess;
     closeCallback?: BrowserCloseCallback;
     connection: BidiConnection;

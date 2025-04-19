@@ -17,12 +17,13 @@ export declare class Context {
 declare const enum Events {
     FLAVOR_CHANGED = "FlavorChanged"
 }
-type EventListenerDirect = Common.EventTarget.EventListener<EventTypes, Events.FLAVOR_CHANGED>;
-interface EventTypes {
+export type EventListenerDirect = Common.EventTarget.EventListener<EventTypes, Events.FLAVOR_CHANGED>;
+export interface EventTypes {
     [Events.FLAVOR_CHANGED]: InstanceType<Platform.Constructor.Constructor<unknown>>;
 }
-declare function registerListener(registration: ContextFlavorListenerRegistration): void;
-interface ContextFlavorListenerRegistration {
+export declare function registerListener(registration: ContextFlavorListenerRegistration): void;
+export interface ContextFlavorListenerRegistration {
     contextTypes: () => Array<Platform.Constructor.Constructor<unknown>>;
     loadListener: () => Promise<ContextFlavorListener>;
 }
+export {};

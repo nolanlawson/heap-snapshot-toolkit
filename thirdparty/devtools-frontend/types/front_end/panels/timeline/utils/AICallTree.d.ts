@@ -1,5 +1,5 @@
 import * as Trace from '../../../models/trace/trace.js';
-interface FromTimeOnThreadOptions {
+export interface FromTimeOnThreadOptions {
     thread: {
         pid: Trace.Types.Events.ProcessID;
         tid: Trace.Types.Events.ThreadID;
@@ -36,17 +36,17 @@ export declare class AICallTree {
 /**
  * These events are very noisy and take up room in the context window for no real benefit.
  */
-class ExcludeCompileCodeFilter extends Trace.Extras.TraceFilter.TraceFilter {
+export declare class ExcludeCompileCodeFilter extends Trace.Extras.TraceFilter.TraceFilter {
     #private;
     constructor(selectedEvent?: Trace.Types.Events.Event);
     accept(event: Trace.Types.Events.Event): boolean;
 }
-class SelectedEventDurationFilter extends Trace.Extras.TraceFilter.TraceFilter {
+export declare class SelectedEventDurationFilter extends Trace.Extras.TraceFilter.TraceFilter {
     #private;
     constructor(selectedEvent: Trace.Types.Events.Event);
     accept(event: Trace.Types.Events.Event): boolean;
 }
-class MinDurationFilter extends Trace.Extras.TraceFilter.TraceFilter {
+export declare class MinDurationFilter extends Trace.Extras.TraceFilter.TraceFilter {
     #private;
     constructor(minDuration: Trace.Types.Timing.Micro);
     accept(event: Trace.Types.Events.Event): boolean;

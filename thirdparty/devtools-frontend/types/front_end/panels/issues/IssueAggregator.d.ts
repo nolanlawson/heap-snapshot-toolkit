@@ -9,7 +9,7 @@ interface AggregationKeyTag {
  * chosen such that if two aggregated issues have the same aggregation key, then
  * they also have the same issue code.
  */
-type AggregationKey = {
+export type AggregationKey = {
     toString(): string;
 } & AggregationKeyTag;
 /**
@@ -56,7 +56,7 @@ export declare class AggregatedIssue extends IssuesManager.Issue.Issue {
     isHidden(): boolean;
     setHidden(_value: boolean): void;
 }
-class IssueAggregator extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
+export declare class IssueAggregator extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
     #private;
     private readonly issuesManager;
     constructor(issuesManager: IssuesManager.IssuesManager.IssuesManager);
@@ -69,11 +69,12 @@ class IssueAggregator extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
     numberOfHiddenAggregatedIssues(): number;
     keyForIssue(issue: IssuesManager.Issue.Issue<string>): AggregationKey;
 }
-declare const enum Events {
+export declare const enum Events {
     AGGREGATED_ISSUE_UPDATED = "AggregatedIssueUpdated",
     FULL_UPDATE_REQUIRED = "FullUpdateRequired"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.AGGREGATED_ISSUE_UPDATED]: AggregatedIssue;
     [Events.FULL_UPDATE_REQUIRED]: void;
 }
+export {};

@@ -1,5 +1,6 @@
+import * as Protocol from '../../generated/protocol.js';
 import * as UI from '../../ui/legacy/legacy.js';
-class NetworkConfigView extends UI.Widget.VBox {
+export declare class NetworkConfigView extends UI.Widget.VBox {
     constructor();
     static instance(opts?: {
         forceNew: boolean | null;
@@ -16,4 +17,13 @@ class NetworkConfigView extends UI.Widget.VBox {
     private createAcceptedEncodingSection;
     wasShown(): void;
 }
+interface UserAgentGroup {
+    title: string;
+    values: Array<{
+        title: string;
+        value: string;
+        metadata: Protocol.Emulation.UserAgentMetadata | null;
+    }>;
+}
+export declare const userAgentGroups: UserAgentGroup[];
 export {};

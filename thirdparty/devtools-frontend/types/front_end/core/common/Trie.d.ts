@@ -17,3 +17,4 @@ export declare class Trie<T extends ArrayLike<ElementType<T>>> {
     longestPrefix(word: T, fullWordOnly: boolean): T;
     clear(): void;
 }
+export {};

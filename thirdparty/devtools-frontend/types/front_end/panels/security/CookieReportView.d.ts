@@ -5,8 +5,8 @@ import * as IssuesManager from '../../models/issues_manager/issues_manager.js';
 import type * as TextUtils from '../../models/text_utils/text_utils.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import * as Lit from '../../ui/lit/lit.js';
-const i18nString: (id: string, values?: import("../../core/i18n/i18nTypes.js").Values | undefined) => Common.UIString.LocalizedString;
-interface ViewInput {
+export declare const i18nString: (id: string, values?: import("../../core/i18n/i18nTypes.js").Values | undefined) => Common.UIString.LocalizedString;
+export interface ViewInput {
     cookieRows: IssuesManager.CookieIssue.CookieReportInfo[];
     filterItems: UI.FilterBar.Item[];
     filters: TextUtils.TextUtils.ParsedFilter[];
@@ -19,10 +19,10 @@ interface ViewInput {
         element: HTMLElement;
     }>) => void;
 }
-interface ViewOutput {
+export interface ViewOutput {
     namedBitSetFilterUI?: UI.FilterBar.NamedBitSetFilterUI;
 }
-interface CookieReportNodeData {
+export interface CookieReportNodeData {
     name: string;
     domain: string;
     type: string;
@@ -30,7 +30,7 @@ interface CookieReportNodeData {
     status: string;
     recommendation: HTMLElement;
 }
-type View = (input: ViewInput, output: ViewOutput, target: HTMLElement) => void;
+export type View = (input: ViewInput, output: ViewOutput, target: HTMLElement) => void;
 export declare class CookieReportView extends UI.Widget.VBox {
     #private;
     namedBitSetFilterUI?: UI.FilterBar.NamedBitSetFilterUI;

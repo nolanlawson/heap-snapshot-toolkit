@@ -4,7 +4,7 @@ import * as TextUtils from '../text_utils/text_utils.js';
 import * as Workspace from '../workspace/workspace.js';
 import { type IsolatedFileSystemManager } from './IsolatedFileSystemManager.js';
 import type { PlatformFileSystem, PlatformFileSystemType } from './PlatformFileSystem.js';
-class FileSystemWorkspaceBinding {
+export declare class FileSystemWorkspaceBinding {
     readonly isolatedFileSystemManager: IsolatedFileSystemManager;
     private readonly workspace;
     private readonly eventListeners;
@@ -24,7 +24,7 @@ class FileSystemWorkspaceBinding {
     private fileSystemFilesChanged;
     dispose(): void;
 }
-class FileSystem extends Workspace.Workspace.ProjectStore {
+export declare class FileSystem extends Workspace.Workspace.ProjectStore {
     readonly fileSystemInternal: PlatformFileSystem;
     readonly fileSystemBaseURL: Platform.DevToolsPath.UrlString;
     private readonly fileSystemParentURL;

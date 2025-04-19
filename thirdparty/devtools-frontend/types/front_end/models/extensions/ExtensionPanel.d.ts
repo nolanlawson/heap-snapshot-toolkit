@@ -2,7 +2,7 @@ import '../../ui/legacy/legacy.js';
 import type * as Platform from '../../core/platform/platform.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import type { ExtensionServer } from './ExtensionServer.js';
-class ExtensionPanel extends UI.Panel.Panel implements UI.SearchableView.Searchable {
+export declare class ExtensionPanel extends UI.Panel.Panel implements UI.SearchableView.Searchable {
     private readonly server;
     private readonly id;
     private readonly panelToolbar;
@@ -17,7 +17,7 @@ class ExtensionPanel extends UI.Panel.Panel implements UI.SearchableView.Searcha
     supportsCaseSensitiveSearch(): boolean;
     supportsRegexSearch(): boolean;
 }
-class ExtensionButton {
+export declare class ExtensionButton {
     private readonly id;
     private readonly toolbarButtonInternal;
     constructor(server: ExtensionServer, id: string, iconURL: string, tooltip?: string, disabled?: boolean);

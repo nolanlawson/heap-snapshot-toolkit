@@ -18,3 +18,4 @@ export declare abstract class CSSQuery {
     header(): CSSStyleSheetHeader | null;
     rawLocation(): CSSLocation | null;
 }
+export {};

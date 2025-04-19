@@ -4,7 +4,7 @@ import type * as Protocol from '../../generated/protocol.js';
 export interface BuildOptions {
     sanitize: boolean;
 }
-class Log {
+export declare class Log {
     static pseudoWallTime(request: SDK.NetworkRequest.NetworkRequest, monotonicTime: number): Date;
     static build(requests: SDK.NetworkRequest.NetworkRequest[], options: BuildOptions): Promise<LogDTO>;
     private creator;
@@ -12,7 +12,7 @@ class Log {
     private convertPage;
     private pageEventTime;
 }
-class Entry {
+export declare class Entry {
     private request;
     constructor(request: SDK.NetworkRequest.NetworkRequest);
     static toMilliseconds(time: number): number;
@@ -30,7 +30,7 @@ class Entry {
     get responseBodySize(): number;
     get responseCompression(): number | undefined;
 }
-interface Timing {
+export interface Timing {
     blocked: number;
     dns: number;
     ssl: number;
@@ -47,18 +47,18 @@ interface Timing {
     _workerRouterEvaluationStart?: number;
     _workerCacheLookupStart?: number;
 }
-interface Parameter {
+export interface Parameter {
     name: string;
     value: string;
 }
-interface Content {
+export interface Content {
     size: number;
     mimeType: string;
     compression?: number;
     text?: string;
     encoding?: string;
 }
-interface Request {
+export interface Request {
     method: string;
     url: Platform.DevToolsPath.UrlString;
     httpVersion: string;
@@ -73,7 +73,7 @@ interface Request {
     bodySize: number;
     postData?: PostData;
 }
-interface Response {
+export interface Response {
     status: number;
     statusText: string;
     httpVersion: string;
@@ -96,7 +96,7 @@ interface Response {
     _serviceWorkerRouterMatchedSourceType: string | undefined;
     _serviceWorkerRouterActualSourceType: string | undefined;
 }
-interface EntryDTO {
+export interface EntryDTO {
     _connectionId?: string;
     _fromCache?: string;
     _initiator: Protocol.Network.Initiator | null;
@@ -113,12 +113,12 @@ interface EntryDTO {
     time: number;
     timings: Timing;
 }
-interface PostData {
+export interface PostData {
     mimeType: string;
     params?: Parameter[];
     text: string;
 }
-interface CookieDTO {
+export interface CookieDTO {
     name: string;
     value: string;
     path: string;
@@ -129,7 +129,7 @@ interface CookieDTO {
     sameSite?: Protocol.Network.CookieSameSite;
     partitionKey?: Protocol.Network.CookiePartitionKey;
 }
-interface Page {
+export interface Page {
     startedDateTime: string | Object;
     id: string;
     title: string;
@@ -138,11 +138,11 @@ interface Page {
         onLoad: number;
     };
 }
-interface Creator {
+export interface Creator {
     version: string;
     name: string;
 }
-interface LogDTO {
+export interface LogDTO {
     version: string;
     creator: Creator;
     pages: Page[];

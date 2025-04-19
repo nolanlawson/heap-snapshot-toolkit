@@ -7,7 +7,7 @@ import * as IconButton from '../../ui/components/icon_button/icon_button.js';
 import * as Components from '../../ui/legacy/components/utils/utils.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import type { ConsoleViewportElement } from './ConsoleViewport.js';
-const getMessageForElement: (element: Element) => ConsoleViewMessage | undefined;
+export declare const getMessageForElement: (element: Element) => ConsoleViewMessage | undefined;
 /**
  * Combines the error description (essentially the `Error#stack` property value)
  * with the `issueSummary`.
@@ -17,7 +17,7 @@ const getMessageForElement: (element: Element) => ConsoleViewMessage | undefined
  * @returns the enriched description.
  * @see https://goo.gle/devtools-reduce-network-noise-design
  */
-const concatErrorDescriptionAndIssueSummary: (description: string, issueSummary: string) => string;
+export declare const concatErrorDescriptionAndIssueSummary: (description: string, issueSummary: string) => string;
 export declare class ConsoleViewMessage implements ConsoleViewportElement {
     #private;
     protected message: SDK.ConsoleModel.ConsoleMessage;
@@ -152,16 +152,16 @@ export declare class ConsoleGroupViewMessage extends ConsoleViewMessage {
     setGroupEnd(viewMessage: ConsoleViewMessage): void;
     groupEnd(): ConsoleViewMessage | null;
 }
-class ConsoleCommand extends ConsoleViewMessage {
+export declare class ConsoleCommand extends ConsoleViewMessage {
     private formattedCommand;
     constructor(consoleMessage: SDK.ConsoleModel.ConsoleMessage, linkifier: Components.Linkifier.Linkifier, requestResolver: Logs.RequestResolver.RequestResolver, issueResolver: IssuesManager.IssueResolver.IssueResolver, onResize: (arg0: Common.EventTarget.EventTargetEvent<UI.TreeOutline.TreeElement>) => void);
     contentElement(): HTMLElement;
     private updateSearch;
 }
-class ConsoleCommandResult extends ConsoleViewMessage {
+export declare class ConsoleCommandResult extends ConsoleViewMessage {
     contentElement(): HTMLElement;
 }
-class ConsoleTableMessageView extends ConsoleViewMessage {
+export declare class ConsoleTableMessageView extends ConsoleViewMessage {
     private dataGrid;
     constructor(consoleMessage: SDK.ConsoleModel.ConsoleMessage, linkifier: Components.Linkifier.Linkifier, requestResolver: Logs.RequestResolver.RequestResolver, issueResolver: IssuesManager.IssueResolver.IssueResolver, onResize: (arg0: Common.EventTarget.EventTargetEvent<UI.TreeOutline.TreeElement>) => void);
     wasShown(): void;
@@ -173,8 +173,8 @@ class ConsoleTableMessageView extends ConsoleViewMessage {
 /**
  * @const
  */
-const MaxLengthForLinks = 40;
-const getMaxTokenizableStringLength: () => number;
-const setMaxTokenizableStringLength: (length: number) => void;
-const getLongStringVisibleLength: () => number;
-const setLongStringVisibleLength: (length: number) => void;
+export declare const MaxLengthForLinks = 40;
+export declare const getMaxTokenizableStringLength: () => number;
+export declare const setMaxTokenizableStringLength: (length: number) => void;
+export declare const getLongStringVisibleLength: () => number;
+export declare const setLongStringVisibleLength: (length: number) => void;

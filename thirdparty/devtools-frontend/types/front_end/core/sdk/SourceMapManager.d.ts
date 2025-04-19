@@ -17,15 +17,15 @@ export declare class SourceMapManager<T extends FrameAssociated> extends Common.
     cancelAttachSourceMap(client: T): void;
     detachSourceMap(client: T): void;
 }
-declare function loadSourceMap(url: Platform.DevToolsPath.UrlString, initiator: PageResourceLoadInitiator): Promise<SourceMapV3>;
-declare function tryLoadSourceMap(url: Platform.DevToolsPath.UrlString, initiator: PageResourceLoadInitiator): Promise<SourceMapV3 | null>;
-declare enum Events {
+export declare function loadSourceMap(url: Platform.DevToolsPath.UrlString, initiator: PageResourceLoadInitiator): Promise<SourceMapV3>;
+export declare function tryLoadSourceMap(url: Platform.DevToolsPath.UrlString, initiator: PageResourceLoadInitiator): Promise<SourceMapV3 | null>;
+export declare enum Events {
     SourceMapWillAttach = "SourceMapWillAttach",
     SourceMapFailedToAttach = "SourceMapFailedToAttach",
     SourceMapAttached = "SourceMapAttached",
     SourceMapDetached = "SourceMapDetached"
 }
-interface EventTypes<T extends FrameAssociated> {
+export interface EventTypes<T extends FrameAssociated> {
     [Events.SourceMapWillAttach]: {
         client: T;
     };

@@ -1,0 +1,14 @@
+export declare const QUICK_OPEN_SELECTOR = "[aria-label=\"Quick open\"]";
+export declare const openCommandMenu: () => Promise<void>;
+export declare const openFileQuickOpen: () => Promise<void>;
+export declare function readQuickOpenResults(): Promise<string[]>;
+export declare const openFileWithQuickOpen: (sourceFile: string, filePosition?: number) => Promise<void>;
+export declare function runCommandWithQuickOpen(command: string): Promise<void>;
+export declare const openGoToLineQuickOpen: () => Promise<void>;
+export declare const showSnippetsAutocompletion: () => Promise<void>;
+export declare function getAvailableSnippets(): Promise<(string | null)[]>;
+export declare function getMenuItemAtPosition(position: number): Promise<import("puppeteer-core").ElementHandle<Element>>;
+export declare function getMenuItemTitleAtPosition(position: number): Promise<string | null>;
+export declare const closeDrawer: () => Promise<void>;
+export declare const getSelectedItemText: () => Promise<string | null>;
+export declare function typeIntoQuickOpen(query: string, expectEmptyResults?: boolean): Promise<void>;

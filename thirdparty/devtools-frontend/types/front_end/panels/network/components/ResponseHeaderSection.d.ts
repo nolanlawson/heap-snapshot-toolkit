@@ -2,7 +2,8 @@ import type { NameValue } from '../../../core/sdk/NetworkRequest.js';
 import type * as SDK from '../../../core/sdk/sdk.js';
 import * as NetworkForward from '../../../panels/network/forward/forward.js';
 import { type HeaderDetailsDescriptor } from './HeaderSectionRow.js';
-interface ResponseHeaderSectionData {
+export declare const RESPONSE_HEADER_SECTION_DATA_KEY = "ResponseHeaderSection";
+export interface ResponseHeaderSectionData {
     request: SDK.NetworkRequest.NetworkRequest;
     toReveal?: {
         section: NetworkForward.UIRequestLocation.UIHeaderSection;
@@ -16,11 +17,11 @@ declare class ResponseHeaderSectionBase extends HTMLElement {
     protected setHeaders(headers: NameValue[]): void;
     protected highlightHeaders(data: ResponseHeaderSectionData): void;
 }
-class EarlyHintsHeaderSection extends ResponseHeaderSectionBase {
+export declare class EarlyHintsHeaderSection extends ResponseHeaderSectionBase {
     #private;
     set data(data: ResponseHeaderSectionData);
 }
-class ResponseHeaderSection extends ResponseHeaderSectionBase {
+export declare class ResponseHeaderSection extends ResponseHeaderSectionBase {
     #private;
     set data(data: ResponseHeaderSectionData);
 }

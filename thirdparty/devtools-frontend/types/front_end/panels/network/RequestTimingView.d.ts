@@ -1,7 +1,7 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import { type NetworkTimeCalculator } from './NetworkTimeCalculator.js';
-class RequestTimingView extends UI.Widget.VBox {
+export declare class RequestTimingView extends UI.Widget.VBox {
     private request;
     private calculator;
     private lastMinimumBoundary;
@@ -20,7 +20,7 @@ class RequestTimingView extends UI.Widget.VBox {
     private refresh;
     private boundaryChanged;
 }
-declare const enum RequestTimeRangeNames {
+export declare const enum RequestTimeRangeNames {
     PUSH = "push",
     QUEUEING = "queueing",
     BLOCKING = "blocking",
@@ -39,9 +39,9 @@ declare const enum RequestTimeRangeNames {
     TOTAL = "total",
     WAITING = "waiting"
 }
-const ServiceWorkerRangeNames: Set<RequestTimeRangeNames>;
-const ConnectionSetupRangeNames: Set<RequestTimeRangeNames>;
-interface RequestTimeRange {
+export declare const ServiceWorkerRangeNames: Set<RequestTimeRangeNames>;
+export declare const ConnectionSetupRangeNames: Set<RequestTimeRangeNames>;
+export interface RequestTimeRange {
     name: RequestTimeRangeNames;
     start: number;
     end: number;

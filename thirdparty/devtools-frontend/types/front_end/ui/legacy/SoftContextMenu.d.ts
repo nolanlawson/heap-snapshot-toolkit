@@ -1,5 +1,5 @@
 import type * as Platform from '../../core/platform/platform.js';
-class SoftContextMenu {
+export declare class SoftContextMenu {
     private items;
     private itemSelectedCallback;
     private parentMenu;
@@ -64,3 +64,4 @@ interface ElementMenuDetails {
     subItems?: SoftContextMenuDescriptor[];
     actionId?: number;
 }
+export {};

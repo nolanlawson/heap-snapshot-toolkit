@@ -2,14 +2,14 @@ import type * as ProtocolProxyApi from '../../generated/protocol-proxy-api.js';
 import type * as Protocol from '../../generated/protocol.js';
 import { SDKModel } from './SDKModel.js';
 import { type Target } from './Target.js';
-class PaintProfilerModel extends SDKModel<void> {
+export declare class PaintProfilerModel extends SDKModel<void> {
     readonly layerTreeAgent: ProtocolProxyApi.LayerTreeApi;
     constructor(target: Target);
     loadSnapshotFromFragments(tiles: Protocol.LayerTree.PictureTile[]): Promise<PaintProfilerSnapshot | null>;
     loadSnapshot(encodedPicture: Protocol.binary): Promise<PaintProfilerSnapshot | null>;
     makeSnapshot(layerId: Protocol.LayerTree.LayerId): Promise<PaintProfilerSnapshot | null>;
 }
-class PaintProfilerSnapshot {
+export declare class PaintProfilerSnapshot {
     #private;
     constructor(paintProfilerModel: PaintProfilerModel, snapshotId: Protocol.LayerTree.SnapshotId);
     release(): void;
@@ -18,28 +18,28 @@ class PaintProfilerSnapshot {
     profile(clipRect: Protocol.DOM.Rect | null): Promise<Protocol.LayerTree.PaintProfile[]>;
     commandLog(): Promise<PaintProfilerLogItem[] | null>;
 }
-class PaintProfilerLogItem {
+export declare class PaintProfilerLogItem {
     method: string;
     params: RawPaintProfilerLogItemParams | null;
     commandIndex: number;
     constructor(rawEntry: RawPaintProfilerLogItem, commandIndex: number);
 }
-type RawPaintProfilerLogItemParamValue = string | {
+export type RawPaintProfilerLogItemParamValue = string | {
     [key: string]: RawPaintProfilerLogItemParamValue;
 };
-interface RawPaintProfilerLogItemParams {
+export interface RawPaintProfilerLogItemParams {
     [key: string]: RawPaintProfilerLogItemParamValue;
 }
 export interface SnapshotWithRect {
     rect: Protocol.DOM.Rect;
     snapshot: PaintProfilerSnapshot;
 }
-interface PictureFragment {
+export interface PictureFragment {
     x: number;
     y: number;
     picture: string;
 }
-interface RawPaintProfilerLogItem {
+export interface RawPaintProfilerLogItem {
     method: string;
     params: RawPaintProfilerLogItemParams | null;
 }

@@ -22,13 +22,13 @@ export declare class ContrastInfo extends Common.ObjectWrapper.ObjectWrapper<Eve
     private updateContrastRatio;
     contrastRatioThreshold(level: string): number | null;
 }
-declare const enum Events {
+export declare const enum Events {
     CONTRAST_INFO_UPDATED = "ContrastInfoUpdated"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.CONTRAST_INFO_UPDATED]: void;
 }
-interface ContrastInfoType {
+export interface ContrastInfoType {
     backgroundColors: string[] | null;
     computedFontSize: string;
     computedFontWeight: string;

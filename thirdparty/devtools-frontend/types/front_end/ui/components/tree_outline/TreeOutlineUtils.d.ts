@@ -9,14 +9,14 @@ interface BaseTreeNode<TreeNodeDataType> {
     id: TreeNodeId;
     jslogContext?: string;
 }
-interface TreeNodeWithChildren<TreeNodeDataType> extends BaseTreeNode<TreeNodeDataType> {
+export interface TreeNodeWithChildren<TreeNodeDataType> extends BaseTreeNode<TreeNodeDataType> {
     children: () => Promise<Array<TreeNode<TreeNodeDataType>>>;
 }
 interface LeafNode<TreeNodeDataType> extends BaseTreeNode<TreeNodeDataType> {
     children?: never;
 }
 export type TreeNode<TreeNodeDataType> = TreeNodeWithChildren<TreeNodeDataType> | LeafNode<TreeNodeDataType>;
-declare function isExpandableNode<TreeNodeDataType>(node: TreeNode<TreeNodeDataType>): node is TreeNodeWithChildren<TreeNodeDataType>;
+export declare function isExpandableNode<TreeNodeDataType>(node: TreeNode<TreeNodeDataType>): node is TreeNodeWithChildren<TreeNodeDataType>;
 /**
  * This is a custom lit directive that lets us track the DOM nodes that Lit
  * creates and maps them to the tree node that was given to us. This means we
@@ -27,8 +27,8 @@ declare class TrackDOMNodeToTreeNode extends Lit.Directive.Directive {
     update(part: Lit.Directive.ElementPart, [weakMap, treeNode]: Lit.Directive.DirectiveParameters<this>): void;
     render(_weakmap: WeakMap<HTMLLIElement, TreeNode<any>>, _treeNode: TreeNode<any>): void;
 }
-const trackDOMNodeToTreeNode: (_weakmap: WeakMap<HTMLLIElement, TreeNode<any>>, _treeNode: TreeNode<any>) => Lit.Directive.DirectiveResult<typeof TrackDOMNodeToTreeNode>;
-const getNodeChildren: <TreeNodeDataType>(node: TreeNode<TreeNodeDataType>) => Promise<Array<TreeNode<TreeNodeDataType>>>;
+export declare const trackDOMNodeToTreeNode: (_weakmap: WeakMap<HTMLLIElement, TreeNode<any>>, _treeNode: TreeNode<any>) => Lit.Directive.DirectiveResult<typeof TrackDOMNodeToTreeNode>;
+export declare const getNodeChildren: <TreeNodeDataType>(node: TreeNode<TreeNodeDataType>) => Promise<Array<TreeNode<TreeNodeDataType>>>;
 /**
  * Searches the tree and returns a path to the given node.
  * e.g. if the tree is:
@@ -41,11 +41,12 @@ const getNodeChildren: <TreeNodeDataType>(node: TreeNode<TreeNodeDataType>) => P
  *
  * And you look for F, you'll get back [A, D, F]
  */
-const getPathToTreeNode: <TreeNodeDataType>(tree: ReadonlyArray<TreeNode<TreeNodeDataType>>, nodeIdToFind: TreeNodeId) => Promise<Array<TreeNode<TreeNodeDataType>> | null>;
+export declare const getPathToTreeNode: <TreeNodeDataType>(tree: ReadonlyArray<TreeNode<TreeNodeDataType>>, nodeIdToFind: TreeNodeId) => Promise<Array<TreeNode<TreeNodeDataType>> | null>;
 interface KeyboardNavigationOptions<TreeNodeDataType> {
     currentDOMNode: HTMLLIElement;
     currentTreeNode: TreeNode<TreeNodeDataType>;
     direction: Platform.KeyboardUtilities.ArrowKey;
     setNodeExpandedState: (treeNode: TreeNode<TreeNodeDataType>, expanded: boolean) => void;
 }
-const findNextNodeForTreeOutlineKeyboardNavigation: <TreeNodeDataType>(options: KeyboardNavigationOptions<TreeNodeDataType>) => HTMLLIElement;
+export declare const findNextNodeForTreeOutlineKeyboardNavigation: <TreeNodeDataType>(options: KeyboardNavigationOptions<TreeNodeDataType>) => HTMLLIElement;
+export {};

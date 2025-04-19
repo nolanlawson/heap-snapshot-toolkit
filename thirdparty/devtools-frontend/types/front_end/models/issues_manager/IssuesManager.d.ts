@@ -3,27 +3,28 @@ import * as SDK from '../../core/sdk/sdk.js';
 import * as Protocol from '../../generated/protocol.js';
 import type { Issue, IssueKind } from './Issue.js';
 import { Events } from './IssuesManagerEvents.js';
+export { Events } from './IssuesManagerEvents.js';
 /**
  * Each issue reported by the backend can result in multiple `Issue` instances.
  * Handlers are simple functions hard-coded into a map.
  */
-declare function createIssuesFromProtocolIssue(issuesModel: SDK.IssuesModel.IssuesModel, inspectorIssue: Protocol.Audits.InspectorIssue): Issue[];
-interface IssuesManagerCreationOptions {
+export declare function createIssuesFromProtocolIssue(issuesModel: SDK.IssuesModel.IssuesModel, inspectorIssue: Protocol.Audits.InspectorIssue): Issue[];
+export interface IssuesManagerCreationOptions {
     forceNew: boolean;
     /** Throw an error if this is not the first instance created */
     ensureFirst: boolean;
     showThirdPartyIssuesSetting?: Common.Settings.Setting<boolean>;
     hideIssueSetting?: Common.Settings.Setting<HideIssueMenuSetting>;
 }
-interface HideIssueMenuSetting {
+export interface HideIssueMenuSetting {
     [x: string]: IssueStatus;
 }
-declare const enum IssueStatus {
+export declare const enum IssueStatus {
     HIDDEN = "Hidden",
     UNHIDDEN = "Unhidden"
 }
-declare function defaultHideIssueByCodeSetting(): HideIssueMenuSetting;
-declare function getHideIssueByCodeSetting(): Common.Settings.Setting<HideIssueMenuSetting>;
+export declare function defaultHideIssueByCodeSetting(): HideIssueMenuSetting;
+export declare function getHideIssueByCodeSetting(): Common.Settings.Setting<HideIssueMenuSetting>;
 /**
  * The `IssuesManager` is the central storage for issues. It collects issues from all the
  * `IssuesModel` instances in the page, and deduplicates them wrt their primary key.
@@ -52,11 +53,11 @@ export declare class IssuesManager extends Common.ObjectWrapper.ObjectWrapper<Ev
     unhideAllIssues(): void;
     getIssueById(id: string): Issue | undefined;
 }
-interface IssueAddedEvent {
+export interface IssueAddedEvent {
     issuesModel: SDK.IssuesModel.IssuesModel;
     issue: Issue;
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.ISSUES_COUNT_UPDATED]: void;
     [Events.FULL_UPDATE_REQUIRED]: void;
     [Events.ISSUE_ADDED]: IssueAddedEvent;

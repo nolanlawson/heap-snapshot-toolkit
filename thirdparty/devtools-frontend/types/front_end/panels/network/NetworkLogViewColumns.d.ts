@@ -72,7 +72,7 @@ export declare class NetworkLogViewColumns {
     selectFilmStripFrame(time: number): void;
     clearFilmStripFrame(): void;
 }
-interface Descriptor {
+export interface Descriptor {
     id: string;
     title: string | (() => string);
     titleDOMFragment?: DocumentFragment;

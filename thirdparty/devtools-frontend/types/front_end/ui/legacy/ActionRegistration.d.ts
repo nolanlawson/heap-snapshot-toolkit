@@ -32,26 +32,26 @@ export declare class Action extends Common.ObjectWrapper.ObjectWrapper<EventType
     condition(): Root.Runtime.Condition | undefined;
     order(): number | undefined;
 }
-declare function registerActionExtension(registration: ActionRegistration): void;
-declare function reset(): void;
-declare function getRegisteredActionExtensions(): Action[];
-declare function maybeRemoveActionExtension(actionId: string): boolean;
-declare const enum Platforms {
+export declare function registerActionExtension(registration: ActionRegistration): void;
+export declare function reset(): void;
+export declare function getRegisteredActionExtensions(): Action[];
+export declare function maybeRemoveActionExtension(actionId: string): boolean;
+export declare const enum Platforms {
     ALL = "All platforms",
     MAC = "mac",
     WINDOWS_LINUX = "windows,linux",
     ANDROID = "Android",
     WINDOWS = "windows"
 }
-declare const enum Events {
+export declare const enum Events {
     ENABLED = "Enabled",
     TOGGLED = "Toggled"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.ENABLED]: boolean;
     [Events.TOGGLED]: boolean;
 }
-declare const enum ActionCategory {
+export declare const enum ActionCategory {
     NONE = "",// `NONE` must be a falsy value. Legacy code uses if-checks for the category.
     ELEMENTS = "ELEMENTS",
     SCREENSHOT = "SCREENSHOT",
@@ -75,8 +75,8 @@ declare const enum ActionCategory {
     RECORDER = "RECORDER",
     CHANGES = "CHANGES"
 }
-declare function getLocalizedActionCategory(category: ActionCategory): Platform.UIString.LocalizedString;
-declare const enum IconClass {
+export declare function getLocalizedActionCategory(category: ActionCategory): Platform.UIString.LocalizedString;
+export declare const enum IconClass {
     LARGEICON_NODE_SEARCH = "select-element",
     START_RECORDING = "record-start",
     STOP_RECORDING = "record-stop",
@@ -102,16 +102,16 @@ declare const enum IconClass {
     COPY = "copy",
     IMPORT = "import"
 }
-declare const enum KeybindSet {
+export declare const enum KeybindSet {
     DEVTOOLS_DEFAULT = "devToolsDefault",
     VS_CODE = "vsCode"
 }
-interface ExtensionOption {
+export interface ExtensionOption {
     value: boolean;
     title: () => Platform.UIString.LocalizedString;
     text?: string;
 }
-interface Binding {
+export interface Binding {
     platform?: Platforms;
     shortcut: string;
     keybindSets?: KeybindSet[];
@@ -119,7 +119,7 @@ interface Binding {
 /**
  * The representation of an action extension to be registered.
  */
-interface ActionRegistration {
+export interface ActionRegistration {
     /**
      * The unique id of an Action extension.
      */

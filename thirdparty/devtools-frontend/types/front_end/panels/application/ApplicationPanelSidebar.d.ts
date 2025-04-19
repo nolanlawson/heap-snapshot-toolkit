@@ -110,7 +110,7 @@ export declare class ApplicationPanelSidebar extends UI.Widget.VBox implements S
     private onmousemove;
     private onmouseleave;
 }
-class BackgroundServiceTreeElement extends ApplicationPanelTreeElement {
+export declare class BackgroundServiceTreeElement extends ApplicationPanelTreeElement {
     private serviceName;
     private view;
     private model;
@@ -122,13 +122,13 @@ class BackgroundServiceTreeElement extends ApplicationPanelTreeElement {
     get selectable(): boolean;
     onselect(selectedByUser?: boolean): boolean;
 }
-class ServiceWorkersTreeElement extends ApplicationPanelTreeElement {
+export declare class ServiceWorkersTreeElement extends ApplicationPanelTreeElement {
     private view?;
     constructor(storagePanel: ResourcesPanel);
     get itemURL(): Platform.DevToolsPath.UrlString;
     onselect(selectedByUser?: boolean): boolean;
 }
-class AppManifestTreeElement extends ApplicationPanelTreeElement {
+export declare class AppManifestTreeElement extends ApplicationPanelTreeElement {
     private view;
     constructor(storagePanel: ResourcesPanel);
     get itemURL(): Platform.DevToolsPath.UrlString;
@@ -137,20 +137,20 @@ class AppManifestTreeElement extends ApplicationPanelTreeElement {
     onInvoke(): void;
     showManifestView(): void;
 }
-class ManifestChildTreeElement extends ApplicationPanelTreeElement {
+export declare class ManifestChildTreeElement extends ApplicationPanelTreeElement {
     #private;
     constructor(storagePanel: ResourcesPanel, element: Element, childTitle: string, fieldElement: HTMLElement, jslogContext: string);
     get itemURL(): Platform.DevToolsPath.UrlString;
     onInvoke(): void;
     onInvokeElementKeydown(event: KeyboardEvent): void;
 }
-class ClearStorageTreeElement extends ApplicationPanelTreeElement {
+export declare class ClearStorageTreeElement extends ApplicationPanelTreeElement {
     private view?;
     constructor(storagePanel: ResourcesPanel);
     get itemURL(): Platform.DevToolsPath.UrlString;
     onselect(selectedByUser?: boolean): boolean;
 }
-class IndexedDBTreeElement extends ExpandableApplicationPanelTreeElement {
+export declare class IndexedDBTreeElement extends ExpandableApplicationPanelTreeElement {
     private idbDatabaseTreeElements;
     private storageBucket?;
     constructor(storagePanel: ResourcesPanel, storageBucket?: Protocol.Storage.StorageBucket);
@@ -170,7 +170,7 @@ class IndexedDBTreeElement extends ExpandableApplicationPanelTreeElement {
     private indexedDBContentUpdated;
     private idbDatabaseTreeElement;
 }
-class IDBDatabaseTreeElement extends ApplicationPanelTreeElement {
+export declare class IDBDatabaseTreeElement extends ApplicationPanelTreeElement {
     model: IndexedDBModel;
     databaseId: DatabaseId;
     private readonly idbObjectStoreTreeElements;
@@ -189,7 +189,7 @@ class IDBDatabaseTreeElement extends ApplicationPanelTreeElement {
     private objectStoreRemoved;
     clear(): void;
 }
-class IDBObjectStoreTreeElement extends ApplicationPanelTreeElement {
+export declare class IDBObjectStoreTreeElement extends ApplicationPanelTreeElement {
     private model;
     private databaseId;
     private readonly idbIndexTreeElements;
@@ -208,7 +208,7 @@ class IDBObjectStoreTreeElement extends ApplicationPanelTreeElement {
     private indexRemoved;
     clear(): void;
 }
-class IDBIndexTreeElement extends ApplicationPanelTreeElement {
+export declare class IDBIndexTreeElement extends ApplicationPanelTreeElement {
     private model;
     private databaseId;
     private objectStore;
@@ -224,7 +224,7 @@ class IDBIndexTreeElement extends ApplicationPanelTreeElement {
     onselect(selectedByUser?: boolean): boolean;
     clear(): void;
 }
-class DOMStorageTreeElement extends ApplicationPanelTreeElement {
+export declare class DOMStorageTreeElement extends ApplicationPanelTreeElement {
     private readonly domStorage;
     constructor(storagePanel: ResourcesPanel, domStorage: DOMStorage);
     get itemURL(): Platform.DevToolsPath.UrlString;
@@ -232,7 +232,7 @@ class DOMStorageTreeElement extends ApplicationPanelTreeElement {
     onattach(): void;
     private handleContextMenuEvent;
 }
-class ExtensionStorageTreeElement extends ApplicationPanelTreeElement {
+export declare class ExtensionStorageTreeElement extends ApplicationPanelTreeElement {
     private readonly extensionStorage;
     constructor(storagePanel: ResourcesPanel, extensionStorage: ExtensionStorage);
     get storageArea(): Protocol.Extensions.StorageArea;
@@ -241,12 +241,12 @@ class ExtensionStorageTreeElement extends ApplicationPanelTreeElement {
     onattach(): void;
     private handleContextMenuEvent;
 }
-class ExtensionStorageTreeParentElement extends ApplicationPanelTreeElement {
+export declare class ExtensionStorageTreeParentElement extends ApplicationPanelTreeElement {
     private readonly extensionId;
     constructor(storagePanel: ResourcesPanel, extensionId: string, extensionName: string);
     get itemURL(): Platform.DevToolsPath.UrlString;
 }
-class CookieTreeElement extends ApplicationPanelTreeElement {
+export declare class CookieTreeElement extends ApplicationPanelTreeElement {
     private readonly target;
     private readonly cookieDomainInternal;
     constructor(storagePanel: ResourcesPanel, frame: SDK.ResourceTreeModel.ResourceTreeFrame, cookieUrl: Common.ParsedURL.ParsedURL);
@@ -256,7 +256,7 @@ class CookieTreeElement extends ApplicationPanelTreeElement {
     private handleContextMenuEvent;
     onselect(selectedByUser?: boolean): boolean;
 }
-class StorageCategoryView extends UI.Widget.VBox {
+export declare class StorageCategoryView extends UI.Widget.VBox {
     private emptyWidget;
     private linkElement;
     constructor();
@@ -264,7 +264,7 @@ class StorageCategoryView extends UI.Widget.VBox {
     setHeadline(header: string): void;
     setLink(link: Platform.DevToolsPath.UrlString | null): void;
 }
-class ResourcesSection implements SDK.TargetManager.Observer {
+export declare class ResourcesSection implements SDK.TargetManager.Observer {
     panel: ResourcesPanel;
     private readonly treeElement;
     private treeElementForFrameId;
@@ -287,7 +287,7 @@ class ResourcesSection implements SDK.TargetManager.Observer {
     private windowChanged;
     reset(): void;
 }
-class FrameTreeElement extends ApplicationPanelTreeElement {
+export declare class FrameTreeElement extends ApplicationPanelTreeElement {
     private section;
     private frame;
     private readonly categoryElements;
@@ -313,7 +313,7 @@ class FrameTreeElement extends ApplicationPanelTreeElement {
      */
     private static presentationOrderCompare;
 }
-class FrameResourceTreeElement extends ApplicationPanelTreeElement {
+export declare class FrameResourceTreeElement extends ApplicationPanelTreeElement {
     private readonly panel;
     private resource;
     private previewPromise;

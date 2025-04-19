@@ -12,7 +12,7 @@ declare class SourceScopeRemoteObject extends SDK.RemoteObject.RemoteObjectImpl 
     constructor(callFrame: SDK.DebuggerModel.CallFrame, stopId: StopId, plugin: DebuggerLanguagePlugin);
     doGetProperties(_ownProperties: boolean, accessorPropertiesOnly: boolean, _generatePreview: boolean): Promise<SDK.RemoteObject.GetPropertiesResult>;
 }
-class SourceScope implements SDK.DebuggerModel.ScopeChainEntry {
+export declare class SourceScope implements SDK.DebuggerModel.ScopeChainEntry {
     #private;
     constructor(callFrame: SDK.DebuggerModel.CallFrame, stopId: StopId, type: string, typeName: string, icon: string | undefined, plugin: DebuggerLanguagePlugin);
     getVariableValue(name: string): Promise<SDK.RemoteObject.RemoteObject | null>;
@@ -26,7 +26,7 @@ class SourceScope implements SDK.DebuggerModel.ScopeChainEntry {
     icon(): string | undefined;
     extraProperties(): SDK.RemoteObject.RemoteObjectProperty[];
 }
-class ExtensionRemoteObject extends SDK.RemoteObject.RemoteObject {
+export declare class ExtensionRemoteObject extends SDK.RemoteObject.RemoteObject {
     private readonly extensionObject;
     private readonly plugin;
     readonly callFrame: SDK.DebuggerModel.CallFrame;
@@ -52,7 +52,7 @@ class ExtensionRemoteObject extends SDK.RemoteObject.RemoteObject {
     runtimeModel(): SDK.RuntimeModel.RuntimeModel;
     isLinearMemoryInspectable(): boolean;
 }
-type StopId = bigint;
+export type StopId = bigint;
 export declare class DebuggerLanguagePluginManager implements SDK.TargetManager.SDKModelObserver<SDK.DebuggerModel.DebuggerModel> {
     #private;
     private readonly callFrameByStopId;
@@ -112,8 +112,9 @@ export declare class DebuggerLanguagePluginManager implements SDK.TargetManager.
     }>>;
     getMappedLines(uiSourceCode: Workspace.UISourceCode.UISourceCode): Promise<Set<number> | null>;
 }
-interface DebuggerLanguagePlugin extends Chrome.DevTools.LanguageExtensionPlugin {
+export interface DebuggerLanguagePlugin extends Chrome.DevTools.LanguageExtensionPlugin {
     name: string;
     handleScript(script: SDK.Script.Script): boolean;
     createPageResourceLoadInitiator(): SDK.PageResourceLoader.PageResourceLoadInitiator;
 }
+export {};

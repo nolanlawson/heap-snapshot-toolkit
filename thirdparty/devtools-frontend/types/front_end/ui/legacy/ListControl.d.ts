@@ -10,12 +10,12 @@ export interface ListDelegate<T> {
     selectedItemChanged(from: T | null, to: T | null, fromElement: HTMLElement | null, toElement: HTMLElement | null): void;
     updateSelectedItemARIA(fromElement: Element | null, toElement: Element | null): boolean;
 }
-declare enum ListMode {
+export declare enum ListMode {
     NonViewport = "UI.ListMode.NonViewport",
     EqualHeightItems = "UI.ListMode.EqualHeightItems",
     VariousHeightItems = "UI.ListMode.VariousHeightItems"
 }
-class ListControl<T> {
+export declare class ListControl<T> {
     element: HTMLDivElement;
     private topElement;
     private bottomElement;

@@ -13,8 +13,8 @@ import { ElementsSidebarPane } from './ElementsSidebarPane.js';
 import { StylePropertiesSection } from './StylePropertiesSection.js';
 import type { StylePropertyTreeElement } from './StylePropertyTreeElement.js';
 import { WebCustomData } from './WebCustomData.js';
-const REGISTERED_PROPERTY_SECTION_NAME = "@property";
-const FUNCTION_SECTION_NAME = "@function";
+export declare const REGISTERED_PROPERTY_SECTION_NAME = "@property";
+export declare const FUNCTION_SECTION_NAME = "@function";
 declare const StylesSidebarPane_base: {
     new (...args: any[]): {
         "__#15@#events": Common.ObjectWrapper.ObjectWrapper<EventTypes>;
@@ -121,18 +121,18 @@ export declare class StylesSidebarPane extends StylesSidebarPane_base {
     private startToolbarPaneAnimation;
     private createRenderingShortcuts;
 }
-declare const enum Events {
+export declare const enum Events {
     INITIAL_UPDATE_COMPLETED = "InitialUpdateCompleted",
     STYLES_UPDATE_COMPLETED = "StylesUpdateCompleted"
 }
-interface StylesUpdateCompletedEvent {
+export interface StylesUpdateCompletedEvent {
     hasMatchedStyles: boolean;
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.INITIAL_UPDATE_COMPLETED]: void;
     [Events.STYLES_UPDATE_COMPLETED]: StylesUpdateCompletedEvent;
 }
-class SectionBlock {
+export declare class SectionBlock {
     #private;
     private readonly titleElementInternal;
     sections: StylePropertiesSection[];
@@ -150,7 +150,7 @@ class SectionBlock {
     updateFilter(): number;
     titleElement(): Element | null;
 }
-class IdleCallbackManager {
+export declare class IdleCallbackManager {
     private discarded;
     private readonly promises;
     private readonly queue;
@@ -160,8 +160,8 @@ class IdleCallbackManager {
     protected scheduleIdleCallback(timeout: number): void;
     awaitDone(): Promise<void[]>;
 }
-declare function quoteFamilyName(familyName: string): string;
-class CSSPropertyPrompt extends UI.TextPrompt.TextPrompt {
+export declare function quoteFamilyName(familyName: string): string;
+export declare class CSSPropertyPrompt extends UI.TextPrompt.TextPrompt {
     private readonly isColorAware;
     private readonly cssCompletions;
     private selectedNodeComputedStyles;
@@ -177,12 +177,12 @@ class CSSPropertyPrompt extends UI.TextPrompt.TextPrompt {
     private isValueSuggestion;
     private buildPropertyCompletions;
 }
-declare function unescapeCssString(input: string): string;
-declare function escapeUrlAsCssComment(urlText: string): string;
-class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
+export declare function unescapeCssString(input: string): string;
+export declare function escapeUrlAsCssComment(urlText: string): string;
+export declare class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(_context: UI.Context.Context, actionId: string): boolean;
 }
-class ButtonProvider implements UI.Toolbar.Provider {
+export declare class ButtonProvider implements UI.Toolbar.Provider {
     private readonly button;
     private constructor();
     static instance(opts?: {
@@ -191,3 +191,4 @@ class ButtonProvider implements UI.Toolbar.Provider {
     private longClicked;
     item(): UI.Toolbar.ToolbarItem;
 }
+export {};

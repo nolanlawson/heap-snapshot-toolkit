@@ -39,7 +39,7 @@ export interface Project {
      */
     uiSourceCodes(): Iterable<UISourceCode>;
 }
-declare enum projectTypes {
+export declare enum projectTypes {
     Debugger = "debugger",
     Formatter = "formatter",
     Inspector = "inspector",
@@ -49,7 +49,7 @@ declare enum projectTypes {
     ContentScripts = "contentscripts",
     Service = "service"
 }
-class ProjectStore implements Project {
+export declare abstract class ProjectStore implements Project {
     #private;
     private readonly workspaceInternal;
     private readonly idInternal;
@@ -87,7 +87,7 @@ class ProjectStore implements Project {
     abstract searchInFileContent(uiSourceCode: UISourceCode, query: string, caseSensitive: boolean, isRegex: boolean): Promise<TextUtils.ContentProvider.SearchMatch[]>;
     abstract findFilesMatchingSearchRequest(searchConfig: SearchConfig, filesMatchingFileQuery: UISourceCode[], progress: Common.Progress.Progress): Promise<Map<UISourceCode, TextUtils.ContentProvider.SearchMatch[] | null>>;
 }
-class WorkspaceImpl extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
+export declare class WorkspaceImpl extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
     private projectsInternal;
     private hasResourceContentTrackingExtensionsInternal;
     private constructor();
@@ -109,7 +109,7 @@ class WorkspaceImpl extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
     setHasResourceContentTrackingExtensions(hasExtensions: boolean): void;
     hasResourceContentTrackingExtensions(): boolean;
 }
-declare enum Events {
+export declare enum Events {
     UISourceCodeAdded = "UISourceCodeAdded",
     UISourceCodeRemoved = "UISourceCodeRemoved",
     UISourceCodeRenamed = "UISourceCodeRenamed",
@@ -119,19 +119,19 @@ declare enum Events {
     ProjectAdded = "ProjectAdded",
     ProjectRemoved = "ProjectRemoved"
 }
-interface UISourceCodeRenamedEvent {
+export interface UISourceCodeRenamedEvent {
     oldURL: Platform.DevToolsPath.UrlString;
     uiSourceCode: UISourceCode;
 }
-interface WorkingCopyChangedEvent {
+export interface WorkingCopyChangedEvent {
     uiSourceCode: UISourceCode;
 }
-interface WorkingCopyCommitedEvent {
+export interface WorkingCopyCommitedEvent {
     uiSourceCode: UISourceCode;
     content: string;
     encoded?: boolean;
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.UISourceCodeAdded]: UISourceCode;
     [Events.UISourceCodeRemoved]: UISourceCode;
     [Events.UISourceCodeRenamed]: UISourceCodeRenamedEvent;

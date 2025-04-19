@@ -17,7 +17,7 @@ import { BidiPage } from './Page.js';
 /**
  * @internal
  */
-interface BidiBrowserContextOptions {
+export interface BidiBrowserContextOptions {
     defaultViewport: Viewport | null;
 }
 /**

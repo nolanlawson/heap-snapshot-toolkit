@@ -68,17 +68,17 @@ export declare class TabbedEditorContainer extends Common.ObjectWrapper.ObjectWr
     private generateTabId;
     currentFile(): Workspace.UISourceCode.UISourceCode | null;
 }
-declare const enum Events {
+export declare const enum Events {
     EDITOR_SELECTED = "EditorSelected",
     EDITOR_CLOSED = "EditorClosed"
 }
-interface EditorSelectedEvent {
+export interface EditorSelectedEvent {
     currentFile: Workspace.UISourceCode.UISourceCode;
     currentView: UI.Widget.Widget | null;
     previousView: UI.Widget.Widget | null;
     userGesture: boolean | undefined;
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.EDITOR_SELECTED]: EditorSelectedEvent;
     [Events.EDITOR_CLOSED]: Workspace.UISourceCode.UISourceCode;
 }
@@ -92,7 +92,7 @@ interface HistoryItemKey {
     url: Platform.DevToolsPath.UrlString;
     resourceType: Common.ResourceType.ResourceType;
 }
-class HistoryItem implements HistoryItemKey {
+export declare class HistoryItem implements HistoryItemKey {
     url: Platform.DevToolsPath.UrlString;
     resourceType: Common.ResourceType.ResourceType;
     selectionRange: TextUtils.TextRange.TextRange | undefined;
@@ -101,7 +101,7 @@ class HistoryItem implements HistoryItemKey {
     static fromObject(serializedHistoryItem: SerializedHistoryItem): HistoryItem;
     toObject(): SerializedHistoryItem | null;
 }
-class History {
+export declare class History {
     private items;
     constructor(items: HistoryItem[]);
     static fromObject(serializedHistoryItems: SerializedHistoryItem[]): History;
@@ -115,9 +115,10 @@ class History {
     toObject(): SerializedHistoryItem[];
     keys(): HistoryItemKey[];
 }
-class EditorContainerTabDelegate implements UI.TabbedPane.TabbedPaneTabDelegate {
+export declare class EditorContainerTabDelegate implements UI.TabbedPane.TabbedPaneTabDelegate {
     private readonly editorContainer;
     constructor(editorContainer: TabbedEditorContainer);
     closeTabs(_tabbedPane: UI.TabbedPane.TabbedPane, ids: string[]): void;
     onContextMenu(tabId: string, contextMenu: UI.ContextMenu.ContextMenu): void;
 }
+export {};

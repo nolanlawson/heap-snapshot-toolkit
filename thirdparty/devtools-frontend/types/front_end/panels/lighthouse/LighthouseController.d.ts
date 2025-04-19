@@ -42,31 +42,31 @@ export declare class LighthouseController extends Common.ObjectWrapper.ObjectWra
     private setupEmulationAndProtocolConnection;
     private restoreEmulationAndProtocolConnection;
 }
-const Presets: Preset[];
-interface Flags {
+export declare const Presets: Preset[];
+export interface Flags {
     [flag: string]: string | boolean;
 }
-const RuntimeSettings: RuntimeSetting[];
+export declare const RuntimeSettings: RuntimeSetting[];
 export declare enum Events {
     PageAuditabilityChanged = "PageAuditabilityChanged",
     PageWarningsChanged = "PageWarningsChanged",
     AuditProgressChanged = "AuditProgressChanged"
 }
-interface PageAuditabilityChangedEvent {
+export interface PageAuditabilityChangedEvent {
     helpText: string;
 }
-interface PageWarningsChangedEvent {
+export interface PageWarningsChangedEvent {
     warning: string;
 }
-interface AuditProgressChangedEvent {
+export interface AuditProgressChangedEvent {
     message: string;
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.PageAuditabilityChanged]: PageAuditabilityChangedEvent;
     [Events.PageWarningsChanged]: PageWarningsChangedEvent;
     [Events.AuditProgressChanged]: AuditProgressChangedEvent;
 }
-interface Preset {
+export interface Preset {
     setting: Common.Settings.Setting<boolean>;
     configID: string;
     title: () => Common.UIString.LocalizedString;
@@ -74,7 +74,7 @@ interface Preset {
     supportedModes: string[];
     userMetric: Host.UserMetrics.LighthouseCategoryUsed;
 }
-interface RuntimeSetting {
+export interface RuntimeSetting {
     setting: Common.Settings.Setting<string | boolean>;
     description: () => Common.UIString.LocalizedString;
     setFlags: (flags: Flags, value: string | boolean) => void;

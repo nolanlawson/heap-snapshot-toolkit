@@ -3,7 +3,7 @@ import * as SDK from '../../core/sdk/sdk.js';
 import * as Protocol from '../../generated/protocol.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import { type EmulatedDevice, type Mode } from './EmulatedDevices.js';
-class DeviceModeModel extends Common.ObjectWrapper.ObjectWrapper<EventTypes> implements SDK.TargetManager.SDKModelObserver<SDK.EmulationModel.EmulationModel> {
+export declare class DeviceModeModel extends Common.ObjectWrapper.ObjectWrapper<EventTypes> implements SDK.TargetManager.SDKModelObserver<SDK.EmulationModel.EmulationModel> {
     #private;
     private constructor();
     static instance(opts?: {
@@ -98,7 +98,7 @@ export declare class Insets {
     constructor(left: number, top: number, right: number, bottom: number);
     isEqual(insets: Insets | null): boolean;
 }
-class Rect {
+export declare class Rect {
     left: number;
     top: number;
     width: number;
@@ -109,26 +109,26 @@ class Rect {
     relativeTo(origin: Rect): Rect;
     rebaseTo(origin: Rect): Rect;
 }
-declare const enum Events {
+export declare const enum Events {
     UPDATED = "Updated"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.UPDATED]: void;
 }
-declare enum Type {
+export declare enum Type {
     None = "None",
     Responsive = "Responsive",
     Device = "Device"
 }
-declare const enum UA {
+export declare const enum UA {
     MOBILE = "Mobile",
     MOBILE_NO_TOUCH = "Mobile (no touch)",
     DESKTOP = "Desktop",
     DESKTOP_TOUCH = "Desktop (touch)"
 }
-const MinDeviceSize = 50;
-const MaxDeviceSize = 9999;
-const MinDeviceScaleFactor = 0;
-const MaxDeviceScaleFactor = 10;
-const MaxDeviceNameLength = 50;
-const defaultMobileScaleFactor = 2;
+export declare const MinDeviceSize = 50;
+export declare const MaxDeviceSize = 9999;
+export declare const MinDeviceScaleFactor = 0;
+export declare const MaxDeviceScaleFactor = 10;
+export declare const MaxDeviceNameLength = 50;
+export declare const defaultMobileScaleFactor = 2;

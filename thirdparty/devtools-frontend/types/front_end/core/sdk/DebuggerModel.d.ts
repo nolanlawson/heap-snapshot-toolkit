@@ -9,13 +9,13 @@ import { Script } from './Script.js';
 import { SDKModel } from './SDKModel.js';
 import { SourceMapManager } from './SourceMapManager.js';
 import { type Target } from './Target.js';
-declare function sortAndMergeRanges(locationRanges: Protocol.Debugger.LocationRange[]): Protocol.Debugger.LocationRange[];
-declare const enum StepMode {
+export declare function sortAndMergeRanges(locationRanges: Protocol.Debugger.LocationRange[]): Protocol.Debugger.LocationRange[];
+export declare const enum StepMode {
     STEP_INTO = "StepInto",
     STEP_OUT = "StepOut",
     STEP_OVER = "StepOver"
 }
-const WASM_SYMBOLS_PRIORITY: Protocol.Debugger.DebugSymbolsType[];
+export declare const WASM_SYMBOLS_PRIORITY: Protocol.Debugger.DebugSymbolsType[];
 export declare class DebuggerModel extends SDKModel<EventTypes> {
     #private;
     readonly agent: ProtocolProxyApi.DebuggerApi;
@@ -106,13 +106,13 @@ export declare class DebuggerModel extends SDKModel<EventTypes> {
 /**
  * Keep these in sync with WebCore::V8Debugger
  */
-declare enum PauseOnExceptionsState {
+export declare enum PauseOnExceptionsState {
     DontPauseOnExceptions = "none",
     PauseOnAllExceptions = "all",
     PauseOnCaughtExceptions = "caught",
     PauseOnUncaughtExceptions = "uncaught"
 }
-declare enum Events {
+export declare enum Events {
     DebuggerWasEnabled = "DebuggerWasEnabled",
     DebuggerWasDisabled = "DebuggerWasDisabled",
     DebuggerPaused = "DebuggerPaused",
@@ -125,7 +125,7 @@ declare enum Events {
     DebuggerIsReadyToPause = "DebuggerIsReadyToPause",
     ScriptSourceWasEdited = "ScriptSourceWasEdited"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.DebuggerWasEnabled]: DebuggerModel;
     [Events.DebuggerWasDisabled]: DebuggerModel;
     [Events.DebuggerPaused]: DebuggerModel;
@@ -159,16 +159,16 @@ export interface LocationRange {
     start: Location;
     end: Location;
 }
-class BreakLocation extends Location {
+export declare class BreakLocation extends Location {
     type: Protocol.Debugger.BreakLocationType | undefined;
     constructor(debuggerModel: DebuggerModel, scriptId: Protocol.Runtime.ScriptId, lineNumber: number, columnNumber?: number, type?: Protocol.Debugger.BreakLocationType);
     static fromPayload(debuggerModel: DebuggerModel, payload: Protocol.Debugger.BreakLocation): BreakLocation;
 }
-interface MissingDebugFiles {
+export interface MissingDebugFiles {
     resourceUrl: Platform.DevToolsPath.UrlString;
     initiator: PageResourceLoadInitiator;
 }
-interface MissingDebugInfoDetails {
+export interface MissingDebugInfoDetails {
     details: string;
     resources: MissingDebugFiles[];
 }
@@ -212,7 +212,7 @@ export interface ScopeChainEntry {
      */
     extraProperties(): RemoteObjectProperty[];
 }
-class Scope implements ScopeChainEntry {
+export declare class Scope implements ScopeChainEntry {
     #private;
     constructor(callFrame: CallFrame, ordinal: number);
     callFrame(): CallFrame;
@@ -225,7 +225,7 @@ class Scope implements ScopeChainEntry {
     icon(): undefined;
     extraProperties(): RemoteObjectProperty[];
 }
-class DebuggerPausedDetails {
+export declare class DebuggerPausedDetails {
     debuggerModel: DebuggerModel;
     callFrames: CallFrame[];
     reason: Protocol.Debugger.PausedEventReason;
@@ -245,7 +245,7 @@ export interface FunctionDetails {
     location: Location | null;
     functionName: string;
 }
-interface SetBreakpointResult {
+export interface SetBreakpointResult {
     breakpointId: Protocol.Debugger.BreakpointId | null;
     locations: Location[];
 }
@@ -255,7 +255,7 @@ export interface EventListenerPausedDetailsAuxData {
     webglErrorName?: string;
     directiveText?: string;
 }
-declare const enum BreakpointType {
+export declare const enum BreakpointType {
     LOGPOINT = "LOGPOINT",
     CONDITIONAL_BREAKPOINT = "CONDITIONAL_BREAKPOINT",
     REGULAR_BREAKPOINT = "REGULAR_BREAKPOINT"
@@ -264,6 +264,6 @@ declare const enum BreakpointType {
  * A breakpoint condition as sent to V8. This helps distinguish
  * the breakpoint condition as it is entered by the user.
  */
-type BackendCondition = Platform.Brand.Brand<string, 'BackendCondition'>;
-const LOGPOINT_SOURCE_URL = "debugger://logpoint";
-const COND_BREAKPOINT_SOURCE_URL = "debugger://breakpoint";
+export type BackendCondition = Platform.Brand.Brand<string, 'BackendCondition'>;
+export declare const LOGPOINT_SOURCE_URL = "debugger://logpoint";
+export declare const COND_BREAKPOINT_SOURCE_URL = "debugger://breakpoint";

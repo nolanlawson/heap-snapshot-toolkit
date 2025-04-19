@@ -1,4 +1,4 @@
-class InplaceEditor<T> {
+export declare class InplaceEditor<T> {
     private focusRestorer?;
     static startEditing<T>(element: Element, config: Config<T>): Controller | null;
     editorContent(editingContext: EditingContext<T>): string;
@@ -7,9 +7,9 @@ class InplaceEditor<T> {
     cancelEditing(editingContext: EditingContext<T>): void;
     startEditing(element: Element, config: Config<T>): Controller | null;
 }
-type CommitHandler<T> = (element: Element, newText: string, oldText: string | null, context: T, moveDirection: string) => void;
-type CancelHandler<T> = (element: Element, context: T) => void;
-type BlurHandler = (element: Element, event?: Event) => boolean;
+export type CommitHandler<T> = (element: Element, newText: string, oldText: string | null, context: T, moveDirection: string) => void;
+export type CancelHandler<T> = (element: Element, context: T) => void;
+export type BlurHandler = (element: Element, event?: Event) => boolean;
 export declare class Config<T> {
     commitHandler: CommitHandler<T>;
     cancelHandler: CancelHandler<T>;
@@ -20,12 +20,12 @@ export declare class Config<T> {
     constructor(commitHandler: CommitHandler<T>, cancelHandler: CancelHandler<T>, context: T, blurHandler?: BlurHandler);
     setPostKeydownFinishHandler(postKeydownFinishHandler: EventHandler): void;
 }
-type EventHandler = (event: Event) => string | undefined;
-interface Controller {
+export type EventHandler = (event: Event) => string | undefined;
+export interface Controller {
     cancel: () => void;
     commit: () => void;
 }
-interface EditingContext<T> {
+export interface EditingContext<T> {
     element: Element;
     config: Config<T>;
     oldRole: string | null;

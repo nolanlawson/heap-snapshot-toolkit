@@ -4,7 +4,7 @@ import * as UI from '../../../ui/legacy/legacy.js';
 interface ListItem extends CrUXManager.OriginMapping {
     isTitleRow?: boolean;
 }
-class OriginMap extends UI.Widget.WidgetElement<UI.Widget.Widget> implements UI.ListWidget.Delegate<ListItem> {
+export declare class OriginMap extends UI.Widget.WidgetElement<UI.Widget.Widget> implements UI.ListWidget.Delegate<ListItem> {
     #private;
     constructor();
     createWidget(): UI.Widget.Widget;

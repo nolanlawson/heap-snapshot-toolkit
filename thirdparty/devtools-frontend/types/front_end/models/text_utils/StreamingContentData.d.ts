@@ -8,7 +8,7 @@ import { ContentData, type ContentDataOrError } from './ContentData.js';
  * Decoding to text only happens on-demand by clients. This ensures that at most we have
  * incomplete unicode at the end and not in-between chunks.
  */
-class StreamingContentData extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
+export declare class StreamingContentData extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
     #private;
     readonly mimeType: string;
     private constructor();
@@ -34,14 +34,14 @@ class StreamingContentData extends Common.ObjectWrapper.ObjectWrapper<EventTypes
 export type StreamingContentDataOrError = StreamingContentData | {
     error: string;
 };
-const isError: (contentDataOrError: StreamingContentDataOrError) => contentDataOrError is {
+export declare const isError: (contentDataOrError: StreamingContentDataOrError) => contentDataOrError is {
     error: string;
 };
-const asContentDataOrError: (contentDataOrError: StreamingContentDataOrError) => ContentDataOrError;
-declare const enum Events {
+export declare const asContentDataOrError: (contentDataOrError: StreamingContentDataOrError) => ContentDataOrError;
+export declare const enum Events {
     CHUNK_ADDED = "ChunkAdded"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.CHUNK_ADDED]: {
         content: StreamingContentData;
         chunk: string;

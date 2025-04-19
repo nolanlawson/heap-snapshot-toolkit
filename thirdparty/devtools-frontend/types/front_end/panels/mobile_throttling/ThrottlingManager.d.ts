@@ -1,15 +1,15 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import { NetworkThrottlingSelector } from './NetworkThrottlingSelector.js';
-interface CPUThrottlingSelectorWrapper {
+export interface CPUThrottlingSelectorWrapper {
     control: UI.Toolbar.ToolbarComboBox;
     updateRecommendedOption(recommendedOption: SDK.CPUThrottlingManager.CPUThrottlingOption | null): void;
 }
-interface NetworkThrottlingSelectorWrapper {
+export interface NetworkThrottlingSelectorWrapper {
     selector: NetworkThrottlingSelector;
     updateRecommendedConditions(recommendedConditions: SDK.NetworkManager.Conditions | null): void;
 }
-class ThrottlingManager {
+export declare class ThrottlingManager {
     #private;
     private readonly cpuThrottlingControls;
     private readonly cpuThrottlingOptions;
@@ -40,7 +40,7 @@ class ThrottlingManager {
     setHardwareConcurrency(concurrency: number): void;
     private isDirty;
 }
-class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
+export declare class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(_context: UI.Context.Context, actionId: string): boolean;
 }
-declare function throttlingManager(): ThrottlingManager;
+export declare function throttlingManager(): ThrottlingManager;

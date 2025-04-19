@@ -125,7 +125,7 @@ export declare const enum ViewLocationCategory {
     SOURCES = "SOURCES"
 }
 export declare function getLocalizedViewLocationCategory(category: ViewLocationCategory): Platform.UIString.LocalizedString;
-interface LocationResolverRegistration {
+export interface LocationResolverRegistration {
     name: ViewLocationValues;
     category: ViewLocationCategory;
     loadResolver: () => Promise<ViewLocationResolver>;

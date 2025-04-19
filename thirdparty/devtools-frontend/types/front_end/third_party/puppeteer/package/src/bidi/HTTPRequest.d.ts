@@ -11,7 +11,7 @@ import { HTTPRequest, type ResourceType } from '../api/HTTPRequest.js';
 import type { Request } from './core/Request.js';
 import type { BidiFrame } from './Frame.js';
 import { BidiHTTPResponse } from './HTTPResponse.js';
-const requests: WeakMap<Request, BidiHTTPRequest>;
+export declare const requests: WeakMap<Request, BidiHTTPRequest>;
 /**
  * @internal
  */

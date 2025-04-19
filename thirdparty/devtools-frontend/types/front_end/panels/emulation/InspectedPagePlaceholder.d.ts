@@ -22,15 +22,16 @@ export declare class InspectedPagePlaceholder extends InspectedPagePlaceholder_b
     private dipPageRect;
     update(force?: boolean): void;
 }
-declare const enum Events {
+export declare const enum Events {
     UPDATE = "Update"
 }
-interface Bounds {
+export interface Bounds {
     x: number;
     y: number;
     height: number;
     width: number;
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.UPDATE]: Bounds;
 }
+export {};

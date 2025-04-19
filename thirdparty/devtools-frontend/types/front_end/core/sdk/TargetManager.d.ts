@@ -48,19 +48,19 @@ export declare class TargetManager extends Common.ObjectWrapper.ObjectWrapper<Ev
     addScopeChangeListener(listener: () => void): void;
     scopeTarget(): Target | null;
 }
-declare const enum Events {
+export declare const enum Events {
     AVAILABLE_TARGETS_CHANGED = "AvailableTargetsChanged",
     INSPECTED_URL_CHANGED = "InspectedURLChanged",
     NAME_CHANGED = "NameChanged",
     SUSPEND_STATE_CHANGED = "SuspendStateChanged"
 }
-interface EventTypes {
+export interface EventTypes {
     [Events.AVAILABLE_TARGETS_CHANGED]: Protocol.Target.TargetInfo[];
     [Events.INSPECTED_URL_CHANGED]: Target;
     [Events.NAME_CHANGED]: Target;
     [Events.SUSPEND_STATE_CHANGED]: void;
 }
-class Observer {
+export declare class Observer {
     targetAdded(_target: Target): void;
     targetRemoved(_target: Target): void;
 }
@@ -68,3 +68,4 @@ export declare class SDKModelObserver<T> {
     modelAdded(_model: T): void;
     modelRemoved(_model: T): void;
 }
+export {};

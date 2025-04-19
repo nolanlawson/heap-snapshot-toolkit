@@ -5,7 +5,7 @@ export interface ScreenshotToolMessage {
     width: number;
     height: number;
 }
-class ScreenshotOverlay extends Overlay {
+export declare class ScreenshotOverlay extends Overlay {
     private zone;
     constructor(window: Window, style?: CSSStyleSheet[]);
     install(): void;

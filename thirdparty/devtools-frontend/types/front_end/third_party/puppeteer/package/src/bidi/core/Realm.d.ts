@@ -12,11 +12,11 @@ import type { Session } from './Session.js';
 /**
  * @internal
  */
-type CallFunctionOptions = Omit<Bidi.Script.CallFunctionParameters, 'functionDeclaration' | 'awaitPromise' | 'target'>;
+export type CallFunctionOptions = Omit<Bidi.Script.CallFunctionParameters, 'functionDeclaration' | 'awaitPromise' | 'target'>;
 /**
  * @internal
  */
-type EvaluateOptions = Omit<Bidi.Script.EvaluateParameters, 'expression' | 'awaitPromise' | 'target'>;
+export type EvaluateOptions = Omit<Bidi.Script.EvaluateParameters, 'expression' | 'awaitPromise' | 'target'>;
 /**
  * @internal
  */
@@ -63,7 +63,7 @@ export declare class WindowRealm extends Realm {
 /**
  * @internal
  */
-type DedicatedWorkerOwnerRealm = DedicatedWorkerRealm | SharedWorkerRealm | WindowRealm;
+export type DedicatedWorkerOwnerRealm = DedicatedWorkerRealm | SharedWorkerRealm | WindowRealm;
 /**
  * @internal
  */

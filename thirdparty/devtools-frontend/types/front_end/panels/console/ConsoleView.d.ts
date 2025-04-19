@@ -7,7 +7,7 @@ import { ConsoleFilter, type LevelsMask } from './ConsoleFilter.js';
 import { ConsolePinPane } from './ConsolePinPane.js';
 import { ConsoleViewMessage } from './ConsoleViewMessage.js';
 import { type ConsoleViewportElement, type ConsoleViewportProvider } from './ConsoleViewport.js';
-class ConsoleView extends UI.Widget.VBox implements UI.SearchableView.Searchable, ConsoleViewportProvider, SDK.TargetManager.SDKModelObserver<SDK.ConsoleModel.ConsoleModel> {
+export declare class ConsoleView extends UI.Widget.VBox implements UI.SearchableView.Searchable, ConsoleViewportProvider, SDK.TargetManager.SDKModelObserver<SDK.ConsoleModel.ConsoleModel> {
     #private;
     private readonly searchableViewInternal;
     private readonly sidebar;
@@ -147,7 +147,7 @@ class ConsoleView extends UI.Widget.VBox implements UI.SearchableView.Searchable
     private promptTextChangedForTest;
     private isScrolledToBottom;
 }
-class ConsoleViewFilter {
+export declare class ConsoleViewFilter {
     private readonly filterChanged;
     messageLevelFiltersSetting: Common.Settings.Setting<LevelsMask>;
     hideNetworkMessagesSetting: Common.Settings.Setting<boolean>;
@@ -172,10 +172,10 @@ class ConsoleViewFilter {
     clear(): void;
     reset(): void;
 }
-class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
+export declare class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(_context: UI.Context.Context, actionId: string): boolean;
 }
-interface RegexMatchRange {
+export interface RegexMatchRange {
     messageIndex: number;
     matchIndex: number;
 }

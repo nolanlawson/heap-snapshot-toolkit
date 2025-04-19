@@ -2,7 +2,7 @@ import type { NameValue } from './NetworkRequest.js';
 /**
  * Represents an authored single server timing metric. https://w3c.github.io/server-timing/#the-server-timing-header-field
  */
-interface ServerTimingMetric {
+export interface ServerTimingMetric {
     /** The name of the metric, a single token */
     name: string;
     /** A human-readable description of the metric. */
@@ -10,8 +10,8 @@ interface ServerTimingMetric {
     /** The duration; milliseconds is recommended. https://w3c.github.io/server-timing/#duration-attribute. */
     dur?: number;
 }
-const cloudflarePrefix = "(cf) ";
-const cloudinaryPrefix = "(cld) ";
+export declare const cloudflarePrefix = "(cf) ";
+export declare const cloudinaryPrefix = "(cld) ";
 export declare class ServerTiming {
     metric: string;
     value: number | null;

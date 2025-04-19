@@ -1,6 +1,6 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import * as UI from '../../ui/legacy/legacy.js';
-class ClassesPaneWidget extends UI.Widget.Widget {
+export declare class ClassesPaneWidget extends UI.Widget.Widget {
     private input;
     private readonly classesContainer;
     private readonly prompt;
@@ -22,7 +22,7 @@ class ClassesPaneWidget extends UI.Widget.Widget {
     private installNodeClasses;
     private flushPendingClasses;
 }
-class ButtonProvider implements UI.Toolbar.Provider {
+export declare class ButtonProvider implements UI.Toolbar.Provider {
     private readonly button;
     private view;
     private constructor();
@@ -32,7 +32,7 @@ class ButtonProvider implements UI.Toolbar.Provider {
     private clicked;
     item(): UI.Toolbar.ToolbarToggle;
 }
-class ClassNamePrompt extends UI.TextPrompt.TextPrompt {
+export declare class ClassNamePrompt extends UI.TextPrompt.TextPrompt {
     private readonly nodeClasses;
     private selectedFrameId;
     private classNamesPromise;

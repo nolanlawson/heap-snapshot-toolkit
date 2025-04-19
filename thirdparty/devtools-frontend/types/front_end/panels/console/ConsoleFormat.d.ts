@@ -1,5 +1,5 @@
 import type * as SDK from '../../core/sdk/sdk.js';
-type FormatToken = {
+export type FormatToken = {
     type: 'generic' | 'optimal';
     value: SDK.RemoteObject.RemoteObject;
 } | {
@@ -17,11 +17,11 @@ type FormatToken = {
  * @param args the substitution arguments for `fmt`.
  * @returns a list of `FormatToken`s as well as the unused arguments.
  */
-const format: (fmt: string, args: SDK.RemoteObject.RemoteObject[]) => {
+export declare const format: (fmt: string, args: SDK.RemoteObject.RemoteObject[]) => {
     tokens: FormatToken[];
     args: SDK.RemoteObject.RemoteObject[];
 };
-const updateStyle: (currentStyle: Map<string, {
+export declare const updateStyle: (currentStyle: Map<string, {
     value: string;
     priority: string;
 }>, styleToAdd: string) => void;

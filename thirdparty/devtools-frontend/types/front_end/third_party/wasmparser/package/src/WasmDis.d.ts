@@ -1,5 +1,5 @@
 import { BinaryReader } from "./WasmParser.js";
-interface IExportMetadata {
+export interface IExportMetadata {
     getFunctionExportNames(index: number): string[];
     getGlobalExportNames(index: number): string[];
     getMemoryExportNames(index: number): string[];
@@ -47,7 +47,7 @@ export declare enum LabelMode {
     WhenUsed = 1,
     Always = 2
 }
-interface IFunctionBodyOffset {
+export interface IFunctionBodyOffset {
     start: number;
     end: number;
 }
@@ -140,7 +140,7 @@ declare class NameSectionNameResolver extends DefaultNameResolver {
     getVariableName(funcIndex: number, index: number, isRef: boolean): string;
     getFieldName(typeIndex: number, index: number, isRef: boolean): string;
 }
-class NameSectionReader {
+export declare class NameSectionReader {
     private _done;
     private _functionsCount;
     private _functionImportsCount;
@@ -157,11 +157,11 @@ class NameSectionReader {
     hasValidNames(): boolean;
     getNameResolver(): INameResolver;
 }
-class DevToolsNameResolver extends NameSectionNameResolver {
+export declare class DevToolsNameResolver extends NameSectionNameResolver {
     constructor(functionNames: string[], localNames: string[][], eventNames: string[], typeNames: string[], tableNames: string[], memoryNames: string[], globalNames: string[], fieldNames: string[][]);
     getFunctionName(index: number, isImport: boolean, isRef: boolean): string;
 }
-class DevToolsNameGenerator {
+export declare class DevToolsNameGenerator {
     private _done;
     private _functionImportsCount;
     private _memoryImportsCount;
@@ -187,3 +187,4 @@ class DevToolsNameGenerator {
     getExportMetadata(): IExportMetadata;
     getNameResolver(): INameResolver;
 }
+export {};

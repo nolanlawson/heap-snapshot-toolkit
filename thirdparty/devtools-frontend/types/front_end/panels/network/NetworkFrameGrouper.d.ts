@@ -1,14 +1,14 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import { NetworkGroupNode } from './NetworkDataGridNode.js';
 import type { GroupLookupInterface, NetworkLogView } from './NetworkLogView.js';
-class NetworkFrameGrouper implements GroupLookupInterface {
+export declare class NetworkFrameGrouper implements GroupLookupInterface {
     private parentView;
     private readonly activeGroups;
     constructor(parentView: NetworkLogView);
     groupNodeForRequest(request: SDK.NetworkRequest.NetworkRequest): NetworkGroupNode | null;
     reset(): void;
 }
-class FrameGroupNode extends NetworkGroupNode {
+export declare class FrameGroupNode extends NetworkGroupNode {
     private readonly frame;
     constructor(parentView: NetworkLogView, frame: SDK.ResourceTreeModel.ResourceTreeFrame);
     displayName(): string;
