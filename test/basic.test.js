@@ -3,7 +3,7 @@ import { createGunzip } from 'node:zlib'
 import { describe, it } from 'node:test'
 import { createReadStream } from 'node:fs'
 import { pipeline } from 'node:stream'
-import {makeDefaultReadableStreamFromNodeReadable} from 'node-readable-to-web-readable-stream';
+import { makeDefaultReadableStreamFromNodeReadable } from 'node-readable-to-web-readable-stream'
 import { diff, parse, DevToolsAPI } from '../index.js'
 
 function fileToReadStream (filename) {
