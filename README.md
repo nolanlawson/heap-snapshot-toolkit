@@ -159,7 +159,7 @@ for await (const item of iterator) {
   } else if (item.type === 'end') {
     console.log(item.result) // end snapshot
   } else if (item.type === 'diff') {
-    console.log(item.result) // diff snapshot
+    console.log(item.result) // snapshot diff
   }
 }
 ```
