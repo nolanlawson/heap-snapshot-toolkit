@@ -25,7 +25,7 @@ import { parse } from 'heap-snapshot-toolkit'
 const parsedHeapSnapshot = await parse(createReadStream('path/to/my.heapsnapshot', 'utf-8'))
 ```
 
-You can either pass in a Node.js [`ReadStream`](https://nodejs.org/api/fs.html#class-fsreadstream), or a standard [`ReadableStream`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)
+You can either pass in a Node.js [`ReadStream`](https://nodejs.org/api/fs.html#class-fsreadstream), or a standard [`ReadableStream`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream).
 
 Passing in a file directly is not recommended, since heap snapshot files can be quite large. But if you really must:
 
