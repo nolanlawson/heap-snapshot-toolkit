@@ -180,8 +180,8 @@ console.log(DevToolsAPI)
 
 ### Build from `devtools-frontend`
 
-Clone `devtools-frontend` in a sibling directory from 
-[the Chromium DevTools frontend source code](https://github.com/ChromeDevTools/devtools-frontend). Then run:
+Clone `devtools-frontend` from 
+[the Chromium DevTools frontend source code](https://github.com/ChromeDevTools/devtools-frontend) into a sibling directory relative to `heap-snapshot-toolkit`. Then run:
 
 ```sh
 pnpm build
