@@ -1,5 +1,5 @@
 {
-  "name": "heap-snapshot-parser",
+  "name": "heap-snapshot-toolkit",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -11,14 +11,14 @@
   },
   "author": "Nolan Lawson <nolan@nolanlawson.com>",
   "license": "Apache-2.0",
-  "description": "A tool for parsing Chromium heap snapshot (`*.heapsnapshot`) files and doing useful things with them.",
+  "description": "Tools for parsing Chromium heap snapshot (`*.heapsnapshot`) files and doing useful things with them",
   "files": [
     "index.d.ts",
     "thirdparty"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nolanlawson/heap-snapshot-parser.git"
+    "url": "git+https://github.com/nolanlawson/heap-snapshot-toolkit.git"
   },
   "keywords": [
     "heap",
@@ -28,9 +28,9 @@
     "memory"
   ],
   "bugs": {
-    "url": "https://github.com/nolanlawson/heap-snapshot-parser/issues"
+    "url": "https://github.com/nolanlawson/heap-snapshot-toolkit/issues"
   },
-  "homepage": "https://github.com/nolanlawson/heap-snapshot-parser#readme",
+  "homepage": "https://github.com/nolanlawson/heap-snapshot-toolkit#readme",
   "engines": {
     "node": ">= 18.0.0"
   },

@@ -1,6 +1,6 @@
-# heap-snapshot-parser
+# heap-snapshot-toolkit
 
-A tool for parsing Chromium heap snapshot (`*.heapsnapshot`) files and doing useful things with them.
+Tools for parsing Chromium heap snapshot (`*.heapsnapshot`) files and doing useful things with them.
 
 This package mostly re-exports code from [the Chromium DevTools frontend](https://github.com/ChromeDevTools/devtools-frontend). You can refer to that project for the original source.
 
@@ -9,7 +9,7 @@ The goal is to have a way to analyze and diff heap snapshots in any JavaScript e
 ## Installation
 
 ```sh
-npm install heap-snapshot-parser
+npm install heap-snapshot-toolkit
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ Parse a heap snapshot file from disk:
 
 ```js
 import {createReadStream } from 'node:fs'
-import { parse } from 'heap-snapshot-parser'
+import { parse } from 'heap-snapshot-toolkit'
 
 const parsedHeapSnapshot = await parse(createReadStream('path/to/my.heapsnapshot', 'utf-8'))
 ```
@@ -32,7 +32,7 @@ Passing in a file directly is not recommended, since heap snapshot files can be 
 ```js
 import {readFileSync } from 'node:fs'
 import { Readable } from 'node:stream'
-import { parse } from 'heap-snapshot-parser'
+import { parse } from 'heap-snapshot-toolkit'
 
 const string = readFileSync('path/to/my.heapsnapshot', 'utf-8')
 const stream = new Readable()
@@ -77,7 +77,7 @@ You can also diff two snapshots using the `diff()` method:
 
 ```js
 import {createReadStream } from 'node:fs'
-import { parse, diff } from 'heap-snapshot-parser'
+import { parse, diff } from 'heap-snapshot-toolkit'
 
 const startSnapshot = parse(createReadStream('path/to/start.heapsnapshot', 'utf-8'))
 const endSnapshot = parse(createReadStream('path/to/end.heapsnapshot', 'utf-8'))
@@ -144,7 +144,7 @@ around in the generated objects if there is something particular you want to do.
 All important DevTools APIs are also exported in case you need them:
 
 ```js
-import { DevToolsAPI } from 'heap-snapshot-parser'
+import { DevToolsAPI } from 'heap-snapshot-toolkit'
 console.log(DevToolsAPI)
 ```
 
