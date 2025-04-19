@@ -138,6 +138,34 @@ This might log something like:
 }
 ```
 
+You can also use the `diffFromStreams()` API to diff from two `ReadStream`/`ReadableStream`s. This is useful if you want to avoid using too
+much memory by reading in two entire heap snapshot files at once. `diffFromStreams()` will efficiently read in the start
+snapshot, create a minimal object for diffing, read in the end snapshot, and then create the diff.
+
+In this mode, `diffFromStreams()` is an [async iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AsyncIterator)
+which emits 3 events: one for the start snapshot, one for the end snapshot, and one for the final diff.
+
+```js
+import {createReadStream } from 'node:fs'
+import { diffFromStreams } from 'heap-snapshot-toolkit'
+
+const startStream = createReadStream('path/to/start.heapsnapshot', 'utf-8')
+const endStream = createReadStream('path/to/end.heapsnapshot', 'utf-8')
+
+const iterator = diffFromStreams(startStream, endStream)
+for await (const item of iterator) {
+  if (item.type === 'start') {
+    console.log(item.result) // start snapshot
+  } else if (item.type === 'end') {
+    console.log(item.result) // end snapshot
+  } else if (item.type === 'diff') {
+    console.log(item.result) // diff snapshot
+  }
+}
+```
+
+## `DevToolsAPI`
+
 Note that this package doesn't make much attempt to paper over the Chromium DevTools APIs. You may have to dig
 around in the generated objects if there is something particular you want to do.
 
