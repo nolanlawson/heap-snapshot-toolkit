@@ -1,5 +1,5 @@
 import * as UI from '../../ui/legacy/legacy.js';
-export declare class EventListenersWidget extends UI.ThrottledWidget.ThrottledWidget implements UI.Toolbar.ItemsProvider {
+class EventListenersWidget extends UI.ThrottledWidget.ThrottledWidget implements UI.Toolbar.ItemsProvider {
     private readonly toolbarItemsInternal;
     private showForAncestorsSetting;
     private readonly dispatchFilterBySetting;
@@ -19,11 +19,11 @@ export declare class EventListenersWidget extends UI.ThrottledWidget.ThrottledWi
     private windowObjectInNodeContext;
     eventListenersArrivedForTest(): void;
 }
-export declare const DispatchFilterBy: {
+const DispatchFilterBy: {
     All: string;
     Blocking: string;
     Passive: string;
 };
-export declare class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
+class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(_context: UI.Context.Context, actionId: string): boolean;
 }

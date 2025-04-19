@@ -13,7 +13,7 @@ import { DOMModel, type DOMNode } from './DOMModel.js';
 import { SDKModel } from './SDKModel.js';
 import { SourceMapManager } from './SourceMapManager.js';
 import { type Target } from './Target.js';
-export declare const enum ColorScheme {
+declare const enum ColorScheme {
     LIGHT = "light",
     DARK = "dark"
 }
@@ -101,7 +101,7 @@ export declare class CSSModel extends SDKModel<EventTypes> {
     dispose(): void;
     getAgent(): ProtocolProxyApi.CSSApi;
 }
-export declare enum Events {
+declare enum Events {
     FontsUpdated = "FontsUpdated",
     MediaQueryResultChanged = "MediaQueryResultChanged",
     ModelWasEnabled = "ModelWasEnabled",
@@ -112,19 +112,19 @@ export declare enum Events {
     StyleSheetRemoved = "StyleSheetRemoved",
     ComputedStyleUpdated = "ComputedStyleUpdated"
 }
-export interface StyleSheetChangedEvent {
+interface StyleSheetChangedEvent {
     styleSheetId: Protocol.CSS.StyleSheetId;
     edit?: Edit;
 }
-export interface PseudoStateForcedEvent {
+interface PseudoStateForcedEvent {
     node: DOMNode;
     pseudoClass: string;
     enable: boolean;
 }
-export interface ComputedStyleUpdatedEvent {
+interface ComputedStyleUpdatedEvent {
     nodeId: Protocol.DOM.NodeId;
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.FontsUpdated]: void;
     [Events.MediaQueryResultChanged]: void;
     [Events.ModelWasEnabled]: void;
@@ -153,25 +153,25 @@ export declare class CSSLocation {
     cssModel(): CSSModel;
     header(): CSSStyleSheetHeader | null;
 }
-export declare class InlineStyleResult {
+class InlineStyleResult {
     inlineStyle: CSSStyleDeclaration | null;
     attributesStyle: CSSStyleDeclaration | null;
     constructor(inlineStyle: CSSStyleDeclaration | null, attributesStyle: CSSStyleDeclaration | null);
 }
-export declare class CSSPropertyTracker extends Common.ObjectWrapper.ObjectWrapper<CSSPropertyTrackerEventTypes> {
+class CSSPropertyTracker extends Common.ObjectWrapper.ObjectWrapper<CSSPropertyTrackerEventTypes> {
     #private;
     constructor(cssModel: CSSModel, propertiesToTrack: Protocol.CSS.CSSComputedStyleProperty[]);
     start(): void;
     stop(): void;
     getTrackedProperties(): Protocol.CSS.CSSComputedStyleProperty[];
 }
-export declare const enum CSSPropertyTrackerEvents {
+declare const enum CSSPropertyTrackerEvents {
     TRACKED_CSS_PROPERTIES_UPDATED = "TrackedCSSPropertiesUpdated"
 }
-export interface CSSPropertyTrackerEventTypes {
+interface CSSPropertyTrackerEventTypes {
     [CSSPropertyTrackerEvents.TRACKED_CSS_PROPERTIES_UPDATED]: Array<DOMNode | null>;
 }
-export interface ContrastInfo {
+interface ContrastInfo {
     backgroundColors: string[] | null;
     computedFontSize: string;
     computedFontWeight: string;

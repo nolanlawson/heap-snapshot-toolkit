@@ -62,7 +62,7 @@ export declare class ResourceTreeModel extends SDKModel<EventTypes> {
     onBackForwardCacheNotUsed(event: Protocol.Page.BackForwardCacheNotUsedEvent): void;
     processPendingEvents(frame: ResourceTreeFrame): void;
 }
-export declare enum Events {
+declare enum Events {
     FrameAdded = "FrameAdded",
     FrameNavigated = "FrameNavigated",
     FrameDetached = "FrameDetached",
@@ -82,7 +82,7 @@ export declare enum Events {
     BackForwardCacheDetailsUpdated = "BackForwardCacheDetailsUpdated",
     JavaScriptDialogOpening = "JavaScriptDialogOpening"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.FrameAdded]: ResourceTreeFrame;
     [Events.FrameNavigated]: ResourceTreeFrame;
     [Events.FrameDetached]: {
@@ -200,7 +200,7 @@ export declare class ResourceTreeFrame {
     setBackForwardCacheDetails(event: Protocol.Page.BackForwardCacheNotUsedEvent): void;
     getResourcesMap(): Map<string, Resource>;
 }
-export declare class PageDispatcher implements ProtocolProxyApi.PageDispatcher {
+class PageDispatcher implements ProtocolProxyApi.PageDispatcher {
     #private;
     constructor(resourceTreeModel: ResourceTreeModel);
     backForwardCacheNotUsed(params: Protocol.Page.BackForwardCacheNotUsedEvent): void;
@@ -232,12 +232,12 @@ export declare class PageDispatcher implements ProtocolProxyApi.PageDispatcher {
     downloadWillBegin({}: Protocol.Page.DownloadWillBeginEvent): void;
     downloadProgress(): void;
 }
-export interface SecurityOriginData {
+interface SecurityOriginData {
     securityOrigins: Set<string>;
     mainSecurityOrigin: string | null;
     unreachableMainSecurityOrigin: string | null;
 }
-export interface StorageKeyData {
+interface StorageKeyData {
     storageKeys: Set<string>;
     mainStorageKey: string | null;
 }

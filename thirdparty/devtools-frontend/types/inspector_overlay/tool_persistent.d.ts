@@ -18,7 +18,7 @@ interface DraggableMetadata {
     initialWidth?: number;
     initialHeight?: number;
 }
-export declare class PersistentOverlay extends Overlay {
+class PersistentOverlay extends Overlay {
     private gridLabelState;
     private gridLabels;
     private draggableBorders;
@@ -34,4 +34,3 @@ export declare class PersistentOverlay extends Overlay {
     drawIsolatedElementHighlight(highlight: IsolatedElementHighlight): void;
     isPointInDraggablePath(x: number, y: number): DraggableMetadata | undefined;
 }
-export {};

@@ -4,7 +4,7 @@ import * as SDK from '../../core/sdk/sdk.js';
 import type * as Protocol from '../../generated/protocol.js';
 import { ExpandableApplicationPanelTreeElement } from './ApplicationPanelTreeElement.js';
 import type { ResourcesPanel } from './ResourcesPanel.js';
-export declare const i18nString: (id: string, values?: import("../../core/i18n/i18nTypes.js").Values | undefined) => Common.UIString.LocalizedString;
+const i18nString: (id: string, values?: import("../../core/i18n/i18nTypes.js").Values | undefined) => Common.UIString.LocalizedString;
 export declare class StorageBucketsTreeParentElement extends ExpandableApplicationPanelTreeElement {
     private bucketTreeElements;
     constructor(storagePanel: ResourcesPanel);
@@ -18,7 +18,7 @@ export declare class StorageBucketsTreeParentElement extends ExpandableApplicati
     get itemURL(): Platform.DevToolsPath.UrlString;
     getBucketTreeElement(model: SDK.StorageBucketsModel.StorageBucketsModel, { bucket: { storageKey, name }, }: Protocol.Storage.StorageBucketInfo): StorageBucketsTreeElement | null;
 }
-export declare class StorageBucketsTreeElement extends ExpandableApplicationPanelTreeElement {
+class StorageBucketsTreeElement extends ExpandableApplicationPanelTreeElement {
     private storageBucketInfo;
     private bucketModel;
     private view?;

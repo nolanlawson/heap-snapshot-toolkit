@@ -2,14 +2,14 @@ import './CSSAngleEditor.js';
 import './CSSAngleSwatch.js';
 import { type Angle } from './CSSAngleUtils.js';
 import { ValueChangedEvent } from './InlineEditorUtils.js';
-export declare class PopoverToggledEvent extends Event {
+class PopoverToggledEvent extends Event {
     static readonly eventName = "popovertoggled";
     data: {
         open: boolean;
     };
     constructor(open: boolean);
 }
-export declare class UnitChangedEvent extends Event {
+class UnitChangedEvent extends Event {
     static readonly eventName = "unitchanged";
     data: {
         value: string;
@@ -21,11 +21,11 @@ interface EventTypes {
     [UnitChangedEvent.eventName]: UnitChangedEvent;
     [ValueChangedEvent.eventName]: ValueChangedEvent;
 }
-export interface CSSAngleData {
+interface CSSAngleData {
     angleText: string;
     containingPane: HTMLElement;
 }
-export declare class CSSAngle extends HTMLElement {
+class CSSAngle extends HTMLElement {
     private readonly shadow;
     private angle;
     private displayedAngle;

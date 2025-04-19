@@ -13,8 +13,8 @@ import { ElementsSidebarPane } from './ElementsSidebarPane.js';
 import { StylePropertiesSection } from './StylePropertiesSection.js';
 import type { StylePropertyTreeElement } from './StylePropertyTreeElement.js';
 import { WebCustomData } from './WebCustomData.js';
-export declare const REGISTERED_PROPERTY_SECTION_NAME = "@property";
-export declare const FUNCTION_SECTION_NAME = "@function";
+const REGISTERED_PROPERTY_SECTION_NAME = "@property";
+const FUNCTION_SECTION_NAME = "@function";
 declare const StylesSidebarPane_base: {
     new (...args: any[]): {
         "__#15@#events": Common.ObjectWrapper.ObjectWrapper<EventTypes>;
@@ -125,18 +125,18 @@ export declare class StylesSidebarPane extends StylesSidebarPane_base {
     private startToolbarPaneAnimation;
     private createRenderingShortcuts;
 }
-export declare const enum Events {
+declare const enum Events {
     INITIAL_UPDATE_COMPLETED = "InitialUpdateCompleted",
     STYLES_UPDATE_COMPLETED = "StylesUpdateCompleted"
 }
-export interface StylesUpdateCompletedEvent {
+interface StylesUpdateCompletedEvent {
     hasMatchedStyles: boolean;
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.INITIAL_UPDATE_COMPLETED]: void;
     [Events.STYLES_UPDATE_COMPLETED]: StylesUpdateCompletedEvent;
 }
-export declare class SectionBlock {
+class SectionBlock {
     #private;
     private readonly titleElementInternal;
     sections: StylePropertiesSection[];
@@ -154,7 +154,7 @@ export declare class SectionBlock {
     updateFilter(): number;
     titleElement(): Element | null;
 }
-export declare class IdleCallbackManager {
+class IdleCallbackManager {
     private discarded;
     private readonly promises;
     private readonly queue;
@@ -164,8 +164,8 @@ export declare class IdleCallbackManager {
     protected scheduleIdleCallback(timeout: number): void;
     awaitDone(): Promise<void[]>;
 }
-export declare function quoteFamilyName(familyName: string): string;
-export declare class CSSPropertyPrompt extends UI.TextPrompt.TextPrompt {
+declare function quoteFamilyName(familyName: string): string;
+class CSSPropertyPrompt extends UI.TextPrompt.TextPrompt {
     private readonly isColorAware;
     private readonly cssCompletions;
     private selectedNodeComputedStyles;
@@ -181,12 +181,12 @@ export declare class CSSPropertyPrompt extends UI.TextPrompt.TextPrompt {
     private isValueSuggestion;
     private buildPropertyCompletions;
 }
-export declare function unescapeCssString(input: string): string;
-export declare function escapeUrlAsCssComment(urlText: string): string;
-export declare class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
+declare function unescapeCssString(input: string): string;
+declare function escapeUrlAsCssComment(urlText: string): string;
+class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(_context: UI.Context.Context, actionId: string): boolean;
 }
-export declare class ButtonProvider implements UI.Toolbar.Provider {
+class ButtonProvider implements UI.Toolbar.Provider {
     private readonly button;
     private constructor();
     static instance(opts?: {
@@ -195,4 +195,3 @@ export declare class ButtonProvider implements UI.Toolbar.Provider {
     private longClicked;
     item(): UI.Toolbar.ToolbarItem;
 }
-export {};

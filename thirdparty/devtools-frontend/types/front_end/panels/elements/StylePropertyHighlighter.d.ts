@@ -1,6 +1,6 @@
 import type * as SDK from '../../core/sdk/sdk.js';
 import type { StylesSidebarPane } from './StylesSidebarPane.js';
-export declare class StylePropertyHighlighter {
+class StylePropertyHighlighter {
     private readonly styleSidebarPane;
     constructor(ssp: StylesSidebarPane);
     /**

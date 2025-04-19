@@ -31,11 +31,11 @@ export declare class StatusUpdate {
     wait: boolean | undefined;
     constructor(subtitle: string | null, wait: boolean | undefined);
 }
-export declare const enum Events {
+declare const enum Events {
     UPDATE_STATUS = "UpdateStatus",
     PROFILE_TITLE_CHANGED = "ProfileTitleChanged"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.UPDATE_STATUS]: StatusUpdate;
     [Events.PROFILE_TITLE_CHANGED]: ProfileHeader;
 }
@@ -74,13 +74,13 @@ export declare class ProfileType extends Common.ObjectWrapper.ObjectWrapper<Prof
     reset(): void;
     disposeProfile(profile: ProfileHeader): void;
 }
-export declare const enum ProfileEvents {
+declare const enum ProfileEvents {
     ADD_PROFILE_HEADER = "add-profile-header",
     PROFILE_COMPLETE = "profile-complete",
     REMOVE_PROFILE_HEADER = "remove-profile-header",
     VIEW_UPDATED = "view-updated"
 }
-export interface ProfileEventTypes {
+interface ProfileEventTypes {
     [ProfileEvents.ADD_PROFILE_HEADER]: ProfileHeader;
     [ProfileEvents.PROFILE_COMPLETE]: ProfileHeader;
     [ProfileEvents.REMOVE_PROFILE_HEADER]: ProfileHeader;

@@ -398,7 +398,7 @@ declare global {
         webInspector?: APIImpl.InspectorExtensionAPI;
     }
 }
-export interface ExtensionDescriptor {
+interface ExtensionDescriptor {
     startPage: string;
     name: string;
     exposeExperimentalAPIs: boolean;

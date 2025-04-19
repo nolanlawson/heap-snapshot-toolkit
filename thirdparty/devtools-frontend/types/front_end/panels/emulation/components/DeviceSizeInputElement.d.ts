@@ -4,7 +4,7 @@ declare class SizeChangedEvent extends Event {
     static readonly eventName = "sizechanged";
     constructor(size: number);
 }
-export declare class SizeInputElement extends HTMLElement {
+class SizeInputElement extends HTMLElement {
     #private;
     constructor(title: Platform.UIString.LocalizedString, { jslogContext }: {
         jslogContext: string;

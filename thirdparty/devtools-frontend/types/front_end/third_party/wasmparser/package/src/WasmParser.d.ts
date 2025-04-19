@@ -594,7 +594,7 @@ export declare const enum ExternalKind {
     Global = 3,
     Event = 4
 }
-export declare const enum TypeKind {
+declare const enum TypeKind {
     unspecified = 0,
     i32 = -1,
     i64 = -2,
@@ -699,11 +699,11 @@ export declare const enum BinaryReaderState {
     OFFSET_EXPRESSION_OPERATOR = 45,
     END_OFFSET_EXPRESSION_BODY = 46
 }
-export declare const enum DataMode {
+declare const enum DataMode {
     Active = 0,
     Passive = 1
 }
-export declare const enum ElementMode {
+declare const enum ElementMode {
     Active = 0,
     Passive = 1,
     Declarative = 2
@@ -728,7 +728,7 @@ export interface IGlobalType {
     contentType: Type;
     mutability: number;
 }
-export interface IEventType {
+interface IEventType {
     attribute: number;
     typeIndex: number;
 }
@@ -782,26 +782,26 @@ export interface ILocalName {
 export interface ILocalNameEntry extends INameEntry {
     funcs: ILocalName[];
 }
-export interface IEventNameEntry extends INameEntry {
+interface IEventNameEntry extends INameEntry {
     names: INaming[];
 }
-export interface ITypeNameEntry extends INameEntry {
+interface ITypeNameEntry extends INameEntry {
     names: INaming[];
 }
-export interface ITableNameEntry extends INameEntry {
+interface ITableNameEntry extends INameEntry {
     names: INaming[];
 }
-export interface IMemoryNameEntry extends INameEntry {
+interface IMemoryNameEntry extends INameEntry {
     names: INaming[];
 }
-export interface IGlobalNameEntry extends INameEntry {
+interface IGlobalNameEntry extends INameEntry {
     names: INaming[];
 }
-export interface IFieldName {
+interface IFieldName {
     index: number;
     fields: INaming[];
 }
-export interface IFieldNameEntry extends INameEntry {
+interface IFieldNameEntry extends INameEntry {
     types: IFieldName[];
 }
 export interface ILinkingEntry {
@@ -883,7 +883,7 @@ export declare class Int64 {
     toString(): string;
     get data(): Uint8Array;
 }
-export type BinaryReaderResult = IImportEntry | IExportEntry | IFunctionEntry | ITypeEntry | IModuleHeader | IOperatorInformation | IMemoryType | ITableType | IGlobalVariable | INameEntry | IElementSegment | IElementSegmentBody | IDataSegment | IDataSegmentBody | ISectionInformation | IFunctionInformation | ISectionInformation | IFunctionInformation | IRelocHeader | IRelocEntry | ILinkingEntry | ISourceMappingURL | IModuleNameEntry | IStartEntry | Uint8Array;
+type BinaryReaderResult = IImportEntry | IExportEntry | IFunctionEntry | ITypeEntry | IModuleHeader | IOperatorInformation | IMemoryType | ITableType | IGlobalVariable | INameEntry | IElementSegment | IElementSegmentBody | IDataSegment | IDataSegmentBody | ISectionInformation | IFunctionInformation | ISectionInformation | IFunctionInformation | IRelocHeader | IRelocEntry | ILinkingEntry | ISourceMappingURL | IModuleNameEntry | IStartEntry | Uint8Array;
 export declare class BinaryReader {
     private _data;
     private _pos;

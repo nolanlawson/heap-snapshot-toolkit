@@ -1,7 +1,7 @@
 export type Screenshot = string & {
     _brand: 'ImageData';
 };
-export interface ScreenshotMetaData {
+interface ScreenshotMetaData {
     recordingName: string;
     index: number;
     data: Screenshot;
@@ -12,7 +12,7 @@ export interface ScreenshotMetaData {
  * by default and the least recently accessed screenshots will be
  * deleted first.
  */
-export declare class ScreenshotStorage {
+class ScreenshotStorage {
     #private;
     constructor(maxStorageSize?: number);
     clear(): void;

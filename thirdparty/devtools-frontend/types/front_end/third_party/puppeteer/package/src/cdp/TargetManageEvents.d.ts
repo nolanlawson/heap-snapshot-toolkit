@@ -9,7 +9,7 @@ import type { CdpTarget } from './Target.js';
 /**
  * @internal
  */
-export declare const enum TargetManagerEvent {
+declare const enum TargetManagerEvent {
     TargetDiscovered = "targetDiscovered",
     TargetAvailable = "targetAvailable",
     TargetGone = "targetGone",

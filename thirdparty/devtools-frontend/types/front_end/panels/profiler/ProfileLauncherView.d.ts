@@ -40,10 +40,9 @@ export declare class ProfileLauncherView extends ProfileLauncherView_base {
     controlButtonClicked(): void;
     profileTypeChanged(profileType: ProfileType): void;
 }
-export declare const enum Events {
+declare const enum Events {
     PROFILE_TYPE_SELECTED = "ProfileTypeSelected"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.PROFILE_TYPE_SELECTED]: ProfileType;
 }
-export {};

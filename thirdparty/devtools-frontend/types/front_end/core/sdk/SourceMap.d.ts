@@ -59,8 +59,8 @@ export type SourceMapV3 = SourceMapV3Object | {
  * @param content the string representation of a sourcemap.
  * @returns the {@link SourceMapV3} representation of the {@link content}.
  */
-export declare function parseSourceMap(content: string): SourceMapV3;
-export declare class SourceMapEntry {
+declare function parseSourceMap(content: string): SourceMapV3;
+class SourceMapEntry {
     readonly lineNumber: number;
     readonly columnNumber: number;
     readonly sourceIndex?: number;
@@ -142,7 +142,7 @@ export declare class SourceMap {
     resolveScopeChain(frame: CallFrame): ScopeChainEntry[] | null;
     findOriginalFunctionName(position: GeneratedPosition): string | null;
 }
-export declare class TokenIterator {
+class TokenIterator {
     #private;
     constructor(string: string);
     next(): string;

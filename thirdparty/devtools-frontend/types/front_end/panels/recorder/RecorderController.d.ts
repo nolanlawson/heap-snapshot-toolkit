@@ -22,13 +22,13 @@ interface StoredRecording {
     storageName: string;
     flow: Models.Schema.UserFlow;
 }
-export declare const enum Pages {
+declare const enum Pages {
     START_PAGE = "StartPage",
     ALL_RECORDINGS_PAGE = "AllRecordingsPage",
     CREATE_RECORDING_PAGE = "CreateRecordingPage",
     RECORDING_PAGE = "RecordingPage"
 }
-export declare class RecorderController extends LitElement {
+class RecorderController extends LitElement {
     #private;
     static readonly styles: CSSStyleSheet[];
     private currentRecordingSession?;

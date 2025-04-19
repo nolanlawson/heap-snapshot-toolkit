@@ -27,7 +27,7 @@ export declare class BidiBrowserTarget extends Target {
 /**
  * @internal
  */
-export declare class BidiPageTarget extends Target {
+class BidiPageTarget extends Target {
     #private;
     constructor(page: BidiPage);
     page(): Promise<BidiPage>;
@@ -42,7 +42,7 @@ export declare class BidiPageTarget extends Target {
 /**
  * @internal
  */
-export declare class BidiFrameTarget extends Target {
+class BidiFrameTarget extends Target {
     #private;
     constructor(frame: BidiFrame);
     page(): Promise<BidiPage>;
@@ -57,7 +57,7 @@ export declare class BidiFrameTarget extends Target {
 /**
  * @internal
  */
-export declare class BidiWorkerTarget extends Target {
+class BidiWorkerTarget extends Target {
     #private;
     constructor(worker: BidiWebWorker);
     page(): Promise<BidiPage>;

@@ -15,7 +15,7 @@ export interface TTFBMetric extends Metric {
  * service worker, as browsers differ in what they report when service worker
  * is involved, see: https://github.com/w3c/navigation-timing/issues/199
  */
-export interface TTFBAttribution {
+interface TTFBAttribution {
     /**
      * The total time from when the user initiates loading the page to when the
      * page starts to handle the request. Large values here are typically due

@@ -1,4 +1,4 @@
-export declare class TimelineGrid {
+class TimelineGrid {
     element: HTMLDivElement;
     private readonly dividersElementInternal;
     private readonly gridHeaderElement;
@@ -26,7 +26,7 @@ export interface Calculator {
     maximumBoundary(): number;
     boundarySpan(): number;
 }
-export interface DividersData {
+interface DividersData {
     offsets: Array<{
         position: number;
         time: number;

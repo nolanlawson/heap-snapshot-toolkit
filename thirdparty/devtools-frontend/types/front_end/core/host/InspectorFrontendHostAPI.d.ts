@@ -1,7 +1,7 @@
 import type * as Platform from '../../core/platform/platform.js';
 import type * as Common from '../common/common.js';
 import type * as Root from '../root/root.js';
-export declare enum Events {
+declare enum Events {
     AppendedToURL = "appendedToURL",
     CanceledSaveURL = "canceledSaveURL",
     ColorThemeChanged = "colorThemeChanged",
@@ -31,58 +31,58 @@ export declare enum Events {
     SetUseSoftMenu = "setUseSoftMenu",
     ShowPanel = "showPanel"
 }
-export declare const EventDescriptors: readonly [readonly [Events.AppendedToURL, "appendedToURL", readonly ["url"]], readonly [Events.CanceledSaveURL, "canceledSaveURL", readonly ["url"]], readonly [Events.ColorThemeChanged, "colorThemeChanged", readonly []], readonly [Events.ContextMenuCleared, "contextMenuCleared", readonly []], readonly [Events.ContextMenuItemSelected, "contextMenuItemSelected", readonly ["id"]], readonly [Events.DeviceCountUpdated, "deviceCountUpdated", readonly ["count"]], readonly [Events.DevicesDiscoveryConfigChanged, "devicesDiscoveryConfigChanged", readonly ["config"]], readonly [Events.DevicesPortForwardingStatusChanged, "devicesPortForwardingStatusChanged", readonly ["status"]], readonly [Events.DevicesUpdated, "devicesUpdated", readonly ["devices"]], readonly [Events.DispatchMessage, "dispatchMessage", readonly ["messageObject"]], readonly [Events.DispatchMessageChunk, "dispatchMessageChunk", readonly ["messageChunk", "messageSize"]], readonly [Events.EnterInspectElementMode, "enterInspectElementMode", readonly []], readonly [Events.EyeDropperPickedColor, "eyeDropperPickedColor", readonly ["color"]], readonly [Events.FileSystemsLoaded, "fileSystemsLoaded", readonly ["fileSystems"]], readonly [Events.FileSystemRemoved, "fileSystemRemoved", readonly ["fileSystemPath"]], readonly [Events.FileSystemAdded, "fileSystemAdded", readonly ["errorMessage", "fileSystem"]], readonly [Events.FileSystemFilesChangedAddedRemoved, "fileSystemFilesChangedAddedRemoved", readonly ["changed", "added", "removed"]], readonly [Events.IndexingTotalWorkCalculated, "indexingTotalWorkCalculated", readonly ["requestId", "fileSystemPath", "totalWork"]], readonly [Events.IndexingWorked, "indexingWorked", readonly ["requestId", "fileSystemPath", "worked"]], readonly [Events.IndexingDone, "indexingDone", readonly ["requestId", "fileSystemPath"]], readonly [Events.KeyEventUnhandled, "keyEventUnhandled", readonly ["event"]], readonly [Events.ReloadInspectedPage, "reloadInspectedPage", readonly ["hard"]], readonly [Events.RevealSourceLine, "revealSourceLine", readonly ["url", "lineNumber", "columnNumber"]], readonly [Events.SavedURL, "savedURL", readonly ["url", "fileSystemPath"]], readonly [Events.SearchCompleted, "searchCompleted", readonly ["requestId", "fileSystemPath", "files"]], readonly [Events.SetInspectedTabId, "setInspectedTabId", readonly ["tabId"]], readonly [Events.SetUseSoftMenu, "setUseSoftMenu", readonly ["useSoftMenu"]], readonly [Events.ShowPanel, "showPanel", readonly ["panelName"]]];
-export interface DispatchMessageChunkEvent {
+const EventDescriptors: readonly [readonly [Events.AppendedToURL, "appendedToURL", readonly ["url"]], readonly [Events.CanceledSaveURL, "canceledSaveURL", readonly ["url"]], readonly [Events.ColorThemeChanged, "colorThemeChanged", readonly []], readonly [Events.ContextMenuCleared, "contextMenuCleared", readonly []], readonly [Events.ContextMenuItemSelected, "contextMenuItemSelected", readonly ["id"]], readonly [Events.DeviceCountUpdated, "deviceCountUpdated", readonly ["count"]], readonly [Events.DevicesDiscoveryConfigChanged, "devicesDiscoveryConfigChanged", readonly ["config"]], readonly [Events.DevicesPortForwardingStatusChanged, "devicesPortForwardingStatusChanged", readonly ["status"]], readonly [Events.DevicesUpdated, "devicesUpdated", readonly ["devices"]], readonly [Events.DispatchMessage, "dispatchMessage", readonly ["messageObject"]], readonly [Events.DispatchMessageChunk, "dispatchMessageChunk", readonly ["messageChunk", "messageSize"]], readonly [Events.EnterInspectElementMode, "enterInspectElementMode", readonly []], readonly [Events.EyeDropperPickedColor, "eyeDropperPickedColor", readonly ["color"]], readonly [Events.FileSystemsLoaded, "fileSystemsLoaded", readonly ["fileSystems"]], readonly [Events.FileSystemRemoved, "fileSystemRemoved", readonly ["fileSystemPath"]], readonly [Events.FileSystemAdded, "fileSystemAdded", readonly ["errorMessage", "fileSystem"]], readonly [Events.FileSystemFilesChangedAddedRemoved, "fileSystemFilesChangedAddedRemoved", readonly ["changed", "added", "removed"]], readonly [Events.IndexingTotalWorkCalculated, "indexingTotalWorkCalculated", readonly ["requestId", "fileSystemPath", "totalWork"]], readonly [Events.IndexingWorked, "indexingWorked", readonly ["requestId", "fileSystemPath", "worked"]], readonly [Events.IndexingDone, "indexingDone", readonly ["requestId", "fileSystemPath"]], readonly [Events.KeyEventUnhandled, "keyEventUnhandled", readonly ["event"]], readonly [Events.ReloadInspectedPage, "reloadInspectedPage", readonly ["hard"]], readonly [Events.RevealSourceLine, "revealSourceLine", readonly ["url", "lineNumber", "columnNumber"]], readonly [Events.SavedURL, "savedURL", readonly ["url", "fileSystemPath"]], readonly [Events.SearchCompleted, "searchCompleted", readonly ["requestId", "fileSystemPath", "files"]], readonly [Events.SetInspectedTabId, "setInspectedTabId", readonly ["tabId"]], readonly [Events.SetUseSoftMenu, "setUseSoftMenu", readonly ["useSoftMenu"]], readonly [Events.ShowPanel, "showPanel", readonly ["panelName"]]];
+interface DispatchMessageChunkEvent {
     messageChunk: string;
     messageSize: number;
 }
-export interface EyeDropperPickedColorEvent {
+interface EyeDropperPickedColorEvent {
     r: number;
     g: number;
     b: number;
     a: number;
 }
-export interface DevToolsFileSystem {
+interface DevToolsFileSystem {
     type: '' | 'automatic' | 'snippets' | 'overrides';
     fileSystemName: string;
     rootURL: string;
     fileSystemPath: Platform.DevToolsPath.RawPathString;
 }
-export interface FileSystemAddedEvent {
+interface FileSystemAddedEvent {
     errorMessage?: string;
     fileSystem: DevToolsFileSystem | null;
 }
-export interface FilesChangedEvent {
+interface FilesChangedEvent {
     changed: Platform.DevToolsPath.RawPathString[];
     added: Platform.DevToolsPath.RawPathString[];
     removed: Platform.DevToolsPath.RawPathString[];
 }
-export interface IndexingEvent {
+interface IndexingEvent {
     requestId: number;
     fileSystemPath: string;
 }
-export interface IndexingTotalWorkCalculatedEvent extends IndexingEvent {
+interface IndexingTotalWorkCalculatedEvent extends IndexingEvent {
     totalWork: number;
 }
-export interface IndexingWorkedEvent extends IndexingEvent {
+interface IndexingWorkedEvent extends IndexingEvent {
     worked: number;
 }
-export interface KeyEventUnhandledEvent {
+interface KeyEventUnhandledEvent {
     type: string;
     key: string;
     keyCode: number;
     modifiers: number;
 }
-export interface RevealSourceLineEvent {
+interface RevealSourceLineEvent {
     url: Platform.DevToolsPath.UrlString;
     lineNumber: number;
     columnNumber: number;
 }
-export interface SavedURLEvent {
+interface SavedURLEvent {
     url: Platform.DevToolsPath.RawPathString | Platform.DevToolsPath.UrlString;
     fileSystemPath: Platform.DevToolsPath.RawPathString | Platform.DevToolsPath.UrlString;
 }
-export interface SearchCompletedEvent {
+interface SearchCompletedEvent {
     requestId: number;
     files: Platform.DevToolsPath.RawPathString[];
 }
@@ -101,7 +101,7 @@ export interface AidaClientResult {
     error?: string;
     detail?: string;
 }
-export interface VisualElementImpression {
+interface VisualElementImpression {
     id: number;
     type: number;
     parent?: number;
@@ -266,7 +266,7 @@ export interface InspectorFrontendHostAPI {
     recordKeyDown(event: KeyDownEvent): void;
     recordSettingAccess(event: SettingAccessEvent): void;
 }
-export interface AcceleratorDescriptor {
+interface AcceleratorDescriptor {
     keyCode: number;
     modifiers: number;
 }
@@ -300,7 +300,7 @@ export interface ExtensionDescriptor {
     hostsPolicy?: ExtensionHostsPolicy;
     allowFileAccess?: boolean;
 }
-export interface ExtensionHostsPolicy {
+interface ExtensionHostsPolicy {
     runtimeAllowedHosts: string[];
     runtimeBlockedHosts: string[];
 }

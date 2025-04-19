@@ -1,19 +1,19 @@
-export declare const PortPadding = 4;
-export declare const InputPortRadius = 10;
-export declare const AudioParamRadius = 5;
-export declare const LeftMarginOfText = 12;
-export declare const RightMarginOfText = 30;
-export declare const LeftSideTopPadding = 5;
-export declare const BottomPaddingWithoutParam = 6;
-export declare const BottomPaddingWithParam = 8;
-export declare const ArrowHeadSize = 12;
-export declare const GraphPadding = 20;
-export declare const GraphMargin = 20;
-export declare const TotalInputPortHeight: number;
-export declare const TotalOutputPortHeight: number;
-export declare const TotalParamPortHeight: number;
-export declare const NodeLabelFontStyle = "14px Segoe UI, Arial";
-export declare const ParamLabelFontStyle = "12px Segoe UI, Arial";
+const PortPadding = 4;
+const InputPortRadius = 10;
+const AudioParamRadius = 5;
+const LeftMarginOfText = 12;
+const RightMarginOfText = 30;
+const LeftSideTopPadding = 5;
+const BottomPaddingWithoutParam = 6;
+const BottomPaddingWithParam = 8;
+const ArrowHeadSize = 12;
+const GraphPadding = 20;
+const GraphMargin = 20;
+const TotalInputPortHeight: number;
+const TotalOutputPortHeight: number;
+const TotalParamPortHeight: number;
+const NodeLabelFontStyle = "14px Segoe UI, Arial";
+const ParamLabelFontStyle = "12px Segoe UI, Arial";
 /**
  * Supported port types.
  */
@@ -30,7 +30,7 @@ export interface Point {
     x: number;
     y: number;
 }
-export interface NodeLayout {
+interface NodeLayout {
     inputPortSectionHeight: number;
     outputPortSectionHeight: number;
     maxTextLength: number;
@@ -66,7 +66,7 @@ export interface NodesDisconnectionData {
     sourceOutputIndex?: number;
     destinationInputIndex?: number;
 }
-export interface NodesDisconnectionDataWithDestination {
+interface NodesDisconnectionDataWithDestination {
     sourceId: string;
     destinationId: string;
     sourceOutputIndex?: number;

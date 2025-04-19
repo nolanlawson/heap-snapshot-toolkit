@@ -58,7 +58,7 @@ export interface Suggestion {
     iconElement?: HTMLElement;
 }
 export type Suggestions = Suggestion[];
-export interface AutocompleteConfig {
+interface AutocompleteConfig {
     substituteRangeCallback?: ((arg0: number, arg1: number) => TextUtils.TextRange.TextRange | null);
     tooltipCallback?: ((arg0: number, arg1: number) => Promise<Element | null>);
     suggestionsCallback?: ((arg0: TextUtils.TextRange.TextRange, arg1: TextUtils.TextRange.TextRange, arg2?: boolean | undefined) => Promise<Suggestion[]> | null);

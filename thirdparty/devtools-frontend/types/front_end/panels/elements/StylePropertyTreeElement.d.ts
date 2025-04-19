@@ -24,7 +24,7 @@ declare const FlexGridRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class FlexGridRenderer extends FlexGridRenderer_base {
+class FlexGridRenderer extends FlexGridRenderer_base {
     #private;
     constructor(stylesPane: StylesSidebarPane, treeElement: StylePropertyTreeElement | null);
     render(match: SDK.CSSPropertyParserMatchers.FlexGridMatch, context: RenderingContext): Node[];
@@ -35,7 +35,7 @@ declare const CSSWideKeywordRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class CSSWideKeywordRenderer extends CSSWideKeywordRenderer_base {
+class CSSWideKeywordRenderer extends CSSWideKeywordRenderer_base {
     #private;
     constructor(stylesPane: StylesSidebarPane, treeElement: StylePropertyTreeElement | null);
     render(match: SDK.CSSPropertyParserMatchers.CSSWideKeywordMatch, context: RenderingContext): Node[];
@@ -46,7 +46,7 @@ declare const VariableRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class VariableRenderer extends VariableRenderer_base {
+class VariableRenderer extends VariableRenderer_base {
     #private;
     constructor(stylesPane: StylesSidebarPane, treeElement: StylePropertyTreeElement | null, matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, computedStyles: Map<string, string>);
     render(match: SDK.CSSPropertyParserMatchers.VariableMatch, context: RenderingContext): Node[];
@@ -57,7 +57,7 @@ declare const LinearGradientRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class LinearGradientRenderer extends LinearGradientRenderer_base {
+class LinearGradientRenderer extends LinearGradientRenderer_base {
     render(match: SDK.CSSPropertyParserMatchers.LinearGradientMatch, context: RenderingContext): Node[];
 }
 declare const ColorRenderer_base: abstract new () => {
@@ -66,7 +66,7 @@ declare const ColorRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class ColorRenderer extends ColorRenderer_base {
+class ColorRenderer extends ColorRenderer_base {
     #private;
     constructor(stylesPane: StylesSidebarPane, treeElement: StylePropertyTreeElement | null);
     render(match: SDK.CSSPropertyParserMatchers.ColorMatch, context: RenderingContext): Node[];
@@ -78,7 +78,7 @@ declare const LightDarkColorRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class LightDarkColorRenderer extends LightDarkColorRenderer_base {
+class LightDarkColorRenderer extends LightDarkColorRenderer_base {
     #private;
     constructor(stylesPane: StylesSidebarPane, matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, treeElement: StylePropertyTreeElement | null);
     render(match: SDK.CSSPropertyParserMatchers.LightDarkColorMatch, context: RenderingContext): Node[];
@@ -90,7 +90,7 @@ declare const ColorMixRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class ColorMixRenderer extends ColorMixRenderer_base {
+class ColorMixRenderer extends ColorMixRenderer_base {
     #private;
     constructor(pane: StylesSidebarPane, matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, computedStyles: Map<string, string>, treeElement: StylePropertyTreeElement | null);
     render(match: SDK.CSSPropertyParserMatchers.ColorMixMatch, context: RenderingContext): Node[];
@@ -101,7 +101,7 @@ declare const AngleRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class AngleRenderer extends AngleRenderer_base {
+class AngleRenderer extends AngleRenderer_base {
     #private;
     constructor(treeElement: StylePropertyTreeElement | null);
     render(match: SDK.CSSPropertyParserMatchers.AngleMatch, context: RenderingContext): Node[];
@@ -112,7 +112,7 @@ declare const LinkableNameRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class LinkableNameRenderer extends LinkableNameRenderer_base {
+class LinkableNameRenderer extends LinkableNameRenderer_base {
     #private;
     constructor(matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, stylesSidebarPane: StylesSidebarPane);
     render(match: SDK.CSSPropertyParserMatchers.LinkableNameMatch): Node[];
@@ -123,7 +123,7 @@ declare const BezierRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class BezierRenderer extends BezierRenderer_base {
+class BezierRenderer extends BezierRenderer_base {
     #private;
     constructor(treeElement: StylePropertyTreeElement | null);
     render(match: SDK.CSSPropertyParserMatchers.BezierMatch): Node[];
@@ -135,12 +135,12 @@ declare const AutoBaseRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class AutoBaseRenderer extends AutoBaseRenderer_base {
+class AutoBaseRenderer extends AutoBaseRenderer_base {
     #private;
     constructor(computedStyle: Map<string, string>);
     render(match: SDK.CSSPropertyParserMatchers.AutoBaseMatch, context: RenderingContext): Node[];
 }
-export declare const enum ShadowPropertyType {
+declare const enum ShadowPropertyType {
     X = "x",
     Y = "y",
     SPREAD = "spread",
@@ -154,7 +154,7 @@ interface ShadowProperty {
     expansionContext: RenderingContext | null;
     propertyType: ShadowPropertyType;
 }
-export declare class ShadowModel implements InlineEditor.CSSShadowEditor.CSSShadowModel {
+class ShadowModel implements InlineEditor.CSSShadowEditor.CSSShadowModel {
     #private;
     constructor(shadowType: SDK.CSSPropertyParserMatchers.ShadowType, properties: ShadowProperty[], context: RenderingContext);
     isBoxShadow(): boolean;
@@ -176,7 +176,7 @@ declare const ShadowRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class ShadowRenderer extends ShadowRenderer_base {
+class ShadowRenderer extends ShadowRenderer_base {
     #private;
     constructor(treeElement: StylePropertyTreeElement | null);
     shadowModel(shadow: CodeMirror.SyntaxNode[], shadowType: SDK.CSSPropertyParserMatchers.ShadowType, context: RenderingContext): null | ShadowModel;
@@ -188,7 +188,7 @@ declare const FontRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class FontRenderer extends FontRenderer_base {
+class FontRenderer extends FontRenderer_base {
     readonly treeElement: StylePropertyTreeElement;
     constructor(treeElement: StylePropertyTreeElement);
     render(match: SDK.CSSPropertyParserMatchers.FontMatch, context: RenderingContext): Node[];
@@ -199,7 +199,7 @@ declare const GridTemplateRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class GridTemplateRenderer extends GridTemplateRenderer_base {
+class GridTemplateRenderer extends GridTemplateRenderer_base {
     render(match: SDK.CSSPropertyParserMatchers.GridTemplateMatch, context: RenderingContext): Node[];
 }
 declare const LengthRenderer_base: abstract new () => {
@@ -208,7 +208,7 @@ declare const LengthRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class LengthRenderer extends LengthRenderer_base {
+class LengthRenderer extends LengthRenderer_base {
     #private;
     constructor(stylesPane: StylesSidebarPane, treeElement: StylePropertyTreeElement | null);
     render(match: SDK.CSSPropertyParserMatchers.LengthMatch, context: RenderingContext): Node[];
@@ -220,7 +220,7 @@ declare const MathFunctionRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class MathFunctionRenderer extends MathFunctionRenderer_base {
+class MathFunctionRenderer extends MathFunctionRenderer_base {
     #private;
     constructor(stylesPane: StylesSidebarPane, matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, computedStyles: Map<string, string>, treeElement: StylePropertyTreeElement | null);
     render(match: SDK.CSSPropertyParserMatchers.MathFunctionMatch, context: RenderingContext): Node[];
@@ -233,7 +233,7 @@ declare const AnchorFunctionRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class AnchorFunctionRenderer extends AnchorFunctionRenderer_base {
+class AnchorFunctionRenderer extends AnchorFunctionRenderer_base {
     #private;
     constructor(stylesPane: StylesSidebarPane);
     anchorDecoratedForTest(): void;
@@ -245,7 +245,7 @@ declare const PositionAnchorRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class PositionAnchorRenderer extends PositionAnchorRenderer_base {
+class PositionAnchorRenderer extends PositionAnchorRenderer_base {
     #private;
     constructor(stylesPane: StylesSidebarPane);
     anchorDecoratedForTest(): void;
@@ -257,12 +257,12 @@ declare const PositionTryRenderer_base: abstract new () => {
      *@description Text in Color Swatch Popover Icon of the Elements panel
      */
 };
-export declare class PositionTryRenderer extends PositionTryRenderer_base {
+class PositionTryRenderer extends PositionTryRenderer_base {
     #private;
     constructor(matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles);
     render(match: SDK.CSSPropertyParserMatchers.PositionTryMatch, context: RenderingContext): Node[];
 }
-export declare function getPropertyRenderers(style: SDK.CSSStyleDeclaration.CSSStyleDeclaration, stylesPane: StylesSidebarPane, matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, treeElement: StylePropertyTreeElement | null, computedStyles: Map<string, string>): Array<MatchRenderer<SDK.CSSPropertyParser.Match>>;
+declare function getPropertyRenderers(style: SDK.CSSStyleDeclaration.CSSStyleDeclaration, stylesPane: StylesSidebarPane, matchedStyles: SDK.CSSMatchedStyles.CSSMatchedStyles, treeElement: StylePropertyTreeElement | null, computedStyles: Map<string, string>): Array<MatchRenderer<SDK.CSSPropertyParser.Match>>;
 export declare class StylePropertyTreeElement extends UI.TreeOutline.TreeElement {
     #private;
     private readonly style;
@@ -354,4 +354,3 @@ export interface Context {
     originalValue?: string;
     previousContent: string;
 }
-export {};

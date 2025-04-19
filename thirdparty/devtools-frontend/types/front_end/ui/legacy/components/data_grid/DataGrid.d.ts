@@ -141,36 +141,36 @@ export declare class DataGridImpl<T> extends Common.ObjectWrapper.ObjectWrapper<
     headerHeight(): number;
     revealNode(element: HTMLElement): void;
 }
-export declare const CornerWidth = 14;
-export declare const enum Events {
+const CornerWidth = 14;
+declare const enum Events {
     SELECTED_NODE = "SelectedNode",
     DESELECTED_NODE = "DeselectedNode",
     OPENED_NODE = "OpenedNode",
     SORTING_CHANGED = "SortingChanged",
     PADDING_CHANGED = "PaddingChanged"
 }
-export interface EventTypes<T> {
+interface EventTypes<T> {
     [Events.SELECTED_NODE]: DataGridNode<T>;
     [Events.DESELECTED_NODE]: void;
     [Events.OPENED_NODE]: DataGridNode<T>;
     [Events.SORTING_CHANGED]: void;
     [Events.PADDING_CHANGED]: void;
 }
-export declare enum Order {
+declare enum Order {
     Ascending = "sort-ascending",
     Descending = "sort-descending"
 }
-export declare const enum Align {
+declare const enum Align {
     CENTER = "center",
     RIGHT = "right"
 }
-export declare const enum DataType {
+declare const enum DataType {
     STRING = "String",
     BOOLEAN = "Boolean"
 }
-export declare const ColumnResizePadding = 34;
-export declare const CenterResizerOverBorderAdjustment = 3;
-export declare const enum ResizeMethod {
+const ColumnResizePadding = 34;
+const CenterResizerOverBorderAdjustment = 3;
+declare const enum ResizeMethod {
     NEAREST = "nearest",
     FIRST = "first",
     LAST = "last"
@@ -259,13 +259,13 @@ export declare class DataGridNode<T> {
     savePosition(): void;
     restorePosition(): void;
 }
-export declare class CreationDataGridNode<T> extends DataGridNode<T> {
+class CreationDataGridNode<T> extends DataGridNode<T> {
     isCreationNode: boolean;
     constructor(data?: {
         [x: string]: any;
     } | null, hasChildren?: boolean);
 }
-export declare class DataGridWidget<T> extends UI.Widget.VBox {
+class DataGridWidget<T> extends UI.Widget.VBox {
     readonly dataGrid: DataGridImpl<T>;
     constructor(dataGrid: DataGridImpl<T>, element?: HTMLElement);
     wasShown(): void;

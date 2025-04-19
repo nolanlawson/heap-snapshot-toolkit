@@ -13,7 +13,7 @@ export interface MarkdownIssueDescription {
         linkTitle: string;
     }>;
 }
-export interface LazyMarkdownIssueDescription {
+interface LazyMarkdownIssueDescription {
     file: string;
     substitutions?: Map<string, () => string>;
     links: Array<{
@@ -26,12 +26,12 @@ export interface LazyMarkdownIssueDescription {
  * constant and at the same time delays resolution of the substitutions
  * and/or link titles to allow localization.
  */
-export declare function resolveLazyDescription(lazyDescription: LazyMarkdownIssueDescription): MarkdownIssueDescription;
+declare function resolveLazyDescription(lazyDescription: LazyMarkdownIssueDescription): MarkdownIssueDescription;
 /**
  * A loaded and parsed issue description. This is usually obtained by loading
  * a `MarkdownIssueDescription` via `createIssueDescriptionFromMarkdown`.
  */
-export interface IssueDescription {
+interface IssueDescription {
     title: string;
     markdown: Marked.Marked.Token[];
     links: Array<{
@@ -39,13 +39,13 @@ export interface IssueDescription {
         linkTitle: string;
     }>;
 }
-export declare function getFileContent(url: URL): Promise<string>;
-export declare function getMarkdownFileContent(filename: string): Promise<string>;
-export declare function createIssueDescriptionFromMarkdown(description: MarkdownIssueDescription): Promise<IssueDescription>;
+declare function getFileContent(url: URL): Promise<string>;
+declare function getMarkdownFileContent(filename: string): Promise<string>;
+declare function createIssueDescriptionFromMarkdown(description: MarkdownIssueDescription): Promise<IssueDescription>;
 /**
  * This function is exported separately for unit testing.
  */
-export declare function createIssueDescriptionFromRawMarkdown(markdown: string, description: MarkdownIssueDescription): IssueDescription;
+declare function createIssueDescriptionFromRawMarkdown(markdown: string, description: MarkdownIssueDescription): IssueDescription;
 /**
  * Replaces placeholders in markdown text with a string provided by the
  * `substitutions` map. To keep mental overhead to a minimum, the same
@@ -58,6 +58,6 @@ export declare function createIssueDescriptionFromRawMarkdown(markdown: string, 
  *
  * Exported only for unit testing.
  */
-export declare function substitutePlaceholders(markdown: string, substitutions?: Map<string, string>): string;
-export declare function findTitleFromMarkdownAst(markdownAst: Marked.Marked.Token[]): string | null;
-export declare function getIssueTitleFromMarkdownDescription(description: MarkdownIssueDescription): Promise<string | null>;
+declare function substitutePlaceholders(markdown: string, substitutions?: Map<string, string>): string;
+declare function findTitleFromMarkdownAst(markdownAst: Marked.Marked.Token[]): string | null;
+declare function getIssueTitleFromMarkdownDescription(description: MarkdownIssueDescription): Promise<string | null>;

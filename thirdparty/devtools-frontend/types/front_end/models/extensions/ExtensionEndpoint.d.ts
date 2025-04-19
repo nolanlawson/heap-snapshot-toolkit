@@ -11,4 +11,3 @@ export declare class ExtensionEndpoint {
     private onResponse;
     protected handleEvent(_event: Event): void;
 }
-export {};

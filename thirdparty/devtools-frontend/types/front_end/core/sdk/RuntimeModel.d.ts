@@ -58,7 +58,7 @@ export declare class RuntimeModel extends SDKModel<EventTypes> {
     terminateExecution(): Promise<Protocol.ProtocolResponseWithError>;
     getExceptionDetails(errorObjectId: Protocol.Runtime.RemoteObjectId): Promise<Protocol.Runtime.ExceptionDetails | undefined>;
 }
-export declare enum Events {
+declare enum Events {
     BindingCalled = "BindingCalled",
     ExecutionContextCreated = "ExecutionContextCreated",
     ExecutionContextDestroyed = "ExecutionContextDestroyed",
@@ -69,7 +69,7 @@ export declare enum Events {
     ConsoleAPICalled = "ConsoleAPICalled",
     QueryObjectRequested = "QueryObjectRequested"
 }
-export interface ConsoleAPICall {
+interface ConsoleAPICall {
     type: Protocol.Runtime.ConsoleAPICalledEventType;
     args: Protocol.Runtime.RemoteObject[];
     executionContextId: number;
@@ -77,15 +77,15 @@ export interface ConsoleAPICall {
     stackTrace?: Protocol.Runtime.StackTrace;
     context?: string;
 }
-export interface ExceptionWithTimestamp {
+interface ExceptionWithTimestamp {
     timestamp: number;
     details: Protocol.Runtime.ExceptionDetails;
 }
-export interface QueryObjectRequestedEvent {
+interface QueryObjectRequestedEvent {
     objects: RemoteObject;
     executionContextId?: number;
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.BindingCalled]: Protocol.Runtime.BindingCalledEvent;
     [Events.ExecutionContextCreated]: ExecutionContext;
     [Events.ExecutionContextDestroyed]: ExecutionContext;
@@ -124,7 +124,7 @@ export type EvaluationResult = {
 } | {
     error: string;
 };
-export interface CompileScriptResult {
+interface CompileScriptResult {
     scriptId?: string;
     exceptionDetails?: Protocol.Runtime.ExceptionDetails;
 }
@@ -142,7 +142,7 @@ export interface EvaluationOptions {
     allowUnsafeEvalBlockedByCSP?: boolean;
     contextId?: number;
 }
-export interface CallFunctionOptions {
+interface CallFunctionOptions {
     functionDeclaration: string;
     includeCommandLineAPI?: boolean;
     returnByValue?: boolean;
@@ -152,7 +152,7 @@ export interface CallFunctionOptions {
     userGesture: boolean;
     awaitPromise: boolean;
 }
-export type QueryObjectResult = {
+type QueryObjectResult = {
     objects: RemoteObject;
 } | {
     error: string;

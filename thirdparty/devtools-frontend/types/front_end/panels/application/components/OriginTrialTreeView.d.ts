@@ -2,28 +2,28 @@ import '../../../ui/components/icon_button/icon_button.js';
 import '../../../ui/components/tree_outline/tree_outline.js';
 import * as Protocol from '../../../generated/protocol.js';
 import type * as TreeOutline from '../../../ui/components/tree_outline/tree_outline.js';
-export interface BadgeData {
+interface BadgeData {
     badgeContent: string;
     style: 'error' | 'success' | 'secondary';
 }
-export declare class Badge extends HTMLElement {
+class Badge extends HTMLElement {
     #private;
     set data(data: BadgeData);
 }
 type TreeNode<DataType> = TreeOutline.TreeOutlineUtils.TreeNode<DataType>;
-export type OriginTrialTreeNodeData = Protocol.Page.OriginTrial | Protocol.Page.OriginTrialTokenWithStatus | string;
-export interface OriginTrialTokenRowsData {
+type OriginTrialTreeNodeData = Protocol.Page.OriginTrial | Protocol.Page.OriginTrialTokenWithStatus | string;
+interface OriginTrialTokenRowsData {
     node: TreeNode<OriginTrialTreeNodeData>;
 }
-export declare class OriginTrialTokenRows extends HTMLElement {
+class OriginTrialTokenRows extends HTMLElement {
     #private;
     set data(data: OriginTrialTokenRowsData);
     connectedCallback(): void;
 }
-export interface OriginTrialTreeViewData {
+interface OriginTrialTreeViewData {
     trials: Protocol.Page.OriginTrial[];
 }
-export declare class OriginTrialTreeView extends HTMLElement {
+class OriginTrialTreeView extends HTMLElement {
     #private;
     set data(data: OriginTrialTreeViewData);
 }

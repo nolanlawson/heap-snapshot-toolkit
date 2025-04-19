@@ -1,7 +1,7 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import type * as ProtocolProxyApi from '../../generated/protocol-proxy-api.js';
 import type * as Protocol from '../../generated/protocol.js';
-export declare class LayerTreeModel extends SDK.SDKModel.SDKModel<EventTypes> {
+class LayerTreeModel extends SDK.SDKModel.SDKModel<EventTypes> {
     readonly layerTreeAgent: ProtocolProxyApi.LayerTreeApi;
     readonly paintProfilerModel: SDK.PaintProfiler.PaintProfilerModel;
     private layerTreeInternal;
@@ -18,21 +18,21 @@ export declare class LayerTreeModel extends SDK.SDKModel.SDKModel<EventTypes> {
     layerPainted(layerId: string, clipRect: Protocol.DOM.Rect): void;
     private onPrimaryPageChanged;
 }
-export declare enum Events {
+declare enum Events {
     LayerTreeChanged = "LayerTreeChanged",
     LayerPainted = "LayerPainted"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.LayerTreeChanged]: void;
     [Events.LayerPainted]: AgentLayer;
 }
-export declare class AgentLayerTree extends SDK.LayerTreeBase.LayerTreeBase {
+class AgentLayerTree extends SDK.LayerTreeBase.LayerTreeBase {
     private layerTreeModel;
     constructor(layerTreeModel: LayerTreeModel);
     setLayers(payload: Protocol.LayerTree.Layer[] | null): Promise<void>;
     private innerSetLayers;
 }
-export declare class AgentLayer implements SDK.LayerTreeBase.Layer {
+class AgentLayer implements SDK.LayerTreeBase.Layer {
     private scrollRectsInternal;
     private quadInternal;
     private childrenInternal;

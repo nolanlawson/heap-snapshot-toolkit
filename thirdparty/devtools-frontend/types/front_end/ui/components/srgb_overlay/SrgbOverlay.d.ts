@@ -3,7 +3,7 @@ interface SrgbOverlayProps {
     width: number;
     height: number;
 }
-export declare class SrgbOverlay extends HTMLElement {
+class SrgbOverlay extends HTMLElement {
     #private;
     constructor();
     render({ hue, width, height }: SrgbOverlayProps): Promise<void>;

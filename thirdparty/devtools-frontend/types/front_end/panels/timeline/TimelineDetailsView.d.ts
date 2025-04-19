@@ -17,7 +17,7 @@ declare const TimelineDetailsPane_base: {
         dispatchEventToListeners<T_3 extends keyof TimelineTreeView.EventTypes>(eventType: Platform.TypeScriptUtilities.NoUnion<T_3>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<TimelineTreeView.EventTypes, T_3>): void;
     };
 } & typeof UI.Widget.VBox;
-export declare class TimelineDetailsPane extends TimelineDetailsPane_base {
+class TimelineDetailsPane extends TimelineDetailsPane_base {
     #private;
     private readonly detailsLinkifier;
     private tabbedPane;
@@ -83,4 +83,3 @@ export declare enum Tab {
     LayerViewer = "layer-viewer",
     SelectorStats = "selector-stats"
 }
-export {};

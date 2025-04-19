@@ -1,5 +1,5 @@
 import * as Dialogs from '../dialogs/dialogs.js';
-export interface MenuData {
+interface MenuData {
     /**
      * Whether the menu is open.
      */
@@ -38,7 +38,7 @@ export interface MenuData {
      */
     getConnectorCustomXPosition: (() => number) | null;
 }
-export declare class Menu extends HTMLElement {
+class Menu extends HTMLElement {
     #private;
     get origin(): Dialogs.Dialog.DialogOrigin;
     set origin(origin: Dialogs.Dialog.DialogOrigin);
@@ -56,7 +56,7 @@ export declare class Menu extends HTMLElement {
     set getConnectorCustomXPosition(connectorXPosition: (() => number) | null);
     connectedCallback(): void;
 }
-export declare class MenuItem extends HTMLElement {
+class MenuItem extends HTMLElement {
     #private;
     connectedCallback(): void;
     get preventMenuCloseOnSelection(): boolean;
@@ -85,12 +85,12 @@ declare global {
         [MenuCloseRequest.eventName]: MenuCloseRequest;
     }
 }
-export declare class MenuItemSelectedEvent extends Event {
+class MenuItemSelectedEvent extends Event {
     itemValue: MenuItemValue;
     static readonly eventName = "menuitemselected";
     constructor(itemValue: MenuItemValue);
 }
-export declare class MenuCloseRequest extends Event {
+class MenuCloseRequest extends Event {
     static readonly eventName = "menucloserequest";
     constructor();
 }

@@ -19,7 +19,7 @@ export declare class BinaryResourceView extends UI.Widget.VBox {
     private binaryViewTypeChanged;
     addCopyToContextMenu(contextMenu: UI.ContextMenu.ContextMenu, submenuItemText: string): void;
 }
-export declare class BinaryViewObject {
+class BinaryViewObject {
     type: string;
     label: string;
     copiedMessage: string;

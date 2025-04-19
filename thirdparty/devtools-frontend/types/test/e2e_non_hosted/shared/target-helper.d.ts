@@ -7,4 +7,4 @@ export declare class InspectedPage extends PageWrapper {
     goToResource(path: string, options?: puppeteer.WaitForOptions): Promise<void>;
     getResourcesPath(host?: string): string;
 }
-export declare function setupInspectedPage(context: puppeteer.BrowserContext, serverPort: number): Promise<InspectedPage>;
+declare function setupInspectedPage(context: puppeteer.BrowserContext, serverPort: number): Promise<InspectedPage>;

@@ -11,7 +11,7 @@ export declare class EdgeView {
 /**
  * Generates the edge id and source/destination portId using edge data and type.
  */
-export declare const generateEdgePortIdsByData: (data: NodesConnectionData | NodeParamConnectionData, type: EdgeTypes) => {
+const generateEdgePortIdsByData: (data: NodesConnectionData | NodeParamConnectionData, type: EdgeTypes) => {
     edgeId: string;
     sourcePortId: string;
     destinationPortId: string;
@@ -19,7 +19,7 @@ export declare const generateEdgePortIdsByData: (data: NodesConnectionData | Nod
 /**
  * Supported edge types.
  */
-export declare const enum EdgeTypes {
+declare const enum EdgeTypes {
     NODE_TO_NODE = "NodeToNode",
     NODE_TO_PARAM = "NodeToParam"
 }

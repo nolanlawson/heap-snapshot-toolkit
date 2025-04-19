@@ -151,13 +151,13 @@ export declare class DeferredDOMNode {
     domModel(): DOMModel;
     highlight(): void;
 }
-export declare class DOMNodeShortcut {
+class DOMNodeShortcut {
     nodeType: number;
     nodeName: string;
     deferredNode: DeferredDOMNode;
     constructor(target: Target, backendNodeId: Protocol.DOM.BackendNodeId, nodeType: number, nodeName: string);
 }
-export declare class DOMDocument extends DOMNode {
+class DOMDocument extends DOMNode {
     body: DOMNode | null;
     documentElement: DOMNode | null;
     documentURL: Platform.DevToolsPath.UrlString;
@@ -228,7 +228,7 @@ export declare class DOMModel extends SDKModel<EventTypes> {
     getAgent(): ProtocolProxyApi.DOMApi;
     registerNode(node: DOMNode): void;
 }
-export declare enum Events {
+declare enum Events {
     AttrModified = "AttrModified",
     AttrRemoved = "AttrRemoved",
     CharacterDataModified = "CharacterDataModified",
@@ -242,7 +242,7 @@ export declare enum Events {
     TopLayerElementsChanged = "TopLayerElementsChanged",
     ScrollableFlagUpdated = "ScrollableFlagUpdated"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.AttrModified]: {
         node: DOMNode;
         name: string;
@@ -267,7 +267,7 @@ export interface EventTypes {
         node: DOMNode;
     };
 }
-export declare class DOMModelUndoStack {
+class DOMModelUndoStack {
     #private;
     constructor();
     static instance(opts?: {
@@ -278,7 +278,7 @@ export declare class DOMModelUndoStack {
     redo(): Promise<void>;
     dispose(model: DOMModel): void;
 }
-export interface Attribute {
+interface Attribute {
     name: string;
     value: string;
     _node: DOMNode;

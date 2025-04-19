@@ -68,17 +68,17 @@ export declare class HeapSnapshotSortableDataGrid extends HeapSnapshotSortableDa
     removeAllChildren(parent: HeapSnapshotGridNode): void;
     dataSourceChanged(): Promise<void>;
 }
-export declare enum HeapSnapshotSortableDataGridEvents {
+declare enum HeapSnapshotSortableDataGridEvents {
     ContentShown = "ContentShown",
     SortingComplete = "SortingComplete",
     ExpandRetainersComplete = "ExpandRetainersComplete"
 }
-export interface EventTypes {
+interface EventTypes {
     [HeapSnapshotSortableDataGridEvents.ContentShown]: HeapSnapshotSortableDataGrid;
     [HeapSnapshotSortableDataGridEvents.SortingComplete]: void;
     [HeapSnapshotSortableDataGridEvents.ExpandRetainersComplete]: void;
 }
-export declare class HeapSnapshotViewportDataGrid extends HeapSnapshotSortableDataGrid {
+class HeapSnapshotViewportDataGrid extends HeapSnapshotSortableDataGrid {
     topPaddingHeight: number;
     bottomPaddingHeight: number;
     selectedNode: HeapSnapshotGridNode | null;
@@ -116,7 +116,7 @@ export declare class HeapSnapshotRetainmentDataGrid extends HeapSnapshotContainm
     setDataSource(snapshot: HeapSnapshotProxy, nodeIndex: number, nodeId?: number): Promise<void>;
     dataSourceChanged(): Promise<void>;
 }
-export declare enum HeapSnapshotRetainmentDataGridEvents {
+declare enum HeapSnapshotRetainmentDataGridEvents {
     ExpandRetainersComplete = "ExpandRetainersComplete"
 }
 export declare class HeapSnapshotConstructorsDataGrid extends HeapSnapshotViewportDataGrid {
@@ -158,4 +158,3 @@ export declare class AllocationDataGrid extends HeapSnapshotViewportDataGrid {
     sortingChanged(): void;
     createComparator(): (arg0: Object, arg1: Object) => number;
 }
-export {};

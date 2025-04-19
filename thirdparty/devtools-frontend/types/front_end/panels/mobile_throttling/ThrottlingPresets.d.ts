@@ -1,5 +1,5 @@
 import * as SDK from '../../core/sdk/sdk.js';
-export declare class ThrottlingPresets {
+class ThrottlingPresets {
     static getNoThrottlingConditions(): Conditions;
     static getOfflineConditions(): Conditions;
     static getLowEndMobileConditions(): Conditions;
@@ -27,7 +27,7 @@ export interface MobileThrottlingConditionsGroup {
     items: Array<Conditions | PlaceholderConditions>;
 }
 export type ConditionsList = Array<Conditions | PlaceholderConditions | null>;
-export interface PlaceholderConditions {
+interface PlaceholderConditions {
     title: string;
     description: string;
     jslogContext?: string;

@@ -19,7 +19,7 @@ export interface RehydratingScript {
     auxData?: RehydratingExecutionContextAuxData;
     pid?: number;
 }
-export interface RehydratingExecutionContextAuxData {
+interface RehydratingExecutionContextAuxData {
     frameId?: Protocol.Page.FrameId;
     isDefault?: boolean;
     type?: string;
@@ -50,17 +50,17 @@ export interface ProtocolMessage {
     sessionId?: number;
     params?: object;
 }
-export interface ProtocolEvent {
+interface ProtocolEvent {
     method: string;
     params: object;
 }
-export interface ProtocolResponse {
+interface ProtocolResponse {
     id: number;
 }
 export type ServerMessage = (ProtocolEvent | ProtocolMessage | ProtocolResponse) & {
     [others: string]: unknown;
 };
-export interface Session {
+interface Session {
     target: RehydratingTarget;
     executionContexts: RehydratingExecutionContext[];
     scripts: RehydratingScript[];

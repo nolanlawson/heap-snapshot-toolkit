@@ -36,15 +36,15 @@ export declare class ResourcesPanel extends UI.Panel.PanelWithSidebar {
     showCookies(cookieFrameTarget: SDK.Target.Target, cookieDomain: string): void;
     clearCookies(target: SDK.Target.Target, cookieDomain: string): void;
 }
-export declare class ResourceRevealer implements Common.Revealer.Revealer<SDK.Resource.Resource> {
+class ResourceRevealer implements Common.Revealer.Revealer<SDK.Resource.Resource> {
     reveal(resource: SDK.Resource.Resource): Promise<void>;
 }
-export declare class FrameDetailsRevealer implements Common.Revealer.Revealer<SDK.ResourceTreeModel.ResourceTreeFrame> {
+class FrameDetailsRevealer implements Common.Revealer.Revealer<SDK.ResourceTreeModel.ResourceTreeFrame> {
     reveal(frame: SDK.ResourceTreeModel.ResourceTreeFrame): Promise<void>;
 }
-export declare class RuleSetViewRevealer implements Common.Revealer.Revealer<PreloadingHelper.PreloadingForward.RuleSetView> {
+class RuleSetViewRevealer implements Common.Revealer.Revealer<PreloadingHelper.PreloadingForward.RuleSetView> {
     reveal(revealInfo: PreloadingHelper.PreloadingForward.RuleSetView): Promise<void>;
 }
-export declare class AttemptViewWithFilterRevealer implements Common.Revealer.Revealer<PreloadingHelper.PreloadingForward.AttemptViewWithFilter> {
+class AttemptViewWithFilterRevealer implements Common.Revealer.Revealer<PreloadingHelper.PreloadingForward.AttemptViewWithFilter> {
     reveal(filter: PreloadingHelper.PreloadingForward.AttemptViewWithFilter): Promise<void>;
 }

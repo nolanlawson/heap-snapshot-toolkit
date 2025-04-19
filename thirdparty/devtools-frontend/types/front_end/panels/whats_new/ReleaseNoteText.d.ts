@@ -18,5 +18,5 @@ export declare const enum VideoType {
     DEVTOOLS_TIPS = "DevtoolsTips",
     OTHER = "Other"
 }
-export declare function setReleaseNoteForTest(testReleaseNote: ReleaseNote): void;
-export declare function getReleaseNote(): ReleaseNote;
+declare function setReleaseNoteForTest(testReleaseNote: ReleaseNote): void;
+declare function getReleaseNote(): ReleaseNote;

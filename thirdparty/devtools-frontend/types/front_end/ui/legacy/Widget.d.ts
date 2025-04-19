@@ -5,12 +5,12 @@ import { Constraints, Size } from './Geometry.js';
 interface WidgetConstructor<WidgetT extends Widget & WidgetParams, WidgetParams> {
     new (element: WidgetElement<WidgetT, WidgetParams>): WidgetT;
 }
-export declare class WidgetConfig<WidgetT extends Widget & WidgetParams, WidgetParams> {
+class WidgetConfig<WidgetT extends Widget & WidgetParams, WidgetParams> {
     readonly widgetClass: WidgetConstructor<WidgetT, WidgetParams>;
     readonly widgetParams?: WidgetParams | undefined;
     constructor(widgetClass: WidgetConstructor<WidgetT, WidgetParams>, widgetParams?: WidgetParams | undefined);
 }
-export declare function widgetConfig<WidgetT extends Widget & WidgetParams, WidgetParams>(widgetClass: WidgetConstructor<WidgetT, WidgetParams>, widgetParams?: WidgetParams): WidgetConfig<any, any>;
+declare function widgetConfig<WidgetT extends Widget & WidgetParams, WidgetParams>(widgetClass: WidgetConstructor<WidgetT, WidgetParams>, widgetParams?: WidgetParams): WidgetConfig<any, any>;
 export declare class WidgetElement<WidgetT extends Widget & WidgetParams, WidgetParams = object> extends HTMLElement {
     #private;
     createWidget(): WidgetT;
@@ -22,7 +22,7 @@ export declare class WidgetElement<WidgetT extends Widget & WidgetParams, Widget
     removeChild<T extends Node>(child: T): T;
     removeChildren(): void;
 }
-export declare function widgetRef<T extends Widget, Args extends unknown[]>(type: Platform.Constructor.Constructor<T, Args>, callback: (_: T) => void): ReturnType<typeof Lit.Directives.ref>;
+declare function widgetRef<T extends Widget, Args extends unknown[]>(type: Platform.Constructor.Constructor<T, Args>, callback: (_: T) => void): ReturnType<typeof Lit.Directives.ref>;
 export declare class Widget {
     #private;
     readonly element: HTMLElement;
@@ -146,15 +146,14 @@ export declare class HBox extends Widget {
     constructor(useShadowDom?: boolean);
     calculateConstraints(): Constraints;
 }
-export declare class VBoxWithResizeCallback extends VBox {
+class VBoxWithResizeCallback extends VBox {
     private readonly resizeCallback;
     constructor(resizeCallback: () => void);
     onResize(): void;
 }
-export declare class WidgetFocusRestorer {
+class WidgetFocusRestorer {
     private widget;
     private previous;
     constructor(widget: Widget);
     restore(): void;
 }
-export {};

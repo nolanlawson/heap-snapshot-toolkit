@@ -40,7 +40,7 @@ export declare class GlassPane {
     static container(document: Document): Element;
     static containerMoved(element: Element): void;
 }
-export declare const enum PointerEventsBehavior {
+declare const enum PointerEventsBehavior {
     BLOCKED_BY_GLASS_PANE = "BlockedByGlassPane",
     PIERCE_GLASS_PANE = "PierceGlassPane",
     PIERCE_CONTENTS = "PierceContents"
@@ -51,13 +51,13 @@ export declare const enum AnchorBehavior {
     PREFER_LEFT = "PreferLeft",
     PREFER_RIGHT = "PreferRight"
 }
-export declare const enum SizeBehavior {
+declare const enum SizeBehavior {
     SET_EXACT_SIZE = "SetExactSize",
     SET_EXACT_WIDTH_MAX_HEIGHT = "SetExactWidthMaxHeight",
     MEASURE_CONTENT = "MeasureContent"
 }
-export declare const enum MarginBehavior {
+declare const enum MarginBehavior {
     DEFAULT_MARGIN = "DefaultMargin",
     NO_MARGIN = "NoMargin"
 }
-export declare const GlassPanePanes: Set<GlassPane>;
+const GlassPanePanes: Set<GlassPane>;

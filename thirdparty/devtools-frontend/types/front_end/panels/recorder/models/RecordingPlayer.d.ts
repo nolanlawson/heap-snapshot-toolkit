@@ -7,12 +7,12 @@ export declare const enum PlayRecordingSpeed {
     VERY_SLOW = "very_slow",
     EXTREMELY_SLOW = "extremely_slow"
 }
-export declare const enum ReplayResult {
+declare const enum ReplayResult {
     FAILURE = "Failure",
     SUCCESS = "Success"
 }
-export declare const defaultTimeout = 5000;
-export declare class RecordingPlayer extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
+const defaultTimeout = 5000;
+class RecordingPlayer extends Common.ObjectWrapper.ObjectWrapper<EventTypes> {
     #private;
     userFlow: UserFlow;
     speed: PlayRecordingSpeed;
@@ -38,7 +38,7 @@ export declare class RecordingPlayer extends Common.ObjectWrapper.ObjectWrapper<
     updateBreakpointIndexes(breakpointIndexes: Set<number>): void;
     play(): Promise<void>;
 }
-export declare const enum Events {
+declare const enum Events {
     ABORT = "Abort",
     DONE = "Done",
     STEP = "Step",
@@ -57,4 +57,3 @@ interface EventTypes {
     [Events.CONTINUE]: void;
     [Events.ERROR]: Error;
 }
-export {};

@@ -1,4 +1,4 @@
-export const generatedProperties: ({
+const generatedProperties: ({
     inherited: boolean;
     name: string;
     keywords?: undefined;
@@ -34,7 +34,7 @@ export const generatedProperties: ({
     name: string;
     inherited?: undefined;
 })[];
-export const generatedPropertyValues: {
+const generatedPropertyValues: {
     "-webkit-box-align": {
         values: string[];
     };
@@ -948,4 +948,4 @@ export const generatedPropertyValues: {
         values: string[];
     };
 };
-export const generatedAliasesFor: Map<string, string>;
+const generatedAliasesFor: Map<string, string>;

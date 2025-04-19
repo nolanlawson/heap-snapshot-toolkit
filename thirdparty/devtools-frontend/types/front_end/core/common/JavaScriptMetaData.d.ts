@@ -11,11 +11,11 @@ export interface DOMPinnedWebIDLType {
     };
     rules?: DOMPinnedWebIDLRule[];
 }
-export interface DOMPinnedWebIDLRule {
+interface DOMPinnedWebIDLRule {
     when: string;
     is: string;
 }
-export interface JavaScriptMetaData {
+interface JavaScriptMetaData {
     signaturesForNativeFunction(name: string): string[][] | null;
     signaturesForInstanceMethod(name: string, receiverClassName: string): string[][] | null;
     signaturesForStaticMethod(name: string, receiverConstructorName: string): string[][] | null;

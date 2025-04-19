@@ -5,7 +5,7 @@ declare global {
         'devtools-control-button': ControlButton;
     }
 }
-export declare class ControlButton extends LitElement {
+class ControlButton extends LitElement {
     #private;
     static styles: CSSStyleSheet[];
     label: string;

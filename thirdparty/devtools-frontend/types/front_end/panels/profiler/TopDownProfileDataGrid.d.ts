@@ -1,7 +1,7 @@
 import type * as CPUProfile from '../../models/cpu_profile/cpu_profile.js';
 import type * as UI from '../../ui/legacy/legacy.js';
 import { type Formatter, ProfileDataGridNode, ProfileDataGridTree } from './ProfileDataGrid.js';
-export declare class TopDownProfileDataGridNode extends ProfileDataGridNode {
+class TopDownProfileDataGridNode extends ProfileDataGridNode {
     remainingChildren: CPUProfile.ProfileTreeModel.ProfileNode[];
     constructor(profileNode: CPUProfile.ProfileTreeModel.ProfileNode, owningTree: TopDownProfileDataGridTree);
     static sharedPopulate(container: TopDownProfileDataGridTree | TopDownProfileDataGridNode): void;

@@ -1,4 +1,4 @@
-export interface SerializedTextRange {
+interface SerializedTextRange {
     startLine: number;
     startColumn: number;
     endLine: number;

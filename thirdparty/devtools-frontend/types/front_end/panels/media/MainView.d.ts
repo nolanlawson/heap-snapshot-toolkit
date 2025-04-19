@@ -14,7 +14,7 @@ export interface TriggerDispatcher {
     onMessage(playerID: string, message: Protocol.Media.PlayerMessage): void;
     onEvent(playerID: string, event: PlayerEvent): void;
 }
-export declare class PlayerDataDownloadManager implements TriggerDispatcher {
+class PlayerDataDownloadManager implements TriggerDispatcher {
     private readonly playerDataCollection;
     constructor();
     addPlayer(playerID: string): void;

@@ -11,9 +11,8 @@ export interface LoggingState {
     selectOpen?: boolean;
     pendingChangeContext?: string;
 }
-export declare function getOrCreateLoggingState(loggable: Loggable, config: LoggingConfig, parent?: Loggable): LoggingState;
-export declare function getLoggingState(loggable: Loggable): LoggingState | null;
+declare function getOrCreateLoggingState(loggable: Loggable, config: LoggingConfig, parent?: Loggable): LoggingState;
+declare function getLoggingState(loggable: Loggable): LoggingState | null;
 type ParentProvider = (e: Element) => Element | undefined;
 export declare function registerParentProvider(name: string, provider: ParentProvider): void;
 export declare function setMappedParent(element: Element, parent: Element): void;
-export {};

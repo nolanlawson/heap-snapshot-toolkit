@@ -7,7 +7,7 @@ export interface ChunkedReader {
     cancel(): void;
     error(): DOMError | null;
 }
-export declare class ChunkedFileReader implements ChunkedReader {
+class ChunkedFileReader implements ChunkedReader {
     #private;
     constructor(file: File, chunkSize?: number, chunkTransferredCallback?: ((arg0: ChunkedReader) => void));
     read(output: Common.StringOutputStream.OutputStream): Promise<boolean>;
@@ -23,7 +23,7 @@ export declare class ChunkedFileReader implements ChunkedReader {
     private loadChunk;
     private onError;
 }
-export declare class FileOutputStream implements Common.StringOutputStream.OutputStream {
+class FileOutputStream implements Common.StringOutputStream.OutputStream {
     #private;
     constructor();
     open(fileName: Platform.DevToolsPath.RawPathString | Platform.DevToolsPath.UrlString): Promise<boolean>;

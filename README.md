@@ -149,4 +149,18 @@ console.log(DevToolsAPI)
 Clone `devtools-frontend` in a sibling directory from 
 [the Chromium DevTools frontend source code](https://github.com/ChromeDevTools/devtools-frontend). Then run:
 
-`bash ./scripts/build-devtools-frontend.sh`
+```sh
+pnpm build
+```
+
+### Lint
+
+```sh
+pnpm lint
+```
+
+### Test
+
+```sh
+pnpm test
+```

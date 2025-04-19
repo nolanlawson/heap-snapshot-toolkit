@@ -35,15 +35,15 @@ export declare const enum IssueKind {
      */
     IMPROVEMENT = "Improvement"
 }
-export declare function getIssueKindName(issueKind: IssueKind): Common.UIString.LocalizedString;
-export declare function getIssueKindDescription(issueKind: IssueKind): Common.UIString.LocalizedString;
+declare function getIssueKindName(issueKind: IssueKind): Common.UIString.LocalizedString;
+declare function getIssueKindDescription(issueKind: IssueKind): Common.UIString.LocalizedString;
 /**
  * Union two issue kinds for issue aggregation. The idea is to show the most
  * important kind on aggregated issues that union issues of different kinds.
  */
-export declare function unionIssueKind(a: IssueKind, b: IssueKind): IssueKind;
-export declare function getShowThirdPartyIssuesSetting(): Common.Settings.Setting<boolean>;
-export interface AffectedElement {
+declare function unionIssueKind(a: IssueKind, b: IssueKind): IssueKind;
+declare function getShowThirdPartyIssuesSetting(): Common.Settings.Setting<boolean>;
+interface AffectedElement {
     backendNodeId: Protocol.DOM.BackendNodeId;
     nodeName: string;
     target: SDK.Target.Target | null;
@@ -78,7 +78,7 @@ export declare abstract class Issue<IssueCode extends string = string> {
     setHidden(hidden: boolean): void;
     maybeCreateConsoleMessage(): SDK.ConsoleModel.ConsoleMessage | undefined;
 }
-export declare function toZeroBasedLocation(location: Protocol.Audits.SourceCodeLocation | undefined): {
+declare function toZeroBasedLocation(location: Protocol.Audits.SourceCodeLocation | undefined): {
     url: Platform.DevToolsPath.UrlString;
     scriptId: Protocol.Runtime.ScriptId | undefined;
     lineNumber: number;

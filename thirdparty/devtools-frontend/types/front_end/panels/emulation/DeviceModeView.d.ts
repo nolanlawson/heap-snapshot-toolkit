@@ -1,6 +1,6 @@
 import type * as Protocol from '../../generated/protocol.js';
 import * as UI from '../../ui/legacy/legacy.js';
-export declare class DeviceModeView extends UI.Widget.VBox {
+class DeviceModeView extends UI.Widget.VBox {
     wrapperInstance: UI.Widget.VBox | null;
     blockElementToWidth: WeakMap<HTMLElement, number>;
     private model;
@@ -60,7 +60,7 @@ export declare class DeviceModeView extends UI.Widget.VBox {
     private paintImage;
     private saveScreenshot;
 }
-export declare class Ruler extends UI.Widget.VBox {
+class Ruler extends UI.Widget.VBox {
     private contentElementInternal;
     private readonly horizontal;
     private scale;

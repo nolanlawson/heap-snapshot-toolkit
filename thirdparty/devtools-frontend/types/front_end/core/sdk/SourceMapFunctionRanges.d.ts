@@ -17,10 +17,10 @@ export interface NamedFunctionRange {
  * @throws if the ranges are not nested properly. Concretely: start < end for each range, and no
  * "straddling" (i.e. partially overlapping ranges).
  */
-export declare function buildOriginalScopes(ranges: NamedFunctionRange[]): OriginalScope;
+declare function buildOriginalScopes(ranges: NamedFunctionRange[]): OriginalScope;
 /**
  * Implements decoding of the pasta source map specification.
  *
  * See https://github.com/bloomberg/pasta-sourcemaps/blob/main/spec.md
  */
-export declare function decodePastaRanges(encodedRanges: string, names: string[]): NamedFunctionRange[];
+declare function decodePastaRanges(encodedRanges: string, names: string[]): NamedFunctionRange[];

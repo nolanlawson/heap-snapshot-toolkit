@@ -43,16 +43,16 @@ export declare class NodeView {
 /**
  * Generates the port id for the input of node.
  */
-export declare const generateInputPortId: (nodeId: string, inputIndex: number | undefined) => string;
+const generateInputPortId: (nodeId: string, inputIndex: number | undefined) => string;
 /**
  * Generates the port id for the output of node.
  */
-export declare const generateOutputPortId: (nodeId: string, outputIndex: number | undefined) => string;
+const generateOutputPortId: (nodeId: string, outputIndex: number | undefined) => string;
 /**
  * Generates the port id for the param of node.
  */
-export declare const generateParamPortId: (nodeId: string, paramId: string) => string;
-export declare class NodeLabelGenerator {
+const generateParamPortId: (nodeId: string, paramId: string) => string;
+class NodeLabelGenerator {
     private totalNumberOfNodes;
     constructor();
     /**
@@ -63,4 +63,4 @@ export declare class NodeLabelGenerator {
 /**
  * Get the text width using given font style.
  */
-export declare const measureTextWidth: (text: string, fontStyle: string | null) => number;
+const measureTextWidth: (text: string, fontStyle: string | null) => number;

@@ -1,4 +1,4 @@
-export interface EditableSpanData {
+interface EditableSpanData {
     value: string;
 }
 export declare class EditableSpan extends HTMLElement {

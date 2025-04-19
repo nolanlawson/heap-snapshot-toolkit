@@ -4,7 +4,7 @@ declare global {
         'devtools-button': Button;
     }
 }
-export declare const enum Variant {
+declare const enum Variant {
     PRIMARY = "primary",
     TONAL = "tonal",
     OUTLINED = "outlined",
@@ -15,12 +15,12 @@ export declare const enum Variant {
     ICON_TOGGLE = "icon_toggle",
     ADORNER_ICON = "adorner_icon"
 }
-export declare const enum Size {
+declare const enum Size {
     MICRO = "MICRO",
     SMALL = "SMALL",
     REGULAR = "REGULAR"
 }
-export declare const enum ToggleType {
+declare const enum ToggleType {
     PRIMARY = "primary-toggle",
     RED = "red-toggle"
 }
@@ -44,7 +44,7 @@ interface CommonButtonData {
     jslogContext?: string;
     longClickable?: boolean;
 }
-export type ButtonData = CommonButtonData & ({
+type ButtonData = CommonButtonData & ({
     variant: Variant.PRIMARY_TOOLBAR | Variant.TOOLBAR | Variant.ICON;
     iconName: string;
 } | {
@@ -56,7 +56,7 @@ export type ButtonData = CommonButtonData & ({
     toggleType: ToggleType;
     toggled: boolean;
 });
-export declare class Button extends HTMLElement {
+class Button extends HTMLElement {
     #private;
     static formAssociated: boolean;
     constructor();

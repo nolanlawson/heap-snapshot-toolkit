@@ -22,19 +22,19 @@ export declare class BidiKeyboard extends Keyboard {
 /**
  * @internal
  */
-export interface BidiMouseClickOptions extends MouseClickOptions {
+interface BidiMouseClickOptions extends MouseClickOptions {
     origin?: Bidi.Input.Origin;
 }
 /**
  * @internal
  */
-export interface BidiMouseMoveOptions extends MouseMoveOptions {
+interface BidiMouseMoveOptions extends MouseMoveOptions {
     origin?: Bidi.Input.Origin;
 }
 /**
  * @internal
  */
-export interface BidiTouchMoveOptions {
+interface BidiTouchMoveOptions {
     origin?: Bidi.Input.Origin;
 }
 /**
@@ -74,4 +74,3 @@ export declare class BidiTouchscreen extends Touchscreen {
     constructor(page: BidiPage);
     touchStart(x: number, y: number, options?: BidiTouchMoveOptions): Promise<TouchHandle>;
 }
-export {};

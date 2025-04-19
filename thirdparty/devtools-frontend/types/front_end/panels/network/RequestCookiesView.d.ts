@@ -1,6 +1,6 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import * as UI from '../../ui/legacy/legacy.js';
-export declare class RequestCookiesView extends UI.Widget.Widget {
+class RequestCookiesView extends UI.Widget.Widget {
     private request;
     private readonly showFilteredOutCookiesSetting;
     private readonly emptyWidget;

@@ -10,7 +10,7 @@ import { TimelineFlameChartView } from './TimelineFlameChartView.js';
 import { TimelineMiniMap } from './TimelineMiniMap.js';
 import { type TimelineSelection } from './TimelineSelection.js';
 import * as Utils from './utils/utils.js';
-export declare class TimelinePanel extends UI.Panel.Panel implements Client, TimelineModeViewDelegate {
+class TimelinePanel extends UI.Panel.Panel implements Client, TimelineModeViewDelegate {
     #private;
     private readonly dropTarget;
     private readonly recordingOptionUIControls;
@@ -152,7 +152,7 @@ export declare class TimelinePanel extends UI.Panel.Panel implements Client, Tim
      */
     revealInsight(insightModel: Trace.Insights.Types.InsightModel): void;
 }
-export declare const enum State {
+declare const enum State {
     IDLE = "Idle",
     START_PENDING = "StartPending",
     RECORDING = "Recording",
@@ -160,8 +160,8 @@ export declare const enum State {
     LOADING = "Loading",
     RECORDING_FAILED = "RecordingFailed"
 }
-export declare const rowHeight = 18;
-export declare const headerHeight = 20;
+const rowHeight = 18;
+const headerHeight = 20;
 export interface TimelineModeViewDelegate {
     select(selection: TimelineSelection | null): void;
     element: Element;
@@ -169,7 +169,7 @@ export interface TimelineModeViewDelegate {
     selectEntryAtTime(events: Trace.Types.Events.Event[] | null, time: number): void;
     highlightEvent(event: Trace.Types.Events.Event | null): void;
 }
-export declare class StatusPane extends UI.Widget.VBox {
+class StatusPane extends UI.Widget.VBox {
     #private;
     private status;
     private time;
@@ -199,22 +199,22 @@ export declare class StatusPane extends UI.Widget.VBox {
     private updateTimer;
     wasShown(): void;
 }
-export declare class LoadTimelineHandler implements Common.QueryParamHandler.QueryParamHandler {
+class LoadTimelineHandler implements Common.QueryParamHandler.QueryParamHandler {
     static instance(opts?: {
         forceNew: boolean | null;
     }): LoadTimelineHandler;
     handleQueryParam(value: string): void;
 }
-export declare class TraceRevealer implements Common.Revealer.Revealer<SDK.TraceObject.TraceObject> {
+class TraceRevealer implements Common.Revealer.Revealer<SDK.TraceObject.TraceObject> {
     reveal(trace: SDK.TraceObject.TraceObject): Promise<void>;
 }
-export declare class EventRevealer implements Common.Revealer.Revealer<SDK.TraceObject.RevealableEvent> {
+class EventRevealer implements Common.Revealer.Revealer<SDK.TraceObject.RevealableEvent> {
     reveal(rEvent: SDK.TraceObject.RevealableEvent): Promise<void>;
 }
-export declare class InsightRevealer implements Common.Revealer.Revealer<Utils.InsightAIContext.ActiveInsight> {
+class InsightRevealer implements Common.Revealer.Revealer<Utils.InsightAIContext.ActiveInsight> {
     reveal(revealable: Utils.InsightAIContext.ActiveInsight): Promise<void>;
 }
-export declare class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
+class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(context: UI.Context.Context, actionId: string): boolean;
 }
 /**
@@ -222,7 +222,7 @@ export declare class ActionDelegate implements UI.ActionRegistration.ActionDeleg
  * relied upon in the AI Agent code to know which agent to pick by default based
  * on the context of the panel.
  */
-export declare class SelectedInsight {
+class SelectedInsight {
     insight: TimelineComponents.Sidebar.ActiveInsight;
     constructor(insight: TimelineComponents.Sidebar.ActiveInsight);
 }

@@ -1,7 +1,7 @@
 import * as Common from '../../core/common/common.js';
 import * as SDK from '../../core/sdk/sdk.js';
 import * as UI from '../../ui/legacy/legacy.js';
-export declare class MediaQueryInspector extends UI.Widget.Widget implements SDK.TargetManager.SDKModelObserver<SDK.CSSModel.CSSModel> {
+class MediaQueryInspector extends UI.Widget.Widget implements SDK.TargetManager.SDKModelObserver<SDK.CSSModel.CSSModel> {
     private readonly mediaThrottler;
     private readonly getWidthCallback;
     private readonly setWidthCallback;
@@ -26,12 +26,12 @@ export declare class MediaQueryInspector extends UI.Widget.Widget implements SDK
     wasShown(): void;
     private createElementFromMediaQueryModel;
 }
-export declare const enum Section {
+declare const enum Section {
     MAX = 0,
     MIN_MAX = 1,
     MIN = 2
 }
-export declare class MediaQueryUIModel {
+class MediaQueryUIModel {
     private cssMedia;
     private readonly minWidthExpressionInternal;
     private readonly maxWidthExpressionInternal;

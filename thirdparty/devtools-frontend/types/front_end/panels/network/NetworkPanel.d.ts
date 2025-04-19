@@ -11,7 +11,7 @@ import * as Search from '../search/search.js';
 import { NetworkItemView } from './NetworkItemView.js';
 import { NetworkLogView } from './NetworkLogView.js';
 import { type NetworkTimeCalculator } from './NetworkTimeCalculator.js';
-export declare class NetworkPanel extends UI.Panel.Panel implements UI.ContextMenu
+class NetworkPanel extends UI.Panel.Panel implements UI.ContextMenu
     .Provider<SDK.NetworkRequest.NetworkRequest | SDK.Resource.Resource | Workspace.UISourceCode.UISourceCode>, UI.View.ViewLocationResolver {
     private readonly networkLogShowOverviewSetting;
     private readonly networkLogLargeRowsSetting;
@@ -88,17 +88,17 @@ export declare class NetworkPanel extends UI.Panel.Panel implements UI.ContextMe
     private onUpdateRequest;
     resolveLocation(locationName: string): UI.View.ViewLocation | null;
 }
-export declare class RequestRevealer implements Common.Revealer.Revealer<SDK.NetworkRequest.NetworkRequest> {
+class RequestRevealer implements Common.Revealer.Revealer<SDK.NetworkRequest.NetworkRequest> {
     reveal(request: SDK.NetworkRequest.NetworkRequest): Promise<void>;
 }
-export declare class RequestIdRevealer implements Common.Revealer.Revealer<NetworkForward.NetworkRequestId.NetworkRequestId> {
+class RequestIdRevealer implements Common.Revealer.Revealer<NetworkForward.NetworkRequestId.NetworkRequestId> {
     reveal(requestId: NetworkForward.NetworkRequestId.NetworkRequestId): Promise<void>;
 }
-export declare class NetworkLogWithFilterRevealer implements Common.Revealer
+class NetworkLogWithFilterRevealer implements Common.Revealer
     .Revealer<Extensions.ExtensionServer.RevealableNetworkRequestFilter | NetworkForward.UIFilter.UIRequestFilter> {
     reveal(request: Extensions.ExtensionServer.RevealableNetworkRequestFilter | NetworkForward.UIFilter.UIRequestFilter): Promise<void>;
 }
-export declare class FilmStripRecorder implements Trace.TracingManager.TracingManagerClient {
+class FilmStripRecorder implements Trace.TracingManager.TracingManagerClient {
     #private;
     private tracingManager;
     private resourceTreeModel;
@@ -114,13 +114,13 @@ export declare class FilmStripRecorder implements Trace.TracingManager.TracingMa
     isRecording(): boolean;
     stopRecording(callback: (filmStrip: Trace.Extras.FilmStrip.Data) => void): void;
 }
-export declare class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
+class ActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(context: UI.Context.Context, actionId: string): boolean;
 }
-export declare class RequestLocationRevealer implements Common.Revealer.Revealer<NetworkForward.UIRequestLocation.UIRequestLocation> {
+class RequestLocationRevealer implements Common.Revealer.Revealer<NetworkForward.UIRequestLocation.UIRequestLocation> {
     reveal(location: NetworkForward.UIRequestLocation.UIRequestLocation): Promise<void>;
 }
-export declare class SearchNetworkView extends Search.SearchView.SearchView {
+class SearchNetworkView extends Search.SearchView.SearchView {
     private constructor();
     static instance(opts?: {
         forceNew: boolean | null;

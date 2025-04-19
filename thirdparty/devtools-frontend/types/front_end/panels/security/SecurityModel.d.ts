@@ -7,14 +7,14 @@ export declare class SecurityModel extends SDK.SDKModel.SDKModel<EventTypes> {
     resourceTreeModel(): SDK.ResourceTreeModel.ResourceTreeModel;
     networkManager(): SDK.NetworkManager.NetworkManager;
 }
-export declare function securityStateCompare(a: Protocol.Security.SecurityState, b: Protocol.Security.SecurityState): number;
-export declare enum Events {
+declare function securityStateCompare(a: Protocol.Security.SecurityState, b: Protocol.Security.SecurityState): number;
+declare enum Events {
     VisibleSecurityStateChanged = "VisibleSecurityStateChanged"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.VisibleSecurityStateChanged]: PageVisibleSecurityState;
 }
-export declare const SummaryMessages: {
+const SummaryMessages: {
     [x: string]: () => string;
 };
 export declare class PageVisibleSecurityState {
@@ -24,7 +24,7 @@ export declare class PageVisibleSecurityState {
     securityStateIssueIds: string[];
     constructor(securityState: Protocol.Security.SecurityState, certificateSecurityState: Protocol.Security.CertificateSecurityState | null, safetyTipInfo: Protocol.Security.SafetyTipInfo | null, securityStateIssueIds: string[]);
 }
-export declare class CertificateSecurityState {
+class CertificateSecurityState {
     protocol: string;
     keyExchange: string;
     keyExchangeGroup: string | null;
@@ -53,7 +53,7 @@ declare class SafetyTipInfo {
     safeUrl: string | null;
     constructor(safetyTipInfo: Protocol.Security.SafetyTipInfo);
 }
-export declare class SecurityStyleExplanation {
+class SecurityStyleExplanation {
     securityState: Protocol.Security.SecurityState;
     title: string | undefined;
     summary: string;
@@ -63,4 +63,3 @@ export declare class SecurityStyleExplanation {
     recommendations: string[];
     constructor(securityState: Protocol.Security.SecurityState, title: string | undefined, summary: string, description: string, certificate?: string[] | undefined, mixedContentType?: Protocol.Security.MixedContentType | undefined, recommendations?: string[] | undefined);
 }
-export {};

@@ -13,26 +13,26 @@ export declare class CSSContainerQuery extends CSSQuery {
     active(): boolean;
     getContainerForNode(nodeId: Protocol.DOM.NodeId): Promise<CSSContainerQueryContainer | undefined>;
 }
-export declare class CSSContainerQueryContainer {
+class CSSContainerQueryContainer {
     readonly containerNode: DOMNode;
     constructor(containerNode: DOMNode);
     getContainerSizeDetails(): Promise<ContainerQueriedSizeDetails | undefined>;
 }
-export declare const getQueryAxisFromContainerType: (propertyValue: string) => QueryAxis;
-export declare const getPhysicalAxisFromQueryAxis: (queryAxis: QueryAxis, writingMode: string) => PhysicalAxis;
-export interface ContainerQueriedSizeDetails {
+const getQueryAxisFromContainerType: (propertyValue: string) => QueryAxis;
+const getPhysicalAxisFromQueryAxis: (queryAxis: QueryAxis, writingMode: string) => PhysicalAxis;
+interface ContainerQueriedSizeDetails {
     queryAxis: QueryAxis;
     physicalAxis: PhysicalAxis;
     width?: string;
     height?: string;
 }
-export declare const enum QueryAxis {
+declare const enum QueryAxis {
     NONE = "",
     INLINE = "inline-size",
     BLOCK = "block-size",
     BOTH = "size"
 }
-export declare const enum PhysicalAxis {
+declare const enum PhysicalAxis {
     NONE = "",
     HORIZONTAL = "Horizontal",
     VERTICAL = "Vertical",

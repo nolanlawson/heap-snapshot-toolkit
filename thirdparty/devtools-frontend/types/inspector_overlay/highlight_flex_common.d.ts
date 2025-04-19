@@ -43,8 +43,8 @@ interface GapQuads {
     mainGaps: Quad[][];
     crossGaps: Quad[];
 }
-export declare function drawLayoutFlexItemHighlight(highlight: FlexItemHighlight, itemPath: PathCommands, context: CanvasRenderingContext2D, emulationScaleFactor: number): void;
-export declare function drawLayoutFlexContainerHighlight(highlight: FlexContainerHighlight, context: CanvasRenderingContext2D, emulationScaleFactor: number): void;
+declare function drawLayoutFlexItemHighlight(highlight: FlexItemHighlight, itemPath: PathCommands, context: CanvasRenderingContext2D, emulationScaleFactor: number): void;
+declare function drawLayoutFlexContainerHighlight(highlight: FlexContainerHighlight, context: CanvasRenderingContext2D, emulationScaleFactor: number): void;
 /**
  * We get a list of paths for each flex item from the backend. From this list, we compute the resulting paths for each
  * flex line too (making it span the entire container size (in the main direction)). We also process the item path so
@@ -54,8 +54,8 @@ export declare function drawLayoutFlexContainerHighlight(highlight: FlexContaine
  * @param lines
  * @param isHorizontalFlow
  */
-export declare function getLinesAndItemsQuads(container: PathCommands, lines: FlexLinesData, isHorizontalFlow: boolean, isReverse: boolean): LineQuads[];
-export declare function getGapQuads(highlight: Pick<FlexContainerHighlight, 'crossGap' | 'mainGap' | 'isHorizontalFlow' | 'isReverse'>, lineQuads: LineQuads[]): GapQuads;
+declare function getLinesAndItemsQuads(container: PathCommands, lines: FlexLinesData, isHorizontalFlow: boolean, isReverse: boolean): LineQuads[];
+declare function getGapQuads(highlight: Pick<FlexContainerHighlight, 'crossGap' | 'mainGap' | 'isHorizontalFlow' | 'isReverse'>, lineQuads: LineQuads[]): GapQuads;
 /**
  * Create a quad for the gap that exists between 2 quads.
  *
@@ -71,7 +71,7 @@ export declare function getGapQuads(highlight: Pick<FlexContainerHighlight, 'cro
  * quad2)
  * @param isReverse whether the direction is reversed (quad1 below quad2 or quad1 right of quad2)
  */
-export declare function getGapQuadBetweenQuads(quad1: Quad, quad2: Quad, size: number, vertically: boolean, isReverse?: boolean): {
+declare function getGapQuadBetweenQuads(quad1: Quad, quad2: Quad, size: number, vertically: boolean, isReverse?: boolean): {
     p1: {
         x: number;
         y: number;
@@ -99,7 +99,7 @@ export declare function getGapQuadBetweenQuads(quad1: Quad, quad2: Quad, size: n
  * @param isHorizontalFlow
  * @param isReverse
  */
-export declare function uniteQuads(quad1: Quad, quad2: Quad, isHorizontalFlow: boolean, isReverse: boolean): Quad;
+declare function uniteQuads(quad1: Quad, quad2: Quad, isHorizontalFlow: boolean, isReverse: boolean): Quad;
 /**
  * Given 2 quads, with one being contained inside the other, grow the inner one, along one direction, so it ends up
  * flush aginst the outer one.
@@ -107,20 +107,19 @@ export declare function uniteQuads(quad1: Quad, quad2: Quad, isHorizontalFlow: b
  * @param outerQuad
  * @param horizontally The direction to grow the inner quad along
  */
-export declare function growQuadToEdgesOf(innerQuad: Quad, outerQuad: Quad, horizontally: boolean): Quad;
+declare function growQuadToEdgesOf(innerQuad: Quad, outerQuad: Quad, horizontally: boolean): Quad;
 /**
  * Return the x/y intersection of the 2 segments
  * @param segment1
  * @param segment2
  * @return the point where the segments intersect
  */
-export declare function intersectSegments([p1, p2]: Position[], [p3, p4]: Position[]): Position;
+declare function intersectSegments([p1, p2]: Position[], [p3, p4]: Position[]): Position;
 /**
  * Does the provided segment contain the provided point
  * @param segment
  * @param point
  */
-export declare function segmentContains([p1, p2]: Position[], point: Position): boolean;
-export declare function distance(p1: Position, p2: Position): number;
-export declare function getColinearPointAtDistance(p1: Position, p2: Position, distance: number): Position;
-export {};
+declare function segmentContains([p1, p2]: Position[], point: Position): boolean;
+declare function distance(p1: Position, p2: Position): number;
+declare function getColinearPointAtDistance(p1: Position, p2: Position, distance: number): Position;

@@ -1,7 +1,7 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import * as UI from '../../ui/legacy/legacy.js';
 import * as LayerViewer from '../layer_viewer/layer_viewer.js';
-export declare class LayersPanel extends UI.Panel.PanelWithSidebar implements SDK.TargetManager.Observer {
+class LayersPanel extends UI.Panel.PanelWithSidebar implements SDK.TargetManager.Observer {
     private model;
     private readonly layerViewHost;
     private readonly layerTreeOutline;
@@ -29,7 +29,7 @@ export declare class LayersPanel extends UI.Panel.PanelWithSidebar implements SD
     private showImage;
     private onScaleChanged;
 }
-export declare const DetailsViewTabs: {
+const DetailsViewTabs: {
     Details: string;
     Profiler: string;
 };

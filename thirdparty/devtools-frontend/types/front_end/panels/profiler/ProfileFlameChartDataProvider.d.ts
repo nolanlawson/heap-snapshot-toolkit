@@ -91,7 +91,7 @@ export declare class ProfileFlameChart extends ProfileFlameChart_base implements
     supportsCaseSensitiveSearch(): boolean;
     supportsRegexSearch(): boolean;
 }
-export declare class OverviewCalculator implements PerfUI.TimelineGrid.Calculator {
+class OverviewCalculator implements PerfUI.TimelineGrid.Calculator {
     readonly formatter: (arg0: number, arg1?: number | undefined) => string;
     minimumBoundaries: number;
     maximumBoundaries: number;
@@ -115,7 +115,7 @@ declare const OverviewPane_base: {
         dispatchEventToListeners<T_3 extends OverviewPaneEvents.WINDOW_CHANGED>(eventType: Platform.TypeScriptUtilities.NoUnion<T_3>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<OverviewPaneEventTypes, T_3>): void;
     };
 } & typeof UI.Widget.VBox;
-export declare class OverviewPane extends OverviewPane_base implements PerfUI.FlameChart.FlameChartDelegate {
+class OverviewPane extends OverviewPane_base implements PerfUI.FlameChart.FlameChartDelegate {
     overviewContainer: HTMLElement;
     readonly overviewCalculator: OverviewCalculator;
     readonly overviewGrid: PerfUI.OverviewGrid.OverviewGrid;
@@ -138,14 +138,13 @@ export declare class OverviewPane extends OverviewPane_base implements PerfUI.Fl
     calculateDrawData(width: number): Uint8Array;
     resetCanvas(width: number, height: number): void;
 }
-export declare const enum OverviewPaneEvents {
+declare const enum OverviewPaneEvents {
     WINDOW_CHANGED = "WindowChanged"
 }
-export interface OverviewPaneWindowChangedEvent {
+interface OverviewPaneWindowChangedEvent {
     windowTimeLeft: number;
     windowTimeRight: number;
 }
-export interface OverviewPaneEventTypes {
+interface OverviewPaneEventTypes {
     [OverviewPaneEvents.WINDOW_CHANGED]: OverviewPaneWindowChangedEvent;
 }
-export {};

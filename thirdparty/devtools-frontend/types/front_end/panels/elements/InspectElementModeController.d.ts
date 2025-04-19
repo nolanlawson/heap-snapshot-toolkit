@@ -1,6 +1,6 @@
 import * as SDK from '../../core/sdk/sdk.js';
 import * as UI from '../../ui/legacy/legacy.js';
-export declare class InspectElementModeController implements SDK.TargetManager.SDKModelObserver<SDK.OverlayModel.OverlayModel> {
+class InspectElementModeController implements SDK.TargetManager.SDKModelObserver<SDK.OverlayModel.OverlayModel> {
     private readonly toggleSearchAction;
     private mode;
     private readonly showDetailedInspectTooltipSetting;
@@ -18,6 +18,6 @@ export declare class InspectElementModeController implements SDK.TargetManager.S
     private inspectNode;
     private showDetailedInspectTooltipChanged;
 }
-export declare class ToggleSearchActionDelegate implements UI.ActionRegistration.ActionDelegate {
+class ToggleSearchActionDelegate implements UI.ActionRegistration.ActionDelegate {
     handleAction(_context: UI.Context.Context, actionId: string): boolean;
 }

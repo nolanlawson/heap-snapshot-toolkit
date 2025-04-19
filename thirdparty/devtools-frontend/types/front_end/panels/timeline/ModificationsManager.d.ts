@@ -2,14 +2,14 @@ import * as Trace from '../../models/trace/trace.js';
 import * as TimelineComponents from '../../panels/timeline/components/components.js';
 import { EntriesFilter } from './EntriesFilter.js';
 import type * as Overlays from './overlays/overlays.js';
-export type UpdateAction = 'Remove' | 'Add' | 'UpdateLabel' | 'UpdateTimeRange' | 'UpdateLinkToEntry' | 'EnterLabelEditState';
+type UpdateAction = 'Remove' | 'Add' | 'UpdateLabel' | 'UpdateTimeRange' | 'UpdateLinkToEntry' | 'EnterLabelEditState';
 export declare class AnnotationModifiedEvent extends Event {
     overlay: Overlays.Overlays.TimelineOverlay;
     action: UpdateAction;
     static readonly eventName = "annotationmodifiedevent";
     constructor(overlay: Overlays.Overlays.TimelineOverlay, action: UpdateAction);
 }
-export declare class ModificationsManager extends EventTarget {
+class ModificationsManager extends EventTarget {
     #private;
     /**
      * Gets the ModificationsManager instance corresponding to a trace

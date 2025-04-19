@@ -11,7 +11,7 @@ declare const FilteredListWidget_base: {
         dispatchEventToListeners<T_3 extends Events.HIDDEN>(eventType: Platform.TypeScriptUtilities.NoUnion<T_3>, ...eventData: Common.EventTarget.EventPayloadToRestParameters<EventTypes, T_3>): void;
     };
 } & typeof UI.Widget.VBox;
-export declare class FilteredListWidget extends FilteredListWidget_base implements UI.ListControl.ListDelegate<number> {
+class FilteredListWidget extends FilteredListWidget_base implements UI.ListControl.ListDelegate<number> {
     private promptHistory;
     private scoringTimer;
     private filterTimer;
@@ -67,10 +67,10 @@ export declare class FilteredListWidget extends FilteredListWidget_base implemen
     private scheduleFilter;
     private selectItem;
 }
-export declare const enum Events {
+declare const enum Events {
     HIDDEN = "hidden"
 }
-export interface EventTypes {
+interface EventTypes {
     [Events.HIDDEN]: void;
 }
 export declare class Provider {
@@ -92,9 +92,9 @@ export declare class Provider {
     notFoundText(_query: string): string;
     detach(): void;
 }
-export declare function registerProvider(registration: ProviderRegistration): void;
-export declare function getRegisteredProviders(): ProviderRegistration[];
-export interface ProviderRegistration {
+declare function registerProvider(registration: ProviderRegistration): void;
+declare function getRegisteredProviders(): ProviderRegistration[];
+interface ProviderRegistration {
     prefix: string;
     iconName: string;
     provider: () => Promise<Provider>;
@@ -102,4 +102,3 @@ export interface ProviderRegistration {
     titlePrefix: (() => string);
     titleSuggestion?: (() => string);
 }
-export {};

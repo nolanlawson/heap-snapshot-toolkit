@@ -8,7 +8,7 @@ export declare class Panel extends VBox {
     searchableView(): SearchableView | null;
     elementsToRestoreScrollPositionsFor(): Element[];
 }
-export declare class PanelWithSidebar extends Panel {
+class PanelWithSidebar extends Panel {
     private readonly panelSplitWidget;
     private readonly mainWidget;
     private readonly sidebarWidget;

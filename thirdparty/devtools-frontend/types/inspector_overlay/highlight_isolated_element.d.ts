@@ -14,7 +14,7 @@ export interface IsolatedElementHighlight {
         maskColor: string;
     };
 }
-export declare function drawIsolatedElementHighlight(highlight: IsolatedElementHighlight, context: CanvasRenderingContext2D, canvasWidth: number, canvasHeight: number, emulationScaleFactor: number): {
+declare function drawIsolatedElementHighlight(highlight: IsolatedElementHighlight, context: CanvasRenderingContext2D, canvasWidth: number, canvasHeight: number, emulationScaleFactor: number): {
     widthPath: Path2D;
     heightPath: Path2D;
     bidirectionPath: Path2D;

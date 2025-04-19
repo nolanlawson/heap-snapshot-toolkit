@@ -42,7 +42,7 @@ export declare enum Type {
     WORKLET = "worklet",
     TAB = "tab"
 }
-export declare const enum Capability {
+declare const enum Capability {
     BROWSER = 1,
     DOM = 2,
     JS = 4,
