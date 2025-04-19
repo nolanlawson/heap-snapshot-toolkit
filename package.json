@@ -13,6 +13,7 @@
   "license": "Apache-2.0",
   "description": "A tool for parsing Chromium heap snapshot (`*.heapsnapshot`) files and doing useful things with them.",
   "files": [
+    "index.d.ts",
     "thirdparty"
   ],
   "repository": {
