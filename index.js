@@ -1,5 +1,4 @@
 import { HeapSnapshotLoader, SecondaryInitManager } from './thirdparty/devtools-frontend/index.js'
-
 export * as DevToolsAPI from './thirdparty/devtools-frontend/index.js'
 
 export async function parse (readStream) {
@@ -40,14 +39,32 @@ export async function parse (readStream) {
   }
 }
 
-export async function diff (startSnapshot, endSnapshot) {
+async function getAggregatesForDiff (snapshot) {
   // For reference see:
   // https://github.com/ChromeDevTools/devtools-frontend/blob/898fd09/front_end/panels/profiler/HeapSnapshotDataGrids.ts#L999-L1016
-  const startSnapshotUid = startSnapshot.uid
-  let interfaceDefinitions = await startSnapshot.interfaceDefinitions()
-  const aggregatesForDiff = await startSnapshot.aggregatesForDiff(interfaceDefinitions)
-  startSnapshot = undefined // free memory
-  interfaceDefinitions = undefined // free memory
+  const interfaceDefinitions = await snapshot.interfaceDefinitions()
+  const aggregatesForDiff = await snapshot.aggregatesForDiff(interfaceDefinitions)
+  return aggregatesForDiff
+}
 
+export async function diff (startSnapshot, endSnapshot) {
+  const startSnapshotUid = startSnapshot.uid
+  const aggregatesForDiff = await getAggregatesForDiff(startSnapshot)
   return await endSnapshot.calculateSnapshotDiff(startSnapshotUid, aggregatesForDiff)
+}
+
+export async function * diffFromStreams (startStream, endStream) {
+  // Read in snapshots serially to avoid using too much memory at once
+  let startSnapshot = await parse(startStream)
+  yield { type: 'start', result: startSnapshot }
+
+  const startSnapshotUid = startSnapshot.uid
+  const aggregatesForDiff = await getAggregatesForDiff(startSnapshot)
+  startSnapshot = undefined // free memory
+
+  const endSnapshot = await parse(endStream)
+  yield { type: 'end', result: endSnapshot }
+
+  const diff = await endSnapshot.calculateSnapshotDiff(startSnapshotUid, aggregatesForDiff)
+  yield { type: 'diff', result: diff }
 }
