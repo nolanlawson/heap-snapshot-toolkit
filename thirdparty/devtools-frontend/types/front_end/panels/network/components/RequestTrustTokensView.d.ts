@@ -7,7 +7,6 @@ class RequestTrustTokensView extends LegacyWrapper.LegacyWrapper.WrappableCompon
     constructor(request: SDK.NetworkRequest.NetworkRequest);
     wasShown(): void;
     willHide(): void;
-    connectedCallback(): void;
     render(): Promise<void>;
 }
 declare global {

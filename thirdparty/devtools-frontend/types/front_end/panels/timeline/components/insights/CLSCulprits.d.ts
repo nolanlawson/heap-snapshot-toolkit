@@ -6,6 +6,7 @@ class CLSCulprits extends BaseInsightComponent<CLSCulpritsInsightModel> {
     #private;
     static readonly litTagName: Lit.StaticHtml.StaticValue;
     internalName: string;
+    protected hasAskAiSupport(): boolean;
     createOverlays(): Overlays.Overlays.TimelineOverlay[];
     renderContent(): Lit.LitTemplate;
 }

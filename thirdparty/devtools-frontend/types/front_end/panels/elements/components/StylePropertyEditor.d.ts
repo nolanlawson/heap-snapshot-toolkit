@@ -33,8 +33,6 @@ class PropertyDeselectedEvent extends Event {
 class StylePropertyEditor extends HTMLElement {
     #private;
     protected readonly editableProperties: EditableProperty[];
-    constructor();
-    connectedCallback(): void;
     getEditableProperties(): EditableProperty[];
     set data(data: FlexEditorData);
     protected findIcon(_query: string, _computedProperties: Map<string, string>): IconInfo | null;

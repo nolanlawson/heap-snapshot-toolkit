@@ -12,7 +12,6 @@ interface ResponseHeaderSectionData {
 declare class ResponseHeaderSectionBase extends HTMLElement {
     protected readonly shadow: ShadowRoot;
     protected headerDetails: HeaderDetailsDescriptor[];
-    connectedCallback(): void;
     protected setHeaders(headers: NameValue[]): void;
     protected highlightHeaders(data: ResponseHeaderSectionData): void;
 }

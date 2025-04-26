@@ -10,7 +10,6 @@ class DocumentLatency extends BaseInsightComponent<DocumentLatencyInsightModel> 
     protected hasAskAiSupport(): boolean;
     createOverlays(): Overlays.Overlays.TimelineOverlay[];
     getEstimatedSavingsTime(): Trace.Types.Timing.Milli | null;
-    getEstimatedSavingsBytes(): number | null;
     renderContent(): Lit.LitTemplate;
 }
 declare global {
