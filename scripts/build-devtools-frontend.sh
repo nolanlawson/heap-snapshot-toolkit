@@ -12,8 +12,8 @@ node --max-old-space-size=4096 ../heap-snapshot-toolkit/node_modules/rollup/dist
 cd ../heap-snapshot-toolkit
 rm -fr thirdparty/devtools-frontend/{front_end,inspector_overlay,test,tsconfig.tsbuildinfo}
 
-# remove unused .d.ts files since devtools-frontend has a lot
-echo '{ "include": ["tmp.d.ts", "thirdparty"] }' > tsconfig.json
-cp index.d.ts tmp.d.ts
-npx tsr --recursive --include-d-ts --write 'tmp\.d\.ts$'
-rm -f tsconfig.json tmp.d.ts
+# bundle the remaining .d.ts files
+api-extractor run
+
+# delete unbundled .d.ts files
+rm -fr ./thirdparty/devtools-frontend/types

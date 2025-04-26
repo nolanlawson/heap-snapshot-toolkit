@@ -1,11 +1,10 @@
 import {ReadStream} from 'node:fs'
 import {
-    JSHeapSnapshot, SecondaryInitManager
-} from './thirdparty/devtools-frontend/types/front_end/entrypoints/heap_snapshot_worker/HeapSnapshot'
-import {
-    HeapSnapshotLoader
-} from './thirdparty/devtools-frontend/types/front_end/entrypoints/heap_snapshot_worker/HeapSnapshotLoader'
-import { HeapSnapshotModel } from './thirdparty/devtools-frontend/types/front_end/models/heap_snapshot_model/heap_snapshot_model'
+    HeapSnapshotLoader,
+    HeapSnapshotModel,
+    JSHeapSnapshot,
+    SecondaryInitManager
+} from './thirdparty/devtools-frontend/index.js'
 
 export type JSHeapSnapshotDiff = {[name: string]: any}
 
@@ -53,6 +52,6 @@ export declare function diffFromStreams(startStream: any, endStream: any): Async
  */
 export declare const DevToolsAPI: {
     HeapSnapshotLoader: HeapSnapshotLoader,
-    HeapSnapshotModel: HeapSnapshotModel,
+    HeapSnapshotModel: typeof HeapSnapshotModel,
     SecondaryInitManager: SecondaryInitManager
 }
