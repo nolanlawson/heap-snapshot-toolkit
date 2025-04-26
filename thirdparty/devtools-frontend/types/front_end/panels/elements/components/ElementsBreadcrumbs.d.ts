@@ -13,7 +13,6 @@ interface ElementsBreadcrumbsData {
 }
 class ElementsBreadcrumbs extends HTMLElement {
     #private;
-    connectedCallback(): void;
     set data(data: ElementsBreadcrumbsData);
     disconnectedCallback(): void;
 }

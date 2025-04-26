@@ -40,7 +40,8 @@ export declare enum Type {
     BROWSER = "browser",
     AUCTION_WORKLET = "auction-worklet",
     WORKLET = "worklet",
-    TAB = "tab"
+    TAB = "tab",
+    NODE_WORKER = "node-worker"
 }
 declare const enum Capability {
     BROWSER = 1,

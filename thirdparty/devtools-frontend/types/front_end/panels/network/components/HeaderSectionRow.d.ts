@@ -25,7 +25,6 @@ interface HeaderSectionRowData {
 }
 class HeaderSectionRow extends HTMLElement {
     #private;
-    connectedCallback(): void;
     set data(data: HeaderSectionRowData);
     focus(): void;
 }

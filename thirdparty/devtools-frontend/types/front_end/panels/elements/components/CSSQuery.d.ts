@@ -8,7 +8,6 @@ interface CSSQueryData {
 class CSSQuery extends HTMLElement {
     #private;
     set data(data: CSSQueryData);
-    connectedCallback(): void;
 }
 declare global {
     interface HTMLElementTagNameMap {
