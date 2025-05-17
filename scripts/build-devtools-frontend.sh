@@ -12,6 +12,11 @@ node --max-old-space-size=4096 ../heap-snapshot-toolkit/node_modules/rollup/dist
 cd ../heap-snapshot-toolkit
 rm -fr thirdparty/devtools-frontend/{front_end,inspector_overlay,test,tsconfig.tsbuildinfo}
 
+# fix for this class that isn't properly exported by rollup-plugin-typescript for some reason
+for file in $(grep -lr CSSInJS thirdparty/devtools-frontend/types); do
+  echo "export type CSSInJS = string&{_tag: 'CSS-in-JS'}" >> "${file}"
+done
+
 # bundle the remaining .d.ts files
 npx api-extractor run
 
