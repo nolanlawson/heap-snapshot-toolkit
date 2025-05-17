@@ -33,6 +33,15 @@ declare class AllocationStackFrame {
     constructor(functionName: string, scriptName: string, scriptId: number, line: number, column: number);
 }
 
+/**
+ * Appends the list of `styles` as individual `<style>` elements to the
+ * given `node`.
+ *
+ * @param node the `Node` to append the `<style>` elements to.
+ * @param styles an optional list of styles to append to the `node`.
+ */
+declare function appendStyle(node: Node, ...styles: CSSInJS[]): void;
+
 declare interface ArgumentsToBuildDominatedNodes extends ArgumentsToComputeDominatorsAndRetainedSizes, DominatorsAndRetainedSizes {
 }
 
@@ -198,6 +207,8 @@ declare const createPlainTextSearchRegex: (query: string, flags?: string) => Reg
 
 declare const createSearchRegex: (query: string, caseSensitive: boolean, isRegex: boolean, matchWholeWord?: boolean) => RegExp;
 
+declare type CSSInJS = string&{_tag: 'CSS-in-JS'}
+
 declare namespace DateUtilities {
     export {
         isValid,
@@ -275,7 +286,9 @@ declare namespace DOMUtilities {
     export {
         deepActiveElement,
         getEnclosingShadowRootForNode,
-        rangeOfWord
+        rangeOfWord,
+        appendStyle,
+        CSSInJS
     }
 }
 
