@@ -1,4 +1,4 @@
-/* Generated from devtools-frontend@0a62094 via build-devtools-frontend.sh. Source: https://github.com/ChromeDevTools/devtools-frontend/commit/0a62094 */
+/* Generated from devtools-frontend@8da2e4a via build-devtools-frontend.sh. Source: https://github.com/ChromeDevTools/devtools-frontend/commit/8da2e4a */
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *

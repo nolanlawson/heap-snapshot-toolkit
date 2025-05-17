@@ -13,7 +13,7 @@ cd ../heap-snapshot-toolkit
 rm -fr thirdparty/devtools-frontend/{front_end,inspector_overlay,test,tsconfig.tsbuildinfo}
 
 # bundle the remaining .d.ts files
-api-extractor run
+npx api-extractor run
 
 # delete unbundled .d.ts files
 rm -fr ./thirdparty/devtools-frontend/types
