@@ -1,0 +1,13 @@
+diff --git a/dist/es/index.js b/dist/es/index.js
+index 6b7faa06d156797c31f2a33f0c5ae2d77b42d381..72467dc80d64b3af1b3bff76f62efb1a5b01b602 100644
+--- a/dist/es/index.js
++++ b/dist/es/index.js
+@@ -473,6 +473,8 @@ function getEmittedFile(fileName, emittedFiles, tsCache) {
+  * containing files emitted by the Typescript compiler.
+  */
+ function findTypescriptOutput(ts, parsedOptions, id, emittedFiles, tsCache) {
++    // hopefully temporary fix for getting an assertion error here from typescript
++    parsedOptions.options.configFilePath = parsedOptions.options.configFilePath ?? '/tmp/fake.tsconfig.json'
+     const emittedFileNames = ts.getOutputFileNames(parsedOptions, id, !ts.sys.useCaseSensitiveFileNames);
+     const codeFile = emittedFileNames.find(isCodeOutputFile);
+     const mapFile = emittedFileNames.find(isMapOutputFile);

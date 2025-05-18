@@ -1,4 +1,4 @@
-/* Generated from devtools-frontend@0638bcf via build-devtools-frontend.sh. Source: https://github.com/ChromeDevTools/devtools-frontend/commit/0638bcf */
+/* Generated from devtools-frontend@0987a35 via build-devtools-frontend.sh. Source: https://github.com/ChromeDevTools/devtools-frontend/commit/0987a35 */
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -4277,7 +4277,7 @@ class JSHeapSnapshotNode extends HeapSnapshotNode {
             nextFromEnd = !nextFromEnd;
         }
         if (edgeIndexFromStart <= edgeIndexFromEnd) {
-            categoryNameStart += ', ...';
+            categoryNameStart += ', …';
         }
         if (categoryNameEnd.length > 1) {
             categoryNameStart += ', ';
