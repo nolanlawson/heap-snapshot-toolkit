@@ -4,6 +4,14 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  typescript: ^5.8.3
+
+patchedDependencies:
+  '@rollup/plugin-typescript@12.1.2':
+    hash: 41e21d992a12ba14384d47712c496df0b50830f545d47a02d0809246af91eed1
+    path: patches/@rollup__plugin-typescript@12.1.2.patch
+
 importers:
 
   .:
@@ -22,7 +30,7 @@ importers:
         version: 3.0.4(rollup@4.40.2)
       '@rollup/plugin-typescript':
         specifier: ^12.1.2
-        version: 12.1.2(rollup@4.40.2)(tslib@2.8.1)(typescript@5.8.3)
+        version: 12.1.2(patch_hash=41e21d992a12ba14384d47712c496df0b50830f545d47a02d0809246af91eed1)(rollup@4.40.2)(tslib@2.8.1)(typescript@5.8.3)
       '@rollup/plugin-virtual':
         specifier: ^3.0.2
         version: 3.0.2(rollup@4.40.2)
@@ -136,7 +144,7 @@ packages:
     peerDependencies:
       rollup: ^2.14.0||^3.0.0||^4.0.0
       tslib: '*'
-      typescript: '>=3.7.0'
+      typescript: ^5.8.3
     peerDependenciesMeta:
       rollup:
         optional: true
@@ -1362,11 +1370,6 @@ packages:
     resolution: {integrity: sha512-3KS2b+kL7fsuk/eJZ7EQdnEmQoaho/r6KUef7hxvltNA5DR8NAUM+8wJMbJyZ4G9/7i3v5zPBIMN5aybAh2/Jg==}
     engines: {node: '>= 0.4'}
 
-  typescript@5.8.2:
-    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   typescript@5.8.3:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
     engines: {node: '>=14.17'}
@@ -1490,7 +1493,7 @@ snapshots:
       resolve: 1.22.10
       semver: 7.5.4
       source-map: 0.6.1
-      typescript: 5.8.2
+      typescript: 5.8.3
     transitivePeerDependencies:
       - '@types/node'
 
@@ -1538,7 +1541,7 @@ snapshots:
     optionalDependencies:
       rollup: 4.40.2
 
-  '@rollup/plugin-typescript@12.1.2(rollup@4.40.2)(tslib@2.8.1)(typescript@5.8.3)':
+  '@rollup/plugin-typescript@12.1.2(patch_hash=41e21d992a12ba14384d47712c496df0b50830f545d47a02d0809246af91eed1)(rollup@4.40.2)(tslib@2.8.1)(typescript@5.8.3)':
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@4.40.2)
       resolve: 1.22.10
@@ -2991,8 +2994,6 @@ snapshots:
       is-typed-array: 1.1.15
       possible-typed-array-names: 1.1.0
       reflect.getprototypeof: 1.0.10
-
-  typescript@5.8.2: {}
 
   typescript@5.8.3: {}
 
