@@ -1,4 +1,4 @@
-/* Generated from devtools-frontend@0987a35 via build-devtools-frontend.sh. Source: https://github.com/ChromeDevTools/devtools-frontend/commit/0987a35 */
+/* Generated from devtools-frontend@3431527 via build-devtools-frontend.sh. Source: https://github.com/ChromeDevTools/devtools-frontend/commit/3431527 */
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -129,8 +129,6 @@ class Aggregate {
     maxRet;
     name;
     idxs;
-    constructor() {
-    }
 }
 class AggregateForDiff {
     name;
@@ -174,8 +172,6 @@ class DiffForClass {
     addedIndexes;
     countDelta;
     sizeDelta;
-    constructor() {
-    }
 }
 class ComparatorConfig {
     fieldName1;
@@ -199,8 +195,6 @@ class WorkerCommand {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     methodArguments;
     source;
-    constructor() {
-    }
 }
 class ItemsRange {
     startPosition;
@@ -4164,9 +4158,6 @@ class JSHeapSnapshot extends HeapSnapshot {
     }
 }
 class JSHeapSnapshotNode extends HeapSnapshotNode {
-    constructor(snapshot, nodeIndex) {
-        super(snapshot, nodeIndex);
-    }
     canBeQueried() {
         const snapshot = this.snapshot;
         const flags = snapshot.flagsOfNode(this);
@@ -4330,9 +4321,6 @@ class JSHeapSnapshotNode extends HeapSnapshotNode {
     }
 }
 class JSHeapSnapshotEdge extends HeapSnapshotEdge {
-    constructor(snapshot, edgeIndex) {
-        super(snapshot, edgeIndex);
-    }
     clone() {
         const snapshot = this.snapshot;
         return new JSHeapSnapshotEdge(snapshot, this.edgeIndex);
@@ -4416,9 +4404,6 @@ class JSHeapSnapshotEdge extends HeapSnapshotEdge {
     }
 }
 class JSHeapSnapshotRetainerEdge extends HeapSnapshotRetainerEdge {
-    constructor(snapshot, retainerIndex) {
-        super(snapshot, retainerIndex);
-    }
     clone() {
         const snapshot = this.snapshot;
         return new JSHeapSnapshotRetainerEdge(snapshot, this.retainerIndex());
