@@ -6,7 +6,9 @@
   "types": "index.d.ts",
   "scripts": {
     "lint": "standard",
-    "test": "node --test ./test/*.test.js",
+    "test": "node --run test:types && node --run test:unit",
+    "test:types": "attw --ignore-rules cjs-resolves-to-esm --pack .",
+    "test:unit": "node --test ./test/*.test.js",
     "build": "bash ./scripts/build-devtools-frontend.sh"
   },
   "author": "Nolan Lawson <nolan@nolanlawson.com>",
@@ -35,6 +37,7 @@
     "node": ">= 18.0.0"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
     "@microsoft/api-extractor": "^7.52.8",
     "@rollup/plugin-inject": "^5.0.5",
     "@rollup/plugin-replace": "^6.0.2",
