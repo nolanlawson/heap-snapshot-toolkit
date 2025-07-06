@@ -7,7 +7,6 @@ declare class Aggregate {
     maxRet: number;
     name: string;
     idxs: number[];
-    constructor();
 }
 
 declare class AggregateForDiff {
@@ -260,7 +259,6 @@ declare class DiffForClass {
     addedIndexes: number[];
     countDelta: number;
     sizeDelta: number;
-    constructor();
 }
 
 declare interface DominatedNodes {
@@ -424,21 +422,15 @@ declare abstract class HeapSnapshot {
     get totalSize(): number;
     private createFilter;
     search(searchConfig: HeapSnapshotModel_2.HeapSnapshotModel.SearchConfig, nodeFilter: HeapSnapshotModel_2.HeapSnapshotModel.NodeFilter): number[];
-    aggregatesWithFilter(nodeFilter: HeapSnapshotModel_2.HeapSnapshotModel.NodeFilter): {
-        [x: string]: HeapSnapshotModel_2.HeapSnapshotModel.Aggregate;
-    };
+    aggregatesWithFilter(nodeFilter: HeapSnapshotModel_2.HeapSnapshotModel.NodeFilter): Record<string, HeapSnapshotModel_2.HeapSnapshotModel.Aggregate>;
     private createNodeIdFilter;
     private createAllocationStackFilter;
     private createNamedFilter;
-    getAggregatesByClassKey(sortedIndexes: boolean, key?: string, filter?: ((arg0: HeapSnapshotNode) => boolean)): {
-        [x: string]: HeapSnapshotModel_2.HeapSnapshotModel.Aggregate;
-    };
+    getAggregatesByClassKey(sortedIndexes: boolean, key?: string, filter?: ((arg0: HeapSnapshotNode) => boolean)): Record<string, HeapSnapshotModel_2.HeapSnapshotModel.Aggregate>;
     allocationTracesTops(): HeapSnapshotModel_2.HeapSnapshotModel.SerializedAllocationNode[];
     allocationNodeCallers(nodeId: number): HeapSnapshotModel_2.HeapSnapshotModel.AllocationNodeCallers;
     allocationStack(nodeIndex: number): HeapSnapshotModel_2.HeapSnapshotModel.AllocationStackFrame[] | null;
-    aggregatesForDiff(interfaceDefinitions: string): {
-        [x: string]: HeapSnapshotModel_2.HeapSnapshotModel.AggregateForDiff;
-    };
+    aggregatesForDiff(interfaceDefinitions: string): Record<string, HeapSnapshotModel_2.HeapSnapshotModel.AggregateForDiff>;
     isUserRoot(_node: HeapSnapshotNode): boolean;
     calculateShallowSizes(): void;
     calculateDistances(isForRetainersView: boolean, filter?: ((arg0: HeapSnapshotNode, arg1: HeapSnapshotEdge) => boolean)): void;
@@ -492,11 +484,7 @@ declare abstract class HeapSnapshot {
         map: Uint8Array;
         flag: number;
     } | null;
-    calculateSnapshotDiff(baseSnapshotId: string, baseSnapshotAggregates: {
-        [x: string]: HeapSnapshotModel_2.HeapSnapshotModel.AggregateForDiff;
-    }): {
-        [x: string]: HeapSnapshotModel_2.HeapSnapshotModel.Diff;
-    };
+    calculateSnapshotDiff(baseSnapshotId: string, baseSnapshotAggregates: Record<string, HeapSnapshotModel_2.HeapSnapshotModel.AggregateForDiff>): Record<string, HeapSnapshotModel_2.HeapSnapshotModel.Diff>;
     private calculateDiffForClass;
     private nodeForSnapshotObjectId;
     classKeyFromClassKeyInternal(key: string | number): string;
@@ -615,9 +603,7 @@ declare interface HeapSnapshotMetaInfo {
     trace_function_info_fields: string[];
     trace_node_fields: string[];
     sample_fields: string[];
-    type_strings: {
-        [key: string]: string;
-    };
+    type_strings: Record<string, string>;
 }
 
 declare namespace HeapSnapshotModel {
@@ -804,8 +790,9 @@ declare const isExtendedKebabCase: (inputStr: string) => boolean;
 
 /**
  * @returns true iff `mimeType` has textual content. Concretely we return true if:
- *   - `mimeType` starts with "text/"
- *   - `mimeType` ends with "+json" or "+xml"
+ *   - `mimeType` starts with "text/" or "multipart/"
+ *   - `mimeType` ends with "+xml"
+ *   - `mimeType` contains "json"
  *   - if `mimeType` is one of a predefined list textual mime types.
  */
 declare function isTextType(mimeType: string): boolean;
@@ -856,7 +843,6 @@ export declare class JSHeapSnapshot extends HeapSnapshot {
 }
 
 declare class JSHeapSnapshotEdge extends HeapSnapshotEdge {
-    constructor(snapshot: JSHeapSnapshot, edgeIndex?: number);
     clone(): JSHeapSnapshotEdge;
     hasStringName(): boolean;
     isElement(): boolean;
@@ -876,7 +862,6 @@ declare class JSHeapSnapshotEdge extends HeapSnapshotEdge {
 
 declare class JSHeapSnapshotNode extends HeapSnapshotNode {
     #private;
-    constructor(snapshot: JSHeapSnapshot, nodeIndex?: number);
     canBeQueried(): boolean;
     name(): string;
     private consStringName;
@@ -892,7 +877,6 @@ declare class JSHeapSnapshotNode extends HeapSnapshotNode {
 }
 
 declare class JSHeapSnapshotRetainerEdge extends HeapSnapshotRetainerEdge {
-    constructor(snapshot: JSHeapSnapshot, retainerIndex: number);
     clone(): JSHeapSnapshotRetainerEdge;
     isHidden(): boolean;
     isInvisible(): boolean;
@@ -1349,11 +1333,7 @@ declare const toISO8601Compact: (date: Date) => string;
 
 declare const toKebabCase: (input: string) => Lowercase<string>;
 
-declare function toKebabCaseKeys(settingValue: {
-    [x: string]: any;
-}): {
-    [x: string]: any;
-};
+declare function toKebabCaseKeys(settingValue: Record<string, any>): Record<string, any>;
 
 declare const toLowerCaseString: (input: string) => LowerCaseString;
 
@@ -1472,7 +1452,6 @@ declare class WorkerCommand {
     methodName: string;
     methodArguments: any[];
     source: string;
-    constructor();
 }
 
 export { }
