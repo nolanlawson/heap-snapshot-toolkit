@@ -1,4 +1,4 @@
-/* Generated from devtools-frontend@3431527 via build-devtools-frontend.sh. Source: https://github.com/ChromeDevTools/devtools-frontend/commit/3431527 */
+/* Generated from devtools-frontend@138048f via build-devtools-frontend.sh. Source: https://github.com/ChromeDevTools/devtools-frontend/commit/138048f */
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -1588,7 +1588,7 @@ class HeapSnapshotNode {
     }
     setDetachedness(detachedness) {
         let value = this.#detachednessAndClassIndex();
-        value &= -4; // Clear the old bits.
+        value &= ~BITMASK_FOR_DOM_LINK_STATE; // Clear the old bits.
         value |= detachedness; // Set the new bits.
         this.#setDetachednessAndClassIndex(value);
     }
