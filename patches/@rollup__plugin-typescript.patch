@@ -1,0 +1,28 @@
+diff --git a/dist/cjs/index.js b/dist/cjs/index.js
+index 607d1fbd27a37984d7b6fac74affc4ffd16f9f3b..889cc0794fd4dccb16f8374cb50e7e928d743ce7 100644
+--- a/dist/cjs/index.js
++++ b/dist/cjs/index.js
+@@ -496,6 +496,9 @@ function getEmittedFile(fileName, emittedFiles, tsCache) {
+  * containing files emitted by the Typescript compiler.
+  */
+ function findTypescriptOutput(ts, parsedOptions, id, emittedFiles, tsCache) {
++    // hopefully temporary fix for getting an assertion error here from typescript
++    // see: https://github.com/rollup/plugins/issues/1136
++    parsedOptions.options.configFilePath = parsedOptions.options.configFilePath ?? '/tmp/fake.tsconfig.json'
+     const emittedFileNames = ts.getOutputFileNames(parsedOptions, id, !ts.sys.useCaseSensitiveFileNames);
+     const codeFile = emittedFileNames.find(isCodeOutputFile);
+     const mapFile = emittedFileNames.find(isMapOutputFile);
+diff --git a/dist/es/index.js b/dist/es/index.js
+index 6b7faa06d156797c31f2a33f0c5ae2d77b42d381..0d50e17649596f0418df7295111b7ddc80ae3c22 100644
+--- a/dist/es/index.js
++++ b/dist/es/index.js
+@@ -473,6 +473,9 @@ function getEmittedFile(fileName, emittedFiles, tsCache) {
+  * containing files emitted by the Typescript compiler.
+  */
+ function findTypescriptOutput(ts, parsedOptions, id, emittedFiles, tsCache) {
++    // hopefully temporary fix for getting an assertion error here from typescript
++    // see: https://github.com/rollup/plugins/issues/1136
++    parsedOptions.options.configFilePath = parsedOptions.options.configFilePath ?? '/tmp/fake.tsconfig.json'
+     const emittedFileNames = ts.getOutputFileNames(parsedOptions, id, !ts.sys.useCaseSensitiveFileNames);
+     const codeFile = emittedFileNames.find(isCodeOutputFile);
+     const mapFile = emittedFileNames.find(isMapOutputFile);
